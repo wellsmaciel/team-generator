@@ -1,0 +1,491 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\node_modules\\@playwright\\test\\cli.js",
+      "test"
+    ],
+    "configFile": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\playwright.config.cjs",
+    "rootDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\server.cjs",
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/.scratch/playwright-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "desktop",
+        "name": "desktop",
+        "testDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "*.spec.cjs"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/.scratch/playwright-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "narrow-360",
+        "name": "narrow-360",
+        "testDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "*.spec.cjs"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/.scratch/playwright-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "narrow-390",
+        "name": "narrow-390",
+        "testDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "*.spec.cjs"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "desktop",
+        "testDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "snapshotDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "testIgnore": [],
+        "testMatch": "*.spec.cjs",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:51806",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "desktop"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "narrow-360",
+        "testDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "snapshotDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "testIgnore": [],
+        "testMatch": "*.spec.cjs",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:51806",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 360,
+            "height": 800
+          },
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "narrow-360"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "narrow-390",
+        "testDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "snapshotDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "testIgnore": [],
+        "testMatch": "*.spec.cjs",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:51806",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "narrow-390"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": ".scratch/playwright-results/results.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": ".scratch/playwright-report",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "pending-deletion.spec.cjs",
+      "file": "pending-deletion.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "confirming deletion during a worse preview clears the match and allows a new generation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1422,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T21:20:10.938Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-version",
+                      "contentType": "text/plain",
+                      "body": "MTU2LjAuODA3OC40"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3589d2a3225e492c991c-96b6d2a1b77d00065797",
+          "file": "pending-deletion.spec.cjs",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "confirming deletion during a worse preview clears the match and allows a new generation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-360",
+              "projectName": "narrow-360",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1025,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T21:20:15.015Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-version",
+                      "contentType": "text/plain",
+                      "body": "MTU2LjAuODA3OC40"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3589d2a3225e492c991c-68d5a3a748e5dee76271",
+          "file": "pending-deletion.spec.cjs",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "confirming deletion during a worse preview clears the match and allows a new generation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-390",
+              "projectName": "narrow-390",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1082,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T21:20:18.077Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-version",
+                      "contentType": "text/plain",
+                      "body": "MTU2LjAuODA3OC40"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3589d2a3225e492c991c-b71cefe328783d80182d",
+          "file": "pending-deletion.spec.cjs",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "share-keyboard.spec.cjs",
+      "file": "share-keyboard.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "keyboard actions and real copy and paste preserve teams after undo, accept and swap",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1933,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T21:20:12.642Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "undo-pasted-text",
+                      "contentType": "text/plain",
+                      "body": "VGVhbSAxCjxiPlNhbTwvYj4KQWxleAoKVGVhbSAyClBsYXllciAxMApBbGV4"
+                    },
+                    {
+                      "name": "accept-pasted-text",
+                      "contentType": "text/plain",
+                      "body": "VGVhbSAxClBsYXllciAxMApBbGV4CgpUZWFtIDIKPGI+U2FtPC9iPgpBbGV4"
+                    },
+                    {
+                      "name": "swap-pasted-text",
+                      "contentType": "text/plain",
+                      "body": "VGVhbSAxCjxiPlNhbTwvYj4KQWxleAoKVGVhbSAyClBsYXllciAxMApBbGV4"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "29fda93e78e976e7d88a-03c25bbd395946343c1e",
+          "file": "share-keyboard.spec.cjs",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "keyboard actions and real copy and paste preserve teams after undo, accept and swap",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-360",
+              "projectName": "narrow-360",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1320,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T21:20:16.320Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "undo-pasted-text",
+                      "contentType": "text/plain",
+                      "body": "VGVhbSAxCjxiPlNhbTwvYj4KQWxleAoKVGVhbSAyClBsYXllciAxMApBbGV4"
+                    },
+                    {
+                      "name": "accept-pasted-text",
+                      "contentType": "text/plain",
+                      "body": "VGVhbSAxCkFsZXgKUGxheWVyIDEwCgpUZWFtIDIKQWxleAo8Yj5TYW08L2I+"
+                    },
+                    {
+                      "name": "swap-pasted-text",
+                      "contentType": "text/plain",
+                      "body": "VGVhbSAxCkFsZXgKUGxheWVyIDEwCgpUZWFtIDIKQWxleAo8Yj5TYW08L2I+"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "29fda93e78e976e7d88a-0828c402a6ddff160716",
+          "file": "share-keyboard.spec.cjs",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "keyboard actions and real copy and paste preserve teams after undo, accept and swap",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-390",
+              "projectName": "narrow-390",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1399,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-18T21:20:19.443Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "undo-pasted-text",
+                      "contentType": "text/plain",
+                      "body": "VGVhbSAxCjxiPlNhbTwvYj4KQWxleAoKVGVhbSAyClBsYXllciAxMApBbGV4"
+                    },
+                    {
+                      "name": "accept-pasted-text",
+                      "contentType": "text/plain",
+                      "body": "VGVhbSAxClBsYXllciAxMApBbGV4CgpUZWFtIDIKPGI+U2FtPC9iPgpBbGV4"
+                    },
+                    {
+                      "name": "swap-pasted-text",
+                      "contentType": "text/plain",
+                      "body": "VGVhbSAxCjxiPlNhbTwvYj4KQWxleAoKVGVhbSAyClBsYXllciAxMApBbGV4"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "29fda93e78e976e7d88a-9191086c14ddf250d30d",
+          "file": "share-keyboard.spec.cjs",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-18T21:20:10.498Z",
+    "duration": 10432.312,
+    "expected": 6,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

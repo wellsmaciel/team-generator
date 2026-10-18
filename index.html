@@ -4,59 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Team Generator</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <style>
-    #tablePlayers1,
-    #tablePlayers2 {
-      display: flex;
-      margin: 10px;
-      justify-content: center;
-    }
-    h3 {
-      padding: 20px;
-    }
-    #team1,
-    #totalSkill1,
-    #team2,
-    #totalSkill2 {
-      text-align: center;
-    }
-    body {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Dark_court.jpg);
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      padding: 10px;
-      text-align: center;
-      font-family: Arial, Helvetica, sans-serif;
-      color: aliceblue;
-    }
-    form {
-      display: flex; /* Ative o motor que distribui os elementos */
-      flex-direction: column; /* Faça os elementos ficarem um embaixo do outro (coluna) */
-      align-items: center; /* Centralize todos os inputs e botões no meio exato da tela */
-      gap: 12px;
-    }
-    ul {
-      padding: 0;
-      list-style-position: inside; /* Faz as bolinhas irem junto com o texto centralizado */
-    }
-  </style>
   <body>
     <h1>Building up your Team</h1>
     <h2>Add the Player name and their skill</h2>
     <div>
-      <form id="form">
-        <label for="name" type="text">Player Name</label>
+      <form id="form" onsubmit="addOrUpdatePlayer(event)">
+        <p id="editingStatus" role="status"></p>
+        <label for="pName">Player Name</label>
         <input type="text" id="pName" required />
-        <label for="skill" type="Number">Player Skill</label>
-        <input type="number" id="pSkill" required />
-        <button id="btnPs" onclick="addingPlayers(event)">Add Player</button>
+        <label for="pSkill">Player Skill</label>
+        <input type="number" id="pSkill" min="1" max="10" step="1" required />
+        <label for="pGoalkeeper">
+          <input type="checkbox" id="pGoalkeeper" />
+          Fixed goalkeeper (plays only in goal)
+        </label>
+        <button id="btnPs" type="submit">Add Player</button>
+        <button id="btnCancelEdit" type="button" onclick="cancelEditing()" hidden>Cancel edit</button>
       </form>
+      <p id="storageStatus" role="status"></p>
       <div>
         <h2>Click to Generate Teams</h2>
-        <button id="btnTeams" onclick="gnrTeams()">Generate Teams</button>
+        <label for="teamCount">Number of teams</label>
+        <input type="number" id="teamCount" min="2" step="1" value="2" required aria-describedby="teamCountHelp" />
+        <p id="teamCountHelp">Choose at least 2 teams, with at least 2 selected players per team.</p>
+        <button id="btnTeams" onclick="generateTeams()">Generate Teams</button>
+        <p id="teamsStatus" role="status"></p>
+        <p id="alternativeStatus" role="status"></p>
+        <div id="alternativeControls" hidden>
+          <button type="button" onclick="acceptAlternative()">Accept composition</button>
+          <button type="button" onclick="undoAlternative()">Undo composition</button>
+        </div>
       </div>
     </div>
 
@@ -64,32 +43,33 @@
     <div id="container">
       <div>
         <h3>Players and Skills</h3>
+        <p>Check the players who will play in this match. Unchecking keeps their registration.</p>
+        <p id="selectionStatus" role="status"></p>
         <ul id="playerSkillList"></ul>
       </div>
 
       <h2>List of Team and Players</h2>
 
-      <div id="tablePlayers1">
-        <div>
-          <h3>Players Team 1</h3>
-          <ul id="team1"></ul>
+      <div id="teamsContainer"></div>
+      <section id="shareControls" hidden aria-labelledby="shareHeading">
+        <h3 id="shareHeading">Share teams</h3>
+        <p id="shareHelp">Select the text below and copy it to share your teams. Skill scores are not included.</p>
+        <label for="shareText">Teams to copy</label>
+        <textarea id="shareText" readonly rows="12" spellcheck="false" aria-describedby="shareHelp"></textarea>
+      </section>
+      <section id="swapControls" hidden aria-labelledby="swapHeading">
+        <h3 id="swapHeading">Swap players</h3>
+        <p>Choose two players from different teams: outfield for outfield, or goalkeeper for goalkeeper.</p>
+        <div class="swap-fields">
+          <label for="firstSwapPlayer">First player</label>
+          <select id="firstSwapPlayer"></select>
+          <label for="secondSwapPlayer">Second player</label>
+          <select id="secondSwapPlayer"></select>
+          <button type="button" onclick="confirmPlayerSwap()">Confirm swap</button>
+          <button type="button" onclick="cancelPlayerSwap()">Cancel</button>
         </div>
-        <div>
-          <h3>Skill total - Team 1</h3>
-          <p id="totalSkill1"></p>
-        </div>
-      </div>
-
-      <div id="tablePlayers2">
-        <div>
-          <h3>Players Team 2</h3>
-          <ul id="team2"></ul>
-        </div>
-        <div>
-          <h3>Skill total - Team 2</h3>
-          <p id="totalSkill2"></p>
-        </div>
-      </div>
+        <p id="swapStatus" role="status"></p>
+      </section>
     </div>
 
     <footer>
@@ -101,106 +81,6 @@
         <a href="https://github.com/wellsmaciel">GitHub</a>
       </p>
     </footer>
+    <script src="script.js"></script>
   </body>
-  <script>
-    //variables
-    let listaJogadores = [];
-    let grupo_1 = [];
-    let grupo_2 = [];
-    let soma_1 = 0;
-    let soma_2 = 0;
-
-    //Adding players button Logic
-    function addingPlayers(event) {
-      event.preventDefault();
-
-      // Colleting the inputs
-      let nAdded = document.getElementById('pName').value;
-      let sAdded = Number(document.getElementById('pSkill').value);
-
-      // Building the structure
-      let novoJogador = {
-        name: nAdded,
-        score: sAdded,
-      };
-
-      // Pushing the data to the DB
-      listaJogadores.push(novoJogador);
-
-      //Cleaning the fields
-      document.getElementById('pName').value = '';
-      document.getElementById('pSkill').value = '';
-
-      // Teste de controle para você ver a lista crescendo a cada clique
-      console.log('Banco de dados atual:', listaJogadores);
-
-      const provisList = listaJogadores;
-      let pNameList = '';
-      let pSkillList = 0;
-      provisList.forEach(function (data) {
-        pNameList += '<li>' + data.name + ' - ' + data.score + '</li>';
-        //pSkillList += data.score;
-        //console.log("_*_", pNameList);
-      });
-
-      document.getElementById('playerSkillList').innerHTML = pNameList;
-    }
-
-    //Generate Team button logic
-
-    function gnrTeams() {
-      grupo_1 = [];
-      grupo_2 = [];
-      soma_1 = 0;
-      soma_2 = 0;
-
-      let listOrdenada = listaJogadores.sort(function (a, b) {
-        return b.score - a.score;
-      });
-
-      console.log('lista ordenada: ', listOrdenada);
-
-      for (let i = 0; i < listOrdenada.length; i++) {
-        let jogadorAtual = listOrdenada[i];
-
-        if (soma_1 <= soma_2) {
-          grupo_1.push(jogadorAtual);
-
-          soma_1 += jogadorAtual.score;
-        } else {
-          grupo_2.push(jogadorAtual);
-
-          soma_2 += jogadorAtual.score;
-        }
-      }
-      console.log('soma_1 ', soma_1);
-      console.log('grupo_1 ', grupo_1);
-
-      console.log('soma_2 ', soma_2);
-      console.log('grupo_2 ', grupo_2);
-      //document.getElementById("list1").textContent = grupo_2;
-
-      const array1 = grupo_1;
-      let textoFinal_1 = '';
-      let somaFinal_1 = 0;
-      array1.forEach(function (element) {
-        textoFinal_1 += '<li>' + element.name + '</li>';
-        somaFinal_1 += element.score;
-        // console.log(element);
-      });
-      document.getElementById('team1').innerHTML = textoFinal_1;
-      document.getElementById('totalSkill1').innerHTML = somaFinal_1;
-
-      const array2 = grupo_2;
-      let textoFinal_2 = '';
-      let somaFinal_2 = 0;
-      array2.forEach(function (element2) {
-        textoFinal_2 += '<li>' + element2.name + '</li>';
-        somaFinal_2 += element2.score;
-        //console.log("_*_", element2);
-      });
-      document.getElementById('team2').innerHTML = textoFinal_2;
-      document.getElementById('totalSkill2').innerHTML = somaFinal_2;
-    }
-  </script>
 </html>

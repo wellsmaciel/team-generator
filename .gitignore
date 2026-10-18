@@ -1,5 +1,9 @@
 # Dependencies
 node_modules/
+.scratch/npm-cache/
+.scratch/playwright-browsers/
+.scratch/playwright-results/
+.scratch/playwright-report/
 
 # Local configuration
 .env

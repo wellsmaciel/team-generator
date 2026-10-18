@@ -1,0 +1,152 @@
+- heading "Building up your Team" [level=1]
+- heading "Add the Player name and their skill" [level=2]
+- status
+- generic: Player Name
+- textbox "Player Name"
+- generic: Player Skill
+- spinbutton "Player Skill"
+- checkbox "Fixed goalkeeper (plays only in goal)"
+- text: Fixed goalkeeper (plays only in goal)
+- button "Add Player"
+- status: Players saved in this browser.
+- heading "Click to Generate Teams" [level=2]
+- text: Number of teams
+- spinbutton "Number of teams": "2"
+- paragraph: Choose at least 2 teams, with at least 2 selected players per team.
+- button "Generate another composition" [active]
+- status: "Teams have different numbers of players because the selected players cannot be divided equally among 2 teams. Team sizes differ by one player. No fixed goalkeeper in teams: 1, 2. Someone will need to play in goal."
+- status
+- heading "Added players" [level=2]
+- heading "Players and Skills" [level=3]
+- paragraph: Check the players who will play in this match. Unchecking keeps their registration.
+- status: "Selected for this match: 5 / 20"
+- list:
+  - checkbox "Ana - 1"
+  - text: Ana - 1
+  - button "Edit Ana": Edit
+  - button "Delete Ana": Delete
+  - checkbox "Bruno - 2"
+  - text: Bruno - 2
+  - button "Edit Bruno": Edit
+  - button "Delete Bruno": Delete
+  - checkbox "Carla - 3"
+  - text: Carla - 3
+  - button "Edit Carla": Edit
+  - button "Delete Carla": Delete
+  - checkbox "Diego - 4"
+  - text: Diego - 4
+  - button "Edit Diego": Edit
+  - button "Delete Diego": Delete
+  - checkbox "Eva - 5"
+  - text: Eva - 5
+  - button "Edit Eva": Edit
+  - button "Delete Eva": Delete
+  - checkbox "Player 06 - 6"
+  - text: Player 06 - 6
+  - button "Edit Player 06": Edit
+  - button "Delete Player 06": Delete
+  - checkbox "Player 07 - 7"
+  - text: Player 07 - 7
+  - button "Edit Player 07": Edit
+  - button "Delete Player 07": Delete
+  - checkbox "Player 08 - 8"
+  - text: Player 08 - 8
+  - button "Edit Player 08": Edit
+  - button "Delete Player 08": Delete
+  - checkbox "Player 09 - 9"
+  - text: Player 09 - 9
+  - button "Edit Player 09": Edit
+  - button "Delete Player 09": Delete
+  - checkbox "Player 10 - 10"
+  - text: Player 10 - 10
+  - button "Edit Player 10": Edit
+  - button "Delete Player 10": Delete
+  - checkbox "Player 11 - 1"
+  - text: Player 11 - 1
+  - button "Edit Player 11": Edit
+  - button "Delete Player 11": Delete
+  - checkbox "Player 12 - 2"
+  - text: Player 12 - 2
+  - button "Edit Player 12": Edit
+  - button "Delete Player 12": Delete
+  - checkbox "Player 13 - 3"
+  - text: Player 13 - 3
+  - button "Edit Player 13": Edit
+  - button "Delete Player 13": Delete
+  - checkbox "Player 14 - 4"
+  - text: Player 14 - 4
+  - button "Edit Player 14": Edit
+  - button "Delete Player 14": Delete
+  - checkbox "Player 15 - 5"
+  - text: Player 15 - 5
+  - button "Edit Player 15": Edit
+  - button "Delete Player 15": Delete
+  - checkbox "C1 High A - 10" [checked]
+  - text: C1 High A - 10
+  - button "Edit C1 High A": Edit
+  - button "Delete C1 High A": Delete
+  - checkbox "C1 High B - 10" [checked]
+  - text: C1 High B - 10
+  - button "Edit C1 High B": Edit
+  - button "Delete C1 High B": Delete
+  - checkbox "C1 High C - 10" [checked]
+  - text: C1 High C - 10
+  - button "Edit C1 High C": Edit
+  - button "Delete C1 High C": Delete
+  - checkbox "C1 Low A - 1" [checked]
+  - text: C1 Low A - 1
+  - button "Edit C1 Low A": Edit
+  - button "Delete C1 Low A": Delete
+  - checkbox "C1 Low B - 1" [checked]
+  - text: C1 Low B - 1
+  - button "Edit C1 Low B": Edit
+  - button "Delete C1 Low B": Delete
+- heading "List of Team and Players" [level=2]
+- heading "Players Team 1 (3)" [level=3]
+- list:
+  - listitem: C1 Low A
+  - listitem: C1 High C
+  - listitem: C1 Low B
+- heading "Skill total - Team 1" [level=3]
+- paragraph: "12"
+- heading "Players Team 2 (2)" [level=3]
+- list:
+  - listitem: C1 High B
+  - listitem: C1 High A
+- heading "Skill total - Team 2" [level=3]
+- paragraph: "20"
+- region "Share teams":
+  - heading "Share teams" [level=3]
+  - paragraph: Select the text below and copy it to share your teams. Skill scores are not included.
+  - text: Teams to copy
+  - textbox "Teams to copy": Team 1 C1 Low A C1 High C C1 Low B Team 2 C1 High B C1 High A
+- region "Swap players":
+  - heading "Swap players" [level=3]
+  - paragraph: "Choose two players from different teams: outfield for outfield, or goalkeeper for goalkeeper."
+  - generic: First player
+  - combobox "First player":
+    - option "Choose a player" [selected]
+    - 'option "Team 1, player 1: C1 Low A - 1 (Outfield)"'
+    - 'option "Team 1, player 2: C1 High C - 10 (Outfield)"'
+    - 'option "Team 1, player 3: C1 Low B - 1 (Outfield)"'
+    - 'option "Team 2, player 1: C1 High B - 10 (Outfield)"'
+    - 'option "Team 2, player 2: C1 High A - 10 (Outfield)"'
+  - generic: Second player
+  - combobox "Second player":
+    - option "Choose a player" [selected]
+    - 'option "Team 1, player 1: C1 Low A - 1 (Outfield)"'
+    - 'option "Team 1, player 2: C1 High C - 10 (Outfield)"'
+    - 'option "Team 1, player 3: C1 Low B - 1 (Outfield)"'
+    - 'option "Team 2, player 1: C1 High B - 10 (Outfield)"'
+    - 'option "Team 2, player 2: C1 High A - 10 (Outfield)"'
+  - button "Confirm swap"
+  - button "Cancel"
+  - status
+- contentinfo:
+  - paragraph: Team Generator — Created by Wells Maciel v1.0
+  - paragraph:
+    - link "LinkedIn":
+      - /url: https://www.linkedin.com/in/wells-velasquez-maciel/
+  - paragraph:
+    - link "GitHub":
+      - /url: https://github.com/wellsmaciel
