@@ -1,4 +1,4 @@
-﻿# Dependencies
+# Dependencies
 node_modules/
 
 # Local configuration
@@ -13,3 +13,13 @@ build/
 # Operating system
 .DS_Store
 Thumbs.db
+# Local AI tools, skills and settings
+.agents/
+.claude/
+.codex/
+/skills-lock.json
+/AGENTS.md
+/AGENTS.override.md
+/CLAUDE.md
+/CLAUDE.local.md
+/.mcp.json
