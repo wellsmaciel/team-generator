@@ -73,6 +73,10 @@ You can also run the project with the **Live Server** extension in Visual Studio
 5. Click **Generate Teams**.
 6. Review both teams and their total skill scores.
 
+## Published application
+
+No published application URL has been confirmed yet.
+
 ## Deployment
 
 This is a static web application and can be hosted with services such as:
