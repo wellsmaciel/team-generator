@@ -1,0 +1,12 @@
+{
+  "index.html": "4cff7cf7a979977b98a149b8b05d67bdaa31815138e014fcd70cdfab2dd18963",
+  "script.js": "fec3349cff7d9591743e9f24ae2cccc1a4b735e3587ebc418902cb560a035ebb",
+  "styles.css": "5065657539c387c9771ebb7f706e9770b95b2923a5154cb18bb638d20af6271c",
+  "package.json": "8d1b806a034970670e60f4d241f55ee640200d7753eef93c725b1816d95b5110",
+  "package-lock.json": "48ca32ef83e6add904dfa3267288acd271c58ecdcca9a71afdd441f8bb3bd001",
+  "playwright.config.cjs": "fc3205107771c617482530ea6b5f95a6977c4f4757b8efe5f94af7e47aad4218",
+  "tests/browser/pending-deletion.spec.cjs": "4d111d427f778825f154df9deaa40c40760d8d5f7800ae652c5fe5590c114b52",
+  "tests/browser/share-keyboard.spec.cjs": "3a4aadd5dca18836e7aae24c1b7504bac7b37e44f582283b38c1e75ccbeaccf1",
+  "tests/browser/server.cjs": "31f94748e3aaccf90d42be2638a61c710fb4f9803cf50659330cd3beaf3fcc2f",
+  "tests/browser/clipboard-editor.html": "24bedff175b15ac87b68e89c5f9965180d357b85f970b3c8a1ef46e7710887f6"
+}

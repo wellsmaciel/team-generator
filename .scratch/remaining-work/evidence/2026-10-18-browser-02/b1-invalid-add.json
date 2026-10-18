@@ -1,0 +1,44 @@
+[
+  {
+    "name": "",
+    "nameMessage": "Please fill in this field.",
+    "players": 24,
+    "skill": "5",
+    "skillMessage": ""
+  },
+  {
+    "name": "   ",
+    "nameMessage": "Enter the player name.",
+    "players": 24,
+    "skill": "5",
+    "skillMessage": ""
+  },
+  {
+    "name": "Invalid test",
+    "nameMessage": "",
+    "players": 24,
+    "skill": "",
+    "skillMessage": "Please fill in this field."
+  },
+  {
+    "name": "Invalid test",
+    "nameMessage": "",
+    "players": 24,
+    "skill": "0",
+    "skillMessage": "Value must be greater than or equal to 1."
+  },
+  {
+    "name": "Invalid test",
+    "nameMessage": "",
+    "players": 24,
+    "skill": "11",
+    "skillMessage": "Value must be less than or equal to 10."
+  },
+  {
+    "name": "Invalid test",
+    "nameMessage": "",
+    "players": 24,
+    "skill": "1.5",
+    "skillMessage": "Please enter a valid value. The two nearest valid values are 1 and 2."
+  }
+]
