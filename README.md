@@ -1,115 +1,79 @@
-# Team Generator
+﻿# Team Generator
 
-A simple web application that creates two balanced teams based on the skill scores entered for each player.
+A static web application for selecting participants and forming teams using integer skill scores from 1 to 10. No framework, backend or external dependencies are required.
 
-The app is not limited to football or futsal. It can be used for any sport, game, training session, or group activity where participants need to be divided into teams with similar overall skill levels.
+## Run locally
 
-## Version
-
-**1.0**
-
-## Features
-
-- Add players by name
-- Assign a numerical skill score to each player
-- Display the full list of added players and their scores
-- Sort players from highest to lowest skill
-- Generate two teams
-- Display the players in each team
-- Display the total skill score of each team
-- Recalculate the teams whenever the **Generate Teams** button is clicked
-
-## How the team generation works
-
-The application:
-
-1. Sorts all players from the highest skill score to the lowest.
-2. Starts both teams with a total score of zero.
-3. Goes through the sorted player list.
-4. Adds each player to the team that currently has the lower total skill score.
-5. Updates the total score after each player is added.
-
-This is a greedy balancing approach designed to create teams with similar total skill scores.
-
-> Note: Version 1.0 prioritizes the total skill balance. In some unusual combinations, it may not guarantee that both teams have exactly the same number of players.
-
-## Technologies
-
-- HTML5
-- CSS3
-- JavaScript
-
-No frameworks or external libraries are required.
-
-## Project structure
-
-```text
-team-generator/
-├── index.html
-├── Dark_court.jpg
-└── README.md
-```
-
-Make sure the image filename matches the path used in the CSS:
-
-```css
-url(Dark_court.jpg)
-```
-
-## Running the project locally
-
-1. Download or clone the repository.
-2. Keep `index.html` and `Dark_court.jpg` in the same folder.
-3. Open `index.html` in a web browser.
-
-You can also run the project with the **Live Server** extension in Visual Studio Code.
+Keep `index.html`, `script.js`, `styles.css` and `Dark_court.jpg` together, then open `index.html` in a browser. A local static server, such as VS Code Live Server, is optional. Use the same address and browser profile when checking saved players.
 
 ## How to use
 
-1. Enter a player's name.
-2. Enter the player's skill score.
-3. Click **Add Player**.
-4. Repeat the process for all players.
-5. Click **Generate Teams**.
-6. Review both teams and their total skill scores.
+1. Enter a player name, a whole-number skill score from 1 to 10 and, optionally, mark **Fixed goalkeeper**. Click **Add Player**.
+2. Use **Edit** to change a registration, **Save changes** to save it or **Cancel edit** to discard the edit. **Delete** asks for confirmation. Duplicate names are allowed.
+3. Check the players participating in this match. Unchecking a player keeps their registration.
+4. Choose at least 2 teams, with at least 2 selected participants per team, then click **Generate Teams**.
+5. Review participants, skill totals and warnings. Team sizes differ by at most one participant. Each team has at most one fixed goalkeeper; too many selected goalkeepers block generation. Missing goalkeepers and unequal sizes produce warnings.
+6. Use **Generate another composition** to search for different groups. Equal or better balance applies immediately. Any increase in the difference between the highest and lowest totals shows a preview requiring **Accept composition** or **Undo composition**. Sharing and swaps are unavailable during that decision.
+7. To swap players, choose participants from different teams and click **Confirm swap**. Swap outfield for outfield or goalkeeper for goalkeeper. **Cancel** clears the choices.
+8. Under **Share teams**, select and manually copy the text. It contains team titles and names, without skill scores or totals, and follows the accepted composition after generation, swaps or undo.
 
-## Published application
+Adding a player, saving an edit, confirming deletion, changing selection or changing the team count clears the current match. Canceling an edit or deletion preserves it.
 
-No published application URL has been confirmed yet.
+## Saved data
 
-## Deployment
+Registrations (name, score and goalkeeper flag) are stored locally under `team-generator.players`. Selection and match state are held only in memory and reset on reload. Storage errors are reported; unreadable saved data is not automatically overwritten. Clearing browser data may remove registrations. There is no account, synchronization or remote backup. Names are displayed as literal text.
 
-This is a static web application and can be hosted with services such as:
+## Team balancing
 
-- GitHub Pages
-- Netlify
-- Cloudflare Pages
+The first generation fixes capacities, places goalkeepers in different teams, then assigns outfield players by descending score to the available team with the lowest total. It then repeatedly applies the best exchange between players of the same role that strictly reduces the difference between the highest and lowest team totals. It stops when no such exchange improves that difference. Capacities and goalkeeper counts remain unchanged. Integer differences strictly decrease, so the adjustment terminates.
 
-## Current limitations
+For five outfield players with scores `10, 10, 10, 1, 1` and two teams, the initial result now has totals 12 and 20, rather than 21 and 11, with sizes 3 and 2.
 
-- Player data is not saved after the page is refreshed.
-- Players cannot yet be edited or removed.
-- The app currently generates two teams only.
-- Skill input validation is still basic.
-- Equal team size is not guaranteed in every possible score combination.
+This is a local improvement method and does not guarantee a global optimum. Neutral intermediate exchanges, exchanges between different roles and larger exchange cycles are not explored by the initial adjustment.
 
-## Possible future improvements
+Another composition uses 64 random complete assignments plus valid single exchanges. It may find a worse alternative or report that no different valid grouping was found. Changing only team labels or member order does not count as a different composition. There is no composition history beyond the pending preview and its exact undo copy.
 
-- Add minimum and maximum limits for skill scores
-- Remove or edit players
-- Save players with local storage
-- Guarantee equal team sizes
-- Support more than two teams
-- Allow custom team names
-- Improve mobile responsiveness
-- Add a reset button
-- Display validation messages
-- Add automated tests
+## Verification status
 
-## Author
+Stage 05's essential checks were completed on 18 October 2026 using recorded browser checks, user screenshots/reports and Playwright. The C1 correction was developed test-first: its simulated-page test failed with a difference of 10 before the change and passed with 8 afterward; its first generation also passed in a real browser. Existing Node.js checks cover swaps, regeneration, decisions, invalidation and share text with simulated DOM and storage.
 
-Created as a JavaScript learning project.
+Run the dependency-free checks from the project directory:
 
-## License
+```text
+node --check script.js
+node tests/initial-team-balance.test.cjs
+node tests/manual-player-swaps.test.cjs
+node tests/regenerate-teams.test.cjs
+node tests/share-team-text.test.cjs
+git diff --check
+```
 
-This project is available for educational and personal use.
+Playwright is a development dependency; it is not required to open or run the application. To install and run browser checks in Windows PowerShell:
+
+```powershell
+npm.cmd ci --cache .scratch/npm-cache
+$env:PLAYWRIGHT_BROWSERS_PATH = Join-Path (Get-Location) '.scratch/playwright-browsers'
+npx.cmd --no-install playwright install chromium
+npm.cmd run test:browser
+```
+
+The browser suite creates its own loopback server on port 51806 and a fresh browser context per test. It does not read the user's browser profile or registrations. Two scenarios run at 1280×720, 360×800 and 390×844: deletion during a pending preview and keyboard/copy/paste after undo, acceptance and swaps. Six tests passed on Chromium 156.0.8078.4. Screenshots and an HTML report are generated under `.scratch/playwright-results` and `.scratch/playwright-report`.
+
+The [stage 05 checklist](docs/testes-manuais-etapa-05.md) links the evidence and its limits. Copy/paste was verified with real keyboard shortcuts into a separate browser-based local text editor. Physical phones and pasting into native applications such as Notepad were not tested. Narrow browser widths are simulations; they do not establish touch or mobile keyboard behavior. Tests added for existing behavior are acceptance checks, not a new TDD cycle. Future fixes continue to require a failing test before the implementation change.
+
+## Current scope
+
+Manual text copying is available. A copy button and moving the generation button are deferred. There is no login, backend, cross-device synchronization, saved match, image sharing or sharing with skill totals. No published application URL has been confirmed.
+
+## Project files
+
+- `index.html`: page structure and controls
+- `styles.css`: page styling
+- `script.js`: registrations, local storage, selection, generation and match actions
+- `Dark_court.jpg`: background image
+- `tests/*.test.cjs`: dependency-free Node.js checks
+- `tests/browser/`, `playwright.config.cjs`: isolated browser checks and their server
+- `package.json`, `package-lock.json`: development-only Playwright dependency and commands
+- `docs/`: rules, decisions, verification checklist and continuity notes
+
+Created by Wells Maciel as a JavaScript learning project. Available for educational and personal use.
