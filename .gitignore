@@ -1,3 +1,15 @@
-New JS App/Outros/RC-Free-modified.mq5
-New JS App/Outros/MVP app footbal team v0.95.zip
-New JS App/Outros/index.html
+﻿# Dependencies
+node_modules/
+
+# Local configuration
+.env
+.env.*
+!.env.example
+
+# Build output
+dist/
+build/
+
+# Operating system
+.DS_Store
+Thumbs.db
