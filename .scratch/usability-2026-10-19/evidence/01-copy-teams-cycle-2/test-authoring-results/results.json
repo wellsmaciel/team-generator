@@ -1,0 +1,538 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/browser/copy-teams-button.spec.cjs"
+    ],
+    "configFile": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\playwright.config.cjs",
+    "rootDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\server.cjs",
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/.scratch/playwright-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "desktop",
+        "name": "desktop",
+        "testDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "*.spec.cjs"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/.scratch/playwright-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "narrow-360",
+        "name": "narrow-360",
+        "testDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "*.spec.cjs"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/.scratch/playwright-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "narrow-390",
+        "name": "narrow-390",
+        "testDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "*.spec.cjs"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "desktop",
+        "testDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "snapshotDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "testIgnore": [],
+        "testMatch": "*.spec.cjs",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:51806",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "desktop"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "narrow-360",
+        "testDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "snapshotDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "testIgnore": [],
+        "testMatch": "*.spec.cjs",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:51806",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 360,
+            "height": 800
+          },
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "narrow-360"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "narrow-390",
+        "testDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "snapshotDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "testIgnore": [],
+        "testMatch": "*.spec.cjs",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:51806",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "narrow-390"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": ".scratch/playwright-results/results.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": ".scratch/playwright-report",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "copy-teams-button.spec.cjs",
+      "file": "copy-teams-button.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "clicking Copy teams copies the current shareable text and confirms only after success",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 833,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:26:57.005Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34c9b8fddc678cb198b2-03ceee43ddc392c5ba4f",
+          "file": "copy-teams-button.spec.cjs",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "clipboard rejection offers manual copying without losing the displayed teams or players",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5878,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#teamsContainer')\nTimeout: 5000ms\n\u001b[32m- Expected  - 13\u001b[39m\n\u001b[31m+ Received  +  1\u001b[39m\n\n\u001b[32m- Players Team 1 (2)\u001b[39m\n\u001b[32m- Eva\u001b[39m\n\u001b[32m- Bruno\u001b[39m\n\u001b[32m- Skill total - Team 1\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[32m- 7\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[32m- Players Team 2 (2)\u001b[39m\n\u001b[32m- Diego\u001b[39m\n\u001b[32m- Carla\u001b[39m\n\u001b[32m- Skill total - Team 2\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[32m- 7\u001b[39m\n\u001b[31m+ Players Team 1 (2)EvaBrunoSkill total - Team 1\u001b[7m7\u001b[27mPlayers Team 2 (2)DiegoCarlaSkill total - Team 27\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('#teamsContainer') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#teamsContainer')\u001b[22m\n\u001b[2m    14 × locator resolved to <div id=\"teamsContainer\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"Players Team 1 (2)EvaBrunoSkill total - Team 17Players Team 2 (2)DiegoCarlaSkill total - Team 27\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#teamsContainer')\nTimeout: 5000ms\n\u001b[32m- Expected  - 13\u001b[39m\n\u001b[31m+ Received  +  1\u001b[39m\n\n\u001b[32m- Players Team 1 (2)\u001b[39m\n\u001b[32m- Eva\u001b[39m\n\u001b[32m- Bruno\u001b[39m\n\u001b[32m- Skill total - Team 1\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[32m- 7\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[32m- Players Team 2 (2)\u001b[39m\n\u001b[32m- Diego\u001b[39m\n\u001b[32m- Carla\u001b[39m\n\u001b[32m- Skill total - Team 2\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[32m- 7\u001b[39m\n\u001b[31m+ Players Team 1 (2)EvaBrunoSkill total - Team 1\u001b[7m7\u001b[27mPlayers Team 2 (2)DiegoCarlaSkill total - Team 27\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('#teamsContainer') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#teamsContainer')\u001b[22m\n\u001b[2m    14 × locator resolved to <div id=\"teamsContainer\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"Players Team 1 (2)EvaBrunoSkill total - Team 17Players Team 2 (2)DiegoCarlaSkill total - Team 27\"\u001b[22m\n\n    at C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs:52:49",
+                    "location": {
+                      "file": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs",
+                      "column": 49,
+                      "line": 52
+                    },
+                    "snippet": "  50 |   await expect(shareText).toHaveValue(expectedText);\n  51 |   await expect(shareText).toHaveAttribute('readonly', '');\n> 52 |   await expect(page.locator('#teamsContainer')).toHaveText(expectedTeams);\n     |                                                 ^\n  53 |   await expect(page.locator('#playerSkillList label')).toHaveText([\n  54 |     'Bruno - 2', 'Carla - 3', 'Diego - 4', 'Eva - 5',\n  55 |   ]);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs",
+                        "column": 49,
+                        "line": 52
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#teamsContainer')\nTimeout: 5000ms\n\u001b[32m- Expected  - 13\u001b[39m\n\u001b[31m+ Received  +  1\u001b[39m\n\n\u001b[32m- Players Team 1 (2)\u001b[39m\n\u001b[32m- Eva\u001b[39m\n\u001b[32m- Bruno\u001b[39m\n\u001b[32m- Skill total - Team 1\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[32m- 7\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[32m- Players Team 2 (2)\u001b[39m\n\u001b[32m- Diego\u001b[39m\n\u001b[32m- Carla\u001b[39m\n\u001b[32m- Skill total - Team 2\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[32m- 7\u001b[39m\n\u001b[31m+ Players Team 1 (2)EvaBrunoSkill total - Team 1\u001b[7m7\u001b[27mPlayers Team 2 (2)DiegoCarlaSkill total - Team 27\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('#teamsContainer') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#teamsContainer')\u001b[22m\n\u001b[2m    14 × locator resolved to <div id=\"teamsContainer\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"Players Team 1 (2)EvaBrunoSkill total - Team 17Players Team 2 (2)DiegoCarlaSkill total - Team 27\"\u001b[22m\n\n\n  50 |   await expect(shareText).toHaveValue(expectedText);\n  51 |   await expect(shareText).toHaveAttribute('readonly', '');\n> 52 |   await expect(page.locator('#teamsContainer')).toHaveText(expectedTeams);\n     |                                                 ^\n  53 |   await expect(page.locator('#playerSkillList label')).toHaveText([\n  54 |     'Bruno - 2', 'Carla - 3', 'Diego - 4', 'Eva - 5',\n  55 |   ]);\n    at C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs:52:49"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:26:58.103Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results\\copy-teams-button-clipboar-acc31--displayed-teams-or-players-desktop\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results\\copy-teams-button-clipboar-acc31--displayed-teams-or-players-desktop\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results\\copy-teams-button-clipboar-acc31--displayed-teams-or-players-desktop\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs",
+                    "column": 49,
+                    "line": 52
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "34c9b8fddc678cb198b2-e4fd3389800acc9c0069",
+          "file": "copy-teams-button.spec.cjs",
+          "line": 25,
+          "column": 1
+        },
+        {
+          "title": "clicking Copy teams copies the current shareable text and confirms only after success",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-360",
+              "projectName": "narrow-360",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 702,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:27:04.576Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34c9b8fddc678cb198b2-57cfc47f14f83f828ec7",
+          "file": "copy-teams-button.spec.cjs",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "clipboard rejection offers manual copying without losing the displayed teams or players",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-360",
+              "projectName": "narrow-360",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5745,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#teamsContainer')\nTimeout: 5000ms\n\u001b[32m- Expected  - 13\u001b[39m\n\u001b[31m+ Received  +  1\u001b[39m\n\n\u001b[32m- Players Team 1 (2)\u001b[39m\n\u001b[32m- Eva\u001b[39m\n\u001b[32m- Bruno\u001b[39m\n\u001b[32m- Skill total - Team 1\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[32m- 7\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[32m- Players Team 2 (2)\u001b[39m\n\u001b[32m- Diego\u001b[39m\n\u001b[32m- Carla\u001b[39m\n\u001b[32m- Skill total - Team 2\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[32m- 7\u001b[39m\n\u001b[31m+ Players Team 1 (2)EvaBrunoSkill total - Team 1\u001b[7m7\u001b[27mPlayers Team 2 (2)DiegoCarlaSkill total - Team 27\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('#teamsContainer') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#teamsContainer')\u001b[22m\n\u001b[2m    14 × locator resolved to <div id=\"teamsContainer\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"Players Team 1 (2)EvaBrunoSkill total - Team 17Players Team 2 (2)DiegoCarlaSkill total - Team 27\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#teamsContainer')\nTimeout: 5000ms\n\u001b[32m- Expected  - 13\u001b[39m\n\u001b[31m+ Received  +  1\u001b[39m\n\n\u001b[32m- Players Team 1 (2)\u001b[39m\n\u001b[32m- Eva\u001b[39m\n\u001b[32m- Bruno\u001b[39m\n\u001b[32m- Skill total - Team 1\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[32m- 7\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[32m- Players Team 2 (2)\u001b[39m\n\u001b[32m- Diego\u001b[39m\n\u001b[32m- Carla\u001b[39m\n\u001b[32m- Skill total - Team 2\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[32m- 7\u001b[39m\n\u001b[31m+ Players Team 1 (2)EvaBrunoSkill total - Team 1\u001b[7m7\u001b[27mPlayers Team 2 (2)DiegoCarlaSkill total - Team 27\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('#teamsContainer') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#teamsContainer')\u001b[22m\n\u001b[2m    14 × locator resolved to <div id=\"teamsContainer\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"Players Team 1 (2)EvaBrunoSkill total - Team 17Players Team 2 (2)DiegoCarlaSkill total - Team 27\"\u001b[22m\n\n    at C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs:52:49",
+                    "location": {
+                      "file": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs",
+                      "column": 49,
+                      "line": 52
+                    },
+                    "snippet": "  50 |   await expect(shareText).toHaveValue(expectedText);\n  51 |   await expect(shareText).toHaveAttribute('readonly', '');\n> 52 |   await expect(page.locator('#teamsContainer')).toHaveText(expectedTeams);\n     |                                                 ^\n  53 |   await expect(page.locator('#playerSkillList label')).toHaveText([\n  54 |     'Bruno - 2', 'Carla - 3', 'Diego - 4', 'Eva - 5',\n  55 |   ]);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs",
+                        "column": 49,
+                        "line": 52
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#teamsContainer')\nTimeout: 5000ms\n\u001b[32m- Expected  - 13\u001b[39m\n\u001b[31m+ Received  +  1\u001b[39m\n\n\u001b[32m- Players Team 1 (2)\u001b[39m\n\u001b[32m- Eva\u001b[39m\n\u001b[32m- Bruno\u001b[39m\n\u001b[32m- Skill total - Team 1\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[32m- 7\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[32m- Players Team 2 (2)\u001b[39m\n\u001b[32m- Diego\u001b[39m\n\u001b[32m- Carla\u001b[39m\n\u001b[32m- Skill total - Team 2\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[32m- 7\u001b[39m\n\u001b[31m+ Players Team 1 (2)EvaBrunoSkill total - Team 1\u001b[7m7\u001b[27mPlayers Team 2 (2)DiegoCarlaSkill total - Team 27\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('#teamsContainer') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#teamsContainer')\u001b[22m\n\u001b[2m    14 × locator resolved to <div id=\"teamsContainer\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"Players Team 1 (2)EvaBrunoSkill total - Team 17Players Team 2 (2)DiegoCarlaSkill total - Team 27\"\u001b[22m\n\n\n  50 |   await expect(shareText).toHaveValue(expectedText);\n  51 |   await expect(shareText).toHaveAttribute('readonly', '');\n> 52 |   await expect(page.locator('#teamsContainer')).toHaveText(expectedTeams);\n     |                                                 ^\n  53 |   await expect(page.locator('#playerSkillList label')).toHaveText([\n  54 |     'Bruno - 2', 'Carla - 3', 'Diego - 4', 'Eva - 5',\n  55 |   ]);\n    at C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs:52:49"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:27:05.557Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results\\copy-teams-button-clipboar-acc31--displayed-teams-or-players-narrow-360\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results\\copy-teams-button-clipboar-acc31--displayed-teams-or-players-narrow-360\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results\\copy-teams-button-clipboar-acc31--displayed-teams-or-players-narrow-360\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs",
+                    "column": 49,
+                    "line": 52
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "34c9b8fddc678cb198b2-00f6aaecbf337de2e172",
+          "file": "copy-teams-button.spec.cjs",
+          "line": 25,
+          "column": 1
+        },
+        {
+          "title": "clicking Copy teams copies the current shareable text and confirms only after success",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-390",
+              "projectName": "narrow-390",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 706,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:27:11.825Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34c9b8fddc678cb198b2-90c4d6e7ee06f2795a0e",
+          "file": "copy-teams-button.spec.cjs",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "clipboard rejection offers manual copying without losing the displayed teams or players",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-390",
+              "projectName": "narrow-390",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5679,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#teamsContainer')\nTimeout: 5000ms\n\u001b[32m- Expected  - 13\u001b[39m\n\u001b[31m+ Received  +  1\u001b[39m\n\n\u001b[32m- Players Team 1 (2)\u001b[39m\n\u001b[32m- Eva\u001b[39m\n\u001b[32m- Bruno\u001b[39m\n\u001b[32m- Skill total - Team 1\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[32m- 7\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[32m- Players Team 2 (2)\u001b[39m\n\u001b[32m- Diego\u001b[39m\n\u001b[32m- Carla\u001b[39m\n\u001b[32m- Skill total - Team 2\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[32m- 7\u001b[39m\n\u001b[31m+ Players Team 1 (2)EvaBrunoSkill total - Team 1\u001b[7m7\u001b[27mPlayers Team 2 (2)DiegoCarlaSkill total - Team 27\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('#teamsContainer') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#teamsContainer')\u001b[22m\n\u001b[2m    14 × locator resolved to <div id=\"teamsContainer\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"Players Team 1 (2)EvaBrunoSkill total - Team 17Players Team 2 (2)DiegoCarlaSkill total - Team 27\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#teamsContainer')\nTimeout: 5000ms\n\u001b[32m- Expected  - 13\u001b[39m\n\u001b[31m+ Received  +  1\u001b[39m\n\n\u001b[32m- Players Team 1 (2)\u001b[39m\n\u001b[32m- Eva\u001b[39m\n\u001b[32m- Bruno\u001b[39m\n\u001b[32m- Skill total - Team 1\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[32m- 7\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[32m- Players Team 2 (2)\u001b[39m\n\u001b[32m- Diego\u001b[39m\n\u001b[32m- Carla\u001b[39m\n\u001b[32m- Skill total - Team 2\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[32m- 7\u001b[39m\n\u001b[31m+ Players Team 1 (2)EvaBrunoSkill total - Team 1\u001b[7m7\u001b[27mPlayers Team 2 (2)DiegoCarlaSkill total - Team 27\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('#teamsContainer') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#teamsContainer')\u001b[22m\n\u001b[2m    14 × locator resolved to <div id=\"teamsContainer\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"Players Team 1 (2)EvaBrunoSkill total - Team 17Players Team 2 (2)DiegoCarlaSkill total - Team 27\"\u001b[22m\n\n    at C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs:52:49",
+                    "location": {
+                      "file": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs",
+                      "column": 49,
+                      "line": 52
+                    },
+                    "snippet": "  50 |   await expect(shareText).toHaveValue(expectedText);\n  51 |   await expect(shareText).toHaveAttribute('readonly', '');\n> 52 |   await expect(page.locator('#teamsContainer')).toHaveText(expectedTeams);\n     |                                                 ^\n  53 |   await expect(page.locator('#playerSkillList label')).toHaveText([\n  54 |     'Bruno - 2', 'Carla - 3', 'Diego - 4', 'Eva - 5',\n  55 |   ]);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs",
+                        "column": 49,
+                        "line": 52
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#teamsContainer')\nTimeout: 5000ms\n\u001b[32m- Expected  - 13\u001b[39m\n\u001b[31m+ Received  +  1\u001b[39m\n\n\u001b[32m- Players Team 1 (2)\u001b[39m\n\u001b[32m- Eva\u001b[39m\n\u001b[32m- Bruno\u001b[39m\n\u001b[32m- Skill total - Team 1\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[32m- 7\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[32m- Players Team 2 (2)\u001b[39m\n\u001b[32m- Diego\u001b[39m\n\u001b[32m- Carla\u001b[39m\n\u001b[32m- Skill total - Team 2\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[32m- 7\u001b[39m\n\u001b[31m+ Players Team 1 (2)EvaBrunoSkill total - Team 1\u001b[7m7\u001b[27mPlayers Team 2 (2)DiegoCarlaSkill total - Team 27\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('#teamsContainer') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#teamsContainer')\u001b[22m\n\u001b[2m    14 × locator resolved to <div id=\"teamsContainer\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"Players Team 1 (2)EvaBrunoSkill total - Team 17Players Team 2 (2)DiegoCarlaSkill total - Team 27\"\u001b[22m\n\n\n  50 |   await expect(shareText).toHaveValue(expectedText);\n  51 |   await expect(shareText).toHaveAttribute('readonly', '');\n> 52 |   await expect(page.locator('#teamsContainer')).toHaveText(expectedTeams);\n     |                                                 ^\n  53 |   await expect(page.locator('#playerSkillList label')).toHaveText([\n  54 |     'Bruno - 2', 'Carla - 3', 'Diego - 4', 'Eva - 5',\n  55 |   ]);\n    at C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs:52:49"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:27:12.794Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results\\copy-teams-button-clipboar-acc31--displayed-teams-or-players-narrow-390\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results\\copy-teams-button-clipboar-acc31--displayed-teams-or-players-narrow-390\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results\\copy-teams-button-clipboar-acc31--displayed-teams-or-players-narrow-390\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs",
+                    "column": 49,
+                    "line": 52
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "34c9b8fddc678cb198b2-14f4a19cc7b263c5acc7",
+          "file": "copy-teams-button.spec.cjs",
+          "line": 25,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-19T08:26:56.563Z",
+    "duration": 22064.64,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 3,
+    "flaky": 0
+  }
+}

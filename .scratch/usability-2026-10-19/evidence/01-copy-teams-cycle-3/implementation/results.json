@@ -1,0 +1,807 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--config",
+      ".scratch/usability-2026-10-19/evidence/01-copy-teams-cycle-3/implementation/playwright.implementation.config.cjs"
+    ],
+    "configFile": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\usability-2026-10-19\\evidence\\01-copy-teams-cycle-3\\implementation\\playwright.implementation.config.cjs",
+    "rootDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\server.cjs",
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/.scratch/usability-2026-10-19/evidence/01-copy-teams-cycle-3/implementation/results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "desktop",
+        "name": "desktop",
+        "testDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "*.spec.cjs"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/.scratch/usability-2026-10-19/evidence/01-copy-teams-cycle-3/implementation/results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "narrow-360",
+        "name": "narrow-360",
+        "testDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "*.spec.cjs"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/.scratch/usability-2026-10-19/evidence/01-copy-teams-cycle-3/implementation/results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "narrow-390",
+        "name": "narrow-390",
+        "testDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "*.spec.cjs"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\usability-2026-10-19\\evidence\\01-copy-teams-cycle-3\\implementation\\results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "desktop",
+        "testDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "snapshotDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "testIgnore": [],
+        "testMatch": "*.spec.cjs",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:51806",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "desktop"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\usability-2026-10-19\\evidence\\01-copy-teams-cycle-3\\implementation\\results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "narrow-360",
+        "testDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "snapshotDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "testIgnore": [],
+        "testMatch": "*.spec.cjs",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:51806",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 360,
+            "height": 800
+          },
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "narrow-360"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\usability-2026-10-19\\evidence\\01-copy-teams-cycle-3\\implementation\\results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "narrow-390",
+        "testDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "snapshotDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "testIgnore": [],
+        "testMatch": "*.spec.cjs",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:51806",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "narrow-390"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\usability-2026-10-19\\evidence\\01-copy-teams-cycle-3\\implementation\\results.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\usability-2026-10-19\\evidence\\01-copy-teams-cycle-3\\implementation\\report",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "copy-teams-button.spec.cjs",
+      "file": "copy-teams-button.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "clicking Copy teams copies the current shareable text and confirms only after success",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 816,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:48:48.048Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34c9b8fddc678cb198b2-03ceee43ddc392c5ba4f",
+          "file": "copy-teams-button.spec.cjs",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "clipboard rejection offers manual copying without losing the displayed teams or players",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 740,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:48:49.118Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34c9b8fddc678cb198b2-e4fd3389800acc9c0069",
+          "file": "copy-teams-button.spec.cjs",
+          "line": 25,
+          "column": 1
+        },
+        {
+          "title": "a pending less-balanced preview hides Copy teams and clears a previous copy status",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 834,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:48:49.866Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34c9b8fddc678cb198b2-43e9da4f43cfab4fda14",
+          "file": "copy-teams-button.spec.cjs",
+          "line": 61,
+          "column": 1
+        },
+        {
+          "title": "clicking Copy teams copies the current shareable text and confirms only after success",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-360",
+              "projectName": "narrow-360",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 694,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:48:54.195Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34c9b8fddc678cb198b2-57cfc47f14f83f828ec7",
+          "file": "copy-teams-button.spec.cjs",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "clipboard rejection offers manual copying without losing the displayed teams or players",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-360",
+              "projectName": "narrow-360",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 610,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:48:55.152Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34c9b8fddc678cb198b2-00f6aaecbf337de2e172",
+          "file": "copy-teams-button.spec.cjs",
+          "line": 25,
+          "column": 1
+        },
+        {
+          "title": "a pending less-balanced preview hides Copy teams and clears a previous copy status",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-360",
+              "projectName": "narrow-360",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 669,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:48:55.767Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34c9b8fddc678cb198b2-65e0c852a9b2a96f8c41",
+          "file": "copy-teams-button.spec.cjs",
+          "line": 61,
+          "column": 1
+        },
+        {
+          "title": "clicking Copy teams copies the current shareable text and confirms only after success",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-390",
+              "projectName": "narrow-390",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 695,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:48:59.200Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34c9b8fddc678cb198b2-90c4d6e7ee06f2795a0e",
+          "file": "copy-teams-button.spec.cjs",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "clipboard rejection offers manual copying without losing the displayed teams or players",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-390",
+              "projectName": "narrow-390",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 621,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:49:00.161Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34c9b8fddc678cb198b2-14f4a19cc7b263c5acc7",
+          "file": "copy-teams-button.spec.cjs",
+          "line": 25,
+          "column": 1
+        },
+        {
+          "title": "a pending less-balanced preview hides Copy teams and clears a previous copy status",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-390",
+              "projectName": "narrow-390",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 671,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:49:00.789Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34c9b8fddc678cb198b2-6f02c297bd93019acf7f",
+          "file": "copy-teams-button.spec.cjs",
+          "line": 61,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "pending-deletion.spec.cjs",
+      "file": "pending-deletion.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "confirming deletion during a worse preview clears the match and allows a new generation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1254,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:48:50.710Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-version",
+                      "contentType": "text/plain",
+                      "body": "MTU2LjAuODA3OC40"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3589d2a3225e492c991c-96b6d2a1b77d00065797",
+          "file": "pending-deletion.spec.cjs",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "confirming deletion during a worse preview clears the match and allows a new generation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-360",
+              "projectName": "narrow-360",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 970,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:48:56.452Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-version",
+                      "contentType": "text/plain",
+                      "body": "MTU2LjAuODA3OC40"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3589d2a3225e492c991c-68d5a3a748e5dee76271",
+          "file": "pending-deletion.spec.cjs",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "confirming deletion during a worse preview clears the match and allows a new generation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-390",
+              "projectName": "narrow-390",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 982,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:49:01.476Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "browser-version",
+                      "contentType": "text/plain",
+                      "body": "MTU2LjAuODA3OC40"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3589d2a3225e492c991c-b71cefe328783d80182d",
+          "file": "pending-deletion.spec.cjs",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "share-keyboard.spec.cjs",
+      "file": "share-keyboard.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "keyboard actions and real copy and paste preserve teams after undo, accept and swap",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1805,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:48:51.980Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "undo-pasted-text",
+                      "contentType": "text/plain",
+                      "body": "VGVhbSAxCjxiPlNhbTwvYj4KQWxleAoKVGVhbSAyClBsYXllciAxMApBbGV4"
+                    },
+                    {
+                      "name": "accept-pasted-text",
+                      "contentType": "text/plain",
+                      "body": "VGVhbSAxCkFsZXgKUGxheWVyIDEwCgpUZWFtIDIKQWxleAo8Yj5TYW08L2I+"
+                    },
+                    {
+                      "name": "swap-pasted-text",
+                      "contentType": "text/plain",
+                      "body": "VGVhbSAxCkFsZXgKUGxheWVyIDEwCgpUZWFtIDIKQWxleAo8Yj5TYW08L2I+"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "29fda93e78e976e7d88a-03c25bbd395946343c1e",
+          "file": "share-keyboard.spec.cjs",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "keyboard actions and real copy and paste preserve teams after undo, accept and swap",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-360",
+              "projectName": "narrow-360",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1370,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:48:57.433Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "undo-pasted-text",
+                      "contentType": "text/plain",
+                      "body": "VGVhbSAxCjxiPlNhbTwvYj4KQWxleAoKVGVhbSAyClBsYXllciAxMApBbGV4"
+                    },
+                    {
+                      "name": "accept-pasted-text",
+                      "contentType": "text/plain",
+                      "body": "VGVhbSAxCkFsZXgKUGxheWVyIDEwCgpUZWFtIDIKPGI+U2FtPC9iPgpBbGV4"
+                    },
+                    {
+                      "name": "swap-pasted-text",
+                      "contentType": "text/plain",
+                      "body": "VGVhbSAxCjxiPlNhbTwvYj4KUGxheWVyIDEwCgpUZWFtIDIKQWxleApBbGV4"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "29fda93e78e976e7d88a-0828c402a6ddff160716",
+          "file": "share-keyboard.spec.cjs",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "keyboard actions and real copy and paste preserve teams after undo, accept and swap",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-390",
+              "projectName": "narrow-390",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1286,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:49:02.468Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "undo-pasted-text",
+                      "contentType": "text/plain",
+                      "body": "VGVhbSAxCjxiPlNhbTwvYj4KQWxleAoKVGVhbSAyClBsYXllciAxMApBbGV4"
+                    },
+                    {
+                      "name": "accept-pasted-text",
+                      "contentType": "text/plain",
+                      "body": "VGVhbSAxCjxiPlNhbTwvYj4KQWxleAoKVGVhbSAyCkFsZXgKUGxheWVyIDEw"
+                    },
+                    {
+                      "name": "swap-pasted-text",
+                      "contentType": "text/plain",
+                      "body": "VGVhbSAxCkFsZXgKQWxleAoKVGVhbSAyCjxiPlNhbTwvYj4KUGxheWVyIDEw"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "29fda93e78e976e7d88a-9191086c14ddf250d30d",
+          "file": "share-keyboard.spec.cjs",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-19T08:48:47.671Z",
+    "duration": 16151.131,
+    "expected": 15,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

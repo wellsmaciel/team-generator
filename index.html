@@ -54,6 +54,8 @@
       <section id="shareControls" hidden aria-labelledby="shareHeading">
         <h3 id="shareHeading">Share teams</h3>
         <p id="shareHelp">Select the text below and copy it to share your teams. Skill scores are not included.</p>
+        <button type="button" onclick="copyTeamsToClipboard()">Copy teams</button>
+        <p id="copyStatus" role="status"></p>
         <label for="shareText">Teams to copy</label>
         <textarea id="shareText" readonly rows="12" spellcheck="false" aria-describedby="shareHelp"></textarea>
       </section>

@@ -1,0 +1,412 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/browser/copy-teams-button.spec.cjs"
+    ],
+    "configFile": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\playwright.config.cjs",
+    "rootDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\server.cjs",
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/.scratch/playwright-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "desktop",
+        "name": "desktop",
+        "testDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "*.spec.cjs"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/.scratch/playwright-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "narrow-360",
+        "name": "narrow-360",
+        "testDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "*.spec.cjs"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/.scratch/playwright-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "narrow-390",
+        "name": "narrow-390",
+        "testDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "*.spec.cjs"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "desktop",
+        "testDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "snapshotDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "testIgnore": [],
+        "testMatch": "*.spec.cjs",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:51806",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "desktop"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "narrow-360",
+        "testDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "snapshotDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "testIgnore": [],
+        "testMatch": "*.spec.cjs",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:51806",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 360,
+            "height": 800
+          },
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "narrow-360"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "narrow-390",
+        "testDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "snapshotDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "testIgnore": [],
+        "testMatch": "*.spec.cjs",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:51806",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "narrow-390"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": ".scratch/playwright-results/results.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": ".scratch/playwright-report",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "copy-teams-button.spec.cjs",
+      "file": "copy-teams-button.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "clicking Copy teams copies the current shareable text and confirms only after success",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 30314,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs",
+                        "column": 71,
+                        "line": 18
+                      },
+                      "message": "Error: locator.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Copy teams', exact: true })\u001b[22m\n\n\n  16 |   const expectedText = await page.getByLabel('Teams to copy').inputValue();\n  17 |\n> 18 |   await page.getByRole('button', { name: 'Copy teams', exact: true }).click();\n     |                                                                       ^\n  19 |\n  20 |   await expect(page.getByRole('status').filter({ hasText: /copied/i })).toBeVisible();\n  21 |   const clipboardText = await page.evaluate(() => navigator.clipboard.readText());\n    at C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs:18:71"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:19:01.780Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results\\copy-teams-button-clicking-45506-confirms-only-after-success-desktop\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results\\copy-teams-button-clicking-45506-confirms-only-after-success-desktop\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results\\copy-teams-button-clicking-45506-confirms-only-after-success-desktop\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "34c9b8fddc678cb198b2-03ceee43ddc392c5ba4f",
+          "file": "copy-teams-button.spec.cjs",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "clicking Copy teams copies the current shareable text and confirms only after success",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-360",
+              "projectName": "narrow-360",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 30171,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs",
+                        "column": 71,
+                        "line": 18
+                      },
+                      "message": "Error: locator.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Copy teams', exact: true })\u001b[22m\n\n\n  16 |   const expectedText = await page.getByLabel('Teams to copy').inputValue();\n  17 |\n> 18 |   await page.getByRole('button', { name: 'Copy teams', exact: true }).click();\n     |                                                                       ^\n  19 |\n  20 |   await expect(page.getByRole('status').filter({ hasText: /copied/i })).toBeVisible();\n  21 |   const clipboardText = await page.evaluate(() => navigator.clipboard.readText());\n    at C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs:18:71"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:19:32.919Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results\\copy-teams-button-clicking-45506-confirms-only-after-success-narrow-360\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results\\copy-teams-button-clicking-45506-confirms-only-after-success-narrow-360\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results\\copy-teams-button-clicking-45506-confirms-only-after-success-narrow-360\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "34c9b8fddc678cb198b2-57cfc47f14f83f828ec7",
+          "file": "copy-teams-button.spec.cjs",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "clicking Copy teams copies the current shareable text and confirms only after success",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-390",
+              "projectName": "narrow-390",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "timedOut",
+                  "duration": 30161,
+                  "error": {
+                    "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                    "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                    },
+                    {
+                      "location": {
+                        "file": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs",
+                        "column": 71,
+                        "line": 18
+                      },
+                      "message": "Error: locator.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Copy teams', exact: true })\u001b[22m\n\n\n  16 |   const expectedText = await page.getByLabel('Teams to copy').inputValue();\n  17 |\n> 18 |   await page.getByRole('button', { name: 'Copy teams', exact: true }).click();\n     |                                                                       ^\n  19 |\n  20 |   await expect(page.getByRole('status').filter({ hasText: /copied/i })).toBeVisible();\n  21 |   const clipboardText = await page.evaluate(() => navigator.clipboard.readText());\n    at C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs:18:71"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:20:04.026Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results\\copy-teams-button-clicking-45506-confirms-only-after-success-narrow-390\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results\\copy-teams-button-clicking-45506-confirms-only-after-success-narrow-390\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results\\copy-teams-button-clicking-45506-confirms-only-after-success-narrow-390\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "34c9b8fddc678cb198b2-90c4d6e7ee06f2795a0e",
+          "file": "copy-teams-button.spec.cjs",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-19T08:19:01.410Z",
+    "duration": 93207.15,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 3,
+    "flaky": 0
+  }
+}

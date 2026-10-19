@@ -1,0 +1,436 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/browser/copy-teams-button.spec.cjs"
+    ],
+    "configFile": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\playwright.config.cjs",
+    "rootDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\server.cjs",
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/.scratch/playwright-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "desktop",
+        "name": "desktop",
+        "testDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "*.spec.cjs"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/.scratch/playwright-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "narrow-360",
+        "name": "narrow-360",
+        "testDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "*.spec.cjs"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/.scratch/playwright-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "narrow-390",
+        "name": "narrow-390",
+        "testDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "*.spec.cjs"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "desktop",
+        "testDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "snapshotDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "testIgnore": [],
+        "testMatch": "*.spec.cjs",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:51806",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "desktop"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "narrow-360",
+        "testDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "snapshotDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "testIgnore": [],
+        "testMatch": "*.spec.cjs",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:51806",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 360,
+            "height": 800
+          },
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "narrow-360"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "narrow-390",
+        "testDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "snapshotDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "testIgnore": [],
+        "testMatch": "*.spec.cjs",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:51806",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "narrow-390"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": ".scratch/playwright-results/results.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": ".scratch/playwright-report",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "copy-teams-button.spec.cjs",
+      "file": "copy-teams-button.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "clicking Copy teams copies the current shareable text and confirms only after success",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 909,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\n\u001b[32m- Expected  - 6\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Team 1\u001b[39m\n\u001b[31m+ Team 1\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[32m- Eva\u001b[39m\n\u001b[31m+ Eva\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[32m- Bruno\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[31m+ Bruno\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[31m+ \u001b[43m\r\u001b[49m\u001b[39m\n\u001b[32m- Team 2\u001b[39m\n\u001b[31m+ Team 2\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[32m- Diego\u001b[39m\n\u001b[31m+ Diego\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[2m  Carla\u001b[22m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\n\u001b[32m- Expected  - 6\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Team 1\u001b[39m\n\u001b[31m+ Team 1\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[32m- Eva\u001b[39m\n\u001b[31m+ Eva\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[32m- Bruno\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[31m+ Bruno\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[31m+ \u001b[43m\r\u001b[49m\u001b[39m\n\u001b[32m- Team 2\u001b[39m\n\u001b[31m+ Team 2\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[32m- Diego\u001b[39m\n\u001b[31m+ Diego\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[2m  Carla\u001b[22m\n    at C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs:22:25",
+                    "location": {
+                      "file": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs",
+                      "column": 25,
+                      "line": 22
+                    },
+                    "snippet": "  20 |   await expect(page.getByRole('status').filter({ hasText: /copied/i })).toBeVisible();\n  21 |   const clipboardText = await page.evaluate(() => navigator.clipboard.readText());\n> 22 |   expect(clipboardText).toBe(expectedText);\n     |                         ^\n  23 | });\n  24 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs",
+                        "column": 25,
+                        "line": 22
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\n\u001b[32m- Expected  - 6\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Team 1\u001b[39m\n\u001b[31m+ Team 1\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[32m- Eva\u001b[39m\n\u001b[31m+ Eva\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[32m- Bruno\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[31m+ Bruno\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[31m+ \u001b[43m\r\u001b[49m\u001b[39m\n\u001b[32m- Team 2\u001b[39m\n\u001b[31m+ Team 2\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[32m- Diego\u001b[39m\n\u001b[31m+ Diego\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[2m  Carla\u001b[22m\n\n  20 |   await expect(page.getByRole('status').filter({ hasText: /copied/i })).toBeVisible();\n  21 |   const clipboardText = await page.evaluate(() => navigator.clipboard.readText());\n> 22 |   expect(clipboardText).toBe(expectedText);\n     |                         ^\n  23 | });\n  24 |\n    at C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs:22:25"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:20:49.538Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results\\copy-teams-button-clicking-45506-confirms-only-after-success-desktop\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results\\copy-teams-button-clicking-45506-confirms-only-after-success-desktop\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results\\copy-teams-button-clicking-45506-confirms-only-after-success-desktop\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs",
+                    "column": 25,
+                    "line": 22
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "34c9b8fddc678cb198b2-03ceee43ddc392c5ba4f",
+          "file": "copy-teams-button.spec.cjs",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "clicking Copy teams copies the current shareable text and confirms only after success",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-360",
+              "projectName": "narrow-360",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 807,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\n\u001b[32m- Expected  - 6\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Team 1\u001b[39m\n\u001b[31m+ Team 1\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[32m- Eva\u001b[39m\n\u001b[31m+ Eva\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[32m- Bruno\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[31m+ Bruno\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[31m+ \u001b[43m\r\u001b[49m\u001b[39m\n\u001b[32m- Team 2\u001b[39m\n\u001b[31m+ Team 2\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[32m- Diego\u001b[39m\n\u001b[31m+ Diego\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[2m  Carla\u001b[22m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\n\u001b[32m- Expected  - 6\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Team 1\u001b[39m\n\u001b[31m+ Team 1\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[32m- Eva\u001b[39m\n\u001b[31m+ Eva\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[32m- Bruno\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[31m+ Bruno\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[31m+ \u001b[43m\r\u001b[49m\u001b[39m\n\u001b[32m- Team 2\u001b[39m\n\u001b[31m+ Team 2\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[32m- Diego\u001b[39m\n\u001b[31m+ Diego\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[2m  Carla\u001b[22m\n    at C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs:22:25",
+                    "location": {
+                      "file": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs",
+                      "column": 25,
+                      "line": 22
+                    },
+                    "snippet": "  20 |   await expect(page.getByRole('status').filter({ hasText: /copied/i })).toBeVisible();\n  21 |   const clipboardText = await page.evaluate(() => navigator.clipboard.readText());\n> 22 |   expect(clipboardText).toBe(expectedText);\n     |                         ^\n  23 | });\n  24 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs",
+                        "column": 25,
+                        "line": 22
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\n\u001b[32m- Expected  - 6\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Team 1\u001b[39m\n\u001b[31m+ Team 1\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[32m- Eva\u001b[39m\n\u001b[31m+ Eva\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[32m- Bruno\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[31m+ Bruno\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[31m+ \u001b[43m\r\u001b[49m\u001b[39m\n\u001b[32m- Team 2\u001b[39m\n\u001b[31m+ Team 2\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[32m- Diego\u001b[39m\n\u001b[31m+ Diego\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[2m  Carla\u001b[22m\n\n  20 |   await expect(page.getByRole('status').filter({ hasText: /copied/i })).toBeVisible();\n  21 |   const clipboardText = await page.evaluate(() => navigator.clipboard.readText());\n> 22 |   expect(clipboardText).toBe(expectedText);\n     |                         ^\n  23 | });\n  24 |\n    at C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs:22:25"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:20:51.196Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results\\copy-teams-button-clicking-45506-confirms-only-after-success-narrow-360\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results\\copy-teams-button-clicking-45506-confirms-only-after-success-narrow-360\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results\\copy-teams-button-clicking-45506-confirms-only-after-success-narrow-360\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs",
+                    "column": 25,
+                    "line": 22
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "34c9b8fddc678cb198b2-57cfc47f14f83f828ec7",
+          "file": "copy-teams-button.spec.cjs",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "clicking Copy teams copies the current shareable text and confirms only after success",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-390",
+              "projectName": "narrow-390",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 858,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\n\u001b[32m- Expected  - 6\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Team 1\u001b[39m\n\u001b[31m+ Team 1\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[32m- Eva\u001b[39m\n\u001b[31m+ Eva\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[32m- Bruno\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[31m+ Bruno\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[31m+ \u001b[43m\r\u001b[49m\u001b[39m\n\u001b[32m- Team 2\u001b[39m\n\u001b[31m+ Team 2\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[32m- Diego\u001b[39m\n\u001b[31m+ Diego\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[2m  Carla\u001b[22m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\n\u001b[32m- Expected  - 6\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Team 1\u001b[39m\n\u001b[31m+ Team 1\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[32m- Eva\u001b[39m\n\u001b[31m+ Eva\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[32m- Bruno\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[31m+ Bruno\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[31m+ \u001b[43m\r\u001b[49m\u001b[39m\n\u001b[32m- Team 2\u001b[39m\n\u001b[31m+ Team 2\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[32m- Diego\u001b[39m\n\u001b[31m+ Diego\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[2m  Carla\u001b[22m\n    at C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs:22:25",
+                    "location": {
+                      "file": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs",
+                      "column": 25,
+                      "line": 22
+                    },
+                    "snippet": "  20 |   await expect(page.getByRole('status').filter({ hasText: /copied/i })).toBeVisible();\n  21 |   const clipboardText = await page.evaluate(() => navigator.clipboard.readText());\n> 22 |   expect(clipboardText).toBe(expectedText);\n     |                         ^\n  23 | });\n  24 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs",
+                        "column": 25,
+                        "line": 22
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\n\u001b[32m- Expected  - 6\u001b[39m\n\u001b[31m+ Received  + 6\u001b[39m\n\n\u001b[32m- Team 1\u001b[39m\n\u001b[31m+ Team 1\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[32m- Eva\u001b[39m\n\u001b[31m+ Eva\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[32m- Bruno\u001b[39m\n\u001b[32m-\u001b[39m\n\u001b[31m+ Bruno\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[31m+ \u001b[43m\r\u001b[49m\u001b[39m\n\u001b[32m- Team 2\u001b[39m\n\u001b[31m+ Team 2\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[32m- Diego\u001b[39m\n\u001b[31m+ Diego\u001b[7m\r\u001b[27m\u001b[39m\n\u001b[2m  Carla\u001b[22m\n\n  20 |   await expect(page.getByRole('status').filter({ hasText: /copied/i })).toBeVisible();\n  21 |   const clipboardText = await page.evaluate(() => navigator.clipboard.readText());\n> 22 |   expect(clipboardText).toBe(expectedText);\n     |                         ^\n  23 | });\n  24 |\n    at C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs:22:25"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:20:52.791Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results\\copy-teams-button-clicking-45506-confirms-only-after-success-narrow-390\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results\\copy-teams-button-clicking-45506-confirms-only-after-success-narrow-390\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\playwright-results\\copy-teams-button-clicking-45506-confirms-only-after-success-narrow-390\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs",
+                    "column": 25,
+                    "line": 22
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "34c9b8fddc678cb198b2-90c4d6e7ee06f2795a0e",
+          "file": "copy-teams-button.spec.cjs",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-19T08:20:49.166Z",
+    "duration": 4904.259999999999,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 3,
+    "flaky": 0
+  }
+}

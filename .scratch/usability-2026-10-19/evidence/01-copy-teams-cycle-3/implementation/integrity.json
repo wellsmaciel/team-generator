@@ -1,0 +1,19 @@
+{
+  "checkedFiles": 258,
+  "changed": [
+    "script.js",
+    ".scratch\\usability-2026-10-19\\evidence\\01-copy-teams-cycle-3\\verification-2026-10-19\\resultado.md"
+  ],
+  "stats": {
+    "startTime": "2026-10-19T08:48:47.671Z",
+    "duration": 16151.131,
+    "expected": 15,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "utf8Validated": [
+    ".scratch/usability-2026-10-19/issues/01-copy-teams-button.md",
+    ".scratch/usability-2026-10-19/evidence/01-copy-teams-cycle-3/verification-2026-10-19/resultado.md"
+  ]
+}

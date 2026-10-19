@@ -12,7 +12,7 @@ Há um possível grupo de teste com 15 jogadores. O usuário pretende contatar s
 
 ## Estado atual
 
-O cadastro persistente com goleiro, edição, exclusão, seleção da partida e geração de vários times já existe. A geração respeita limites de tamanho e de goleiros; código e interface estão em inglês. Trocas, combinações alternativas com aceitar/desfazer, texto compartilhável e o aviso específico de tamanhos diferentes estão nas tarefas restantes. Consulte o resumo de continuidade para o estado detalhado. O README principal ainda contém instruções da versão 1.0 e será revisado na validação final.
+Cadastro persistente com goleiro, edição, exclusão, seleção da partida, vários times, restrições de tamanho/goleiros, avisos, trocas, novas composições com aceitar/desfazer e texto compartilhável já foram entregues. Código e interface estão em inglês. A primeira rodada foi concluída no escopo essencial; README e resumo documentam uso, evidências e limitações. Não há validação em celular físico. Na segunda rodada de 19/10/2026, Copy teams está concluído; reposicionar a geração é a próxima entrega, seguido de Select All Players e validação integrada.
 
 ## Limite da promessa
 
