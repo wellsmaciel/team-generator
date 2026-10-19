@@ -1,8 +1,20 @@
 # Resumo para o próximo chat
 
-Atualizado em 18/10/2026. **Tickets 01 a 05 concluídos**, com critérios essenciais comprovados. Nenhuma nova funcionalidade está autorizada.
+Atualizado em 19/10/2026. **Tickets 01 a 05 da primeira rodada concluídos**, com critérios essenciais comprovados. Na segunda rodada, **tarefa 01 (Copy teams) concluída** nesta data — ver fechamento em `.scratch/usability-2026-10-19/issues/01-copy-teams-button.md`. Tarefas 02 e 03 ainda sem implementação; Select All Players aprovado como entrega adicional entre elas.
 
-## Evidências e estado final
+## Plano aprovado para 19/10/2026 — segunda rodada
+
+O usuário aprovou [o plano](plano-2026-10-19.md): Copy teams, posicionar a geração após a lista de participantes e validar a integração. Tickets individuais publicados em `.scratch/usability-2026-10-19/issues/`, usando `to-tickets`. [Índice e prompts](tarefas.md) indicam a rodada e os arquivos completos para não confundir com tarefas antigas.
+
+**Tarefa 01 (Copy teams) concluída em 19/10/2026**, com 8 ciclos de lógica (RED/GREEN, cada um verificado independentemente) mais verificação de apresentação/teclado nas larguras desktop, 360 e 390. Nenhum defeito funcional pendente; limitações explícitas no fechamento do ticket (sem aparelho físico, sem recusa manual real de permissão de clipboard, inventário de ZIPs ainda preservado sem exclusão aprovada).
+
+Próximo chat recomendado: **segunda rodada, tarefa 02 — reposicionar geração após a seleção de participantes**. Confirmar a primeira ação e comportamentos/interfaces de teste no início da implementação; depois concluir a tarefa indicada com TDD, verificações e atualização da passagem. Depois da tarefa 02 vem Select All Players (ticket a preparar) e então a tarefa 03. Não iniciar mais de uma tarefa por chat.
+
+O índice de tarefas foi limpo de instruções contraditórias de etapas ainda abertas. Os prompts anteriores foram preservados em [arquivo histórico](tarefas-01-05-historico.md); não retomá-los automaticamente. Playwright já existe e será aproveitado. Os testes Node atuais são scripts com asserções, não uma suíte já migrada para `node:test`. Não adicionar Jest/Supertest nem migrar todos os testes sem necessidade concreta.
+
+Base histórica anterior à segunda rodada: HEAD `2533789a3dcc16686c6e58d4d05655d13e4aa764`, tag `v1.0.0`. A afirmação de working tree limpa e de nenhuma alteração de aplicativo/teste refere-se apenas à preparação documental de 18/10/2026. A segunda rodada acrescentou Copy teams, testes e evidências, conforme o ticket concluído. Em 19/10/2026, o usuário autorizou commit, PR, merge e nova release desta entrega; a versão preparada é `1.1.0`. Consultar Git/GitHub para confirmar o estado da publicação, sem inferi-lo de passagens históricas.
+
+## Evidências e estado final da primeira rodada (histórico)
 
 - [Relatório final de Playwright](../.scratch/remaining-work/evidence/2026-10-18-playwright-03/resultado.md): 6 testes passaram em Chromium 156.0.8078.4, Windows, nas áreas 1280×720, 360×800 e 390×844. Exclusão durante prévia, limpeza completa, geração posterior, selects por Tab/setas, aceitar/desfazer e cópia/colagem verificados pela interface pública.
 - [Relatório integrado anterior](../.scratch/remaining-work/evidence/2026-10-18-browser-02/resultado.md): A2/A3/A5/A6/B1/B4/B5/C1 e partes dos demais casos, preservados com sua origem.
@@ -38,5 +50,5 @@ O servidor de teste usa somente 127.0.0.1:51806, inicia/encerra com os testes e 
 - Explicar em português, com respostas curtas; código, comentários, interface e novos nomes de testes em inglês.
 - Preservar alterações locais, dados reais e evidências. Sem commit, publicação ou contato com terceiros sem pedido.
 - TDD nas próximas correções/funcionalidades autorizadas: confirmar comportamento/interface, observar falha antes de corrigir, sem fabricar red para comportamento já existente. Interface pública de navegador e instalação Playwright aprovadas nesta conversa; ver [procedimento](desenvolvimento-tdd.md).
-- Botão Copy teams e reposicionar Generate Teams permanecem adiados. Não iniciar esses ajustes, login/backend/sincronização ou persistência da partida automaticamente.
+- Copy teams (tarefa 01) concluído; reposicionar Generate Teams (tarefa 02) ainda não implementado. Trabalhar apenas no ticket escolhido. Login/backend/sincronização ou persistência da partida continuam fora do escopo.
 - Não retomar entrevista de teste ou repetir etapas comprovadas sem alteração, falha ou pedido do usuário.

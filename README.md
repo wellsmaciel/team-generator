@@ -15,7 +15,7 @@ Keep `index.html`, `script.js`, `styles.css` and `Dark_court.jpg` together, then
 5. Review participants, skill totals and warnings. Team sizes differ by at most one participant. Each team has at most one fixed goalkeeper; too many selected goalkeepers block generation. Missing goalkeepers and unequal sizes produce warnings.
 6. Use **Generate another composition** to search for different groups. Equal or better balance applies immediately. Any increase in the difference between the highest and lowest totals shows a preview requiring **Accept composition** or **Undo composition**. Sharing and swaps are unavailable during that decision.
 7. To swap players, choose participants from different teams and click **Confirm swap**. Swap outfield for outfield or goalkeeper for goalkeeper. **Cancel** clears the choices.
-8. Under **Share teams**, select and manually copy the text. It contains team titles and names, without skill scores or totals, and follows the accepted composition after generation, swaps or undo.
+8. Under **Share teams**, click **Copy teams** to copy the text with one action, or select and copy it manually. It contains team titles and names, without skill scores or totals, and follows the accepted composition after generation, swaps or undo. A confirmation message appears only after a successful copy; if the clipboard is unavailable or denies access, guidance to copy manually appears instead, without claiming success or losing the displayed teams. The button is unavailable together with the share text when there are no teams or a pending decision.
 
 Adding a player, saving an edit, confirming deletion, changing selection or changing the team count clears the current match. Canceling an edit or deletion preserves it.
 
@@ -57,13 +57,13 @@ npx.cmd --no-install playwright install chromium
 npm.cmd run test:browser
 ```
 
-The browser suite creates its own loopback server on port 51806 and a fresh browser context per test. It does not read the user's browser profile or registrations. Two scenarios run at 1280×720, 360×800 and 390×844: deletion during a pending preview and keyboard/copy/paste after undo, acceptance and swaps. Six tests passed on Chromium 156.0.8078.4. Screenshots and an HTML report are generated under `.scratch/playwright-results` and `.scratch/playwright-report`.
+The browser suite creates its own loopback server on port 51806 and a fresh browser context per test. It does not read the user's browser profile or registrations. It runs at 1280×720, 360×800 and 390×844, covering deletion during a pending preview, keyboard/copy/paste after undo/acceptance/swaps, the Copy teams button (success, clipboard rejection and absence, stale-feedback races, invalidation) and its presentation/keyboard access. All tests passed on Chromium 156.0.8078.4. Screenshots and an HTML report are generated under `.scratch/playwright-results` and `.scratch/playwright-report`.
 
 The [stage 05 checklist](docs/testes-manuais-etapa-05.md) links the evidence and its limits. Copy/paste was verified with real keyboard shortcuts into a separate browser-based local text editor. Physical phones and pasting into native applications such as Notepad were not tested. Narrow browser widths are simulations; they do not establish touch or mobile keyboard behavior. Tests added for existing behavior are acceptance checks, not a new TDD cycle. Future fixes continue to require a failing test before the implementation change.
 
 ## Current scope
 
-Manual text copying is available. A copy button and moving the generation button are deferred. There is no login, backend, cross-device synchronization, saved match, image sharing or sharing with skill totals. No published application URL has been confirmed.
+Manual text copying and the Copy teams button are available. Moving the generation button after the participant list (next task) and Select All Players are approved but not yet implemented. There is no login, backend, cross-device synchronization, saved match, image sharing or sharing with skill totals. No published application URL has been confirmed.
 
 ## Project files
 
