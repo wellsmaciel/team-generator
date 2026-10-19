@@ -24,12 +24,18 @@ C1 implementado por TDD: a regressão falhou com diferença 10 antes da alteraç
 
 ## Ajustes de interface apontados no teste manual — resolver depois
 
+Atualização: o usuário aprovou esses dois ajustes na segunda rodada de 19/10/2026, descrita no [plano do próximo dia](plano-2026-10-19.md). Tickets publicados com TDD. **Copy teams concluído em 19/10/2026** (tarefa 01); o reposicionamento de Generate Teams (tarefa 02) continua sem implementação. Os parágrafos abaixo preservam a origem como ideias inicialmente adiadas; essa aprovação substitui o adiamento apenas para esses dois itens.
+
 Em 18/10/2026, o usuário testou manualmente a tarefa 04 em navegador real e confirmou a exibição e a cópia/colagem do texto dos times sem notas ou totais. Apontou:
 
 - Adicionar um botão Copy teams para facilitar a cópia, especialmente no celular.
 - Avaliar mover Generate Teams para depois da lista de jogadores marcados para jogar, pois atualmente aparece antes dela.
 
-O usuário pediu somente registrar em Markdown e deixar a resolução para depois. Os ajustes não foram implementados e permanecem adiados. O compartilhamento atual e seus critérios essenciais foram concluídos no ticket 04; essas ideias não são falhas abertas da etapa 05.
+Na origem, o usuário pediu somente registrar e resolver depois. Agora os ajustes estão aprovados na segunda rodada, mas continuam sem implementação. O compartilhamento atual e seus critérios essenciais foram concluídos no ticket 04; esses ajustes não reabrem a etapa 05.
+
+## Melhoria solicitada em 19/10/2026 — seleção em lote
+
+**Select All Players:** registrado a pedido do usuário no [mapa da jornada](jornada-do-usuario.md), após um teste manual em que precisou marcar individualmente os 15 jogadores. Objetivo: selecionar todos os cadastrados para a partida e permitir ajustes individuais depois. Uso principal em celular. Prioridade aprovada em 19/10/2026: depois de reposicionar a geração (tarefa 02), antes da validação integrada (tarefa 03). Ainda sem ticket próprio ou implementação; preparar sua entrega e confirmar comportamento/interface antes de programar, seguindo TDD. Não pressupor desmarcar todos, nova persistência ou alteração dos cadastros.
 
 ## Adiado para além da primeira versão
 
