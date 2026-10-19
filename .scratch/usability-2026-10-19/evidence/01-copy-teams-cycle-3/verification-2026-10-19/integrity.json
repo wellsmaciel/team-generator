@@ -1,0 +1,13 @@
+{
+  "checkedFiles": 214,
+  "changed": [],
+  "stats": {
+    "startTime": "2026-10-19T08:43:53.497Z",
+    "duration": 24354.603,
+    "expected": 6,
+    "skipped": 0,
+    "unexpected": 3,
+    "flaky": 0
+  },
+  "browser": "C:\\Users\\wells\\AppData\\Local\\ms-playwright\\chromium-1248\\chrome-win64\\chrome.exe"
+}

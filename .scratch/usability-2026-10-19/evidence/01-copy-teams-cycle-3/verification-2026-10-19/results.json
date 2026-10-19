@@ -1,0 +1,642 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/browser/copy-teams-button.spec.cjs",
+      "--config",
+      ".scratch/usability-2026-10-19/evidence/01-copy-teams-cycle-3/verification-2026-10-19/playwright.verification.config.cjs"
+    ],
+    "configFile": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\usability-2026-10-19\\evidence\\01-copy-teams-cycle-3\\verification-2026-10-19\\playwright.verification.config.cjs",
+    "rootDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/tests/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\server.cjs",
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/.scratch/usability-2026-10-19/evidence/01-copy-teams-cycle-3/verification-2026-10-19/results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "desktop",
+        "name": "desktop",
+        "testDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "*.spec.cjs"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/.scratch/usability-2026-10-19/evidence/01-copy-teams-cycle-3/verification-2026-10-19/results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "narrow-360",
+        "name": "narrow-360",
+        "testDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "*.spec.cjs"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/.scratch/usability-2026-10-19/evidence/01-copy-teams-cycle-3/verification-2026-10-19/results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "narrow-390",
+        "name": "narrow-390",
+        "testDir": "C:/Users/wells/OneDrive/Documentos/VSC Projects/team-generator/tests/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "*.spec.cjs"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\usability-2026-10-19\\evidence\\01-copy-teams-cycle-3\\verification-2026-10-19\\results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "desktop",
+        "testDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "snapshotDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "testIgnore": [],
+        "testMatch": "*.spec.cjs",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:51806",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "desktop"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\usability-2026-10-19\\evidence\\01-copy-teams-cycle-3\\verification-2026-10-19\\results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "narrow-360",
+        "testDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "snapshotDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "testIgnore": [],
+        "testMatch": "*.spec.cjs",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:51806",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 360,
+            "height": 800
+          },
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "narrow-360"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\usability-2026-10-19\\evidence\\01-copy-teams-cycle-3\\verification-2026-10-19\\results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "narrow-390",
+        "testDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "snapshotDir": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser",
+        "testIgnore": [],
+        "testMatch": "*.spec.cjs",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:51806",
+          "browserName": "chromium",
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "narrow-390"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\usability-2026-10-19\\evidence\\01-copy-teams-cycle-3\\verification-2026-10-19\\results.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\usability-2026-10-19\\evidence\\01-copy-teams-cycle-3\\verification-2026-10-19\\report",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "copy-teams-button.spec.cjs",
+      "file": "copy-teams-button.spec.cjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "clicking Copy teams copies the current shareable text and confirms only after success",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 859,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:43:53.902Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34c9b8fddc678cb198b2-03ceee43ddc392c5ba4f",
+          "file": "copy-teams-button.spec.cjs",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "clipboard rejection offers manual copying without losing the displayed teams or players",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 798,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:43:55.044Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34c9b8fddc678cb198b2-e4fd3389800acc9c0069",
+          "file": "copy-teams-button.spec.cjs",
+          "line": 25,
+          "column": 1
+        },
+        {
+          "title": "a pending less-balanced preview hides Copy teams and clears a previous copy status",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5956,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#copyStatus')\nExpected: \u001b[32m\"\"\u001b[39m\nReceived: \u001b[31m\"Teams copied.\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('#copyStatus') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#copyStatus')\u001b[22m\n\u001b[2m    14 × locator resolved to <p role=\"status\" id=\"copyStatus\">Teams copied.</p>\u001b[22m\n\u001b[2m       - unexpected value \"Teams copied.\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#copyStatus')\nExpected: \u001b[32m\"\"\u001b[39m\nReceived: \u001b[31m\"Teams copied.\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('#copyStatus') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#copyStatus')\u001b[22m\n\u001b[2m    14 × locator resolved to <p role=\"status\" id=\"copyStatus\">Teams copied.</p>\u001b[22m\n\u001b[2m       - unexpected value \"Teams copied.\"\u001b[22m\n\n    at C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs:82:45",
+                    "location": {
+                      "file": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs",
+                      "column": 45,
+                      "line": 82
+                    },
+                    "snippet": "  80 |\n  81 |   await expect(page.locator('#shareControls')).toBeHidden();\n> 82 |   await expect(page.locator('#copyStatus')).toHaveText('');\n     |                                             ^\n  83 | });\n  84 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs",
+                        "column": 45,
+                        "line": 82
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#copyStatus')\nExpected: \u001b[32m\"\"\u001b[39m\nReceived: \u001b[31m\"Teams copied.\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('#copyStatus') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#copyStatus')\u001b[22m\n\u001b[2m    14 × locator resolved to <p role=\"status\" id=\"copyStatus\">Teams copied.</p>\u001b[22m\n\u001b[2m       - unexpected value \"Teams copied.\"\u001b[22m\n\n\n  80 |\n  81 |   await expect(page.locator('#shareControls')).toBeHidden();\n> 82 |   await expect(page.locator('#copyStatus')).toHaveText('');\n     |                                             ^\n  83 | });\n  84 |\n    at C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs:82:45"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:43:55.849Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\usability-2026-10-19\\evidence\\01-copy-teams-cycle-3\\verification-2026-10-19\\results\\copy-teams-button-a-pendin-c8df4-ears-a-previous-copy-status-desktop\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\usability-2026-10-19\\evidence\\01-copy-teams-cycle-3\\verification-2026-10-19\\results\\copy-teams-button-a-pendin-c8df4-ears-a-previous-copy-status-desktop\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\usability-2026-10-19\\evidence\\01-copy-teams-cycle-3\\verification-2026-10-19\\results\\copy-teams-button-a-pendin-c8df4-ears-a-previous-copy-status-desktop\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs",
+                    "column": 45,
+                    "line": 82
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "34c9b8fddc678cb198b2-43e9da4f43cfab4fda14",
+          "file": "copy-teams-button.spec.cjs",
+          "line": 61,
+          "column": 1
+        },
+        {
+          "title": "clicking Copy teams copies the current shareable text and confirms only after success",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-360",
+              "projectName": "narrow-360",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 721,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:44:02.333Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34c9b8fddc678cb198b2-57cfc47f14f83f828ec7",
+          "file": "copy-teams-button.spec.cjs",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "clipboard rejection offers manual copying without losing the displayed teams or players",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-360",
+              "projectName": "narrow-360",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 630,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:44:03.328Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34c9b8fddc678cb198b2-00f6aaecbf337de2e172",
+          "file": "copy-teams-button.spec.cjs",
+          "line": 25,
+          "column": 1
+        },
+        {
+          "title": "a pending less-balanced preview hides Copy teams and clears a previous copy status",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-360",
+              "projectName": "narrow-360",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5778,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#copyStatus')\nExpected: \u001b[32m\"\"\u001b[39m\nReceived: \u001b[31m\"Teams copied.\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('#copyStatus') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#copyStatus')\u001b[22m\n\u001b[2m    14 × locator resolved to <p role=\"status\" id=\"copyStatus\">Teams copied.</p>\u001b[22m\n\u001b[2m       - unexpected value \"Teams copied.\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#copyStatus')\nExpected: \u001b[32m\"\"\u001b[39m\nReceived: \u001b[31m\"Teams copied.\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('#copyStatus') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#copyStatus')\u001b[22m\n\u001b[2m    14 × locator resolved to <p role=\"status\" id=\"copyStatus\">Teams copied.</p>\u001b[22m\n\u001b[2m       - unexpected value \"Teams copied.\"\u001b[22m\n\n    at C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs:82:45",
+                    "location": {
+                      "file": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs",
+                      "column": 45,
+                      "line": 82
+                    },
+                    "snippet": "  80 |\n  81 |   await expect(page.locator('#shareControls')).toBeHidden();\n> 82 |   await expect(page.locator('#copyStatus')).toHaveText('');\n     |                                             ^\n  83 | });\n  84 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs",
+                        "column": 45,
+                        "line": 82
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#copyStatus')\nExpected: \u001b[32m\"\"\u001b[39m\nReceived: \u001b[31m\"Teams copied.\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('#copyStatus') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#copyStatus')\u001b[22m\n\u001b[2m    14 × locator resolved to <p role=\"status\" id=\"copyStatus\">Teams copied.</p>\u001b[22m\n\u001b[2m       - unexpected value \"Teams copied.\"\u001b[22m\n\n\n  80 |\n  81 |   await expect(page.locator('#shareControls')).toBeHidden();\n> 82 |   await expect(page.locator('#copyStatus')).toHaveText('');\n     |                                             ^\n  83 | });\n  84 |\n    at C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs:82:45"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:44:03.965Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\usability-2026-10-19\\evidence\\01-copy-teams-cycle-3\\verification-2026-10-19\\results\\copy-teams-button-a-pendin-c8df4-ears-a-previous-copy-status-narrow-360\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\usability-2026-10-19\\evidence\\01-copy-teams-cycle-3\\verification-2026-10-19\\results\\copy-teams-button-a-pendin-c8df4-ears-a-previous-copy-status-narrow-360\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\usability-2026-10-19\\evidence\\01-copy-teams-cycle-3\\verification-2026-10-19\\results\\copy-teams-button-a-pendin-c8df4-ears-a-previous-copy-status-narrow-360\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs",
+                    "column": 45,
+                    "line": 82
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "34c9b8fddc678cb198b2-65e0c852a9b2a96f8c41",
+          "file": "copy-teams-button.spec.cjs",
+          "line": 61,
+          "column": 1
+        },
+        {
+          "title": "clicking Copy teams copies the current shareable text and confirms only after success",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-390",
+              "projectName": "narrow-390",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 724,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:44:10.251Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34c9b8fddc678cb198b2-90c4d6e7ee06f2795a0e",
+          "file": "copy-teams-button.spec.cjs",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "clipboard rejection offers manual copying without losing the displayed teams or players",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-390",
+              "projectName": "narrow-390",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 632,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:44:11.249Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "34c9b8fddc678cb198b2-14f4a19cc7b263c5acc7",
+          "file": "copy-teams-button.spec.cjs",
+          "line": 25,
+          "column": 1
+        },
+        {
+          "title": "a pending less-balanced preview hides Copy teams and clears a previous copy status",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "narrow-390",
+              "projectName": "narrow-390",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5808,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#copyStatus')\nExpected: \u001b[32m\"\"\u001b[39m\nReceived: \u001b[31m\"Teams copied.\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('#copyStatus') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#copyStatus')\u001b[22m\n\u001b[2m    14 × locator resolved to <p role=\"status\" id=\"copyStatus\">Teams copied.</p>\u001b[22m\n\u001b[2m       - unexpected value \"Teams copied.\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#copyStatus')\nExpected: \u001b[32m\"\"\u001b[39m\nReceived: \u001b[31m\"Teams copied.\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('#copyStatus') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#copyStatus')\u001b[22m\n\u001b[2m    14 × locator resolved to <p role=\"status\" id=\"copyStatus\">Teams copied.</p>\u001b[22m\n\u001b[2m       - unexpected value \"Teams copied.\"\u001b[22m\n\n    at C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs:82:45",
+                    "location": {
+                      "file": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs",
+                      "column": 45,
+                      "line": 82
+                    },
+                    "snippet": "  80 |\n  81 |   await expect(page.locator('#shareControls')).toBeHidden();\n> 82 |   await expect(page.locator('#copyStatus')).toHaveText('');\n     |                                             ^\n  83 | });\n  84 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs",
+                        "column": 45,
+                        "line": 82
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#copyStatus')\nExpected: \u001b[32m\"\"\u001b[39m\nReceived: \u001b[31m\"Teams copied.\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveText\" locator('#copyStatus') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#copyStatus')\u001b[22m\n\u001b[2m    14 × locator resolved to <p role=\"status\" id=\"copyStatus\">Teams copied.</p>\u001b[22m\n\u001b[2m       - unexpected value \"Teams copied.\"\u001b[22m\n\n\n  80 |\n  81 |   await expect(page.locator('#shareControls')).toBeHidden();\n> 82 |   await expect(page.locator('#copyStatus')).toHaveText('');\n     |                                             ^\n  83 | });\n  84 |\n    at C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs:82:45"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-19T08:44:11.889Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\usability-2026-10-19\\evidence\\01-copy-teams-cycle-3\\verification-2026-10-19\\results\\copy-teams-button-a-pendin-c8df4-ears-a-previous-copy-status-narrow-390\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\usability-2026-10-19\\evidence\\01-copy-teams-cycle-3\\verification-2026-10-19\\results\\copy-teams-button-a-pendin-c8df4-ears-a-previous-copy-status-narrow-390\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\.scratch\\usability-2026-10-19\\evidence\\01-copy-teams-cycle-3\\verification-2026-10-19\\results\\copy-teams-button-a-pendin-c8df4-ears-a-previous-copy-status-narrow-390\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Users\\wells\\OneDrive\\Documentos\\VSC Projects\\team-generator\\tests\\browser\\copy-teams-button.spec.cjs",
+                    "column": 45,
+                    "line": 82
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "34c9b8fddc678cb198b2-6f02c297bd93019acf7f",
+          "file": "copy-teams-button.spec.cjs",
+          "line": 61,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-19T08:43:53.497Z",
+    "duration": 24354.603,
+    "expected": 6,
+    "skipped": 0,
+    "unexpected": 3,
+    "flaky": 0
+  }
+}

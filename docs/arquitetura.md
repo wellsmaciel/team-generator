@@ -35,6 +35,8 @@ Ao mostrar nomes, usar inserção como texto, evitando interpretar conteúdo dig
 
 ## Testes e desenvolvimento com TDD
 
+Estado após a etapa 05: existem quatro scripts de regressão Node com DOM/armazenamento simulados e testes Playwright por interface pública, com navegador isolado e viewports desktop/360/390. Playwright é dependência de desenvolvimento; não adiciona backend ao produto. Os scripts Node atuais não foram migrados para `node:test`. A próxima rodada propõe aproveitar essas ferramentas, sem instalar Jest ou Supertest por padrão; ver [o plano](plano-2026-10-19.md).
+
 Orientação vigente na revisão da etapa 05: usar TDD a partir de agora nas correções e novas funcionalidades autorizadas. Antes de escrever testes novos, confirmar o comportamento e a interface pública exercitada, observar o teste falhar e depois implementar a mudança mínima. Ver [procedimento de TDD](desenvolvimento-tdd.md). As verificações anteriores não comprovam retrospectivamente TDD. A validação visual continua necessária; as recomendações abaixo orientam a cobertura.
 
 Verificar principalmente regras com consequências reais: cada selecionado aparece uma vez; não selecionados ficam fora; tamanhos diferem no máximo em 1; cada time tem no máximo 1 goleiro; goleiros excedentes impedem geração; trocas preservam as regras; texto compartilhável não contém notas.

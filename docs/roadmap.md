@@ -1,5 +1,7 @@
 # Roadmap por fases
 
+Para a sequência vigente, consulte o [mapa da jornada e prioridades de 19/10/2026](jornada-do-usuario.md) e o [índice de tarefas](tarefas.md). Ordem aprovada: concluir Copy teams, reposicionar a geração, implementar Select All Players e validar a integração. Comportamentos/interfaces são combinados antes de cada implementação.
+
 **Plano histórico da descoberta.** A base descrita nas primeiras fases já foi implementada. A divisão aprovada do trabalho restante está em [tarefas e prompts](tarefas.md), e o estado atual em [resumo de continuidade](proximo-chat.md). As recomendações abaixo registram a proposta inicial e não devem ser executadas novamente nem tratadas como tarefas adicionais.
 
 ## Agora: confirmar e preparar
