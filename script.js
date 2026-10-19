@@ -3,6 +3,7 @@ let canSavePlayers = true;
 let players = loadPlayers();
 let teams = [];
 let previousTeams = null;
+let shareTextVersion = 0;
 let playerBeingEdited = null;
 const selectedPlayers = new Set();
 
@@ -150,6 +151,7 @@ function clearTeamsAfterChange() {
   resetAlternativeControls();
   resetSwapControls();
   resetShareText();
+  document.getElementById('copyStatus').textContent = '';
   if (teams.length === 0) return;
 
   teams = [];
@@ -296,6 +298,7 @@ function renderTeams() {
 }
 
 function resetShareText() {
+  shareTextVersion++;
   document.getElementById('shareText').value = '';
   document.getElementById('shareControls').hidden = true;
 }
@@ -308,6 +311,19 @@ function renderShareText() {
     return 'Team ' + (index + 1) + '\n' + team.players.map(player => player.name).join('\n');
   }).join('\n\n');
   document.getElementById('shareControls').hidden = false;
+}
+
+async function copyTeamsToClipboard() {
+  const copiedVersion = shareTextVersion;
+  try {
+    await navigator.clipboard.writeText(document.getElementById('shareText').value);
+    if (copiedVersion !== shareTextVersion) return;
+    document.getElementById('copyStatus').textContent = 'Teams copied.';
+  } catch {
+    if (copiedVersion !== shareTextVersion) return;
+    document.getElementById('copyStatus').textContent =
+      'Could not copy teams. Select the text below and copy it manually.';
+  }
 }
 
 function copyTeams(composition) {
@@ -485,6 +501,7 @@ function confirmPlayerSwap() {
   secondTeam.totalScore = secondTeam.players.reduce((total, player) => total + player.score, 0);
   resetAlternativeControls();
   renderTeams();
+  document.getElementById('copyStatus').textContent = '';
   status.textContent = 'Players swapped. Team skill totals updated.';
 }
 
@@ -524,12 +541,14 @@ function generateTeams() {
     const after = scoreDifference(alternative);
     if (after > before) {
       previousTeams = copyTeams(teams);
+      document.getElementById('copyStatus').textContent = '';
       document.getElementById('alternativeControls').hidden = false;
       document.getElementById('btnTeams').disabled = true;
       document.getElementById('alternativeStatus').textContent =
         'This preview is less balanced: the difference between the highest and lowest skill totals increased from ' +
         before + ' to ' + after + '. Accept this composition or undo to restore the previous teams.';
     } else {
+      document.getElementById('copyStatus').textContent = '';
       document.getElementById('alternativeStatus').textContent =
         'New composition applied. Skill total difference: ' + before + ' → ' + after + '.';
     }
