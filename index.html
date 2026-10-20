@@ -24,6 +24,17 @@
         <button id="btnCancelEdit" type="button" onclick="cancelEditing()" hidden>Cancel edit</button>
       </form>
       <p id="storageStatus" role="status"></p>
+    </div>
+
+    <h2>Added players</h2>
+    <div id="container">
+      <div>
+        <h3>Players and Skills</h3>
+        <p>Check the players who will play in this match. Unchecking keeps their registration.</p>
+        <p id="selectionStatus" role="status"></p>
+        <ul id="playerSkillList"></ul>
+      </div>
+
       <div>
         <h2>Click to Generate Teams</h2>
         <label for="teamCount">Number of teams</label>
@@ -36,16 +47,6 @@
           <button type="button" onclick="acceptAlternative()">Accept composition</button>
           <button type="button" onclick="undoAlternative()">Undo composition</button>
         </div>
-      </div>
-    </div>
-
-    <h2>Added players</h2>
-    <div id="container">
-      <div>
-        <h3>Players and Skills</h3>
-        <p>Check the players who will play in this match. Unchecking keeps their registration.</p>
-        <p id="selectionStatus" role="status"></p>
-        <ul id="playerSkillList"></ul>
       </div>
 
       <h2>List of Team and Players</h2>

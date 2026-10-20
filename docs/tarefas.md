@@ -16,13 +16,13 @@ Celular físico não testado; colagem verificada em editor local em outra págin
 
 ## Próxima rodada: 19/10/2026
 
-O usuário aprovou [o plano da segunda rodada](plano-2026-10-19.md). Os três tickets estão publicados em `.scratch/usability-2026-10-19/issues/`, separados da primeira rodada. Atualização em 19/10/2026: **tarefa 01 (Copy teams) concluída**, com 8 ciclos de lógica mais verificação de apresentação/teclado, todos implementados e verificados independentemente — ver o [fechamento no ticket](../.scratch/usability-2026-10-19/issues/01-copy-teams-button.md#fechamento-da-tarefa-01). Tarefas 02 e 03 ainda não iniciadas nesta continuidade. O usuário ampliou a sequência para incluir **Select All Players após a tarefa 02 e antes da tarefa 03**; ticket próprio e comportamentos/interfaces ainda serão preparados e confirmados antes de implementar. Ver o [mapa da jornada e prioridades](jornada-do-usuario.md).
+O usuário aprovou [o plano da segunda rodada](plano-2026-10-19.md). Os três tickets estão publicados em `.scratch/usability-2026-10-19/issues/`, separados da primeira rodada. Atualização em 19/10/2026: **tarefa 01 (Copy teams) concluída**, com 8 ciclos de lógica mais verificação de apresentação/teclado, todos implementados e verificados independentemente — ver o [fechamento no ticket](../.scratch/usability-2026-10-19/issues/01-copy-teams-button.md#fechamento-da-tarefa-01). Atualização em 20/10/2026: **tarefa 02 concluída** — ver o [fechamento no ticket](../.scratch/usability-2026-10-19/issues/02-generate-after-player-selection.md#fechamento-da-tarefa-02--20102026). Tarefa 03 ainda não iniciada. O usuário ampliou a sequência para incluir **Select All Players após a tarefa 02 e antes da tarefa 03**; ticket próprio e comportamentos/interfaces ainda serão preparados e confirmados antes de implementar. Ver o [mapa da jornada e prioridades](jornada-do-usuario.md).
 
 | Segunda rodada | Ticket | Dependências | Estado |
 | --- | --- | --- | --- |
 | 01 | [Copy teams](../.scratch/usability-2026-10-19/issues/01-copy-teams-button.md) | Nenhuma nova | Concluída |
-| 02 | [Gerar após conferir participantes](../.scratch/usability-2026-10-19/issues/02-generate-after-player-selection.md) | Nenhuma nova | Próxima entrega |
-| Nova entrega, ticket a preparar | Select All Players | Depois da tarefa 02, antes da tarefa 03 | Não iniciada |
+| 02 | [Gerar após conferir participantes](../.scratch/usability-2026-10-19/issues/02-generate-after-player-selection.md) | Nenhuma nova | Concluída |
+| Nova entrega, ticket a preparar | Select All Players | Depois da tarefa 02, antes da tarefa 03 | Próxima entrega |
 | 03 | [Validar a rodada e atualizar a passagem](../.scratch/usability-2026-10-19/issues/03-validate-usability-round.md) | 01, 02 e Select All Players | Não iniciada |
 
 Antes do commit da evidência do ticket 01, revisar o [inventário de ZIPs duplicados](../.scratch/usability-2026-10-19/duplicatas-zip-inventario.md) (15 pares, ~30,2 MiB recuperáveis) e aprovar explicitamente quais arquivos remover.
