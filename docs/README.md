@@ -1,6 +1,6 @@
 # Documentação do produto
 
-Estado vigente em 19/10/2026: base e tarefas 01–05 da primeira rodada concluídas no escopo essencial. Na segunda rodada, Copy teams (tarefa 01) foi concluído com evidências Node e Playwright; a próxima entrega é reposicionar a geração (tarefa 02), depois Select All Players e a validação integrada (tarefa 03). Celular físico não foi testado. TDD continua obrigatório para correções e novas funcionalidades.
+Estado vigente em 20/10/2026: base e tarefas 01–05 da primeira rodada concluídas no escopo essencial. Na segunda rodada, Copy teams (tarefa 01) e a geração após a seleção de participantes (tarefa 02) foram concluídos com evidências Node e Playwright; a próxima entrega é Select All Players, depois a validação integrada (tarefa 03). Celular físico não foi testado. TDD continua obrigatório para correções e novas funcionalidades.
 
 - [Visão do produto](visao-do-produto.md)
 - [Jornada do usuário](jornada-do-usuario.md)
@@ -16,6 +16,7 @@ Estado vigente em 19/10/2026: base e tarefas 01–05 da primeira rodada concluí
 - [TDD para correções e novas funcionalidades](desenvolvimento-tdd.md)
 - [Destino das tarefas em Markdown](agents/issue-tracker.md)
 - [Política de gestão de arquivos (Claude e Codex)](agents/gestao-de-arquivos.md)
+- [Coordenação entre Codex e Claude por hooks](agents/coordenacao-por-hooks.md)
 - [Glossário](../GLOSSARY.md)
 
 ## Como interpretar
