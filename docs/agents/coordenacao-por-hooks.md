@@ -50,7 +50,7 @@ Preservar código, alterações locais, cadastros, testes e evidências, incluin
 
 Explicações e registros em português, breves e com uma pergunta por vez quando necessário. Código, comentários, interface e nomes de testes em inglês.
 
-## Autorização vigente — Select All Players (20/10/2026)
+## Autorização anterior — Select All Players (20/10/2026)
 
 Após o commit da tarefa 02, o usuário confirmou a sequência aprovada: [Select All Players, ticket 02a](../../.scratch/usability-2026-10-19/issues/02a-select-all-players.md), depois tarefa 03. Somente o ticket 02a foi autorizado.
 
@@ -59,3 +59,11 @@ Reaproveitar a passagem automática existente trocando o ticket ativo para 02a. 
 O limite continua obrigatório: parar antes de staging/commit para o usuário testar e revisar. Não iniciar a tarefa 03 automaticamente.
 
 **Encerramento 20/10/2026:** o ticket 02a foi concluído em dois ciclos TDD. O relé rodou de ponta a ponta nos dois, com uma falha de formato no título de uma passagem, corrigida (ver o ticket). A parada antes do commit funcionou; commit, PR, merge e release foram feitos depois, a pedido explícito do usuário. A autorização terminou com o ticket. O hook fica inerte porque a última seção do ticket não é uma passagem `→ Codex`. Usar o relé na tarefa 03 exige nova autorização.
+
+## Autorização vigente — tarefa 03 (20/10/2026)
+
+Após o commit de Select All Players, o usuário autorizou somente a [tarefa 03 — validação integrada](../../.scratch/usability-2026-10-19/issues/03-validate-usability-round.md), até a revisão anterior ao commit. Dependências 01, 02 e 02a concluídas; seus registros devem ser preservados.
+
+O ponteiro `.claude/codex-relay/active-ticket.txt` passa a indicar o ticket 03. Reutilizar o hook genérico, sem duplicá-lo ou apagar logs anteriores. Aceitação/regressão não exige RED artificial; o hook só deve receber passagem com instrução adequada à etapa real. Correções novas continuam sujeitas à skill tdd e à confirmação de comportamento/interface.
+
+Parar antes de staging/commit para testes e revisão do usuário, sem iniciar outra tarefa. **Encerramento 20/10/2026:** validação concluída com uma passagem Codex → Claude e fechamento por Claude, sem nova passagem `→ Codex` (relé inerte). A parada antes do commit funcionou; commit, PR e merge foram feitos depois, a pedido explícito do usuário. A autorização terminou com a tarefa. Usar o relé em outra tarefa exige nova autorização. Ver o ticket.
