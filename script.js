@@ -92,6 +92,7 @@ function renderPlayers(id, players, showScores = false) {
 function updateSelectedPlayerCount() {
   document.getElementById('selectionStatus').textContent =
     'Selected for this match: ' + selectedPlayers.size + ' / ' + players.length;
+  document.getElementById('btnSelectAllPlayers').disabled = selectedPlayers.size === players.length;
 }
 
 function selectPlayer(player, selected) {
@@ -102,6 +103,13 @@ function selectPlayer(player, selected) {
   }
   clearTeamsAfterChange();
   updateSelectedPlayerCount();
+}
+
+function selectAllPlayers() {
+  players.forEach(function (player) {
+    selectPlayer(player, true);
+  });
+  renderPlayers('playerSkillList', players, true);
 }
 
 renderPlayers('playerSkillList', players, true);
