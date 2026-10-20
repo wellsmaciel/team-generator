@@ -4,7 +4,7 @@ Acordo registrado em 20/10/2026. Pasta vigente: `C:\VSC Projects\team-generator`
 
 ## Escopo e estado
 
-O usuário definiu o trabalho por tarefa, com passagens automáticas entre Codex e Claude por hooks. A autorização atual abrange somente o restante da tarefa 02 da segunda rodada: [gerar depois de conferir os participantes](../../.scratch/usability-2026-10-19/issues/02-generate-after-player-selection.md).
+O usuário definiu o trabalho por tarefa, com passagens automáticas entre Codex e Claude por hooks. A autorização anterior abrangia somente o restante da tarefa 02 da segunda rodada: [gerar depois de conferir os participantes](../../.scratch/usability-2026-10-19/issues/02-generate-after-player-selection.md).
 
 Os hooks ainda estão sendo preparados por Claude, que está levantando como o usuário acessa as ferramentas. Este documento registra o acordo de coordenação; não comprova instalação, ativação ou funcionamento dos hooks. Não substituir essa preparação por outra implementação automática.
 
@@ -49,3 +49,13 @@ Executar uma etapa por vez, sem os dois agentes editarem os mesmos arquivos simu
 Preservar código, alterações locais, cadastros, testes e evidências, incluindo a entrega concluída de Copy teams. Nenhuma exclusão de ZIPs foi autorizada. Seguir a [política de gestão de arquivos](gestao-de-arquivos.md).
 
 Explicações e registros em português, breves e com uma pergunta por vez quando necessário. Código, comentários, interface e nomes de testes em inglês.
+
+## Autorização vigente — Select All Players (20/10/2026)
+
+Após o commit da tarefa 02, o usuário confirmou a sequência aprovada: [Select All Players, ticket 02a](../../.scratch/usability-2026-10-19/issues/02a-select-all-players.md), depois tarefa 03. Somente o ticket 02a foi autorizado.
+
+Reaproveitar a passagem automática existente trocando o ticket ativo para 02a. Preservar o ticket 02 e seu histórico, configurações e logs; não criar hooks duplicados. O ponteiro ativo não autoriza iniciar código sem cumprir a confirmação e o RED exigidos pela skill tdd.
+
+O limite continua obrigatório: parar antes de staging/commit para o usuário testar e revisar. Não iniciar a tarefa 03 automaticamente.
+
+**Encerramento 20/10/2026:** o ticket 02a foi concluído em dois ciclos TDD. O relé rodou de ponta a ponta nos dois, com uma falha de formato no título de uma passagem, corrigida (ver o ticket). A parada antes do commit funcionou; commit, PR, merge e release foram feitos depois, a pedido explícito do usuário. A autorização terminou com o ticket. O hook fica inerte porque a última seção do ticket não é uma passagem `→ Codex`. Usar o relé na tarefa 03 exige nova autorização.
