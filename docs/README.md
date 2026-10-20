@@ -1,6 +1,6 @@
 # Documentação do produto
 
-Estado vigente em 20/10/2026: base e tarefas 01–05 da primeira rodada concluídas no escopo essencial. Na segunda rodada, Copy teams (tarefa 01), a geração após a seleção de participantes (tarefa 02) e Select All Players (ticket 02a) foram concluídos com evidências Node e Playwright; a próxima entrega é a validação integrada (tarefa 03). Celular físico não foi testado. TDD continua obrigatório para correções e novas funcionalidades.
+Estado vigente em 20/10/2026: base e tarefas 01–05 da primeira rodada concluídas no escopo essencial. Na segunda rodada, Copy teams (tarefa 01), a geração após a seleção de participantes (tarefa 02) e Select All Players (ticket 02a) foram concluídos com evidências Node e Playwright; a validação integrada (tarefa 03) foi concluída em 20/10/2026, encerrando a segunda rodada. Celular físico não foi testado. TDD continua obrigatório para correções e novas funcionalidades.
 
 - [Visão do produto](visao-do-produto.md)
 - [Jornada do usuário](jornada-do-usuario.md)

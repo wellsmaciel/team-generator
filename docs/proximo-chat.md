@@ -1,10 +1,12 @@
 # Resumo para o próximo chat
 
+**Tarefa 03 validada — 20/10/2026:** validação integrada executada por Codex (regressões) e Claude (verificação independente, fluxo integrado novo e foco do Select All Players); suíte Chromium com 61 aprovados, 5 ignorados por desenho e 0 falhas; quatro scripts Node aprovados. Nenhum defeito encontrado, nenhum código do aplicativo alterado. Revisada pelo usuário e integrada em `main` por commit, PR e merge a pedido explícito, sem nova release: o aplicativo não mudou e a versão exibida continua `v1.3.0`. Ver `.scratch/usability-2026-10-19/issues/03-validate-usability-round.md`. **Segunda rodada encerrada**; nenhuma tarefa nova está autorizada.
+
 **Tarefas 02 e 02a concluídas — 20/10/2026:** revisadas pelo usuário e entregues nas versões `1.2.0` (geração após a seleção) e `1.3.0` (Select All Players), com commit, PR, merge e release feitos a pedido explícito. O relé Codex ↔ Claude por hooks rodou de ponta a ponta nos dois ciclos do 02a; a autorização da coordenação terminou com o ticket. Ver [acordo e requisitos dos hooks](agents/coordenacao-por-hooks.md).
 
 **Pasta vigente desde 19/10/2026:** `C:\VSC Projects\team-generator`, fora do OneDrive. Preservar a cópia antiga; não trabalhar nela.
 
-Atualizado em 19/10/2026. **Tickets 01 a 05 da primeira rodada concluídos**, com critérios essenciais comprovados. Na segunda rodada, **tarefa 01 (Copy teams) concluída** nesta data — ver fechamento em `.scratch/usability-2026-10-19/issues/01-copy-teams-button.md`. **Tarefa 02 concluída em 20/10/2026** — ver fechamento em `.scratch/usability-2026-10-19/issues/02-generate-after-player-selection.md`. **Select All Players (ticket 02a) concluído em 20/10/2026** — ver fechamento em `.scratch/usability-2026-10-19/issues/02a-select-all-players.md`. Tarefa 03 sem implementação.
+Atualizado em 19/10/2026. **Tickets 01 a 05 da primeira rodada concluídos**, com critérios essenciais comprovados. Na segunda rodada, **tarefa 01 (Copy teams) concluída** nesta data — ver fechamento em `.scratch/usability-2026-10-19/issues/01-copy-teams-button.md`. **Tarefa 02 concluída em 20/10/2026** — ver fechamento em `.scratch/usability-2026-10-19/issues/02-generate-after-player-selection.md`. **Select All Players (ticket 02a) concluído em 20/10/2026** — ver fechamento em `.scratch/usability-2026-10-19/issues/02a-select-all-players.md`. **Tarefa 03 concluída em 20/10/2026**; segunda rodada encerrada, sem nova funcionalidade autorizada.
 
 ## Plano aprovado para 19/10/2026 — segunda rodada
 
@@ -12,7 +14,7 @@ O usuário aprovou [o plano](plano-2026-10-19.md): Copy teams, posicionar a gera
 
 **Tarefa 01 (Copy teams) concluída em 19/10/2026**, com 8 ciclos de lógica (RED/GREEN, cada um verificado independentemente) mais verificação de apresentação/teclado nas larguras desktop, 360 e 390. Nenhum defeito funcional pendente; limitações explícitas no fechamento do ticket (sem aparelho físico, sem recusa manual real de permissão de clipboard, inventário de ZIPs ainda preservado sem exclusão aprovada).
 
-Próximo chat recomendado: **segunda rodada, tarefa 03 — validar a rodada e atualizar a passagem**. Confirmar com o usuário a primeira ação; reaproveitar evidências suficientes sem repetir a primeira rodada. Incluir na validação o foco depois que Select All Players se desabilita (mouse/toque e outros navegadores), não verificado além do teclado no Chromium. Não iniciar mais de uma tarefa por chat.
+Próximo passo: nenhuma tarefa autorizada. Combinar com o usuário se haverá uma nova rodada e qual entrega vem primeiro; ideias adiadas continuam em [pendências](pendencias.md).
 
 O índice de tarefas foi limpo de instruções contraditórias de etapas ainda abertas. Os prompts anteriores foram preservados em [arquivo histórico](tarefas-01-05-historico.md); não retomá-los automaticamente. Playwright já existe e será aproveitado. Os testes Node atuais são scripts com asserções, não uma suíte já migrada para `node:test`. Não adicionar Jest/Supertest nem migrar todos os testes sem necessidade concreta.
 
