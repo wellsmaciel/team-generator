@@ -10,7 +10,7 @@ Keep `index.html`, `script.js`, `styles.css` and `Dark_court.jpg` together, then
 
 1. Enter a player name, a whole-number skill score from 1 to 10 and, optionally, mark **Fixed goalkeeper**. Click **Add Player**.
 2. Use **Edit** to change a registration, **Save changes** to save it or **Cancel edit** to discard the edit. **Delete** asks for confirmation. Duplicate names are allowed.
-3. Check the players participating in this match. Unchecking a player keeps their registration.
+3. Check the players participating in this match, or click **Select All Players** above the list to check every registered player at once. Unchecking a player keeps their registration. **Select All Players** is disabled when there are no registered players or everyone is already selected, and becomes available again as soon as someone is unchecked or a player is added. When it adds someone to the selection it clears the current match, like any other selection change; it never selects players for you silently and does not save the selection.
 4. Choose at least 2 teams, with at least 2 selected participants per team, then click **Generate Teams**.
 5. Review participants, skill totals and warnings. Team sizes differ by at most one participant. Each team has at most one fixed goalkeeper; too many selected goalkeepers block generation. Missing goalkeepers and unequal sizes produce warnings.
 6. Use **Generate another composition** to search for different groups. Equal or better balance applies immediately. Any increase in the difference between the highest and lowest totals shows a preview requiring **Accept composition** or **Undo composition**. Sharing and swaps are unavailable during that decision.
@@ -63,7 +63,7 @@ The [stage 05 checklist](docs/testes-manuais-etapa-05.md) links the evidence and
 
 ## Current scope
 
-Manual text copying and the Copy teams button are available. Moving the generation button after the participant list (next task) and Select All Players are approved but not yet implemented. There is no login, backend, cross-device synchronization, saved match, image sharing or sharing with skill totals. No published application URL has been confirmed.
+Manual text copying, the Copy teams button, team generation placed after the participant list and the Select All Players button are available. There is no button to unselect everyone. There is no login, backend, cross-device synchronization, saved match, image sharing or sharing with skill totals. No published application URL has been confirmed.
 
 ## Project files
 

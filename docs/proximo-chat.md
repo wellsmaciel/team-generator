@@ -1,10 +1,10 @@
 # Resumo para o próximo chat
 
-**Tarefa 02 concluída — 20/10/2026:** revisada pelo usuário e entregue na versão `1.2.0` (commit, PR, merge e release feitos a pedido explícito). O relé Codex ↔ Claude por hooks foi preparado, mas não teve execução real de ponta a ponta; a autorização da coordenação terminou com a tarefa. Ver [acordo e requisitos dos hooks](agents/coordenacao-por-hooks.md).
+**Tarefas 02 e 02a concluídas — 20/10/2026:** revisadas pelo usuário e entregues nas versões `1.2.0` (geração após a seleção) e `1.3.0` (Select All Players), com commit, PR, merge e release feitos a pedido explícito. O relé Codex ↔ Claude por hooks rodou de ponta a ponta nos dois ciclos do 02a; a autorização da coordenação terminou com o ticket. Ver [acordo e requisitos dos hooks](agents/coordenacao-por-hooks.md).
 
 **Pasta vigente desde 19/10/2026:** `C:\VSC Projects\team-generator`, fora do OneDrive. Preservar a cópia antiga; não trabalhar nela.
 
-Atualizado em 19/10/2026. **Tickets 01 a 05 da primeira rodada concluídos**, com critérios essenciais comprovados. Na segunda rodada, **tarefa 01 (Copy teams) concluída** nesta data — ver fechamento em `.scratch/usability-2026-10-19/issues/01-copy-teams-button.md`. **Tarefa 02 concluída em 20/10/2026** — ver fechamento em `.scratch/usability-2026-10-19/issues/02-generate-after-player-selection.md`. Select All Players (entrega adicional aprovada) e tarefa 03 sem implementação.
+Atualizado em 19/10/2026. **Tickets 01 a 05 da primeira rodada concluídos**, com critérios essenciais comprovados. Na segunda rodada, **tarefa 01 (Copy teams) concluída** nesta data — ver fechamento em `.scratch/usability-2026-10-19/issues/01-copy-teams-button.md`. **Tarefa 02 concluída em 20/10/2026** — ver fechamento em `.scratch/usability-2026-10-19/issues/02-generate-after-player-selection.md`. **Select All Players (ticket 02a) concluído em 20/10/2026** — ver fechamento em `.scratch/usability-2026-10-19/issues/02a-select-all-players.md`. Tarefa 03 sem implementação.
 
 ## Plano aprovado para 19/10/2026 — segunda rodada
 
@@ -12,11 +12,11 @@ O usuário aprovou [o plano](plano-2026-10-19.md): Copy teams, posicionar a gera
 
 **Tarefa 01 (Copy teams) concluída em 19/10/2026**, com 8 ciclos de lógica (RED/GREEN, cada um verificado independentemente) mais verificação de apresentação/teclado nas larguras desktop, 360 e 390. Nenhum defeito funcional pendente; limitações explícitas no fechamento do ticket (sem aparelho físico, sem recusa manual real de permissão de clipboard, inventário de ZIPs ainda preservado sem exclusão aprovada).
 
-Próximo chat recomendado: **segunda rodada, Select All Players**. Preparar o ticket e confirmar comportamento/interfaces de teste com o usuário antes de implementar, com TDD. Depois vem a tarefa 03. Não iniciar mais de uma tarefa por chat.
+Próximo chat recomendado: **segunda rodada, tarefa 03 — validar a rodada e atualizar a passagem**. Confirmar com o usuário a primeira ação; reaproveitar evidências suficientes sem repetir a primeira rodada. Incluir na validação o foco depois que Select All Players se desabilita (mouse/toque e outros navegadores), não verificado além do teclado no Chromium. Não iniciar mais de uma tarefa por chat.
 
 O índice de tarefas foi limpo de instruções contraditórias de etapas ainda abertas. Os prompts anteriores foram preservados em [arquivo histórico](tarefas-01-05-historico.md); não retomá-los automaticamente. Playwright já existe e será aproveitado. Os testes Node atuais são scripts com asserções, não uma suíte já migrada para `node:test`. Não adicionar Jest/Supertest nem migrar todos os testes sem necessidade concreta.
 
-Base histórica anterior à segunda rodada: HEAD `2533789a3dcc16686c6e58d4d05655d13e4aa764`, tag `v1.0.0`. A afirmação de working tree limpa e de nenhuma alteração de aplicativo/teste refere-se apenas à preparação documental de 18/10/2026. A segunda rodada acrescentou Copy teams, testes e evidências, conforme o ticket concluído. Em 19/10/2026, o usuário autorizou commit, PR, merge e nova release desta entrega; a versão preparada é `1.1.0`. Em 20/10/2026, o mesmo para a tarefa 02, versão `1.2.0`. Consultar Git/GitHub para confirmar o estado da publicação, sem inferi-lo de passagens históricas.
+Base histórica anterior à segunda rodada: HEAD `2533789a3dcc16686c6e58d4d05655d13e4aa764`, tag `v1.0.0`. A afirmação de working tree limpa e de nenhuma alteração de aplicativo/teste refere-se apenas à preparação documental de 18/10/2026. A segunda rodada acrescentou Copy teams, testes e evidências, conforme o ticket concluído. Em 19/10/2026, o usuário autorizou commit, PR, merge e nova release desta entrega; a versão preparada é `1.1.0`. Em 20/10/2026, o mesmo para a tarefa 02, versão `1.2.0`, e para o ticket 02a, versão `1.3.0`. Consultar Git/GitHub para confirmar o estado da publicação, sem inferi-lo de passagens históricas.
 
 ## Evidências e estado final da primeira rodada (histórico)
 
