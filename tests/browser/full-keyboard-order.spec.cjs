@@ -16,9 +16,6 @@ test('Tab visits registration, participants, team count/generation and sharing c
     await playerSkillInput.fill(String(score));
     await addPlayerButton.click();
   }
-  const participants = page.locator('#playerSkillList input[type=checkbox]');
-  for (const checkbox of await participants.all()) await checkbox.check();
-
   const outlineOf = async locator => locator.evaluate(element => getComputedStyle(element).outlineStyle);
 
   await playerNameInput.focus();
@@ -34,6 +31,17 @@ test('Tab visits registration, participants, team count/generation and sharing c
   await page.keyboard.press('Tab');
   await expect(addPlayerButton).toBeFocused();
   expect(await outlineOf(addPlayerButton)).not.toBe('none');
+
+  const selectAllButton = page.getByRole('button', { name: 'Select All Players', exact: true });
+  await page.keyboard.press('Tab');
+  await expect(selectAllButton).toBeFocused();
+  expect(await outlineOf(selectAllButton)).not.toBe('none');
+
+  // Select everyone by keyboard; the button then disables itself, so it must not
+  // trap focus and the next Tab continues to the first participant.
+  await page.keyboard.press('Enter');
+  await expect(selectAllButton).toBeDisabled();
+  await expect(page.locator('#selectionStatus')).toHaveText('Selected for this match: 4 / 4');
 
   for (const name of ['Ana', 'Beto', 'Caio', 'Dani']) {
     await page.keyboard.press('Tab');
