@@ -57,9 +57,12 @@ test('the Copy teams button is reachable by Tab, shows a visible focus style and
   await expect(page.locator('#shareControls')).toBeVisible();
 
   const copyButton = page.getByRole('button', { name: 'Copy teams', exact: true });
-  // Each player row ends with Edit/Delete buttons; the last row's Delete button
-  // is the last focusable control before the share controls in DOM order.
+  // Generation controls follow the participant list before the share controls.
   await page.getByRole('button', { name: 'Delete Dani', exact: true }).focus();
+  await page.keyboard.press('Tab');
+  await expect(page.getByLabel('Number of teams', { exact: true })).toBeFocused();
+  await page.keyboard.press('Tab');
+  await expect(page.getByRole('button', { name: 'Generate another composition', exact: true })).toBeFocused();
   await page.keyboard.press('Tab');
   await expect(copyButton).toBeFocused();
 

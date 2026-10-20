@@ -8,12 +8,12 @@ O uso principal é no celular, com suporte também a tablet e PC. A tarefa 01 co
 | --- | --- | --- |
 | Preparar o cadastro | Cadastrar, editar, excluir e reaproveitar jogadores | Base concluída na primeira rodada |
 | Confirmar participantes | Selecionar jogadores individualmente e conferir a contagem | Existente; **Select All Players** aprovado na fila após a tarefa 02 e antes da validação integrada, ainda sem implementação |
-| Configurar e gerar | Quantidade de times, regras de goleiros, tamanhos e equilíbrio | Lógica existente; reposicionar a geração após a seleção é a tarefa 02 da segunda rodada |
+| Configurar e gerar | Quantidade de times, regras de goleiros, tamanhos e equilíbrio | Lógica existente; **tarefa 02 concluída** em 20/10/2026: quantidade de times e geração ficam depois da lista de participantes e antes dos resultados, na ordem visual, DOM e de Tab |
 | Rever os times | Regenerar, aceitar/desfazer e trocar jogadores | Existente; preservar nas próximas mudanças |
 | Compartilhar | Copy teams e cópia manual | **Tarefa 01 concluída** em 19/10/2026 (8 ciclos de lógica + apresentação/teclado, verificados independentemente); sem lacunas de lógica pendentes, limitações registradas no ticket |
 | Conferir a entrega | Validar o fluxo integrado e atualizar a documentação | Tarefa 03, após concluir 01, 02 e Select All Players; não é uma nova rodada de implementação automática |
 
-**Próximo passo confirmado:** tarefa 01 (Copy teams) concluída em 19/10/2026, com fechamento registrado no ticket. A próxima entrega da ordem aprovada é a tarefa 02 (reposicionar geração); comportamentos/interfaces de teste serão confirmados com o usuário no início dessa tarefa, não iniciada nesta passagem.
+**Próximo passo confirmado:** tarefas 01 (Copy teams) e 02 (geração após a seleção) concluídas, com fechamento registrado nos tickets. A próxima entrega da ordem aprovada é Select All Players; comportamentos/interfaces de teste serão confirmados com o usuário no início dessa entrega, ainda não iniciada.
 
 **Ordem aprovada da segunda rodada, ampliada pelo usuário em 19/10/2026:** tarefa 01 concluída (lógica e critérios de UX); próxima, tarefa 02, depois Select All Players e então tarefa 03 (validação integrada). A prioridade de Select All Players está aprovada; seu comportamento detalhado e a interface de teste serão confirmados antes de programar. Não iniciar outra entrega automaticamente. Tickets e passagens recentes em [tarefas](tarefas.md) são a referência para o progresso de cada entrega.
 
@@ -40,7 +40,7 @@ A geração permite escolher pelo menos 2 times, com pelo menos 2 selecionados p
 
 Trocas manuais, novas composições com aceitar/desfazer e texto para compartilhar sem notas estão implementados. Os critérios essenciais das tarefas 01–05 foram concluídos com evidências Node, navegador, relatos/capturas e Playwright. Celular físico não testado; ver o resumo e o relatório final para as limitações.
 
-A segunda rodada de 19/10/2026 foi aprovada para adicionar Copy teams e posicionar a geração após a seleção, com TDD e validação integrada. **Copy teams está concluído** (tarefa 01), com 8 ciclos de lógica e verificação de apresentação/teclado, todos verificados independentemente; ver o fechamento no ticket. A cópia manual permanece disponível. O reposicionamento da geração (tarefa 02) ainda não foi iniciado nesta continuidade. Ver o mapa acima e as passagens recentes do ticket 01.
+A segunda rodada de 19/10/2026 foi aprovada para adicionar Copy teams e posicionar a geração após a seleção, com TDD e validação integrada. **Copy teams está concluído** (tarefa 01), com 8 ciclos de lógica e verificação de apresentação/teclado, todos verificados independentemente; ver o fechamento no ticket. A cópia manual permanece disponível. O reposicionamento da geração (tarefa 02) foi concluído em 20/10/2026; ver o fechamento no ticket 02. Ver o mapa acima e as passagens recentes do ticket 01.
 
 ## Dúvidas
 

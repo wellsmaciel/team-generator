@@ -1,6 +1,10 @@
 # Resumo para o próximo chat
 
-Atualizado em 19/10/2026. **Tickets 01 a 05 da primeira rodada concluídos**, com critérios essenciais comprovados. Na segunda rodada, **tarefa 01 (Copy teams) concluída** nesta data — ver fechamento em `.scratch/usability-2026-10-19/issues/01-copy-teams-button.md`. Tarefas 02 e 03 ainda sem implementação; Select All Players aprovado como entrega adicional entre elas.
+**Tarefa 02 concluída — 20/10/2026:** revisada pelo usuário e entregue na versão `1.2.0` (commit, PR, merge e release feitos a pedido explícito). O relé Codex ↔ Claude por hooks foi preparado, mas não teve execução real de ponta a ponta; a autorização da coordenação terminou com a tarefa. Ver [acordo e requisitos dos hooks](agents/coordenacao-por-hooks.md).
+
+**Pasta vigente desde 19/10/2026:** `C:\VSC Projects\team-generator`, fora do OneDrive. Preservar a cópia antiga; não trabalhar nela.
+
+Atualizado em 19/10/2026. **Tickets 01 a 05 da primeira rodada concluídos**, com critérios essenciais comprovados. Na segunda rodada, **tarefa 01 (Copy teams) concluída** nesta data — ver fechamento em `.scratch/usability-2026-10-19/issues/01-copy-teams-button.md`. **Tarefa 02 concluída em 20/10/2026** — ver fechamento em `.scratch/usability-2026-10-19/issues/02-generate-after-player-selection.md`. Select All Players (entrega adicional aprovada) e tarefa 03 sem implementação.
 
 ## Plano aprovado para 19/10/2026 — segunda rodada
 
@@ -8,11 +12,11 @@ O usuário aprovou [o plano](plano-2026-10-19.md): Copy teams, posicionar a gera
 
 **Tarefa 01 (Copy teams) concluída em 19/10/2026**, com 8 ciclos de lógica (RED/GREEN, cada um verificado independentemente) mais verificação de apresentação/teclado nas larguras desktop, 360 e 390. Nenhum defeito funcional pendente; limitações explícitas no fechamento do ticket (sem aparelho físico, sem recusa manual real de permissão de clipboard, inventário de ZIPs ainda preservado sem exclusão aprovada).
 
-Próximo chat recomendado: **segunda rodada, tarefa 02 — reposicionar geração após a seleção de participantes**. Confirmar a primeira ação e comportamentos/interfaces de teste no início da implementação; depois concluir a tarefa indicada com TDD, verificações e atualização da passagem. Depois da tarefa 02 vem Select All Players (ticket a preparar) e então a tarefa 03. Não iniciar mais de uma tarefa por chat.
+Próximo chat recomendado: **segunda rodada, Select All Players**. Preparar o ticket e confirmar comportamento/interfaces de teste com o usuário antes de implementar, com TDD. Depois vem a tarefa 03. Não iniciar mais de uma tarefa por chat.
 
 O índice de tarefas foi limpo de instruções contraditórias de etapas ainda abertas. Os prompts anteriores foram preservados em [arquivo histórico](tarefas-01-05-historico.md); não retomá-los automaticamente. Playwright já existe e será aproveitado. Os testes Node atuais são scripts com asserções, não uma suíte já migrada para `node:test`. Não adicionar Jest/Supertest nem migrar todos os testes sem necessidade concreta.
 
-Base histórica anterior à segunda rodada: HEAD `2533789a3dcc16686c6e58d4d05655d13e4aa764`, tag `v1.0.0`. A afirmação de working tree limpa e de nenhuma alteração de aplicativo/teste refere-se apenas à preparação documental de 18/10/2026. A segunda rodada acrescentou Copy teams, testes e evidências, conforme o ticket concluído. Em 19/10/2026, o usuário autorizou commit, PR, merge e nova release desta entrega; a versão preparada é `1.1.0`. Consultar Git/GitHub para confirmar o estado da publicação, sem inferi-lo de passagens históricas.
+Base histórica anterior à segunda rodada: HEAD `2533789a3dcc16686c6e58d4d05655d13e4aa764`, tag `v1.0.0`. A afirmação de working tree limpa e de nenhuma alteração de aplicativo/teste refere-se apenas à preparação documental de 18/10/2026. A segunda rodada acrescentou Copy teams, testes e evidências, conforme o ticket concluído. Em 19/10/2026, o usuário autorizou commit, PR, merge e nova release desta entrega; a versão preparada é `1.1.0`. Em 20/10/2026, o mesmo para a tarefa 02, versão `1.2.0`. Consultar Git/GitHub para confirmar o estado da publicação, sem inferi-lo de passagens históricas.
 
 ## Evidências e estado final da primeira rodada (histórico)
 
@@ -50,5 +54,5 @@ O servidor de teste usa somente 127.0.0.1:51806, inicia/encerra com os testes e 
 - Explicar em português, com respostas curtas; código, comentários, interface e novos nomes de testes em inglês.
 - Preservar alterações locais, dados reais e evidências. Sem commit, publicação ou contato com terceiros sem pedido.
 - TDD nas próximas correções/funcionalidades autorizadas: confirmar comportamento/interface, observar falha antes de corrigir, sem fabricar red para comportamento já existente. Interface pública de navegador e instalação Playwright aprovadas nesta conversa; ver [procedimento](desenvolvimento-tdd.md).
-- Copy teams (tarefa 01) concluído; reposicionar Generate Teams (tarefa 02) ainda não implementado. Trabalhar apenas no ticket escolhido. Login/backend/sincronização ou persistência da partida continuam fora do escopo.
+- Copy teams (tarefa 01) e reposicionamento de Generate Teams (tarefa 02) concluídos. Trabalhar apenas no ticket escolhido. Login/backend/sincronização ou persistência da partida continuam fora do escopo.
 - Não retomar entrevista de teste ou repetir etapas comprovadas sem alteração, falha ou pedido do usuário.
