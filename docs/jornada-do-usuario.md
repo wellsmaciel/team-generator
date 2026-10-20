@@ -7,7 +7,7 @@ O uso principal é no celular, com suporte também a tablet e PC. A tarefa 01 co
 | Etapa da jornada | Recursos | Estado e ordem do trabalho |
 | --- | --- | --- |
 | Preparar o cadastro | Cadastrar, editar, excluir e reaproveitar jogadores | Base concluída na primeira rodada |
-| Confirmar participantes | Selecionar jogadores individualmente e conferir a contagem | Existente; **Select All Players** aprovado na fila após a tarefa 02 e antes da validação integrada, ainda sem implementação |
+| Confirmar participantes | Selecionar jogadores individualmente e conferir a contagem | **Select All Players** implementado no ticket 02a (20/10/2026): marca todos os cadastrados; fica desabilitado sem cadastrados ou com todos já marcados, para não apagar times à toa; reabilita ao desmarcar alguém. **Concluído** em 20/10/2026 |
 | Configurar e gerar | Quantidade de times, regras de goleiros, tamanhos e equilíbrio | Lógica existente; **tarefa 02 concluída** em 20/10/2026: quantidade de times e geração ficam depois da lista de participantes e antes dos resultados, na ordem visual, DOM e de Tab |
 | Rever os times | Regenerar, aceitar/desfazer e trocar jogadores | Existente; preservar nas próximas mudanças |
 | Compartilhar | Copy teams e cópia manual | **Tarefa 01 concluída** em 19/10/2026 (8 ciclos de lógica + apresentação/teclado, verificados independentemente); sem lacunas de lógica pendentes, limitações registradas no ticket |
@@ -15,9 +15,9 @@ O uso principal é no celular, com suporte também a tablet e PC. A tarefa 01 co
 
 **Próximo passo confirmado:** tarefas 01 (Copy teams) e 02 (geração após a seleção) concluídas, com fechamento registrado nos tickets. A próxima entrega da ordem aprovada é Select All Players; comportamentos/interfaces de teste serão confirmados com o usuário no início dessa entrega, ainda não iniciada.
 
-**Ordem aprovada da segunda rodada, ampliada pelo usuário em 19/10/2026:** tarefa 01 concluída (lógica e critérios de UX); próxima, tarefa 02, depois Select All Players e então tarefa 03 (validação integrada). A prioridade de Select All Players está aprovada; seu comportamento detalhado e a interface de teste serão confirmados antes de programar. Não iniciar outra entrega automaticamente. Tickets e passagens recentes em [tarefas](tarefas.md) são a referência para o progresso de cada entrega.
+**Ordem aprovada da segunda rodada, ampliada pelo usuário em 19/10/2026:** tarefas 01 (Copy teams), 02 (geração após a seleção) e Select All Players (ticket 02a) concluídas; próxima, tarefa 03 (validação integrada). Não iniciar outra entrega automaticamente. Tickets e passagens recentes em [tarefas](tarefas.md) são a referência para o progresso de cada entrega.
 
-**Necessidade registrada para Select All Players:** no teste manual com 15 jogadores, o usuário precisou marcar 15 checkboxes. Um botão com esse nome em inglês deve facilitar a seleção de todos os jogadores cadastrados para a partida, permitindo depois ajustar individualmente quem participa. Detalhes de estado, invalidação dos times e interface de teste serão combinados antes de implementar; não inclui automaticamente um botão de desmarcar todos nem persistência da seleção.
+**Necessidade registrada para Select All Players:** no teste manual com 15 jogadores, o usuário precisou marcar 15 checkboxes. Um botão com esse nome em inglês deve facilitar a seleção de todos os jogadores cadastrados para a partida, permitindo depois ajustar individualmente quem participa. **Implementado em 20/10/2026 (ticket 02a):** o botão fica acima da lista de participantes. Decisão do usuário após testar: com todos já marcados o clique apagava os times sem mudar a seleção, então o botão fica desabilitado quando não há cadastrados ou todos já estão selecionados. Quando adiciona alguém à seleção, limpa os times como qualquer mudança de seleção. Não inclui botão de desmarcar todos nem persistência da seleção.
 
 ## Fluxo confirmado para a evolução
 
