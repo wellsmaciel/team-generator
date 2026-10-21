@@ -17,6 +17,7 @@ test('positions the team count input and Generate Teams button after the partici
     ['Dani', 5],
   ]);
 
+  await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Match', exact: true }).click();
   const participants = page.locator('#playerSkillList input[type=checkbox]');
   for (const checkbox of await participants.all()) await checkbox.check();
 

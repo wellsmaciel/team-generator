@@ -4,12 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Team Generator</title>
+    <link rel="stylesheet" href="vendor/bootstrap-5.3.3/bootstrap.min.css" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <h1>Building up your Team</h1>
-    <h2>Add the Player name and their skill</h2>
+    <nav aria-label="Main">
+      <button id="playersNavigation" type="button" aria-current="page" onclick="showArea('players')">Players</button>
+      <button id="matchNavigation" type="button" onclick="showArea('match')">Match</button>
+    </nav>
+    <section id="playersArea">
     <div>
+      <h2>Registered players</h2>
+      <ul id="registeredPlayerList"></ul>
+    </div>
+    <div>
+      <h2>Add player</h2>
       <form id="form" onsubmit="addOrUpdatePlayer(event)">
         <p id="editingStatus" role="status"></p>
         <label for="pName">Player Name</label>
@@ -25,7 +35,9 @@
       </form>
       <p id="storageStatus" role="status"></p>
     </div>
+    </section>
 
+    <section id="matchArea" hidden>
     <h2>Added players</h2>
     <div id="container">
       <div>
@@ -75,6 +87,7 @@
         <p id="swapStatus" role="status"></p>
       </section>
     </div>
+    </section>
 
     <footer>
       <p>Team Generator — Created by Wells Maciel <span>v1.3.0</span></p>

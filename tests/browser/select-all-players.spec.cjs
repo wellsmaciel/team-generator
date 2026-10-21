@@ -1,11 +1,14 @@
 const { test, expect } = require('@playwright/test');
 
 async function registerPlayers(page, players) {
+  const navigation = page.getByRole('navigation', { name: 'Main', exact: true });
+  await navigation.getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score] of players) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
     await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
+  await navigation.getByRole('button', { name: 'Match', exact: true }).click();
 }
 
 test('Select All Players checks every registered player, updates the count and still allows individual unchecking', async ({ page }) => {
@@ -37,6 +40,7 @@ test('Select All Players checks every registered player, updates the count and s
 
 test('Select All Players is disabled when there are no registered players or everyone is already selected, and enabled again after unchecking someone', async ({ page }) => {
   await page.goto('/');
+  await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Match', exact: true }).click();
   const selectAllButton = page.getByRole('button', { name: 'Select All Players', exact: true });
 
   await expect(selectAllButton).toBeDisabled();

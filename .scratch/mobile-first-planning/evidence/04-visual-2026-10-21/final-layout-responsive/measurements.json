@@ -1,0 +1,258 @@
+{
+  "360": {
+    "players": {
+      "scrollWidth": 360,
+      "nav": {
+        "top": 740,
+        "bottom": 800,
+        "height": 60
+      },
+      "current": "Players",
+      "currentStyle": {
+        "color": "rgb(181, 238, 122)",
+        "background": "rgba(181, 238, 122, 0.08)",
+        "border": "rgba(0, 0, 0, 0)",
+        "weight": "400"
+      },
+      "otherStyle": {
+        "color": "rgb(238, 243, 246)",
+        "background": "rgb(23, 38, 48)",
+        "border": "rgba(0, 0, 0, 0)",
+        "weight": "400"
+      },
+      "navButtonHeights": [
+        44,
+        44
+      ],
+      "primaryButton": {
+        "color": "rgb(20, 32, 11)",
+        "background": "rgb(181, 238, 122)",
+        "border": "rgb(181, 238, 122)",
+        "weight": "600"
+      }
+    },
+    "match": {
+      "scrollWidth": 360,
+      "nav": {
+        "top": 740,
+        "bottom": 800,
+        "height": 60
+      },
+      "current": "Match",
+      "currentStyle": {
+        "color": "rgb(181, 238, 122)",
+        "background": "rgba(181, 238, 122, 0.08)",
+        "border": "rgba(0, 0, 0, 0)",
+        "weight": "400"
+      },
+      "otherStyle": {
+        "color": "rgb(238, 243, 246)",
+        "background": "rgb(23, 38, 48)",
+        "border": "rgba(0, 0, 0, 0)",
+        "weight": "400"
+      },
+      "navButtonHeights": [
+        44,
+        44
+      ],
+      "primaryButton": {
+        "color": "rgb(20, 32, 11)",
+        "background": "rgb(181, 238, 122)",
+        "border": "rgb(181, 238, 122)",
+        "weight": "600"
+      }
+    }
+  },
+  "390": {
+    "players": {
+      "scrollWidth": 390,
+      "nav": {
+        "top": 784,
+        "bottom": 844,
+        "height": 60
+      },
+      "current": "Players",
+      "currentStyle": {
+        "color": "rgb(181, 238, 122)",
+        "background": "rgba(181, 238, 122, 0.08)",
+        "border": "rgba(0, 0, 0, 0)",
+        "weight": "400"
+      },
+      "otherStyle": {
+        "color": "rgb(238, 243, 246)",
+        "background": "rgb(23, 38, 48)",
+        "border": "rgba(0, 0, 0, 0)",
+        "weight": "400"
+      },
+      "navButtonHeights": [
+        44,
+        44
+      ],
+      "primaryButton": {
+        "color": "rgb(20, 32, 11)",
+        "background": "rgb(181, 238, 122)",
+        "border": "rgb(181, 238, 122)",
+        "weight": "600"
+      }
+    },
+    "match": {
+      "scrollWidth": 390,
+      "nav": {
+        "top": 784,
+        "bottom": 844,
+        "height": 60
+      },
+      "current": "Match",
+      "currentStyle": {
+        "color": "rgb(181, 238, 122)",
+        "background": "rgba(181, 238, 122, 0.08)",
+        "border": "rgba(0, 0, 0, 0)",
+        "weight": "400"
+      },
+      "otherStyle": {
+        "color": "rgb(238, 243, 246)",
+        "background": "rgb(23, 38, 48)",
+        "border": "rgba(0, 0, 0, 0)",
+        "weight": "400"
+      },
+      "navButtonHeights": [
+        44,
+        44
+      ],
+      "primaryButton": {
+        "color": "rgb(20, 32, 11)",
+        "background": "rgb(181, 238, 122)",
+        "border": "rgb(181, 238, 122)",
+        "weight": "600"
+      }
+    }
+  },
+  "768": {
+    "players": {
+      "scrollWidth": 768,
+      "nav": {
+        "top": 58,
+        "bottom": 88,
+        "height": 30
+      },
+      "current": "Players",
+      "currentStyle": {
+        "color": "rgb(181, 238, 122)",
+        "background": "rgba(181, 238, 122, 0.08)",
+        "border": "rgba(0, 0, 0, 0)",
+        "weight": "400"
+      },
+      "otherStyle": {
+        "color": "rgb(238, 243, 246)",
+        "background": "rgb(23, 38, 48)",
+        "border": "rgba(0, 0, 0, 0)",
+        "weight": "400"
+      },
+      "navButtonHeights": [
+        30,
+        30
+      ],
+      "primaryButton": {
+        "color": "rgb(20, 32, 11)",
+        "background": "rgb(181, 238, 122)",
+        "border": "rgb(181, 238, 122)",
+        "weight": "600"
+      }
+    },
+    "match": {
+      "scrollWidth": 768,
+      "nav": {
+        "top": 58,
+        "bottom": 88,
+        "height": 30
+      },
+      "current": "Match",
+      "currentStyle": {
+        "color": "rgb(181, 238, 122)",
+        "background": "rgba(181, 238, 122, 0.08)",
+        "border": "rgba(0, 0, 0, 0)",
+        "weight": "400"
+      },
+      "otherStyle": {
+        "color": "rgb(238, 243, 246)",
+        "background": "rgb(23, 38, 48)",
+        "border": "rgba(0, 0, 0, 0)",
+        "weight": "400"
+      },
+      "navButtonHeights": [
+        30,
+        30
+      ],
+      "primaryButton": {
+        "color": "rgb(20, 32, 11)",
+        "background": "rgb(181, 238, 122)",
+        "border": "rgb(181, 238, 122)",
+        "weight": "600"
+      }
+    }
+  },
+  "1280": {
+    "players": {
+      "scrollWidth": 1280,
+      "nav": {
+        "top": 66,
+        "bottom": 96,
+        "height": 30
+      },
+      "current": "Players",
+      "currentStyle": {
+        "color": "rgb(181, 238, 122)",
+        "background": "rgba(181, 238, 122, 0.08)",
+        "border": "rgba(0, 0, 0, 0)",
+        "weight": "400"
+      },
+      "otherStyle": {
+        "color": "rgb(238, 243, 246)",
+        "background": "rgb(23, 38, 48)",
+        "border": "rgba(0, 0, 0, 0)",
+        "weight": "400"
+      },
+      "navButtonHeights": [
+        30,
+        30
+      ],
+      "primaryButton": {
+        "color": "rgb(20, 32, 11)",
+        "background": "rgb(181, 238, 122)",
+        "border": "rgb(181, 238, 122)",
+        "weight": "600"
+      }
+    },
+    "match": {
+      "scrollWidth": 1280,
+      "nav": {
+        "top": 66,
+        "bottom": 96,
+        "height": 30
+      },
+      "current": "Match",
+      "currentStyle": {
+        "color": "rgb(181, 238, 122)",
+        "background": "rgba(181, 238, 122, 0.08)",
+        "border": "rgba(0, 0, 0, 0)",
+        "weight": "400"
+      },
+      "otherStyle": {
+        "color": "rgb(238, 243, 246)",
+        "background": "rgb(23, 38, 48)",
+        "border": "rgba(0, 0, 0, 0)",
+        "weight": "400"
+      },
+      "navButtonHeights": [
+        30,
+        30
+      ],
+      "primaryButton": {
+        "color": "rgb(20, 32, 11)",
+        "background": "rgb(181, 238, 122)",
+        "border": "rgb(181, 238, 122)",
+        "weight": "600"
+      }
+    }
+  }
+}
