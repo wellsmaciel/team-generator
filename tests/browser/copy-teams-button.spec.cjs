@@ -8,6 +8,7 @@ test('clicking Copy teams copies the current shareable text and confirms only af
     await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
+  await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Match', exact: true }).click();
   const participants = page.locator('#playerSkillList input[type=checkbox]');
   for (const checkbox of await participants.all()) await checkbox.check();
   await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
@@ -29,6 +30,7 @@ test('clipboard rejection offers manual copying without losing the displayed tea
     await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
+  await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Match', exact: true }).click();
   const participants = page.locator('#playerSkillList input[type=checkbox]');
   for (const checkbox of await participants.all()) await checkbox.check();
   await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
@@ -66,6 +68,7 @@ test('a pending less-balanced preview hides Copy teams and clears a previous cop
     await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
+  await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Match', exact: true }).click();
   const participants = page.locator('#playerSkillList input[type=checkbox]');
   for (const checkbox of await participants.all()) await checkbox.check();
   await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
@@ -90,6 +93,7 @@ test('Copy teams copies the currently displayed composition after undo, accept a
     await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
+  await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Match', exact: true }).click();
   const participants = page.locator('#playerSkillList input[type=checkbox]');
   for (const checkbox of await participants.all()) await checkbox.check();
   await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
@@ -132,6 +136,7 @@ test('a copy in progress does not apply a late success message after the composi
     await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
+  await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Match', exact: true }).click();
   const participants = page.locator('#playerSkillList input[type=checkbox]');
   for (const checkbox of await participants.all()) await checkbox.check();
   await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
@@ -172,6 +177,7 @@ test('a missing clipboard API offers manual copying without losing the displayed
     await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
+  await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Match', exact: true }).click();
   const participants = page.locator('#playerSkillList input[type=checkbox]');
   for (const checkbox of await participants.all()) await checkbox.check();
   await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
@@ -203,6 +209,7 @@ test('a copy in progress does not apply a late error message after the compositi
     await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
+  await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Match', exact: true }).click();
   const participants = page.locator('#playerSkillList input[type=checkbox]');
   for (const checkbox of await participants.all()) await checkbox.check();
   await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
@@ -240,6 +247,7 @@ test('confirming a manual swap after a successful copy clears the previous succe
     await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
+  await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Match', exact: true }).click();
   const participants = page.locator('#playerSkillList input[type=checkbox]');
   for (const checkbox of await participants.all()) await checkbox.check();
   await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
@@ -270,6 +278,7 @@ test('an immediately applied regeneration without a pending decision clears the 
     await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
+  await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Match', exact: true }).click();
   const participants = page.locator('#playerSkillList input[type=checkbox]');
   for (const checkbox of await participants.all()) await checkbox.check();
   await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
@@ -297,6 +306,7 @@ test('regenerating after an invalidating selection change does not resurface the
     await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
+  await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Match', exact: true }).click();
   const participants = page.locator('#playerSkillList input[type=checkbox]');
   for (const checkbox of await participants.all()) await checkbox.check();
   await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
@@ -327,6 +337,7 @@ test('Copy teams copies literal HTML-looking names as plain text, without interp
     await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
+  await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Match', exact: true }).click();
   const participants = page.locator('#playerSkillList input[type=checkbox]');
   for (const checkbox of await participants.all()) await checkbox.check();
   await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
