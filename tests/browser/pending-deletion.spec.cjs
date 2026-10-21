@@ -4,6 +4,7 @@ test('confirming deletion during a worse preview clears the match and allows a n
   // Playwright creates a fresh browser context, without the user's saved registrations.
   await page.goto('/');
   await expect(page.locator('#selectionStatus')).toHaveText('Selected for this match: 0 / 0');
+  await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score] of [['Bruno', 2], ['Carla', 3], ['Diego', 4], ['Eva', 5]]) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
     await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
