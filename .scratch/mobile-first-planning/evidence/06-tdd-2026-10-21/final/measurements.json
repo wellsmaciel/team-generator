@@ -1,0 +1,61 @@
+{
+  "chromium": "156.0.8078.4",
+  "viewports": {
+    "360": {
+      "height": 800,
+      "metrics": {
+        "pageScrollWidth": 360,
+        "innerWidth": 360,
+        "textareaClientHeight": 312,
+        "textareaScrollHeight": 312,
+        "textareaClientWidth": 306,
+        "fontSize": "16px"
+      },
+      "shown": "Team 1\n• Carla\n• Maximiliano Bartolomeu de Albuquerque-Montenegro Sobrinho Neto\n• <b>Sam</b>\n• Fabio\n\nTeam 2\n• Eva\n• Diego\n• Player 10",
+      "clipboardEqualsShown": true,
+      "pastedEqualsShown": true
+    },
+    "390": {
+      "height": 844,
+      "metrics": {
+        "pageScrollWidth": 390,
+        "innerWidth": 390,
+        "textareaClientHeight": 312,
+        "textareaScrollHeight": 312,
+        "textareaClientWidth": 336,
+        "fontSize": "16px"
+      },
+      "shown": "Team 1\n• Carla\n• Maximiliano Bartolomeu de Albuquerque-Montenegro Sobrinho Neto\n• <b>Sam</b>\n• Fabio\n\nTeam 2\n• Eva\n• Diego\n• Player 10",
+      "clipboardEqualsShown": true,
+      "pastedEqualsShown": true
+    },
+    "768": {
+      "height": 1024,
+      "metrics": {
+        "pageScrollWidth": 768,
+        "innerWidth": 768,
+        "textareaClientHeight": 312,
+        "textareaScrollHeight": 312,
+        "textareaClientWidth": 574,
+        "fontSize": "16px"
+      },
+      "shown": "Team 1\n• Carla\n• Maximiliano Bartolomeu de Albuquerque-Montenegro Sobrinho Neto\n• <b>Sam</b>\n• Fabio\n\nTeam 2\n• Eva\n• Diego\n• Player 10",
+      "clipboardEqualsShown": true,
+      "pastedEqualsShown": true
+    },
+    "1280": {
+      "height": 720,
+      "metrics": {
+        "pageScrollWidth": 1280,
+        "innerWidth": 1280,
+        "textareaClientHeight": 312,
+        "textareaScrollHeight": 312,
+        "textareaClientWidth": 574,
+        "fontSize": "16px"
+      },
+      "shown": "Team 1\n• Carla\n• Maximiliano Bartolomeu de Albuquerque-Montenegro Sobrinho Neto\n• <b>Sam</b>\n• Fabio\n\nTeam 2\n• Eva\n• Diego\n• Player 10",
+      "clipboardEqualsShown": true,
+      "pastedEqualsShown": true
+    }
+  }
+}

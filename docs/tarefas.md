@@ -1,3 +1,5 @@
+> **Autorização vigente (21/10/2026):** executar 06 com TDD e commit condicional exclusivo de Claude; encerrar após o commit validado de 06, sem iniciar 07. Sem push/PR/merge/release/publicação. A regra atual está no início de [coordenação](agents/coordenacao-por-hooks.md). Regras de 04/05 abaixo são históricas.
+
 # Tarefas e continuidade
 
 > **Regra vigente para 04/05 (atualizada em 21/10/2026):** a regra única está em [coordenação por hooks](agents/coordenacao-por-hooks.md#regra-vigente--tarefas-04-e-05-atualizada-em-21102026) e prevalece sobre qualquer outro texto. Resumo: o Claude escreve o RED e verifica cada GREEN; o Codex implementa o mínimo e nunca faz staging nem commit. O commit de cada tarefa é feito pelo Claude num chat novo, aberto pelo Codex raiz pelo runner, logo depois do próprio `/ecc:code-review`, sem achado crítico, alto ou médio. Uma tarefa por vez (04, depois 05); sem 06/07 e sem publicação do site. Push, PR e merge de cada tarefa, depois do commit validado, cabem à sessão raiz; a release sai uma vez, depois da 05. Passagens e critérios antigos que mandam parar antes do commit estão superados para 04/05.
@@ -10,10 +12,10 @@ Entrevista e disposição da prévia aprovadas pelo usuário, incluindo a divis�
 | --- | --- | --- | --- |
 | [04](../.scratch/mobile-first-planning/issues/04-responsive-players-navigation.md) | Bootstrap, identidade esportiva, navegação responsiva e Players funcional | Preparação do acionamento (concluída em 20/10/2026) | Implementada e verificada em 21/10/2026, incluindo a disposição Desktop aprovada (ciclo 16); a conferência de especificação de 21/10/2026 reabriu a 04 e foi resolvida. Commitada em `04adc65` (merge `804dea5`); hash registrado no ticket 04 |
 | [05](../.scratch/mobile-first-planning/issues/05-match-selection-and-teams.md) | Match com Select players/Teams e estados preservados | 04 | Concluída em 21/10/2026 (ciclos 1–13), commitada em `9f8ae63` (merge `5ded6c5`) |
-| [06](../.scratch/mobile-first-planning/issues/06-share-text-format.md) | Texto compartilhado com marcadores, sem notas | 05; sequência aprovada | Planejada |
+| [06](../.scratch/mobile-first-planning/issues/06-share-text-format.md) | Texto compartilhado com marcadores, sem notas | 05; sequência aprovada | Implementada e verificada em 21/10/2026 (ciclo 1 TDD); pronta para revisão e commit condicional (`ecc:code-review`) em chat novo |
 | [07](../.scratch/mobile-first-planning/issues/07-integrated-responsive-validation.md) | Jornada integrada em celular/tablet/desktop e documentação | 04, 05 e 06 | Planejada |
 
-**Próxima ação (21/10/2026):** as tarefas 04 e 05 estão concluídas e mergeadas; a release `v1.4.0` as fecha. A automação desta autorização terminou (relé desligado). As tarefas 06 e 07 só começam com decisão do usuário; sem publicação do site.
+**Próxima ação (21/10/2026):** as tarefas 04 e 05 estão concluídas e mergeadas; a release `v1.4.0` as fecha. A automação daquela autorização terminou (relé desligado). *Atualização de 21/10/2026:* a 06 foi autorizada separadamente (ver o aviso no topo), está implementada e aguarda revisão e commit condicional; a automação para após o commit validado da 06. A 07 só começa com decisão do usuário; sem publicação do site.
 
 *Histórico (20/10/2026, superado):* “preparar e comprovar a passagem automática inicial de Codex para Claude” e “confirmar o primeiro comportamento/interface pública da 04” eram a próxima ação antes de programar; ambas foram cumpridas (ver evidência de preparação e os ciclos do ticket).
 

@@ -36,7 +36,7 @@ test('keyboard actions and real copy and paste preserve teams after undo, accept
     const source = page.getByLabel('Teams to copy');
     const expected = await source.inputValue();
     expect(expected.split('\n').filter(line => line && !/^Team [12]$/.test(line)).sort())
-      .toEqual(['<b>Sam</b>', 'Alex', 'Alex', 'Player 10']);
+      .toEqual(['• <b>Sam</b>', '• Alex', '• Alex', '• Player 10']);
     expect(await page.locator('#teamsContainer b').count()).toBe(0);
     await source.focus();
     await page.keyboard.press('ControlOrMeta+A');

@@ -20,7 +20,7 @@ assert.match(page.elements.teamsStatus.textContent, /different numbers of player
 assert.match(page.elements.teamsStatus.textContent, /No fixed goalkeeper in teams: 1, 2/);
 assert.equal(page.elements.shareControls.hidden, false);
 assert.deepEqual(page.elements.shareText.value.split('\n\n').map(block => block.split('\n')),
-  rendered.map((team, index) => ['Team ' + (index + 1), ...team.names]));
+  rendered.map((team, index) => ['Team ' + (index + 1), ...team.names.map(name => '• ' + name)]));
 assert.equal(page.elements.selectionStatus.textContent, 'Selected for this match: 5 / 6');
 assert.equal(page.writes(), 0);
 console.log('Passed: first generation balances C1 to 12/20, preserving participants, sizes, warnings and share text (simulated DOM).');

@@ -358,7 +358,7 @@ function renderShareText() {
   if (teams.length === 0 || previousTeams !== null) return;
 
   document.getElementById('shareText').value = teams.map(function (team, index) {
-    return 'Team ' + (index + 1) + '\n' + team.players.map(player => player.name).join('\n');
+    return 'Team ' + (index + 1) + '\n' + team.players.map(player => '• ' + player.name).join('\n');
   }).join('\n\n');
   document.getElementById('shareControls').hidden = false;
 }

@@ -35,7 +35,8 @@ test('Select All Players, generation, copy, swap, regeneration and copy again st
     expect((await page.evaluate(() => navigator.clipboard.readText())).replace(/\r\n/g, '\n')).toBe(displayed);
     // Every selected participant exactly once, and no skill scores in the copied text.
     const lines = displayed.split('\n').filter(line => line && !/^Team \d+$/.test(line));
-    expect(lines.sort()).toEqual([...names].sort());
+    expect(lines.every(line => line.startsWith('• '))).toBe(true);
+    expect(lines.map(line => line.slice(2)).sort()).toEqual([...names].sort());
     expect(displayed).not.toMatch(/\d{2,}|skill|total/i);
     return displayed;
   }

@@ -59,6 +59,19 @@ npm.cmd run test:browser
 
 The browser suite creates its own loopback server on port 51806 and a fresh browser context per test. It does not read the user's browser profile or registrations. It runs at 1280×720, 360×800 and 390×844, covering deletion during a pending preview, keyboard/copy/paste after undo/acceptance/swaps, the Copy teams button (success, clipboard rejection and absence, stale-feedback races, invalidation) and its presentation/keyboard access. All tests passed on Chromium 156.0.8078.4. An integrated flow check chains Select All Players, generation, Copy teams, a manual swap, another composition (accept or undo) and copying again, confirming that the clipboard always matches the displayed teams without skill scores. Screenshots and an HTML report are generated under `.scratch/playwright-results` and `.scratch/playwright-report`.
 
+The shared text (the "Teams to copy" box and what Copy teams puts on the clipboard) lists each team title followed by one bulleted player per line, with a blank line between teams. It never includes skill scores, totals or goalkeeper roles, and player names are copied exactly as typed:
+
+```text
+Team 1
+• Carla
+• Maximiliano Bartolomeu de Albuquerque-Montenegro Sobrinho Neto
+• <b>Sam</b>
+
+Team 2
+• Eva
+• Player 10
+```
+
 The [stage 05 checklist](docs/testes-manuais-etapa-05.md) links the evidence and its limits. Copy/paste was verified with real keyboard shortcuts into a separate browser-based local text editor. Physical phones and pasting into native applications such as Notepad were not tested. Narrow browser widths are simulations; they do not establish touch or mobile keyboard behavior. Tests added for existing behavior are acceptance checks, not a new TDD cycle. Future fixes continue to require a failing test before the implementation change.
 
 ## Current scope
