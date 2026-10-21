@@ -101,6 +101,13 @@ footer a {
   text-decoration: underline;
 }
 
+footer {
+  background: rgba(15, 23, 32, 0.92);
+  border-radius: 12px;
+  padding: 16px;
+  margin: 12px 0;
+}
+
 :focus-visible {
   outline: 3px solid #b5ee7a;
   outline-offset: 2px;
