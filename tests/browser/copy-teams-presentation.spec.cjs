@@ -6,6 +6,7 @@ async function registerAndGenerate(page, players) {
     await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
+  await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Match', exact: true }).click();
   const participants = page.locator('#playerSkillList input[type=checkbox]');
   for (const checkbox of await participants.all()) await checkbox.check();
   await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
@@ -58,7 +59,7 @@ test('the Copy teams button is reachable by Tab, shows a visible focus style and
 
   const copyButton = page.getByRole('button', { name: 'Copy teams', exact: true });
   // Generation controls follow the participant list before the share controls.
-  await page.getByRole('button', { name: 'Delete Dani', exact: true }).focus();
+  await page.getByLabel('Dani - 5', { exact: true }).focus();
   await page.keyboard.press('Tab');
   await expect(page.getByLabel('Number of teams', { exact: true })).toBeFocused();
   await page.keyboard.press('Tab');

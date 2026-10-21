@@ -1,5 +1,24 @@
 # Tarefas e continuidade
 
+> **Regra vigente para 04/05 (atualizada em 21/10/2026):** a regra única está em [coordenação por hooks](agents/coordenacao-por-hooks.md#regra-vigente--tarefas-04-e-05-atualizada-em-21102026) e prevalece sobre qualquer outro texto. Resumo: o Claude escreve o RED e verifica cada GREEN; o Codex implementa o mínimo e nunca faz staging nem commit. O commit de cada tarefa é feito pelo Claude num chat novo, aberto pelo Codex raiz pelo runner, logo depois do próprio `/ecc:code-review`, sem achado crítico, alto ou médio. Uma tarefa por vez (04, depois 05); sem 06/07 e sem publicação do site. Push, PR e merge de cada tarefa, depois do commit validado, cabem à sessão raiz; a release sai uma vez, depois da 05. Passagens e critérios antigos que mandam parar antes do commit estão superados para 04/05.
+
+## Próxima rodada — mobile first (planejamento aprovado em 20/10/2026)
+
+Entrevista e disposição da prévia aprovadas pelo usuário, incluindo a divisão abaixo. Ver [plano completo](plano-mobile-first.md). Tickets locais em `.scratch/mobile-first-planning/issues/`; mantida a numeração **04–07 escolhida nesta conversa**, sem confundir com os tickets da primeira rodada. **Estado em 21/10/2026:** a 04 foi implementada e verificada com o relé Codex ↔ Claude (ciclos 1–16); a 05–07 não foram iniciadas. A frase original “nenhuma implementação foi iniciada” descrevia somente a preparação de 20/10/2026.
+
+| Tarefa | Entrega | Dependências | Estado |
+| --- | --- | --- | --- |
+| [04](../.scratch/mobile-first-planning/issues/04-responsive-players-navigation.md) | Bootstrap, identidade esportiva, navegação responsiva e Players funcional | Preparação do acionamento (concluída em 20/10/2026) | Implementada e verificada em 21/10/2026, incluindo a disposição Desktop aprovada (ciclo 16); a conferência de especificação de 21/10/2026 reabriu a 04 e foi resolvida. Aguarda o chat de revisão e commit do Claude; o hash será registrado no ticket 04 pela sessão TDD da 05 |
+| [05](../.scratch/mobile-first-planning/issues/05-match-selection-and-teams.md) | Match com Select players/Teams e estados preservados | 04 | Planejada |
+| [06](../.scratch/mobile-first-planning/issues/06-share-text-format.md) | Texto compartilhado com marcadores, sem notas | 05; sequência aprovada | Planejada |
+| [07](../.scratch/mobile-first-planning/issues/07-integrated-responsive-validation.md) | Jornada integrada em celular/tablet/desktop e documentação | 04, 05 e 06 | Planejada |
+
+**Próxima ação (21/10/2026):** o Codex raiz abre, pelo runner, o chat de revisão e commit do Claude para a 04 (a tentativa de 21/10/2026 terminou em erro de API, sem commit). Antes, o ticket 04 precisa terminar com o marcador `TASK04_READY_FOR_CONDITIONAL_COMMIT` depois do registro do ciclo 16. Nesse chat o Claude executa o `/ecc:code-review` e, sem achado crítico, alto ou médio, faz o commit logo em seguida; depois troca o ticket ativo para a 05. Depois do commit validado de cada tarefa, a sessão raiz faz push, PR e merge (decisão do usuário em 21/10/2026); a release `v1.4.0` sai depois da 05. Sem 06/07 nem publicação do site; depois do commit da 05, o chat cria o sentinela `disabled` e a automação termina. Ver a [regra vigente](agents/coordenacao-por-hooks.md#regra-vigente--tarefas-04-e-05-atualizada-em-21102026).
+
+*Histórico (20/10/2026, superado):* “preparar e comprovar a passagem automática inicial de Codex para Claude” e “confirmar o primeiro comportamento/interface pública da 04” eram a próxima ação antes de programar; ambas foram cumpridas (ver evidência de preparação e os ciclos do ticket).
+
+A regra original de encerrar cada tarefa em **“Pronto para revisão do usuário antes do commit”** continua valendo para as demais tarefas; para 04/05 foi substituída pela autorização vigente no topo. Sem staging/commit, PR, release ou publicação fora dela. Não iniciar a próxima tarefa sozinho. Preservar o site atual, cadastros, ZIPs, prévia e evidências. Os registros abaixo são de rodadas anteriores, já encerradas.
+
 ## Estado vigente em 18/10/2026
 
 As tarefas 01 a 05 da primeira rodada estão concluídas no escopo essencial. Não reabrir seus prompts de implementação nem repetir toda a validação sem alteração ou falha que justifique. Veja o [resumo atual](proximo-chat.md), o [relatório final](../.scratch/remaining-work/evidence/2026-10-18-playwright-03/resultado.md) e o [histórico dos prompts](tarefas-01-05-historico.md).

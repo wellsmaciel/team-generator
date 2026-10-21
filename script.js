@@ -7,6 +7,19 @@ let shareTextVersion = 0;
 let playerBeingEdited = null;
 const selectedPlayers = new Set();
 
+function showArea(area) {
+  for (const name of ['players', 'match']) {
+    const isCurrent = name === area;
+    document.getElementById(name + 'Area').hidden = !isCurrent;
+    const button = document.getElementById(name + 'Navigation');
+    if (isCurrent) {
+      button.setAttribute('aria-current', 'page');
+    } else {
+      button.removeAttribute('aria-current');
+    }
+  }
+}
+
 function isValidPlayer(player) {
   return player !== null && typeof player === 'object' &&
     typeof player.name === 'string' && player.name.trim().length > 0 &&
@@ -65,6 +78,8 @@ function renderPlayers(id, players, showScores = false) {
       label.appendChild(checkbox);
       label.appendChild(document.createTextNode(' ' + item.textContent));
       item.replaceChildren(label);
+    }
+    if (id === 'registeredPlayerList') {
       const editButton = document.createElement('button');
       editButton.type = 'button';
       editButton.textContent = 'Edit';
@@ -113,6 +128,7 @@ function selectAllPlayers() {
 }
 
 renderPlayers('playerSkillList', players, true);
+renderPlayers('registeredPlayerList', players, true);
 
 function editPlayer(player) {
   playerBeingEdited = player;
@@ -152,6 +168,7 @@ function deletePlayer(player) {
   clearTeamsAfterChange();
   savePlayers();
   renderPlayers('playerSkillList', players, true);
+  renderPlayers('registeredPlayerList', players, true);
 }
 
 function clearTeamsAfterChange() {
@@ -205,6 +222,7 @@ function addOrUpdatePlayer(event) {
   cancelEditing();
 
   renderPlayers('playerSkillList', players, true);
+  renderPlayers('registeredPlayerList', players, true);
 }
 
 document.getElementById('pName').addEventListener('input', function () {

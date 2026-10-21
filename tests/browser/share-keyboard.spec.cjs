@@ -15,14 +15,13 @@ test('keyboard actions and real copy and paste preserve teams after undo, accept
     await expect(page.getByRole('button', { name: 'Add Player', exact: true })).toBeFocused();
     await page.keyboard.press('Enter');
   }
+  await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Match', exact: true }).click();
   const checkboxes = page.locator('#playerSkillList input[type=checkbox]');
   await checkboxes.first().focus();
   for (let index = 0; index < 4; index++) {
     await expect(checkboxes.nth(index)).toBeFocused();
     await page.keyboard.press('Space');
     if (index < 3) {
-      await page.keyboard.press('Tab');
-      await page.keyboard.press('Tab');
       await page.keyboard.press('Tab');
     }
   }

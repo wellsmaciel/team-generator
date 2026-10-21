@@ -32,7 +32,12 @@ test('Tab visits registration, participants, team count/generation and sharing c
   await expect(addPlayerButton).toBeFocused();
   expect(await outlineOf(addPlayerButton)).not.toBe('none');
 
+  // Registration and the match are separate areas now: the Tab order restarts at the first
+  // control of Match, reached through the navigation, instead of crossing areas.
+  const matchNavigationButton = page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Match', exact: true });
+  await matchNavigationButton.click();
   const selectAllButton = page.getByRole('button', { name: 'Select All Players', exact: true });
+  await expect(matchNavigationButton).toBeFocused();
   await page.keyboard.press('Tab');
   await expect(selectAllButton).toBeFocused();
   expect(await outlineOf(selectAllButton)).not.toBe('none');
@@ -46,10 +51,18 @@ test('Tab visits registration, participants, team count/generation and sharing c
   for (const name of ['Ana', 'Beto', 'Caio', 'Dani']) {
     await page.keyboard.press('Tab');
     await expect(page.getByLabel(`${name} - 5`, { exact: true })).toBeFocused();
+    await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Players', exact: true }).click();
+    // Management buttons now belong to Players; preserve their keyboard order there.
+    const previousName = { Beto: 'Ana', Caio: 'Beto', Dani: 'Caio' }[name];
+    await (previousName
+      ? page.getByRole('button', { name: `Delete ${previousName}`, exact: true })
+      : matchNavigationButton).focus(); // The registered list now follows the navigation directly.
     await page.keyboard.press('Tab');
     await expect(page.getByRole('button', { name: `Edit ${name}`, exact: true })).toBeFocused();
     await page.keyboard.press('Tab');
     await expect(page.getByRole('button', { name: `Delete ${name}`, exact: true })).toBeFocused();
+    await matchNavigationButton.click();
+    await page.getByLabel(`${name} - 5`, { exact: true }).focus();
   }
 
   const teamCountInput = page.getByLabel('Number of teams', { exact: true });

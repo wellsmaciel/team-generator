@@ -1,11 +1,14 @@
 const { test, expect } = require('@playwright/test');
 
 async function registerPlayers(page, players) {
+  const navigation = page.getByRole('navigation', { name: 'Main', exact: true });
+  await navigation.getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score] of players) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
     await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
+  await navigation.getByRole('button', { name: 'Match', exact: true }).click();
 }
 
 test('Select All Players, generation, copy, swap, regeneration and copy again stay coherent', async ({ page }) => {
