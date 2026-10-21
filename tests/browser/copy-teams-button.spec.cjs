@@ -3,6 +3,7 @@ const { test, expect } = require('@playwright/test');
 test('clicking Copy teams copies the current shareable text and confirms only after success', async ({ page }) => {
   await page.context().grantPermissions(['clipboard-read', 'clipboard-write']);
   await page.goto('/');
+  await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score] of [['Bruno', 2], ['Carla', 3], ['Diego', 4], ['Eva', 5]]) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
     await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
@@ -25,6 +26,7 @@ test('clicking Copy teams copies the current shareable text and confirms only af
 
 test('clipboard rejection offers manual copying without losing the displayed teams or players', async ({ page }) => {
   await page.goto('/');
+  await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score] of [['Bruno', 2], ['Carla', 3], ['Diego', 4], ['Eva', 5]]) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
     await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
@@ -63,6 +65,7 @@ test('clipboard rejection offers manual copying without losing the displayed tea
 test('a pending less-balanced preview hides Copy teams and clears a previous copy status', async ({ page }) => {
   await page.context().grantPermissions(['clipboard-read', 'clipboard-write']);
   await page.goto('/');
+  await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score] of [['Bruno', 2], ['Carla', 3], ['Diego', 4], ['Eva', 5]]) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
     await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
@@ -88,6 +91,7 @@ test('a pending less-balanced preview hides Copy teams and clears a previous cop
 test('Copy teams copies the currently displayed composition after undo, accept and a manual swap', async ({ page }) => {
   await page.context().grantPermissions(['clipboard-read', 'clipboard-write']);
   await page.goto('/');
+  await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score] of [['Bruno', 2], ['Carla', 3], ['Diego', 4], ['Eva', 5]]) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
     await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
@@ -131,6 +135,7 @@ test('Copy teams copies the currently displayed composition after undo, accept a
 
 test('a copy in progress does not apply a late success message after the composition changes', async ({ page }) => {
   await page.goto('/');
+  await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score] of [['Bruno', 2], ['Carla', 3], ['Diego', 4], ['Eva', 5]]) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
     await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
@@ -172,6 +177,7 @@ test('a missing clipboard API offers manual copying without losing the displayed
     Object.defineProperty(navigator, 'clipboard', { value: undefined, configurable: true });
   });
   await page.goto('/');
+  await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score] of [['Bruno', 2], ['Carla', 3], ['Diego', 4], ['Eva', 5]]) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
     await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
@@ -204,6 +210,7 @@ test('a missing clipboard API offers manual copying without losing the displayed
 
 test('a copy in progress does not apply a late error message after the composition changes', async ({ page }) => {
   await page.goto('/');
+  await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score] of [['Bruno', 2], ['Carla', 3], ['Diego', 4], ['Eva', 5]]) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
     await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
@@ -242,6 +249,7 @@ test('a copy in progress does not apply a late error message after the compositi
 test('confirming a manual swap after a successful copy clears the previous success message', async ({ page }) => {
   await page.context().grantPermissions(['clipboard-read', 'clipboard-write']);
   await page.goto('/');
+  await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score] of [['Bruno', 2], ['Carla', 3], ['Diego', 4], ['Eva', 5]]) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
     await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
@@ -271,6 +279,7 @@ test('confirming a manual swap after a successful copy clears the previous succe
 test('an immediately applied regeneration without a pending decision clears the previous success message', async ({ page }) => {
   await page.context().grantPermissions(['clipboard-read', 'clipboard-write']);
   await page.goto('/');
+  await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Players', exact: true }).click();
   // Equal scores guarantee the search never finds a worse alternative, so the
   // next generation always applies immediately, without a pending decision.
   for (const [name, score] of [['Ana', 5], ['Beto', 5], ['Caio', 5], ['Dani', 5]]) {
@@ -301,6 +310,7 @@ test('an immediately applied regeneration without a pending decision clears the 
 test('regenerating after an invalidating selection change does not resurface the old copy confirmation', async ({ page }) => {
   await page.context().grantPermissions(['clipboard-read', 'clipboard-write']);
   await page.goto('/');
+  await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score] of [['Bruno', 2], ['Carla', 3], ['Diego', 4], ['Eva', 5]]) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
     await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
@@ -316,6 +326,7 @@ test('regenerating after an invalidating selection change does not resurface the
   await expect(page.getByRole('status').filter({ hasText: /copied/i })).toBeVisible();
 
   // Unchecking a participant invalidates the current results and the share text.
+  await page.getByRole('button', { name: 'Back to selection', exact: true }).click();
   await participants.first().uncheck();
   await expect(page.locator('#teamsContainer')).toBeEmpty();
   await expect(page.locator('#shareControls')).toBeHidden();
@@ -332,6 +343,7 @@ test('regenerating after an invalidating selection change does not resurface the
 test('Copy teams copies literal HTML-looking names as plain text, without interpreting them', async ({ page }) => {
   await page.context().grantPermissions(['clipboard-read', 'clipboard-write']);
   await page.goto('/');
+  await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score] of [['<b>Sam</b>', 2], ['Alex', 3], ['Alex', 4], ['Player 10', 5]]) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
     await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
