@@ -1,0 +1,55 @@
+Codex root task07 baseline acceptance/regression; isolated synthetic browser contexts.
+
+node --check script.js
+
+exit=0
+
+node tests/initial-team-balance.test.cjs
+Passed: first generation balances C1 to 12/20, preserving participants, sizes, warnings and share text (simulated DOM).
+
+exit=0
+
+node tests/manual-player-swaps.test.cjs
+Passed: 458 ordered swap cases, cancellation, stale choices, duplicate names, legacy data, storage isolation and warning regressions (simulated DOM).
+
+exit=0
+
+node tests/regenerate-teams.test.cjs
+Passed: 714 regeneration scenarios, better/equal/worse alternatives, one-point warning, exact undo, acceptance, manual-swap baseline, search fallback, invalidation and storage isolation (simulated DOM).
+
+exit=0
+
+node tests/share-team-text.test.cjs
+Share text checks passed: content, swaps, regeneration, decisions, invalidation and storage. Browser copy verification remains separate.
+
+exit=0
+
+node node_modules/@playwright/test/cli.js test --project=desktop --reporter=line --trace=off tests/browser/integrated-flow.spec.cjs tests/browser/copy-teams-button.spec.cjs tests/browser/players-registration.spec.cjs tests/browser/share-text-format.spec.cjs tests/browser/share-keyboard.spec.cjs
+
+Running 18 tests using 1 worker
+
+
+
+[1/18] [desktop] › tests\browser\copy-teams-button.spec.cjs:3:1 › clicking Copy teams copies the current shareable text and confirms only after success
+[2/18] [desktop] › tests\browser\copy-teams-button.spec.cjs:27:1 › clipboard rejection offers manual copying without losing the displayed teams or players
+[3/18] [desktop] › tests\browser\copy-teams-button.spec.cjs:65:1 › a pending less-balanced preview hides Copy teams and clears a previous copy status
+[4/18] [desktop] › tests\browser\copy-teams-button.spec.cjs:91:1 › Copy teams copies the currently displayed composition after undo, accept and a manual swap
+[5/18] [desktop] › tests\browser\copy-teams-button.spec.cjs:136:1 › a copy in progress does not apply a late success message after the composition changes
+[6/18] [desktop] › tests\browser\copy-teams-button.spec.cjs:172:1 › a missing clipboard API offers manual copying without losing the displayed teams or players
+[7/18] [desktop] › tests\browser\copy-teams-button.spec.cjs:211:1 › a copy in progress does not apply a late error message after the composition changes
+[8/18] [desktop] › tests\browser\copy-teams-button.spec.cjs:249:1 › confirming a manual swap after a successful copy clears the previous success message
+[9/18] [desktop] › tests\browser\copy-teams-button.spec.cjs:279:1 › an immediately applied regeneration without a pending decision clears the previous success message
+[10/18] [desktop] › tests\browser\copy-teams-button.spec.cjs:310:1 › regenerating after an invalidating selection change does not resurface the old copy confirmation
+[11/18] [desktop] › tests\browser\copy-teams-button.spec.cjs:343:1 › Copy teams copies literal HTML-looking names as plain text, without interpreting them
+[12/18] [desktop] › tests\browser\integrated-flow.spec.cjs:14:1 › Select All Players, generation, copy, swap, regeneration and copy again stay coherent
+[13/18] [desktop] › tests\browser\integrated-flow.spec.cjs:75:1 › after Select All Players disables itself by mouse click, focus is not trapped and Tab continues to the first participant
+[14/18] [desktop] › tests\browser\players-registration.spec.cjs:24:1 › saved legacy records load in Players with literal names, long names fit the screen, and editing keeps them intact
+[15/18] [desktop] › tests\browser\players-registration.spec.cjs:69:1 › only navigating keeps a pending decision, cancelling an edit keeps the match, saving an edit invalidates it
+[16/18] [desktop] › tests\browser\share-keyboard.spec.cjs:3:1 › keyboard actions and real copy and paste preserve teams after undo, accept and swap
+[17/18] [desktop] › tests\browser\share-text-format.spec.cjs:3:1 › Teams to copy lists each player on a bulleted line under the team title, with a blank line between teams
+[18/18] [desktop] › tests\browser\share-text-format.spec.cjs:24:1 › Teams to copy contains only titles, bulleted names and blank separators, without scores or roles
+  18 passed (14.8s)
+(node:63704) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+exit=0

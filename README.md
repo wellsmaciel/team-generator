@@ -59,6 +59,14 @@ npm.cmd run test:browser
 
 The browser suite creates its own loopback server on port 51806 and a fresh browser context per test. It does not read the user's browser profile or registrations. It runs at 1280×720, 360×800 and 390×844, covering deletion during a pending preview, keyboard/copy/paste after undo/acceptance/swaps, the Copy teams button (success, clipboard rejection and absence, stale-feedback races, invalidation) and its presentation/keyboard access. All tests passed on Chromium 156.0.8078.4. An integrated flow check chains Select All Players, generation, Copy teams, a manual swap, another composition (accept or undo) and copying again, confirming that the clipboard always matches the displayed teams without skill scores. Screenshots and an HTML report are generated under `.scratch/playwright-results` and `.scratch/playwright-report`.
 
+The responsive journey (task 07) has its own acceptance configuration, which runs the chained public journey, keyboard-only access, text and focus-outline contrast and a reflow check at 360×800, 390×844, 768×1024 and 1280×720 in emulated Chromium viewports, with synthetic data in fresh browser contexts. The browser suite above and this one use the same loopback port, so run them one after the other, never together:
+
+```powershell
+npx.cmd --no-install playwright test --config .scratch/mobile-first-planning/evidence/07-validation-2026-10-21/playwright.acceptance.config.cjs
+```
+
+The same command works as `npx --no-install playwright test --config ...` in shells where `npx` is allowed. The check found one real defect, now fixed: the footer text and links over the background photo fell below the 4.5:1 minimum contrast on tablet and desktop widths, so the footer now sits on the same dark card as the other sections. After the fix the footer is checked against a conservative bound (the dark card over a white pixel, 10.75:1), not by sampling the rendered photo; the headline and the wide-screen navigation are still sampled from rendered pixels. The reflow check resizes the viewport to 640×512 and 320×256 CSS pixels, which is the layout of 200% and 400% zoom, but it is not the browser's zoom control. Physical phones, real touch, mobile keyboards and native applications were not tested.
+
 The shared text (the "Teams to copy" box and what Copy teams puts on the clipboard) lists each team title followed by one bulleted player per line, with a blank line between teams. It never includes skill scores, totals or goalkeeper roles, and player names are copied exactly as typed:
 
 ```text
