@@ -1,3 +1,7 @@
+> **Atualização vigente da 06 (21/10/2026):** usuário autorizou explicitamente chamadas do Claude CLI à Anthropic com código/testes/documentação/evidências necessários, sem credenciais. Bloqueio externo resolvido. Início, retorno, interrupção e recusa de segundo executor comprovados em `.scratch/mobile-first-planning/evidence/automation-06-2026-10-21/preparation-verified.md`. Executar somente 06 e parar após commit validado; preservar registros históricos abaixo.
+
+> **Autorização vigente (21/10/2026):** executar 06 com TDD e commit condicional exclusivo de Claude; encerrar após o commit validado de 06, sem iniciar 07. Sem push/PR/merge/release/publicação. A regra atual está no início de [coordenação](agents/coordenacao-por-hooks.md). Regras de 04/05 abaixo são históricas.
+
 # Resumo para o próximo chat
 
 > **Regra vigente para 04/05 (atualizada em 21/10/2026):** a regra única está em [coordenação por hooks](agents/coordenacao-por-hooks.md#regra-vigente--tarefas-04-e-05-atualizada-em-21102026) e prevalece sobre qualquer outro texto. Resumo: o Claude escreve o RED e verifica cada GREEN; o Codex implementa o mínimo e nunca faz staging nem commit. O commit de cada tarefa é feito pelo Claude num chat novo, aberto pelo Codex raiz pelo runner, logo depois do próprio `/ecc:code-review`, sem achado crítico, alto ou médio. Uma tarefa por vez (04, depois 05); sem 06/07 e sem publicação do site. Push, PR e merge de cada tarefa, depois do commit validado, cabem à sessão raiz; a release sai uma vez, depois da 05. Passagens e critérios antigos que mandam parar antes do commit estão superados para 04/05.
@@ -78,3 +82,11 @@ O servidor de teste usa somente 127.0.0.1:51806, inicia/encerra com os testes e 
 - TDD nas próximas correções/funcionalidades autorizadas: confirmar comportamento/interface, observar falha antes de corrigir, sem fabricar red para comportamento já existente. Interface pública de navegador e instalação Playwright aprovadas nesta conversa; ver [procedimento](desenvolvimento-tdd.md).
 - Copy teams (tarefa 01) e reposicionamento de Generate Teams (tarefa 02) concluídos. Trabalhar apenas no ticket escolhido. Login/backend/sincronização ou persistência da partida continuam fora do escopo.
 - Não retomar entrevista de teste ou repetir etapas comprovadas sem alteração, falha ou pedido do usuário.
+
+## Bloqueio de preparação da 06 — 21/10/2026
+
+A sonda atual não completou ACK/retorno. EPERM e retries de API; a revisão automática rejeitou a chamada externa escalada por autorização insuficiente de destino/payload. Processo da sonda encerrado com confirmação, locks liberados e relé disabled. Sem implementação ou commit. Ver `.scratch/mobile-first-planning/evidence/automation-06-2026-10-21/preparation-blocked.md`. Aguardar autorização explícita antes de repetir a chamada; sem contornar a rejeição. *(Resolvido: autorização recebida e preparação comprovada em `preparation-verified.md`.)*
+
+## Estado da 06 — 21/10/2026
+
+Implementação concluída em um ciclo TDD: RED genuíno (`tests/browser/share-text-format.spec.cjs`, texto sem `•`), GREEN mínimo em `renderShareText` (`script.js`) e verificação independente. Expectativas antigas atualizadas só para o prefixo `• `. Pendente: revisão `ecc:code-review` e commit condicional em chat novo; a 07 não foi iniciada. Detalhes, evidências e lista de candidatos no [ticket 06](../.scratch/mobile-first-planning/issues/06-share-text-format.md).

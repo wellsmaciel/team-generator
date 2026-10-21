@@ -15,7 +15,7 @@ function checkText(page) {
   assert.equal(page.elements.shareControls.hidden, false);
   const blocks = page.elements.shareText.value.split('\n\n');
   assert.deepEqual(blocks.map(block => block.split('\n')),
-    groups.map((names, index) => ['Team ' + (index + 1), ...names]));
+    groups.map((names, index) => ['Team ' + (index + 1), ...names.map(name => '• ' + name)]));
 }
 
 function checkEmpty(page) {
@@ -29,13 +29,13 @@ for (const [count, keepers, teamCount] of [[4, 0, 2], [9, 1, 3], [10, 2, 3], [15
   const page = setup(count, keepers, teamCount);
   const registration = page.run('JSON.stringify(players)');
   checkText(page);
-  assert.equal(page.elements.shareText.value.split('\n').filter(line => line === 'Same name').length, 3);
+  assert.equal(page.elements.shareText.value.split('\n').filter(line => line === '• Same name').length, 3);
   assert.ok(!page.elements.shareText.value.includes('Player ' + count), 'Unselected player excluded');
   page.run(`players[0].name = 'Player 007 <b>& "Test"</b>';
     players[1].name = 'Name 10'; renderTeams();`);
   checkText(page);
-  assert.ok(page.elements.shareText.value.includes('Player 007 <b>& "Test"</b>'));
-  assert.ok(page.elements.shareText.value.includes('Name 10'));
+  assert.ok(page.elements.shareText.value.includes('• Player 007 <b>& "Test"</b>'));
+  assert.ok(page.elements.shareText.value.includes('• Name 10'));
   assert.equal(page.elements.shareText.children.length, 0, 'Names are field values, not parsed markup');
   const pair = JSON.parse(page.run(`JSON.stringify((() => {
     for (const a of teams[0].players) {

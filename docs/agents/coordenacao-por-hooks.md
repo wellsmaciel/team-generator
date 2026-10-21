@@ -1,3 +1,19 @@
+> **Atualização vigente da 06 (21/10/2026):** usuário autorizou explicitamente chamadas do Claude CLI à Anthropic com código/testes/documentação/evidências necessários, sem credenciais. Bloqueio externo resolvido. Início, retorno, interrupção e recusa de segundo executor comprovados em `.scratch/mobile-first-planning/evidence/automation-06-2026-10-21/preparation-verified.md`. Executar somente 06 e parar após commit validado; preservar registros históricos abaixo.
+
+**Estado da 06 (21/10/2026):** ciclo TDD concluído e verificado; ticket termina com `TASK06_READY_FOR_CONDITIONAL_COMMIT`. Falta o chat novo de revisão (`ecc:code-review`) e commit.
+
+## Autorização vigente — tarefa 06 (21/10/2026)
+
+A instrução final do usuário determina encerrar a automação após o commit validado da 06. Executar somente 06 nesta sessão; 07 permanece planejada, sem início automático. A autorização condicional de commits abrange 06/07, mas não autoriza ultrapassar esta parada. Sem push, PR, merge, release ou publicação nesta execução.
+
+Claude prepara um teste por ciclo, comprova RED genuíno e verifica cada GREEN independentemente; Codex implementa o mínimo e nunca faz staging/commit. Aceitação existente dispensa RED artificial. Reutilizar interfaces públicas já confirmadas; decisões novas exigem uma pergunta por vez. Modelos preservados: Claude claude-sonnet-5-5/medium; Codex CLI gpt-6-luna/medium. Sessão raiz somente lê enquanto o runner e o relé executam. Sem background, bypass ou edições concorrentes; locks são cooperativos.
+
+Antes de programar, comprovar início, retorno, interrupção e exclusão de segundo executor, preservando os logs. Se houver falha de acesso/permissão, parar e registrar sem alegar automação ativa. Evidências desta sessão: .scratch/mobile-first-planning/evidence/automation-06-2026-10-21/.
+
+Claude só pode commitar a 06 em chat novo após todos os critérios, verificações obrigatórias, regressões pertinentes, diff completo e revisão instalada /ecc:code-review (confirmar nome; /ecc:codereview não é substituído silenciosamente). Sem achados pendentes ou falhas. Corrigir dentro do escopo com TDD quando aplicável e repetir revisão/verificações afetadas. Listar e revisar caminhos explícitos; excluir alterações preexistentes não relacionadas, sem staging indiscriminado. Registrar revisão, hash e limitações. Marcador de prontidão: TASK06_READY_FOR_CONDITIONAL_COMMIT. Após o commit validado, criar disabled e parar, sem iniciar 07. A parada pré-commit antiga está substituída exclusivamente pela autorização condicional do usuário.
+
+## Registro anterior — histórico
+
 # Coordenação entre Codex e Claude por hooks
 
 ## Regra vigente — tarefas 04 e 05 (atualizada em 21/10/2026)
@@ -139,3 +155,7 @@ Após o commit de Select All Players, o usuário autorizou somente a [tarefa 03 
 O ponteiro `.claude/codex-relay/active-ticket.txt` passa a indicar o ticket 03. Reutilizar o hook genérico, sem duplicá-lo ou apagar logs anteriores. Aceitação/regressão não exige RED artificial; o hook só deve receber passagem com instrução adequada à etapa real. Correções novas continuam sujeitas à skill tdd e à confirmação de comportamento/interface.
 
 Parar antes de staging/commit para testes e revisão do usuário, sem iniciar outra tarefa. **Encerramento 20/10/2026:** validação concluída com uma passagem Codex → Claude e fechamento por Claude, sem nova passagem `→ Codex` (relé inerte). A parada antes do commit funcionou; commit, PR e merge foram feitos depois, a pedido explícito do usuário. A autorização terminou com a tarefa. Usar o relé em outra tarefa exige nova autorização. Ver o ticket.
+
+## Bloqueio de preparação da 06 — 21/10/2026
+
+A sonda atual não completou ACK/retorno. EPERM e retries de API; a revisão automática rejeitou a chamada externa escalada por autorização insuficiente de destino/payload. Processo da sonda encerrado com confirmação, locks liberados e relé disabled. Sem implementação ou commit. Ver `.scratch/mobile-first-planning/evidence/automation-06-2026-10-21/preparation-blocked.md`. Aguardar autorização explícita antes de repetir a chamada; sem contornar a rejeição. *(Histórico, resolvido: autorização recebida e preparação comprovada em `preparation-verified.md`; vale o aviso no topo.)*

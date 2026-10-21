@@ -1,3 +1,5 @@
+> **Autorização vigente (21/10/2026):** executar 06 com TDD e commit condicional exclusivo de Claude; encerrar após o commit validado de 06, sem iniciar 07. Sem push/PR/merge/release/publicação. A regra atual está no início de [coordenação](agents/coordenacao-por-hooks.md). Regras de 04/05 abaixo são históricas.
+
 # Plano aprovado — mobile first, tarefas 04–07
 
 > **Regra vigente para 04/05 (atualizada em 21/10/2026):** a regra única está em [coordenação por hooks](agents/coordenacao-por-hooks.md#regra-vigente--tarefas-04-e-05-atualizada-em-21102026) e prevalece sobre qualquer outro texto. Resumo: o Claude escreve o RED e verifica cada GREEN; o Codex implementa o mínimo e nunca faz staging nem commit. O commit de cada tarefa é feito pelo Claude num chat novo, aberto pelo Codex raiz pelo runner, logo depois do próprio `/ecc:code-review`, sem achado crítico, alto ou médio. Uma tarefa por vez (04, depois 05); sem 06/07 e sem publicação do site. Push, PR e merge de cada tarefa, depois do commit validado, cabem à sessão raiz; a release sai uma vez, depois da 05. Passagens e critérios antigos que mandam parar antes do commit estão superados para 04/05.
@@ -31,7 +33,7 @@ A disposição foi aprovada pelo usuário: “Vamos manter essa disposição”.
 | --- | --- | --- |
 | [04 — Players e navegação responsiva](../.scratch/mobile-first-planning/issues/04-responsive-players-navigation.md) | Cadastro gerenciável na nova área e acesso a Match, com visual Bootstrap e dados preservados | Preparação da passagem automática (cumprida em 20/10/2026); implementada em 21/10/2026 e commitada em `04adc65` (merge `804dea5`) |
 | [05 — Match em etapas](../.scratch/mobile-first-planning/issues/05-match-selection-and-teams.md) | Selecionar, gerar, rever, trocar e compartilhar no novo fluxo, com estados coerentes | 04 |
-| [06 — Texto para compartilhar](../.scratch/mobile-first-planning/issues/06-share-text-format.md) | Texto com marcadores correto após todas as ações relevantes | 05; sequência aprovada |
+| [06 — Texto para compartilhar](../.scratch/mobile-first-planning/issues/06-share-text-format.md) | Texto com marcadores correto após todas as ações relevantes | 05; sequência aprovada. Estado em 21/10/2026: implementada e verificada, pronta para revisão e commit |
 | [07 — Validação integrada](../.scratch/mobile-first-planning/issues/07-integrated-responsive-validation.md) | Jornada validada e documentação pronta para revisão final | 04, 05 e 06 |
 
 Não fazer uma migração de todas as telas de uma só vez. Cada ticket deve deixar um percurso funcional demonstrável; a tarefa 04 mantém Match utilizável enquanto a 05 reorganiza suas etapas. Alterar um comportamento por ciclo TDD. Se a descoberta técnica exigir nova divisão ou decisão de produto, apresentar ao usuário antes de ampliar o escopo.
