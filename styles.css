@@ -1,8 +1,20 @@
 .team {
   display: flex;
-  flex-wrap: wrap;
-  margin: 10px;
-  justify-content: center;
+  flex-direction: column;
+  min-width: 0;
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(15, 23, 32, 0.92);
+  overflow-wrap: anywhere;
+}
+#teamsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+.team > div {
+  min-width: 0;
 }
 h3 {
   padding: 20px;
@@ -10,6 +22,10 @@ h3 {
 .team ul,
 .team p {
   text-align: center;
+  overflow-wrap: anywhere;
+}
+.team h3 {
+  padding: 12px 0;
 }
 body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Dark_court.jpg);
@@ -94,6 +110,21 @@ input[type="checkbox"] {
   accent-color: #b5ee7a;
 }
 
+#playerSkillList > li {
+  list-style: none;
+  text-align: left;
+}
+
+#playerSkillList > li > label {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
 #registeredPlayerList > li {
   list-style: none;
   display: flex;
@@ -147,6 +178,10 @@ input[type="checkbox"] {
 }
 
 @media (max-width: 500px) {
+  #teamsContainer {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   #registeredPlayerList button {
     min-height: 44px;
     min-width: 44px;

@@ -3,6 +3,7 @@ const { test, expect } = require('@playwright/test');
 test('keyboard actions and real copy and paste preserve teams after undo, accept and swap', async ({ page }, testInfo) => {
   await page.context().grantPermissions(['clipboard-read', 'clipboard-write']);
   await page.goto('/');
+  await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score] of [['Alex', 1], ['Alex', 2], ['Player 10', 3], ['<b>Sam</b>', 4]]) {
     await page.getByLabel('Player Name', { exact: true }).click();
     await page.keyboard.insertText(name);

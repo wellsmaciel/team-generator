@@ -8,8 +8,8 @@ Entrevista e disposição da prévia aprovadas pelo usuário, incluindo a divis�
 
 | Tarefa | Entrega | Dependências | Estado |
 | --- | --- | --- | --- |
-| [04](../.scratch/mobile-first-planning/issues/04-responsive-players-navigation.md) | Bootstrap, identidade esportiva, navegação responsiva e Players funcional | Preparação do acionamento (concluída em 20/10/2026) | Implementada e verificada em 21/10/2026, incluindo a disposição Desktop aprovada (ciclo 16); a conferência de especificação de 21/10/2026 reabriu a 04 e foi resolvida. Aguarda o chat de revisão e commit do Claude; o hash será registrado no ticket 04 pela sessão TDD da 05 |
-| [05](../.scratch/mobile-first-planning/issues/05-match-selection-and-teams.md) | Match com Select players/Teams e estados preservados | 04 | Planejada |
+| [04](../.scratch/mobile-first-planning/issues/04-responsive-players-navigation.md) | Bootstrap, identidade esportiva, navegação responsiva e Players funcional | Preparação do acionamento (concluída em 20/10/2026) | Implementada e verificada em 21/10/2026, incluindo a disposição Desktop aprovada (ciclo 16); a conferência de especificação de 21/10/2026 reabriu a 04 e foi resolvida. Commitada em `04adc65` (merge `804dea5`); hash registrado no ticket 04 |
+| [05](../.scratch/mobile-first-planning/issues/05-match-selection-and-teams.md) | Match com Select players/Teams e estados preservados | 04 | Implementada e verificada em 21/10/2026 (ciclos 1–13); ticket termina com o marcador de pronto e aguarda o chat de revisão e commit do Claude |
 | [06](../.scratch/mobile-first-planning/issues/06-share-text-format.md) | Texto compartilhado com marcadores, sem notas | 05; sequência aprovada | Planejada |
 | [07](../.scratch/mobile-first-planning/issues/07-integrated-responsive-validation.md) | Jornada integrada em celular/tablet/desktop e documentação | 04, 05 e 06 | Planejada |
 
