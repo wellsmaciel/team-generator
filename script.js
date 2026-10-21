@@ -20,6 +20,21 @@ function showArea(area) {
   }
 }
 
+function showMatchStage(stage, moveFocus = true) {
+  const showTeams = stage === 'teams';
+  const stageElement = document.getElementById(showTeams ? 'teamsStage' : 'selectPlayersStage');
+  const stageWasHidden = stageElement.hidden;
+  if (showTeams) document.getElementById('generationStatus').textContent = '';
+  document.getElementById('viewTeams').hidden = teams.length === 0;
+  document.getElementById('selectPlayersStage').hidden = showTeams;
+  document.getElementById('teamsStage').hidden = !showTeams;
+  document.getElementById(showTeams ? 'teamsActionSlot' : 'teamGenerateSlot')
+    .appendChild(document.getElementById('btnTeams'));
+  if (moveFocus && stageWasHidden) {
+    document.getElementById(showTeams ? 'teamsHeading' : 'selectPlayersHeading').focus();
+  }
+}
+
 function isValidPlayer(player) {
   return player !== null && typeof player === 'object' &&
     typeof player.name === 'string' && player.name.trim().length > 0 &&
@@ -101,7 +116,12 @@ function renderPlayers(id, players, showScores = false) {
     }
     list.appendChild(item);
   });
-  if (id === 'playerSkillList') updateSelectedPlayerCount();
+  if (id === 'playerSkillList') {
+    updateSelectedPlayerCount();
+    const hasNoPlayers = players.length === 0;
+    document.getElementById('noPlayersGuidance').hidden = !hasNoPlayers;
+    document.getElementById('addPlayersFromMatch').hidden = !hasNoPlayers;
+  }
 }
 
 function updateSelectedPlayerCount() {
@@ -180,10 +200,14 @@ function clearTeamsAfterChange() {
   if (teams.length === 0) return;
 
   teams = [];
+  document.getElementById('viewTeams').hidden = true;
   document.getElementById('btnTeams').textContent = 'Generate Teams';
   document.getElementById('teamsContainer').replaceChildren();
-  document.getElementById('teamsStatus').textContent =
+  const status = document.getElementById('teamsStatus');
+  status.textContent =
     'Match settings or registration changed. Generate teams again.';
+  document.getElementById('selectPlayersStage').appendChild(status);
+  showMatchStage('selection', false);
 }
 
 // Add a player or save changes to an existing player.
@@ -446,6 +470,7 @@ function acceptAlternative() {
 function undoAlternative() {
   if (previousTeams === null) return;
   teams = previousTeams;
+  document.getElementById('viewTeams').hidden = teams.length === 0;
   previousTeams = null;
   resetAlternativeControls();
   renderTeams();
@@ -534,26 +559,31 @@ function confirmPlayerSwap() {
 function generateTeams() {
   if (previousTeams !== null) return;
   const status = document.getElementById('teamsStatus');
+  const generationStatus = document.getElementById('generationStatus');
+  const errorStatus = document.getElementById('teamsStage').hidden ? generationStatus : status;
   if (selectedPlayers.size === 0) {
-    status.textContent = 'Select the players for this match before generating teams.';
+    errorStatus.textContent = 'Select the players for this match before generating teams.';
     return;
   }
   const teamCountInput = document.getElementById('teamCount');
   const teamCount = Number(teamCountInput.value);
   if (!teamCountInput.reportValidity() || !Number.isInteger(teamCount) || teamCount < 2) {
-    status.textContent = 'Choose a whole number of teams, starting from 2.';
+    errorStatus.textContent = 'Choose a whole number of teams, starting from 2.';
     return;
   }
   if (teamCount > Math.floor(selectedPlayers.size / 2)) {
-    status.textContent = 'Select at least 2 players per team, or reduce the number of teams (minimum 2 teams).';
+    errorStatus.textContent = 'Select at least 2 players per team, or reduce the number of teams (minimum 2 teams).';
     return;
   }
   const selected = players.filter(player => selectedPlayers.has(player));
   const goalkeeperCount = selected.filter(player => player.isGoalkeeper).length;
   if (goalkeeperCount > teamCount) {
-    status.textContent = 'Too many fixed goalkeepers. Select no more than ' + teamCount + ' before generating teams.';
+    errorStatus.textContent = 'Too many fixed goalkeepers. Select no more than ' + teamCount + ' before generating teams.';
     return;
   }
+  status.textContent = '';
+  generationStatus.textContent = '';
+  document.getElementById('teamsStage').appendChild(status);
   resetAlternativeControls();
   if (teams.length) {
     const alternative = findAlternativeTeams(teams);
@@ -582,8 +612,10 @@ function generateTeams() {
   } else {
     teams = buildTeams(selected, teamCount);
   }
+  document.getElementById('viewTeams').hidden = teams.length === 0;
   renderTeams();
   updateTeamWarnings();
+  showMatchStage('teams');
 }
 
 function updateTeamWarnings() {

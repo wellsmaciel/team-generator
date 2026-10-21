@@ -1,6 +1,7 @@
 const { test, expect } = require('@playwright/test');
 
 async function registerAndGenerate(page, players) {
+  await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score] of players) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
     await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
@@ -58,10 +59,8 @@ test('the Copy teams button is reachable by Tab, shows a visible focus style and
   await expect(page.locator('#shareControls')).toBeVisible();
 
   const copyButton = page.getByRole('button', { name: 'Copy teams', exact: true });
-  // Generation controls follow the participant list before the share controls.
-  await page.getByLabel('Dani - 5', { exact: true }).focus();
-  await page.keyboard.press('Tab');
-  await expect(page.getByLabel('Number of teams', { exact: true })).toBeFocused();
+  // In Teams, the way back and the generation control come before the share controls.
+  await page.getByRole('button', { name: 'Back to selection', exact: true }).focus();
   await page.keyboard.press('Tab');
   await expect(page.getByRole('button', { name: 'Generate another composition', exact: true })).toBeFocused();
   await page.keyboard.press('Tab');

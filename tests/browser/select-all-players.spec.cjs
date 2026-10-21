@@ -73,6 +73,7 @@ test('Select All Players clears generated teams when it adds someone to the sele
   await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
   await expect(page.locator('#shareControls')).toBeVisible();
 
+  await page.getByRole('button', { name: 'Back to selection', exact: true }).click();
   await page.getByRole('button', { name: 'Select All Players', exact: true }).click();
 
   await expect(page.locator('#selectionStatus')).toHaveText('Selected for this match: 5 / 5');

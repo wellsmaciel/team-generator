@@ -10,10 +10,10 @@
   <body>
     <h1>Building up your Team</h1>
     <nav aria-label="Main">
-      <button id="playersNavigation" type="button" aria-current="page" onclick="showArea('players')">Players</button>
-      <button id="matchNavigation" type="button" onclick="showArea('match')">Match</button>
+      <button id="playersNavigation" type="button" onclick="showArea('players')">Players</button>
+      <button id="matchNavigation" type="button" aria-current="page" onclick="showArea('match')">Match</button>
     </nav>
-    <section id="playersArea">
+    <section id="playersArea" hidden>
     <div>
       <h2>Registered players</h2>
       <ul id="registeredPlayerList"></ul>
@@ -37,13 +37,19 @@
     </div>
     </section>
 
-    <section id="matchArea" hidden>
-    <h2>Added players</h2>
+    <section id="matchArea">
+    <section id="selectPlayersStage" aria-labelledby="selectPlayersHeading">
+    <h2 id="selectPlayersHeading" tabindex="-1">Select players</h2>
+    <h3>Added players</h3>
+    <p id="noPlayersGuidance" hidden>No players registered yet. Add players to set up a match.</p>
+    <button id="addPlayersFromMatch" type="button" onclick="showArea('players')" hidden>Add players</button>
     <div id="container">
       <div>
         <h3>Players and Skills</h3>
         <p>Check the players who will play in this match. Unchecking keeps their registration.</p>
         <p id="selectionStatus" role="status"></p>
+        <p id="generationStatus" role="status"></p>
+        <button id="viewTeams" type="button" onclick="showMatchStage('teams')" hidden>View teams</button>
         <button id="btnSelectAllPlayers" type="button" onclick="selectAllPlayers()">Select All Players</button>
         <ul id="playerSkillList"></ul>
       </div>
@@ -53,17 +59,21 @@
         <label for="teamCount">Number of teams</label>
         <input type="number" id="teamCount" min="2" step="1" value="2" required aria-describedby="teamCountHelp" />
         <p id="teamCountHelp">Choose at least 2 teams, with at least 2 selected players per team.</p>
-        <button id="btnTeams" onclick="generateTeams()">Generate Teams</button>
-        <p id="teamsStatus" role="status"></p>
-        <p id="alternativeStatus" role="status"></p>
-        <div id="alternativeControls" hidden>
-          <button type="button" onclick="acceptAlternative()">Accept composition</button>
-          <button type="button" onclick="undoAlternative()">Undo composition</button>
-        </div>
+        <div id="teamGenerateSlot"><button id="btnTeams" type="button" onclick="generateTeams()">Generate Teams</button></div>
       </div>
+    </div>
+    </section>
 
-      <h2>List of Team and Players</h2>
-
+    <section id="teamsStage" aria-labelledby="teamsHeading" hidden>
+      <h2 id="teamsHeading" tabindex="-1">Teams</h2>
+      <button id="backToSelection" type="button" onclick="showMatchStage('selection')">Back to selection</button>
+      <div id="teamsActionSlot"></div>
+      <p id="teamsStatus" role="status"></p>
+      <p id="alternativeStatus" role="status"></p>
+      <div id="alternativeControls" hidden>
+        <button type="button" onclick="acceptAlternative()">Accept composition</button>
+        <button type="button" onclick="undoAlternative()">Undo composition</button>
+      </div>
       <div id="teamsContainer"></div>
       <section id="shareControls" hidden aria-labelledby="shareHeading">
         <h3 id="shareHeading">Share teams</h3>
@@ -86,7 +96,7 @@
         </div>
         <p id="swapStatus" role="status"></p>
       </section>
-    </div>
+    </section>
     </section>
 
     <footer>

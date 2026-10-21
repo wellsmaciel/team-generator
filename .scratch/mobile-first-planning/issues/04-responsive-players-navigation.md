@@ -1019,4 +1019,11 @@ A suíte completa, as capturas e a revisão ficam para Claude. Se houver erro de
 
 **Para concluir (execução anterior):** reabrir este chat pelo runner com a política de permissões que autoriza `git add -- <caminhos explícitos da lista acima>`, `git diff --cached --check`, `git diff --cached --name-only`, `git commit` (sem `--no-verify`), `git show --stat HEAD`, `git status --short` e a escrita de `.claude/codex-relay/active-ticket.txt`. Mensagem sugerida: `feat: add responsive players navigation (task 04)` com `Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>`. A revisão acima vale para o conteúdo atual dos candidatos; se qualquer um deles mudar antes do commit, repetir o `/ecc:code-review` completo.
 
+## Registro do commit da 04
+
+- Commit da tarefa 04: `04adc65bf3299bc9b8d2090ee33489c2dcfdc19f` (`feat: add responsive players navigation (task 04)`).
+- Merge na `main`: `804dea5` (`Merge responsive Players and navigation (task 04)`).
+- Resultado da revisão `/ecc:code-review`: APPROVE, 0 critical, 0 high, 0 medium.
+- Este ticket não é mais o ticket ativo do relay; a tarefa 05 segue em `05-match-selection-and-teams.md`.
+
 TASK04_READY_FOR_CONDITIONAL_COMMIT

@@ -1,6 +1,7 @@
 const { test, expect } = require('@playwright/test');
 
 async function registerPlayers(page, players) {
+  await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score] of players) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
     await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
@@ -22,19 +23,22 @@ test('positions the team count input and Generate Teams button after the partici
   for (const checkbox of await participants.all()) await checkbox.check();
 
   const teamCountInput = page.getByLabel('Number of teams', { exact: true });
-  await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
   // The button's accessible name changes to "Generate another composition" after
-  // a successful generation, so the position check below locates it by id instead.
+  // a successful generation, so the position checks locate it by id instead.
   const generateButton = page.locator('#btnTeams');
 
+  // In Select players, the team count and generation follow the participant list.
   const participantsListBox = await page.locator('#playerSkillList').boundingBox();
   const teamCountBox = await teamCountInput.boundingBox();
   const generateButtonBox = await generateButton.boundingBox();
-  const resultsBox = await page.locator('#teamsContainer').boundingBox();
-
   expect(teamCountBox.y).toBeGreaterThanOrEqual(participantsListBox.y + participantsListBox.height);
   expect(generateButtonBox.y).toBeGreaterThanOrEqual(participantsListBox.y + participantsListBox.height);
-  expect(resultsBox.y).toBeGreaterThanOrEqual(generateButtonBox.y + generateButtonBox.height);
+
+  // Generation opens Teams, where the results follow the generation button.
+  await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
+  const generateButtonInTeamsBox = await generateButton.boundingBox();
+  const resultsBox = await page.locator('#teamsContainer').boundingBox();
+  expect(resultsBox.y).toBeGreaterThanOrEqual(generateButtonInTeamsBox.y + generateButtonInTeamsBox.height);
 
   const domOrder = await page.evaluate(() => {
     const list = document.querySelector('#playerSkillList');
