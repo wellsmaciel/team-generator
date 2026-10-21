@@ -8,6 +8,7 @@ const assets = new Map([
   ['/index.html', ['index.html', 'text/html; charset=utf-8']],
   ['/script.js', ['script.js', 'text/javascript; charset=utf-8']],
   ['/styles.css', ['styles.css', 'text/css; charset=utf-8']],
+  ['/vendor/bootstrap-5.3.3/bootstrap.min.css', ['vendor/bootstrap-5.3.3/bootstrap.min.css', 'text/css; charset=utf-8']],
   ['/Dark_court.jpg', ['Dark_court.jpg', 'image/jpeg']],
   ['/clipboard-editor', ['tests/browser/clipboard-editor.html', 'text/html; charset=utf-8']],
 ]);

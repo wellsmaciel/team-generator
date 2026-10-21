@@ -9,6 +9,8 @@ test('confirming deletion during a worse preview clears the match and allows a n
     await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
+  const navigation = page.getByRole('navigation', { name: 'Main', exact: true });
+  await navigation.getByRole('button', { name: 'Match', exact: true }).click();
   const participants = page.locator('#playerSkillList input[type=checkbox]');
   for (const checkbox of await participants.all()) await checkbox.check();
   await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
@@ -28,9 +30,11 @@ test('confirming deletion during a worse preview clears the match and allows a n
       } catch (error) { reject(error); }
     });
   });
+  await navigation.getByRole('button', { name: 'Players', exact: true }).click();
   await page.getByRole('button', { name: 'Delete Bruno', exact: true }).click();
   await dialogHandled;
   await expect(page.getByRole('button', { name: 'Delete Bruno', exact: true })).toHaveCount(0);
+  await navigation.getByRole('button', { name: 'Match', exact: true }).click();
   await expect(page.locator('#selectionStatus')).toHaveText('Selected for this match: 3 / 3');
   await expect(page.locator('#teamsContainer')).toBeEmpty();
   await expect(page.locator('#alternativeControls')).toBeHidden();
@@ -45,9 +49,11 @@ test('confirming deletion during a worse preview clears the match and allows a n
   await expect(page.locator('#btnTeams')).toHaveText('Generate Teams');
 
   // Restore the minimum of four participants through the registration form.
+  await navigation.getByRole('button', { name: 'Players', exact: true }).click();
   await page.getByLabel('Player Name', { exact: true }).fill('Replacement');
   await page.getByLabel('Player Skill', { exact: true }).fill('2');
   await page.getByRole('button', { name: 'Add Player', exact: true }).click();
+  await navigation.getByRole('button', { name: 'Match', exact: true }).click();
   await participants.last().check();
   await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
   await expect(page.locator('#teamsContainer .team')).toHaveCount(2);

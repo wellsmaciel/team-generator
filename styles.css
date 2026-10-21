@@ -22,6 +22,13 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   color: aliceblue;
 }
+#playersArea > div,
+#matchArea {
+  background: rgba(15, 23, 32, 0.92);
+  border-radius: 12px;
+  padding: 16px;
+  margin: 12px 0;
+}
 form {
   display: flex;
   flex-direction: column;
@@ -52,4 +59,131 @@ ul {
   line-height: 1.5;
   text-align: left;
   resize: vertical;
+}
+
+nav[aria-label="Main"] button {
+  color: #eef3f6;
+  background: #172630;
+  border-color: transparent;
+}
+
+nav[aria-label="Main"] button[aria-current="page"] {
+  color: #b5ee7a;
+  background: rgba(181, 238, 122, 0.08);
+}
+
+#btnPs,
+#btnTeams {
+  background: #b5ee7a;
+  color: #14200b;
+  border-color: #b5ee7a;
+  font-weight: 600;
+}
+
+footer a {
+  color: #b5ee7a;
+  text-decoration: underline;
+}
+
+:focus-visible {
+  outline: 3px solid #b5ee7a;
+  outline-offset: 2px;
+}
+
+input[type="checkbox"] {
+  accent-color: #b5ee7a;
+}
+
+#registeredPlayerList > li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  overflow-wrap: anywhere;
+}
+
+#registeredPlayerList button {
+  flex-shrink: 0;
+  color: #eef3f6;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 8px;
+}
+
+#registeredPlayerList button:first-of-type {
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  #playersArea:not([hidden]) {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    gap: 20px;
+    align-items: start;
+  }
+
+  form {
+    align-items: stretch;
+  }
+
+  #pName,
+  #pSkill,
+  #btnPs {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 44px;
+  }
+
+  #playerSkillList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 12px;
+    list-style: none;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 500px) {
+  #registeredPlayerList button {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0 16px;
+  }
+
+  #pName,
+  #pSkill,
+  #btnPs {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  html {
+    scroll-padding-bottom: 88px;
+  }
+
+  body {
+    padding-bottom: 80px;
+  }
+
+  nav[aria-label="Main"] {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    display: flex;
+    gap: 8px;
+    padding: 8px;
+    background: #17212b;
+  }
+
+  nav[aria-label="Main"] button {
+    flex: 1;
+    min-height: 44px;
+    padding: 8px 16px;
+    font: inherit;
+  }
 }

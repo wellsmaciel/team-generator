@@ -1,5 +1,7 @@
 # Documentação do produto
 
+**Estado atual (21/10/2026):** rodada mobile first, tarefas 04–07. A **tarefa 04 está implementada e verificada** (Bootstrap local, navegação Players/Match, workspace de Players em celular e em largura maior, nomes longos, foco, dados preservados), incluindo o ciclo 16, que entregou a disposição Desktop aprovada (roster à esquerda, formulário à direita). Aguarda o chat de revisão e commit do Claude (nenhum commit foi feito); a **05 não foi iniciada**; 06 e 07 seguem planejadas. Ver [plano mobile first](plano-mobile-first.md), [índice de tarefas](tarefas.md) e [resumo para o próximo chat](proximo-chat.md). *Histórico:* o planejamento aprovado em 20/10/2026 (Bootstrap, disposição da prévia, divisão 04–07) está preservado no plano. A segunda rodada abaixo permanece encerrada.
+
 Estado vigente em 20/10/2026: base e tarefas 01–05 da primeira rodada concluídas no escopo essencial. Na segunda rodada, Copy teams (tarefa 01), a geração após a seleção de participantes (tarefa 02) e Select All Players (ticket 02a) foram concluídos com evidências Node e Playwright; a validação integrada (tarefa 03) foi concluída em 20/10/2026, encerrando a segunda rodada. Celular físico não foi testado. TDD continua obrigatório para correções e novas funcionalidades.
 
 - [Visão do produto](visao-do-produto.md)
@@ -11,6 +13,7 @@ Estado vigente em 20/10/2026: base e tarefas 01–05 da primeira rodada concluí
 - [Resumo para o próximo chat](proximo-chat.md)
 - [Estado das tarefas e continuidade](tarefas.md)
 - [Plano aprovado para 19/10/2026](plano-2026-10-19.md)
+- [Plano mobile first aprovado — tarefas 04–07](plano-mobile-first.md)
 - [Histórico dos prompts da primeira rodada](tarefas-01-05-historico.md)
 - [Roteiro manual revisado da etapa 05](testes-manuais-etapa-05.md)
 - [TDD para correções e novas funcionalidades](desenvolvimento-tdd.md)
