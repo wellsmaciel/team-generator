@@ -1,5 +1,7 @@
 # Documentação do produto
 
+**Atualização de UX aprovada (22/10/2026):** revisão prioritária aplicada e aprovada pelo usuário; inclui navegação com estado de rolagem, fundo sólido, controles e resultados mais claros. O registro de alterações e da verificação está em [ajustes de UX e interface](ajustes-ux-2026-10-22.md).
+
 **Estado atual (21/10/2026):** rodada mobile first, tarefas 04–07. A **tarefa 04 está implementada e verificada** (Bootstrap local, navegação Players/Match, workspace de Players em celular e em largura maior, nomes longos, foco, dados preservados), incluindo o ciclo 16, que entregou a disposição Desktop aprovada (roster à esquerda, formulário à direita). Está commitada (`04adc65`, merge `804dea5`). A **tarefa 05** (Match em duas etapas, Select players e Teams) está concluída (`9f8ae63`, merge `5ded6c5`), e a release `v1.4.0` fecha as duas. A **tarefa 06** (texto compartilhado com marcadores `• `) está concluída e commitada em `7f057ca`. A **tarefa 07** (validação integrada em 360×800, 390×844, 768×1024 e 1280×720, em Chromium emulado) está validada e commitada em `e63a27f` em 21/10/2026, com uma correção mínima de contraste do rodapé; resultados, limites e revisão independente estão no [ticket 07](../.scratch/mobile-first-planning/issues/07-integrated-responsive-validation.md) e no relatório da validação, sem aparelho físico, toque, teclado móvel nem zoom real do navegador testados. Ver [plano mobile first](plano-mobile-first.md), [índice de tarefas](tarefas.md) e [resumo para o próximo chat](proximo-chat.md). *Histórico:* o planejamento aprovado em 20/10/2026 (Bootstrap, disposição da prévia, divisão 04–07) está preservado no plano. A segunda rodada abaixo permanece encerrada.
 
 **Refinamentos posteriores (21/10/2026):** tipografia, seleção de participantes, títulos de times e alinhamento móvel foram ajustados depois do fechamento formal. O resumo e o estado de verificação estão em [proximo-chat.md](proximo-chat.md); os detalhes do fluxo visual estão em [jornada-do-usuario.md](jornada-do-usuario.md).
@@ -7,6 +9,7 @@
 **Registro da rodada anterior:** base e tarefas 01–05 da primeira rodada foram concluídas no escopo essencial. Na rodada seguinte, Copy teams (01), geração após a seleção (02), Select All Players (02a) e validação integrada (03) foram concluídos em 20/10/2026. A rodada mobile first 04–07, descrita no estado atual acima, foi concluída em 21/10/2026. Celular físico não foi testado. TDD continua obrigatório para correções e novas funcionalidades autorizadas.
 
 - [Visão do produto](visao-do-produto.md)
+- [Ajustes de UX e interface aprovados em 22/10/2026](ajustes-ux-2026-10-22.md)
 - [Jornada do usuário](jornada-do-usuario.md)
 - [Regras dos times](regras-dos-times.md)
 - [Arquitetura](arquitetura.md)

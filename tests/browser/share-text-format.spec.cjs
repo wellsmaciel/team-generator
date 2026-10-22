@@ -6,7 +6,7 @@ test('Teams to copy lists each player on a bulleted line under the team title, w
   await navigation.getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score] of [['Ana', 1], ['Player 10', 2], ['<b>Sam</b>', 3], ['Bia', 4]]) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
-    await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
+    await page.getByLabel('Estimated skill (1–10)', { exact: true }).fill(String(score));
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
   await navigation.getByRole('button', { name: 'Match', exact: true }).click();
@@ -27,7 +27,7 @@ test('Teams to copy contains only titles, bulleted names and blank separators, w
   await navigation.getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score, goalkeeper] of [['Ana', 9, true], ['Bia', 8, false], ['Caio', 7, false], ['Duda', 10, false]]) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
-    await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
+    await page.getByLabel('Estimated skill (1–10)', { exact: true }).fill(String(score));
     await page.getByRole('checkbox', { name: 'Fixed goalkeeper (plays only in goal)' }).setChecked(goalkeeper);
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }

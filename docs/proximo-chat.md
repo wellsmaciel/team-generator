@@ -1,4 +1,12 @@
-> **Estado atual (21/10/2026):** as tarefas 04–07 da rodada mobile first estão concluídas. O último commit é `e63a27fea080f676bc76e418553b1e59b62ebefa` (tarefa 07); o recibo final e a revisão estão registrados no [ticket 07](../.scratch/mobile-first-planning/issues/07-integrated-responsive-validation.md) e em `.scratch/mobile-first-planning/evidence/automation-07-2026-10-21/task07-final-receipt-close.md`. A tag `v1.4.0` fecha as tarefas 04/05; 06 (`7f057ca`) e 07 foram commitadas depois. Não há próxima tarefa autorizada. Não iniciar execução, push, PR, merge, release ou publicação sem nova instrução do usuário.
+> **Estado atual (22/10/2026):** tarefas 04–07 mobile first concluídas; depois, a rodada de UX foi aprovada e implementada. Consulte [o registro das mudanças aprovadas](ajustes-ux-2026-10-22.md). A versão do aplicativo no rodapé móvel foi restaurada após observação do usuário. As mudanças locais continuam sem commit; não fazer commit, push, PR, merge, release ou publicação sem pedido específico.
+
+## Atualização desta sessão — 22/10/2026
+
+- Aplicadas e aprovadas melhorias de hierarquia, navegação fixa com estado atualizado pela rolagem, fundo azul petróleo sólido, controles e lista de participantes mais claros, campo compacto para a quantidade de times e área compacta de compartilhamento.
+- Incluídas orientações para a escala 1–10 e o caráter estimado dos totais, além de avisos nos cartões de times sem goleiro fixo.
+- Atualizado o título; a versão do aplicativo continua visível no rodapé móvel.
+- Verificação visual e de interação em Chromium a 390×844 e 1920×1080; presença da versão conferida em 360 e 390 px. Sem overflow horizontal. Suíte automatizada não executada.
+- Registro detalhado: [ajustes de UX e interface](ajustes-ux-2026-10-22.md).
 
 > **Histórico — atualização da 06 (21/10/2026):** usuário autorizou explicitamente chamadas do Claude CLI à Anthropic com código/testes/documentação/evidências necessários, sem credenciais. Bloqueio externo resolvido. Início, retorno, interrupção e recusa de segundo executor comprovados em `.scratch/mobile-first-planning/evidence/automation-06-2026-10-21/preparation-verified.md`. Executar somente 06 e parar após commit validado; preservar registros históricos abaixo.
 

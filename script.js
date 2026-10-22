@@ -8,17 +8,33 @@ let playerBeingEdited = null;
 const selectedPlayers = new Set();
 
 function showArea(area) {
+  const target = document.getElementById(area === 'players' ? 'playersArea' : 'matchArea');
+  target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  setCurrentArea(area);
+}
+
+function setCurrentArea(area) {
   for (const name of ['players', 'match']) {
-    const isCurrent = name === area;
-    document.getElementById(name + 'Area').hidden = !isCurrent;
     const button = document.getElementById(name + 'Navigation');
-    if (isCurrent) {
-      button.setAttribute('aria-current', 'page');
-    } else {
-      button.removeAttribute('aria-current');
-    }
+    if (name === area) button.setAttribute('aria-current', 'location');
+    else button.removeAttribute('aria-current');
   }
 }
+
+function syncVisibleAreas() {
+  document.getElementById('playersArea').hidden = false;
+  document.getElementById('matchArea').hidden = false;
+}
+syncVisibleAreas();
+
+function updateCurrentAreaFromScroll() {
+  const matchArea = document.getElementById('matchArea');
+  const matchThreshold = window.innerHeight * 0.52;
+  setCurrentArea(matchArea.getBoundingClientRect().top <= matchThreshold ? 'match' : 'players');
+}
+
+window.addEventListener('scroll', updateCurrentAreaFromScroll, { passive: true });
+window.addEventListener('resize', updateCurrentAreaFromScroll);
 
 function showMatchStage(stage, moveFocus = true) {
   const showTeams = stage === 'teams';
@@ -30,6 +46,7 @@ function showMatchStage(stage, moveFocus = true) {
   document.getElementById('teamsStage').hidden = !showTeams;
   document.getElementById(showTeams ? 'teamsActionSlot' : 'teamGenerateSlot')
     .appendChild(document.getElementById('btnTeams'));
+  setCurrentArea('match');
   if (moveFocus && stageWasHidden) {
     document.getElementById(showTeams ? 'teamsHeading' : 'selectPlayersHeading').focus();
   }
@@ -81,7 +98,7 @@ function renderPlayers(id, players, showScores = false) {
   players.forEach(function (player) {
     const item = document.createElement('li');
     const playerName = player.name + (player.isGoalkeeper ? ' (Goalkeeper)' : '');
-    item.textContent = showScores ? playerName + ' - ' + player.score : playerName;
+    item.textContent = playerName;
     if (id === 'playerSkillList') {
       const label = document.createElement('label');
       const checkbox = document.createElement('input');
@@ -95,10 +112,6 @@ function renderPlayers(id, players, showScores = false) {
       name.className = 'player-name';
       name.textContent = playerName;
       label.appendChild(name);
-      const separator = document.createElement('span');
-      separator.className = 'player-score-separator';
-      separator.textContent = ' - ';
-      label.appendChild(separator);
       const score = document.createElement('span');
       score.className = 'player-score';
       score.textContent = String(player.score);
@@ -106,6 +119,13 @@ function renderPlayers(id, players, showScores = false) {
       item.replaceChildren(label);
     }
     if (id === 'registeredPlayerList') {
+      const registeredName = document.createElement('span');
+      registeredName.className = 'registered-player-name';
+      registeredName.textContent = playerName;
+      const registeredScore = document.createElement('span');
+      registeredScore.className = 'player-score';
+      registeredScore.textContent = showScores ? String(player.score) : '';
+      item.replaceChildren(registeredName, registeredScore);
       const editButton = document.createElement('button');
       editButton.type = 'button';
       editButton.textContent = 'Edit';
@@ -341,11 +361,20 @@ function renderTeams() {
       item.textContent = player.name + (player.isGoalkeeper ? ' (Goalkeeper)' : '');
       list.appendChild(item);
     });
-    playerSection.appendChild(heading);
+    if (!team.players.some(player => player.isGoalkeeper)) {
+      const goalkeeperNote = document.createElement('p');
+      goalkeeperNote.className = 'team-warning';
+      goalkeeperNote.textContent = 'No fixed goalkeeper';
+      goalkeeperNote.setAttribute('role', 'note');
+      playerSection.appendChild(heading);
+      playerSection.appendChild(goalkeeperNote);
+    } else {
+      playerSection.appendChild(heading);
+    }
     playerSection.appendChild(list);
     const totals = document.createElement('div');
     const scoreHeading = document.createElement('h3');
-    scoreHeading.textContent = 'Skill total - Team ' + (index + 1);
+    scoreHeading.textContent = 'Skill total';
     const totalScore = document.createElement('p');
     totalScore.textContent = team.totalScore;
     totals.appendChild(scoreHeading);
