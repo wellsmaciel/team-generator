@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Building up your Team</h1>
+    <h1>Team Generator</h1>
     <nav aria-label="Main">
-      <button id="playersNavigation" type="button" onclick="showArea('players')">Players</button>
-      <button id="matchNavigation" type="button" aria-current="page" onclick="showArea('match')">Match</button>
+      <button id="playersNavigation" type="button" aria-current="location" onclick="showArea('players')">Players</button>
+      <button id="matchNavigation" type="button" onclick="showArea('match')">Match</button>
     </nav>
     <section id="playersArea" hidden>
     <div>
@@ -27,8 +27,9 @@
         <p id="editingStatus" role="status"></p>
         <label for="pName">Player Name</label>
         <input type="text" id="pName" required />
-        <label for="pSkill">Player Skill</label>
-        <input type="number" id="pSkill" min="1" max="10" step="1" required />
+        <label for="pSkill">Estimated skill (1–10)</label>
+        <input type="number" id="pSkill" min="1" max="10" step="1" required aria-describedby="pSkillHelp" />
+        <p id="pSkillHelp" class="skill-guidance">Rate each player relative to this group: 1 = developing, 5 = average, 10 = strongest.</p>
         <label for="pGoalkeeper">
           <input type="checkbox" id="pGoalkeeper" />
           Fixed goalkeeper (plays only in goal)
@@ -55,9 +56,7 @@
         <p id="generationStatus" role="status"></p>
         <button id="viewTeams" type="button" onclick="showMatchStage('teams')" hidden>View teams</button>
         <div class="player-list-header" id="playerListColumns" hidden>
-          <span aria-hidden="true"></span>
           <span>Player</span>
-          <span aria-hidden="true"></span>
           <span>Skill</span>
         </div>
         <ul id="playerSkillList" aria-describedby="playerListColumns"></ul>
@@ -75,6 +74,7 @@
 
     <section id="teamsStage" aria-labelledby="teamsHeading" hidden>
       <h2 id="teamsHeading" tabindex="-1">Teams</h2>
+      <p id="skillEstimateNote">Skill totals are estimates to compare teams, not a guarantee of balance.</p>
       <button id="backToSelection" type="button" onclick="showMatchStage('selection')">Back to selection</button>
       <div id="teamsActionSlot"></div>
       <p id="teamsStatus" role="status"></p>
@@ -84,14 +84,6 @@
         <button type="button" onclick="undoAlternative()">Undo composition</button>
       </div>
       <div id="teamsContainer"></div>
-      <section id="shareControls" hidden aria-labelledby="shareHeading">
-        <h3 id="shareHeading">Share teams</h3>
-        <p id="shareHelp">Select the text below and copy it to share your teams. Skill scores are not included.</p>
-        <button type="button" onclick="copyTeamsToClipboard()">Copy teams</button>
-        <p id="copyStatus" role="status"></p>
-        <label for="shareText">Teams to copy</label>
-        <textarea id="shareText" readonly rows="12" spellcheck="false" aria-describedby="shareHelp"></textarea>
-      </section>
       <section id="swapControls" hidden aria-labelledby="swapHeading">
         <h3 id="swapHeading">Swap players</h3>
         <p>Choose two players from different teams: outfield for outfield, or goalkeeper for goalkeeper.</p>
@@ -105,11 +97,19 @@
         </div>
         <p id="swapStatus" role="status"></p>
       </section>
+      <section id="shareControls" hidden aria-labelledby="shareHeading">
+        <h3 id="shareHeading">Share teams</h3>
+        <p id="shareHelp">Copy teams to share the player names. You can also select the text below and copy it manually. Skill scores are not included.</p>
+        <button id="btnCopyTeams" type="button" onclick="copyTeamsToClipboard()">Copy teams</button>
+        <p id="copyStatus" role="status"></p>
+        <label for="shareText">Teams to copy</label>
+        <textarea id="shareText" readonly rows="4" spellcheck="false" aria-describedby="shareHelp"></textarea>
+      </section>
     </section>
     </section>
 
     <footer>
-      <p>Team Generator — Created by Wells Maciel <span>v1.4.0</span></p>
+      <p>Team Generator — Created by Wells Maciel <span class="site-version">v1.5.0</span></p>
       <p>
         <a href="https://www.linkedin.com/in/wells-velasquez-maciel/">LinkedIn</a>
       </p>

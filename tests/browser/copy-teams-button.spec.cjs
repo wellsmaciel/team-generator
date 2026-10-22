@@ -6,7 +6,7 @@ test('clicking Copy teams copies the current shareable text and confirms only af
   await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score] of [['Bruno', 2], ['Carla', 3], ['Diego', 4], ['Eva', 5]]) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
-    await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
+    await page.getByLabel('Estimated skill (1–10)', { exact: true }).fill(String(score));
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
   await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Match', exact: true }).click();
@@ -29,7 +29,7 @@ test('clipboard rejection offers manual copying without losing the displayed tea
   await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score] of [['Bruno', 2], ['Carla', 3], ['Diego', 4], ['Eva', 5]]) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
-    await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
+    await page.getByLabel('Estimated skill (1–10)', { exact: true }).fill(String(score));
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
   await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Match', exact: true }).click();
@@ -54,9 +54,8 @@ test('clipboard rejection offers manual copying without losing the displayed tea
   await expect(shareText).toHaveValue(expectedText);
   await expect(shareText).toHaveAttribute('readonly', '');
   await expect(page.locator('#teamsContainer')).toHaveText(expectedTeams, { useInnerText: true });
-  await expect(page.locator('#playerSkillList label')).toHaveText([
-    'Bruno - 2', 'Carla - 3', 'Diego - 4', 'Eva - 5',
-  ]);
+  await expect(page.locator('#playerSkillList .player-name')).toHaveText(['Bruno', 'Carla', 'Diego', 'Eva']);
+  await expect(page.locator('#playerSkillList .player-score')).toHaveText(['2', '3', '4', '5']);
   await expect(page.getByRole('status').filter({
     hasText: /copy[\s\S]*manually|manually[\s\S]*copy|select[\s\S]*copy/i,
   })).toBeVisible();
@@ -68,7 +67,7 @@ test('a pending less-balanced preview hides Copy teams and clears a previous cop
   await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score] of [['Bruno', 2], ['Carla', 3], ['Diego', 4], ['Eva', 5]]) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
-    await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
+    await page.getByLabel('Estimated skill (1–10)', { exact: true }).fill(String(score));
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
   await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Match', exact: true }).click();
@@ -94,7 +93,7 @@ test('Copy teams copies the currently displayed composition after undo, accept a
   await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score] of [['Bruno', 2], ['Carla', 3], ['Diego', 4], ['Eva', 5]]) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
-    await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
+    await page.getByLabel('Estimated skill (1–10)', { exact: true }).fill(String(score));
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
   await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Match', exact: true }).click();
@@ -138,7 +137,7 @@ test('a copy in progress does not apply a late success message after the composi
   await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score] of [['Bruno', 2], ['Carla', 3], ['Diego', 4], ['Eva', 5]]) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
-    await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
+    await page.getByLabel('Estimated skill (1–10)', { exact: true }).fill(String(score));
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
   await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Match', exact: true }).click();
@@ -180,7 +179,7 @@ test('a missing clipboard API offers manual copying without losing the displayed
   await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score] of [['Bruno', 2], ['Carla', 3], ['Diego', 4], ['Eva', 5]]) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
-    await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
+    await page.getByLabel('Estimated skill (1–10)', { exact: true }).fill(String(score));
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
   await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Match', exact: true }).click();
@@ -200,9 +199,8 @@ test('a missing clipboard API offers manual copying without losing the displayed
   await expect(shareText).toHaveValue(expectedText);
   await expect(shareText).toHaveAttribute('readonly', '');
   await expect(page.locator('#teamsContainer')).toHaveText(expectedTeams, { useInnerText: true });
-  await expect(page.locator('#playerSkillList label')).toHaveText([
-    'Bruno - 2', 'Carla - 3', 'Diego - 4', 'Eva - 5',
-  ]);
+  await expect(page.locator('#playerSkillList .player-name')).toHaveText(['Bruno', 'Carla', 'Diego', 'Eva']);
+  await expect(page.locator('#playerSkillList .player-score')).toHaveText(['2', '3', '4', '5']);
   await expect(page.getByRole('status').filter({
     hasText: /copy[\s\S]*manually|manually[\s\S]*copy|select[\s\S]*copy/i,
   })).toBeVisible();
@@ -213,7 +211,7 @@ test('a copy in progress does not apply a late error message after the compositi
   await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score] of [['Bruno', 2], ['Carla', 3], ['Diego', 4], ['Eva', 5]]) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
-    await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
+    await page.getByLabel('Estimated skill (1–10)', { exact: true }).fill(String(score));
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
   await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Match', exact: true }).click();
@@ -252,7 +250,7 @@ test('confirming a manual swap after a successful copy clears the previous succe
   await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score] of [['Bruno', 2], ['Carla', 3], ['Diego', 4], ['Eva', 5]]) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
-    await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
+    await page.getByLabel('Estimated skill (1–10)', { exact: true }).fill(String(score));
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
   await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Match', exact: true }).click();
@@ -284,7 +282,7 @@ test('an immediately applied regeneration without a pending decision clears the 
   // next generation always applies immediately, without a pending decision.
   for (const [name, score] of [['Ana', 5], ['Beto', 5], ['Caio', 5], ['Dani', 5]]) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
-    await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
+    await page.getByLabel('Estimated skill (1–10)', { exact: true }).fill(String(score));
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
   await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Match', exact: true }).click();
@@ -313,7 +311,7 @@ test('regenerating after an invalidating selection change does not resurface the
   await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score] of [['Bruno', 2], ['Carla', 3], ['Diego', 4], ['Eva', 5]]) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
-    await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
+    await page.getByLabel('Estimated skill (1–10)', { exact: true }).fill(String(score));
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
   await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Match', exact: true }).click();
@@ -346,7 +344,7 @@ test('Copy teams copies literal HTML-looking names as plain text, without interp
   await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score] of [['<b>Sam</b>', 2], ['Alex', 3], ['Alex', 4], ['Player 10', 5]]) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
-    await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
+    await page.getByLabel('Estimated skill (1–10)', { exact: true }).fill(String(score));
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
   await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Match', exact: true }).click();

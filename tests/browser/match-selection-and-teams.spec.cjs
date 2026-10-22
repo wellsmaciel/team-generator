@@ -10,8 +10,8 @@ test('Match without registered players shows guidance and an Add players control
   await expect(page.getByText('No players registered yet. Add players to set up a match.', { exact: true })).toBeVisible();
   await page.getByRole('button', { name: 'Add players', exact: true }).click();
 
-  await expect(nav.getByRole('button', { name: 'Players', exact: true })).toHaveAttribute('aria-current', 'page');
-  await expect(nav.getByRole('button', { name: 'Match', exact: true })).not.toHaveAttribute('aria-current', 'page');
+  await expect(nav.getByRole('button', { name: 'Players', exact: true })).toHaveAttribute('aria-current', 'location');
+  await expect(nav.getByRole('button', { name: 'Match', exact: true })).not.toHaveAttribute('aria-current', 'location');
   await expect(page.getByLabel('Player Name', { exact: true })).toBeVisible();
 });
 
@@ -21,7 +21,7 @@ test('in Select players, tapping anywhere on a row toggles that player exactly o
   await nav.getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score, goalkeeper] of [['Ana', 4, false], ['Beto', 5, true]]) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
-    await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
+    await page.getByLabel('Estimated skill (1–10)', { exact: true }).fill(String(score));
     if (goalkeeper) await page.getByLabel('Fixed goalkeeper (plays only in goal)', { exact: true }).check();
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
@@ -47,24 +47,46 @@ test('in Select players, tapping anywhere on a row toggles that player exactly o
   await expect(status).toHaveText('Selected for this match: 0 / 2');
 });
 
-test('the app opens on Match, the main area, with Players one tap away', async ({ page }) => {
+test('the app opens on Players with the Match workspace one tap away', async ({ page }) => {
   await page.goto('/');
   const nav = mainNavigation(page);
 
-  await expect(nav.getByRole('button', { name: 'Match', exact: true })).toHaveAttribute('aria-current', 'page');
-  await expect(nav.getByRole('button', { name: 'Players', exact: true })).not.toHaveAttribute('aria-current', 'page');
+  await expect(nav.getByRole('button', { name: 'Players', exact: true })).toHaveAttribute('aria-current', 'location');
+  await expect(nav.getByRole('button', { name: 'Match', exact: true })).not.toHaveAttribute('aria-current', 'location');
+  await expect(page.locator('#playersArea')).toBeVisible();
+  await expect(page.locator('#matchArea')).toBeVisible();
   await expect(page.getByLabel('Number of teams', { exact: true })).toBeVisible();
-  await expect(page.getByLabel('Player Name', { exact: true })).toBeHidden();
-
-  await nav.getByRole('button', { name: 'Players', exact: true }).click();
   await expect(page.getByLabel('Player Name', { exact: true })).toBeVisible();
+
+  await nav.getByRole('button', { name: 'Match', exact: true }).click();
+  await expect(nav.getByRole('button', { name: 'Match', exact: true })).toHaveAttribute('aria-current', 'location');
+  await nav.getByRole('button', { name: 'Players', exact: true }).click();
+  await expect(nav.getByRole('button', { name: 'Players', exact: true })).toHaveAttribute('aria-current', 'location');
+});
+
+test('each generated team without a fixed goalkeeper shows a notice on its card', async ({ page }) => {
+  await page.goto('/');
+  for (const [name, score] of [['Ana', 4], ['Beto', 5], ['Carla', 6], ['Davi', 7]]) {
+    await page.getByLabel('Player Name', { exact: true }).fill(name);
+    await page.getByLabel('Estimated skill (1–10)', { exact: true }).fill(String(score));
+    await page.getByRole('button', { name: 'Add Player', exact: true }).click();
+  }
+
+  await page.getByRole('button', { name: 'Select All Players', exact: true }).click();
+  await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
+
+  const teamCards = page.locator('#teamsContainer .team');
+  await expect(teamCards).toHaveCount(2);
+  for (const card of await teamCards.all()) {
+    await expect(card.getByText('No fixed goalkeeper', { exact: true })).toBeVisible();
+  }
 });
 
 async function registerPlayers(page, list) {
   await mainNavigation(page).getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score] of list) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
-    await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
+    await page.getByLabel('Estimated skill (1–10)', { exact: true }).fill(String(score));
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
   await mainNavigation(page).getByRole('button', { name: 'Match', exact: true }).click();

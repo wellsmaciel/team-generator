@@ -4,7 +4,7 @@ async function registerAndGenerate(page, players) {
   await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score] of players) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
-    await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
+    await page.getByLabel('Estimated skill (1–10)', { exact: true }).fill(String(score));
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
   await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Match', exact: true }).click();
@@ -59,10 +59,18 @@ test('the Copy teams button is reachable by Tab, shows a visible focus style and
   await expect(page.locator('#shareControls')).toBeVisible();
 
   const copyButton = page.getByRole('button', { name: 'Copy teams', exact: true });
-  // In Teams, the way back and the generation control come before the share controls.
+  // Swap controls are in document order before sharing controls.
   await page.getByRole('button', { name: 'Back to selection', exact: true }).focus();
   await page.keyboard.press('Tab');
   await expect(page.getByRole('button', { name: 'Generate another composition', exact: true })).toBeFocused();
+  await page.keyboard.press('Tab');
+  await expect(page.getByLabel('First player', { exact: true })).toBeFocused();
+  await page.keyboard.press('Tab');
+  await expect(page.getByLabel('Second player', { exact: true })).toBeFocused();
+  await page.keyboard.press('Tab');
+  await expect(page.getByRole('button', { name: 'Confirm swap', exact: true })).toBeFocused();
+  await page.keyboard.press('Tab');
+  await expect(page.getByRole('button', { name: 'Cancel', exact: true })).toBeFocused();
   await page.keyboard.press('Tab');
   await expect(copyButton).toBeFocused();
 
