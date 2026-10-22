@@ -1,10 +1,12 @@
 # Roadmap por fases
 
-Para a sequência vigente, consulte o [mapa da jornada e prioridades de 19/10/2026](jornada-do-usuario.md) e o [índice de tarefas](tarefas.md). Ordem aprovada: concluir Copy teams, reposicionar a geração, implementar Select All Players e validar a integração. Comportamentos/interfaces são combinados antes de cada implementação.
+**Estado atual (21/10/2026):** as fases iniciais e as rodadas de usabilidade foram concluídas. A evolução [mobile first, tarefas 04–07](plano-mobile-first.md) também foi concluída; consulte [tarefas](tarefas.md) para os commits e evidências. As fases abaixo registram o roadmap original e não são uma fila de trabalho atual.
+
+O [mapa da jornada](jornada-do-usuario.md) e o [índice de tarefas](tarefas.md) registram as entregas encerradas. Não há sequência de implementação autorizada neste roadmap.
 
 **Plano histórico da descoberta.** A base descrita nas primeiras fases já foi implementada. A divisão aprovada do trabalho restante está em [tarefas e prompts](tarefas.md), e o estado atual em [resumo de continuidade](proximo-chat.md). As recomendações abaixo registram a proposta inicial e não devem ser executadas novamente nem tratadas como tarefas adicionais.
 
-## Agora: confirmar e preparar
+## Etapa histórica: confirmar e preparar
 
 As decisões principais já foram confirmadas. Antes de fechar o plano, confirmar as prioridades e resolver os bloqueios da geração em [pendências](pendencias.md), sobretudo algoritmo, detalhes das combinações alternativas e limites da quantidade de times. A medida de equilíbrio já foi aprovada.
 

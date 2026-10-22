@@ -1,6 +1,14 @@
 # Jornada do usuário
 
-## Mapa da jornada e prioridades — atualizado em 19/10/2026
+## Evolução mobile first — aprovada em 20/10/2026, entregue em 21/10/2026
+
+Disposição aprovada na prévia: Players para cadastro/edição/exclusão e Match como área principal. Match terá Select players (participantes e quantidade) e Teams (resultado, revisão, troca e compartilhamento). Apenas navegar preserva a partida; alterações reais seguem as invalidações atuais. Cadastro continua salvo no navegador e seleção começa vazia ao recarregar. Sem jogadores, Add players orienta o primeiro uso.
+
+Celular tem navegação inferior e linhas inteiras tocáveis para selecionar; tablet/desktop têm navegação superior e disposição em colunas quando há espaço. Foto esportiva mantida com cartões escuros legíveis. Bootstrap é a base, preservando HTML/CSS/JavaScript e funcionalidades. Texto compartilhado tem marcadores por jogador, linha em branco entre times e nenhuma nota. **Entregue nas tarefas 04–07.** Resultados e limites no [plano](plano-mobile-first.md) e no [índice de tarefas](tarefas.md).
+
+**Ajustes de interface posteriores (21/10/2026):** a seleção em Match agora usa um único título, com nome e habilidade em colunas alinhadas; a contagem e Select All Players ficam juntos. Em telas largas, seleção e configuração de times aparecem lado a lado; no celular, continuam empilhadas e o botão Select All Players fica centralizado. Os resultados usam títulos Team 1, Team 2 e assim por diante. A tipografia usa Barlow Condensed nos títulos e Inter nos textos, com fallbacks do sistema. Esses refinamentos foram feitos após o fechamento formal das tarefas 04–07; não alteram algoritmo, persistência ou regras dos times.
+
+## Mapa da jornada e prioridades — registros da rodada encerrada em 20/10/2026
 
 O uso principal é no celular, com suporte também a tablet e PC. A tarefa 01 concluiu lógica e critérios de UX (teclado/apresentação) do Copy teams; viewports simulados em Chromium não substituem aparelho físico.
 
@@ -13,7 +21,7 @@ O uso principal é no celular, com suporte também a tablet e PC. A tarefa 01 co
 | Compartilhar | Copy teams e cópia manual | **Tarefa 01 concluída** em 19/10/2026 (8 ciclos de lógica + apresentação/teclado, verificados independentemente); sem lacunas de lógica pendentes, limitações registradas no ticket |
 | Conferir a entrega | Validar o fluxo integrado e atualizar a documentação | **Tarefa 03 concluída** em 20/10/2026: fluxo integrado validado sem defeitos; não é uma nova rodada de implementação automática |
 
-**Próximo passo confirmado:** tarefas 01 (Copy teams) e 02 (geração após a seleção) concluídas, com fechamento registrado nos tickets. A próxima entrega da ordem aprovada é Select All Players; comportamentos/interfaces de teste serão confirmados com o usuário no início dessa entrega, ainda não iniciada.
+**Estado das rodadas:** tarefas 01, 02, 02a (Select All Players) e 03 da rodada de usabilidade concluídas; tarefas 04–07 da rodada mobile first também concluídas. Não há trabalho seguinte autorizado nesta documentação.
 
 **Ordem aprovada da segunda rodada, ampliada pelo usuário em 19/10/2026:** tarefas 01 (Copy teams), 02 (geração após a seleção) e Select All Players (ticket 02a) e tarefa 03 (validação integrada) concluídas; segunda rodada encerrada. Não iniciar outra entrega automaticamente. Tickets e passagens recentes em [tarefas](tarefas.md) são a referência para o progresso de cada entrega.
 
@@ -32,7 +40,7 @@ O uso principal é no celular, com suporte também a tablet e PC. A tarefa 01 co
 
 As notas permanecem visíveis na tela do organizador. Não foi confirmado um controle para incluí-las no compartilhamento; a primeira entrega pode manter o texto sempre sem notas, sujeito à revisão final.
 
-## Estado atual
+## Estado funcional anterior à evolução mobile first — histórico
 
 Atualização da continuidade de 18/10/2026: HTML, CSS e JavaScript estão separados. O cadastro salva nome, nota inteira de 1 a 10 e condição de goleiro fixo no navegador, com edição e exclusão mediante confirmação. A lista permite selecionar quem joga, mostra a contagem e mantém o cadastro de quem for desmarcado. A seleção começa vazia ao abrir a página e não é salva. Editar preserva a seleção do jogador; excluir também o remove da seleção. Alterar a seleção, salvar uma edição ou confirmar uma exclusão limpa os times gerados e pede nova geração.
 
