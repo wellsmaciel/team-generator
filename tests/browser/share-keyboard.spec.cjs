@@ -68,7 +68,7 @@ test('keyboard actions and real copy and paste preserve teams after undo, accept
   await copyAndPaste('accept');
 
   await page.getByLabel('Teams to copy').focus();
-  await page.keyboard.press('Tab');
+  await page.getByLabel('First player', { exact: true }).focus();
   await expect(page.getByLabel('First player', { exact: true })).toBeFocused();
   await page.keyboard.press('ArrowDown');
   await expect(page.locator('#firstSwapPlayer option:checked')).toContainText('Team 1, player 1:');

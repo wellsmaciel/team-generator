@@ -54,9 +54,8 @@ test('clipboard rejection offers manual copying without losing the displayed tea
   await expect(shareText).toHaveValue(expectedText);
   await expect(shareText).toHaveAttribute('readonly', '');
   await expect(page.locator('#teamsContainer')).toHaveText(expectedTeams, { useInnerText: true });
-  await expect(page.locator('#playerSkillList label')).toHaveText([
-    'Bruno - 2', 'Carla - 3', 'Diego - 4', 'Eva - 5',
-  ]);
+  await expect(page.locator('#playerSkillList .player-name')).toHaveText(['Bruno', 'Carla', 'Diego', 'Eva']);
+  await expect(page.locator('#playerSkillList .player-score')).toHaveText(['2', '3', '4', '5']);
   await expect(page.getByRole('status').filter({
     hasText: /copy[\s\S]*manually|manually[\s\S]*copy|select[\s\S]*copy/i,
   })).toBeVisible();
@@ -200,9 +199,8 @@ test('a missing clipboard API offers manual copying without losing the displayed
   await expect(shareText).toHaveValue(expectedText);
   await expect(shareText).toHaveAttribute('readonly', '');
   await expect(page.locator('#teamsContainer')).toHaveText(expectedTeams, { useInnerText: true });
-  await expect(page.locator('#playerSkillList label')).toHaveText([
-    'Bruno - 2', 'Carla - 3', 'Diego - 4', 'Eva - 5',
-  ]);
+  await expect(page.locator('#playerSkillList .player-name')).toHaveText(['Bruno', 'Carla', 'Diego', 'Eva']);
+  await expect(page.locator('#playerSkillList .player-score')).toHaveText(['2', '3', '4', '5']);
   await expect(page.getByRole('status').filter({
     hasText: /copy[\s\S]*manually|manually[\s\S]*copy|select[\s\S]*copy/i,
   })).toBeVisible();

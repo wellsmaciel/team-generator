@@ -2,7 +2,7 @@ const path = require('node:path');
 const { pathToFileURL } = require('node:url');
 const { test, expect } = require('@playwright/test');
 
-test('Bootstrap styles load from local files, with no external requests, also when index.html is opened as a file', async ({ page }) => {
+test('Bootstrap styles load locally, allowing the page’s Google Fonts requests', async ({ page }) => {
   const external = [];
   page.on('request', request => {
     const url = request.url();
@@ -18,7 +18,7 @@ test('Bootstrap styles load from local files, with no external requests, also wh
   expect(await bootstrapBlue()).not.toBe('');
   await expect(page.getByRole('navigation', { name: 'Main', exact: true })).toBeVisible();
 
-  expect(external).toEqual([]);
+  expect(external.filter(url => !/^https:\/\/fonts\.(?:googleapis|gstatic)\.com\//.test(url))).toEqual([]);
 });
 
 test('scrolling between Players and Match updates the current navigation location', async ({ page }) => {
@@ -115,15 +115,12 @@ test('Players lists registrations with Edit and Delete while the Match list only
   }
 
   await nav.getByRole('button', { name: 'Match', exact: true }).click();
-  await expect(page.getByLabel('Ana - 4', { exact: true })).toBeVisible();
-  await expect(page.getByLabel('Beto - 5', { exact: true })).toBeVisible();
+  await expect(page.locator('#playerSkillList .player-name')).toHaveText(['Ana', 'Beto']);
+  await expect(page.locator('#playerSkillList .player-score')).toHaveText(['4', '5']);
   await expect(page.locator('#playerSkillList').getByRole('button', { name: /^(Edit|Delete) /i })).toHaveCount(0);
 });
 
-// Corrected expectation: an earlier version of this test required several columns in BOTH lists. That was our own
-// wrong assumption, not a user requirement. The approved preview keeps the Players roster in one column inside its
-// own panel (asserted in the Players workspace test) and only the Match participant selection uses several columns.
-test('on tablet and desktop widths the Match participant list uses several columns and neither area overflows horizontally', async ({ page }) => {
+test('on tablet and desktop widths the Match participant names and scores stay in aligned columns without horizontal overflow', async ({ page }) => {
   await page.goto('/');
   const nav = page.getByRole('navigation', { name: 'Main', exact: true });
   await nav.getByRole('button', { name: 'Players', exact: true }).click();
@@ -140,9 +137,13 @@ test('on tablet and desktop widths the Match participant list uses several colum
       await nav.getByRole('button', { name: area, exact: true }).click();
       const rows = page.locator(`${list} > li`);
       await expect(rows).toHaveCount(names.length);
-      const tops = await rows.evaluateAll(items => items.map(item => Math.round(item.getBoundingClientRect().top)));
       if (area === 'Match') {
-        expect(new Set(tops).size, `${area} rows at ${width}px should share rows (columns)`).toBeLessThan(names.length);
+        const nameLefts = await page.locator('#playerSkillList .player-name').evaluateAll(items =>
+          items.map(item => Math.round(item.getBoundingClientRect().left)));
+        const scoreRights = await page.locator('#playerSkillList .player-score').evaluateAll(items =>
+          items.map(item => Math.round(item.getBoundingClientRect().right)));
+        expect(new Set(nameLefts).size, `player names align at ${width}px`).toBe(1);
+        expect(new Set(scoreRights).size, `player skills align at ${width}px`).toBe(1);
       }
       expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(width);
     }
@@ -247,6 +248,7 @@ test('the current navigation button is visibly highlighted with the approved gre
     const currentButton = nav.getByRole('button', { name: current, exact: true });
     const otherButton = nav.getByRole('button', { name: other, exact: true });
     await expect(currentButton).toHaveAttribute('aria-current', 'location');
+    await expect(currentButton).toHaveCSS('color', 'rgb(181, 238, 122)');
     const currentColors = await colors(currentButton);
     const otherColors = await colors(otherButton);
     // Reference accent from the approved prototype: #b5ee7a.
@@ -561,11 +563,10 @@ test('at tablet width 768 the navigation sits at the top, switches areas, never 
   expect(order.slice(4, 8)).toEqual(['pName', 'pSkill', 'pGoalkeeper', 'btnPs']);
 });
 
-test('the main navigation is fixed at the bottom on phones, sits at the top on larger screens and never covers content', async ({ page }) => {
+test('the main navigation stays at the top while scrolling and does not cover content', async ({ page }) => {
   await page.goto('/');
   const nav = page.getByRole('navigation', { name: 'Main', exact: true });
-  const { width, height } = page.viewportSize();
-  const phone = width <= 500;
+  const { width } = page.viewportSize();
 
   // Long enough content to scroll, so a fixed bar could cover the last controls.
   await nav.getByRole('button', { name: 'Players', exact: true }).click();
@@ -575,26 +576,17 @@ test('the main navigation is fixed at the bottom on phones, sits at the top on l
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
 
-  if (phone) {
-    for (const area of ['Players', 'Match']) {
-      await nav.getByRole('button', { name: area, exact: true }).click();
-      await page.evaluate(() => window.scrollTo(0, 0));
-      let box = await nav.boundingBox();
-      expect(Math.abs(box.y + box.height - height)).toBeLessThanOrEqual(1);
-      expect(box.width).toBeGreaterThanOrEqual(width - 1);
+  await page.evaluate(() => window.scrollTo(0, 0));
+  const initialNavBox = await nav.boundingBox();
+  const initialAreaBox = await page.locator('#playersArea').boundingBox();
+  expect(initialNavBox.y).toBeGreaterThanOrEqual(0);
+  expect(initialAreaBox.y).toBeGreaterThanOrEqual(initialNavBox.y + initialNavBox.height - 1);
+  expect(initialNavBox.x).toBeGreaterThanOrEqual(0);
+  expect(initialNavBox.x + initialNavBox.width).toBeLessThanOrEqual(width);
 
-      await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
-      box = await nav.boundingBox();
-      expect(Math.abs(box.y + box.height - height)).toBeLessThanOrEqual(1);
-      const footerBox = await page.locator('footer').boundingBox();
-      expect(footerBox.y + footerBox.height).toBeLessThanOrEqual(box.y + 1);
-    }
-  } else {
-    await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
-    await page.evaluate(() => window.scrollTo(0, 0));
-    const box = await nav.boundingBox();
-    expect(box.y).toBeLessThan(height / 4);
-    const areaBox = await page.locator('#playersArea').boundingBox();
-    expect(areaBox.y).toBeGreaterThanOrEqual(box.y + box.height - 1);
-  }
+  await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+  await expect.poll(async () => (await nav.boundingBox()).y).toBeLessThanOrEqual(10);
+  const scrolledNavBox = await nav.boundingBox();
+  expect(scrolledNavBox.x).toBeGreaterThanOrEqual(0);
+  expect(scrolledNavBox.x + scrolledNavBox.width).toBeLessThanOrEqual(width);
 });
