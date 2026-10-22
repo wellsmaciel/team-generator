@@ -27,3 +27,6 @@ Thumbs.db
 /CLAUDE.md
 /CLAUDE.local.md
 /.mcp.json
+
+# Versioned Claude<->Codex relay (tools/relay/); its runtime state stays in the ignored .claude/codex-relay/
+!/tools/relay/

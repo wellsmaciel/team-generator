@@ -1,6 +1,8 @@
-> **Estado vigente da 07 (21/10/2026):** o bloqueio por limite de sessão do Claude CLI (liberação informada para 17h30 Europe/Dublin) é **histórico**: o acesso voltou e uma revisão completa genuína foi feita em chat novo, com leitura integral dos 30 candidatos e a skill `ecc:code-review`, substituindo a revisão original, que não foi completa (29 leituras integrais; `styles.css` só por diff). Resultado e correção estão no registro "Revisão completa retomada" do ticket 07; o commit local `1befd15` é emendado somente se a checagem de cobertura passar, e o hash final fica no `git log` e no recibo local. Relé desligado. Histórico do bloqueio: `evidence/automation-07-2026-10-21/session-limit.md`. Estados anteriores abaixo descrevem etapas históricas.
+> **Fluxo vigente (22/10/2026):** a coordenação Claude ↔ Codex passou a ser o orquestrador `tools/relay/relay.cjs`, que substitui o hook Stop `codex-relay-stop.sh` (arquivado). Cada passo roda em **sessão nova e sem contexto** (`claude -p` / `codex exec`, sem `--resume`) e o ticket é a única memória. Claude escreve o RED, Codex implementa o mínimo, Claude verifica o GREEN e, com `PRONTO_PARA_REVISAO`, uma sessão nova de Claude revisa com a skill nativa `code-review` e registra `REVISADO`; o relé então para. **Ninguém faz staging, commit ou push: o commit é do usuário.** Modelos fixos em `tools/relay/relay.config.json` (Claude `claude-sonnet-5-5`/medium, Codex `gpt-6-luna`/medium); relé desligado por padrão e ligado só por tarefa com autorização do usuário. Detalhes e comandos: `.claude/codex-relay/README.md` (local). **Tudo o que segue neste arquivo é histórico** das tarefas 01–07, do hook antigo e dos commits feitos por Claude em chat de revisão; não descreve o fluxo vigente.
 
-## Autorização vigente — tarefa 07 (21/10/2026)
+> **Estado atual (21/10/2026):** as tarefas 04–07 estão concluídas. A tarefa 07 foi revisada e fechada no commit `e63a27fea080f676bc76e418553b1e59b62ebefa`; recibo final: `.scratch/mobile-first-planning/evidence/automation-07-2026-10-21/task07-final-receipt-close.md`. A tag `v1.4.0` fecha 04/05; 06/07 estão em commits posteriores. O relé está desligado. As autorizações e estados abaixo registram etapas já encerradas; não autorizam retomar tarefas nem operações externas.
+
+## Autorização anterior — tarefa 07 (21/10/2026, concluída)
 
 Após validar o commit da 06 (7f057ca81b673ba9b0588e21cca1d423f3387ca1), Codex perguntou se podia iniciar a 07 mantendo os mesmos critérios de revisão e commit por Claude; o usuário respondeu “sim”. Executar somente 07 e parar após seu commit validado. Esta autorização substitui a parada após a 06 e a parada pré-commit antiga do ticket 07. Sem push, PR, merge, release, publicação ou nova tarefa.
 
@@ -20,7 +22,7 @@ Limitações de ambiente devem permanecer explícitas: emulação não é aparel
 
 **Estado da 06 (21/10/2026) — histórico, superado: a 06 foi commitada em `7f057ca`:** ciclo TDD concluído e verificado; ticket termina com `TASK06_READY_FOR_CONDITIONAL_COMMIT`. Falta o chat novo de revisão (`ecc:code-review`) e commit.
 
-## Autorização vigente — tarefa 06 (21/10/2026)
+## Autorização anterior — tarefa 06 (21/10/2026, concluída)
 
 A instrução final do usuário determina encerrar a automação após o commit validado da 06. Executar somente 06 nesta sessão; 07 permanece planejada, sem início automático. A autorização condicional de commits abrange 06/07, mas não autoriza ultrapassar esta parada. Sem push, PR, merge, release ou publicação nesta execução.
 
@@ -34,11 +36,11 @@ Claude só pode commitar a 06 em chat novo após todos os critérios, verificaç
 
 # Coordenação entre Codex e Claude por hooks
 
-## Regra vigente — tarefas 04 e 05 (atualizada em 21/10/2026)
+## Regra aplicada às tarefas 04 e 05 — histórico
 
-Esta é a única regra em vigor para 04 e 05. Tickets, plano, índices, resumo de continuidade, hook e README do relé só resumem ou apontam para esta seção; se algum texto divergir, vale esta. Seções marcadas como histórico abaixo não se aplicam.
+Durante a execução de 04 e 05, esta foi a regra central; tickets, plano, índices, resumo de continuidade, hook e README do relé resumiam ou apontavam para ela. A execução terminou, então esta seção é apenas registro histórico e não autoriza novas ações.
 
-**Escopo:** somente 04 e depois 05, uma por vez. Sem 06/07 e sem publicação do site. Push, PR e merge de cada tarefa e a release final estão autorizados nos termos de "Depois do commit" abaixo (decisão do usuário em 21/10/2026). O usuário autorizou chamadas externas do Claude CLI ao provedor configurado, incluindo o conteúdo necessário do repositório; sem bypass de permissões nem background sem isolamento. Preparação comprovada na [evidência de preparação](../../.scratch/mobile-first-planning/evidence/automation-2026-10-20/preparation.md).
+**Escopo que vigorava durante a execução:** somente 04 e depois 05, uma por vez. Naquele momento 06/07 e publicação do site estavam fora do escopo; a sessão raiz recebeu autorização para push, PR, merge e release nos termos de "Depois do commit" abaixo. Essas instruções foram executadas e não constituem autorização atual. Preparação comprovada na [evidência de preparação](../../.scratch/mobile-first-planning/evidence/automation-2026-10-20/preparation.md).
 
 ### Papéis
 
@@ -96,15 +98,15 @@ Se faltar decisão do usuário ou acesso, ou se um critério continuar bloqueado
 
 A proibição de commit para o Codex é uma instrução no prompt do hook; o hook não a bloqueia tecnicamente. Os locks (`writer.lock` e `foreground-owner.lock`) só serializam participantes deste protocolo. O hook aceita passagens com `→ Codex` ou `-> Codex`. O push, o PR, o merge e a release não passam pelo hook nem pelo chat de commit: são da sessão raiz. Se uma chamada do Codex falhar, o hook não repete a mesma passagem e avisa o Claude; para tentar de novo, escrever uma passagem `→ Codex` nova.
 
-## Estado — rodada mobile first
+## Estado intermediário — rodada mobile first (histórico)
 
-**Estado em 21/10/2026:** o relé Codex ↔ Claude por hooks foi preparado e comprovado (evidência de preparação de 20/10/2026) e executou os ciclos 1–16 da tarefa 04 (contador real do relé: 19 de teto interno 24, que é um limite de segurança contra falta de progresso, não um orçamento de produto; capturas não o incrementam). A 04 aguarda o chat de revisão e commit do Claude (a tentativa de commit de 21/10/2026 terminou em erro de API, sem commit); a 05 não foi iniciada. Ver [plano](../plano-mobile-first.md).
+**Snapshot intermediário de 21/10/2026:** o relé Codex ↔ Claude executou os ciclos 1–16 da tarefa 04. Naquele ponto, a 04 aguardava revisão/commit e a 05 não havia começado. O estado final está no início deste arquivo e no [índice de tarefas](../tarefas.md); a 04 foi commitada em `04adc65`, a 05 em `9f8ae63`, a 06 em `7f057ca` e a 07 em `e63a27f`.
 
 *Histórico (20/10/2026, superado):* o usuário aprovou o desenho e a divisão das tarefas 04–07 e pediu a documentação do plano/tickets; naquela data a implementação não havia começado e o acionamento inicial ainda precisava ser configurado e testado.
 
 *Histórico (20/10/2026, superado):* o mecanismo anterior fazia Claude → Codex CLI → Claude; naquele momento, o início automático ainda precisava ser comprovado. A preparação foi concluída e evidenciada depois. A regra vigente para as tarefas 04/05 está no topo.
 
-*Histórico (superado para 04/05):* a regra anterior exigia confirmação de novos comportamentos/interfaces e parada para revisão do usuário antes de cada commit, sem iniciar a próxima tarefa. A autorização vigente substitui essa parada somente para 04 e 05: usar as interfaces já aprovadas sem reconfirmação, fazer o commit separado de cada tarefa somente por Claude após todos os gates e iniciar 05 após validar o commit de 04. A automação termina após validar o commit de 05. As autorizações abaixo para tarefas anteriores são históricas.
+*Histórico:* a regra anterior exigia confirmação de novos comportamentos/interfaces e parada para revisão do usuário antes de cada commit. A autorização posterior substituiu essa parada para as tarefas 04/05, que já foram concluídas. As autorizações abaixo para tarefas anteriores também são históricas.
 
 Acordo registrado em 20/10/2026. Pasta vigente: `C:\VSC Projects\team-generator`.
 

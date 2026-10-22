@@ -12,7 +12,11 @@ Há um possível grupo de teste com 15 jogadores. O usuário pretende contatar s
 
 ## Estado atual
 
-Cadastro persistente com goleiro, edição, exclusão, seleção da partida, vários times, restrições de tamanho/goleiros, avisos, trocas, novas composições com aceitar/desfazer e texto compartilhável já foram entregues. Código e interface estão em inglês. A primeira rodada foi concluída no escopo essencial; README e resumo documentam uso, evidências e limitações. Não há validação em celular físico. Na segunda rodada de 19/10/2026, Copy teams está concluído; reposicionar a geração é a próxima entrega, seguido de Select All Players e validação integrada.
+Cadastro persistente com goleiro, edição, exclusão, seleção da partida, vários times, restrições de tamanho/goleiros, avisos, trocas, novas composições com aceitar/desfazer e texto compartilhável já foram entregues. Código e interface estão em inglês. As duas primeiras rodadas estão concluídas, incluindo Copy teams, geração após participantes, Select All Players e validação integrada. README e resumo documentam evidências e limitações; não há validação em celular físico.
+
+## Evolução mobile first aprovada e implementada
+
+Em 20/10/2026, o usuário aprovou [o plano mobile first](plano-mobile-first.md): Bootstrap, Players/Match, seleção e times em etapas, foto esportiva com cartões legíveis e texto compartilhado com marcadores. A disposição foi aprovada em prévia, com atenção também a tablet e desktop. As tarefas 04–07 foram concluídas em 21/10/2026; ver os resultados e limites no [índice de tarefas](tarefas.md) e no [resumo de continuidade](proximo-chat.md).
 
 ## Limite da promessa
 

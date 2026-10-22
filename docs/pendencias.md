@@ -1,6 +1,8 @@
 # Dúvidas abertas e ideias adiadas
 
-## Estado após o fechamento da etapa 05
+**Estado atual — 21/10/2026:** as tarefas 04–07 do [plano mobile first](plano-mobile-first.md) foram concluídas. As pendências e ideias abaixo continuam sem aprovação ou implementação, exceto quando o texto registra explicitamente uma entrega concluída. Não há próxima tarefa autorizada.
+
+## Registro histórico — estado após o fechamento da etapa 05
 
 Atualizado em 18/10/2026: implementação e critérios essenciais dos tickets 01 a 05 concluídos. As evidências combinam testes Node/DOM simulado, navegador integrado, capturas/relatos do usuário e seis testes Playwright em desktop e larguras 360/390. Consulte o [relatório final](../.scratch/remaining-work/evidence/2026-10-18-playwright-03/resultado.md) e o [roteiro](testes-manuais-etapa-05.md) para a origem de cada aprovação.
 
@@ -24,18 +26,18 @@ C1 implementado por TDD: a regressão falhou com diferença 10 antes da alteraç
 
 ## Ajustes de interface apontados no teste manual — resolver depois
 
-Atualização: o usuário aprovou esses dois ajustes na segunda rodada de 19/10/2026, descrita no [plano do próximo dia](plano-2026-10-19.md). Tickets publicados com TDD. **Copy teams concluído em 19/10/2026** (tarefa 01); o reposicionamento de Generate Teams (tarefa 02) continua sem implementação. Os parágrafos abaixo preservam a origem como ideias inicialmente adiadas; essa aprovação substitui o adiamento apenas para esses dois itens.
+Atualização: o usuário aprovou esses dois ajustes na segunda rodada de 19/10/2026, descrita no [plano da segunda rodada](plano-2026-10-19.md). **Copy teams concluído em 19/10/2026** (tarefa 01); **reposicionamento de Generate Teams concluído em 20/10/2026** (tarefa 02). Os parágrafos abaixo preservam a origem como ideias inicialmente adiadas; não reabrir entregas concluídas.
 
 Em 18/10/2026, o usuário testou manualmente a tarefa 04 em navegador real e confirmou a exibição e a cópia/colagem do texto dos times sem notas ou totais. Apontou:
 
 - Adicionar um botão Copy teams para facilitar a cópia, especialmente no celular.
 - Avaliar mover Generate Teams para depois da lista de jogadores marcados para jogar, pois atualmente aparece antes dela.
 
-Na origem, o usuário pediu somente registrar e resolver depois. Agora os ajustes estão aprovados na segunda rodada, mas continuam sem implementação. O compartilhamento atual e seus critérios essenciais foram concluídos no ticket 04; esses ajustes não reabrem a etapa 05.
+Na origem, o usuário pediu somente registrar e resolver depois. Os ajustes foram aprovados e entregues na segunda rodada. O compartilhamento e seus critérios essenciais anteriores foram concluídos no ticket 04 da primeira rodada; esses registros não reabrem entregas antigas.
 
 ## Melhoria solicitada em 19/10/2026 — seleção em lote
 
-**Select All Players:** registrado a pedido do usuário no [mapa da jornada](jornada-do-usuario.md), após um teste manual em que precisou marcar individualmente os 15 jogadores. Objetivo: selecionar todos os cadastrados para a partida e permitir ajustes individuais depois. Uso principal em celular. Prioridade aprovada em 19/10/2026: depois de reposicionar a geração (tarefa 02), antes da validação integrada (tarefa 03). Ainda sem ticket próprio ou implementação; preparar sua entrega e confirmar comportamento/interface antes de programar, seguindo TDD. Não pressupor desmarcar todos, nova persistência ou alteração dos cadastros.
+**Select All Players:** registrado a pedido do usuário no [mapa da jornada](jornada-do-usuario.md), após um teste manual em que precisou marcar individualmente os 15 jogadores. Entregue no ticket 02a em 20/10/2026: seleciona todos e permite ajustes individuais, ficando desabilitado sem cadastrados ou com todos selecionados. Validado na tarefa 03. Preservar esse comportamento na nova interface; não inclui desmarcar todos ou persistência da seleção.
 
 ## Adiado para além da primeira versão
 

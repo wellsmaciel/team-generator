@@ -1,0 +1,36 @@
+{
+  "maxCycles": 12,
+  "lockMaxAgeMinutes": 30,
+  "stepTimeoutMinutes": 45,
+  "logRetention": 40,
+  "stateDir": ".claude/codex-relay",
+  "markers": {
+    "ready": "PRONTO_PARA_REVISAO",
+    "reviewed": "REVISADO"
+  },
+  "claude": {
+    "command": "claude",
+    "prefixArgs": [],
+    "model": "claude-sonnet-5-5",
+    "effort": "medium",
+    "env": {},
+    "allowedTools": [
+      "Read", "Glob", "Grep", "Skill", "Edit", "Write",
+      "Bash(node tests/*)", "Bash(node tools/relay/tests/*)", "Bash(node --check *)",
+      "Bash(npx --no-install playwright test*)", "Bash(npx.cmd --no-install playwright test*)",
+      "Bash(git status*)", "Bash(git diff*)", "Bash(git log*)", "Bash(git show*)", "Bash(git ls-files*)"
+    ],
+    "disallowedTools": [
+      "Bash(git add*)", "Bash(git commit*)", "Bash(git push*)", "Bash(git stash*)",
+      "Bash(git reset*)", "Bash(git checkout*)", "Bash(git restore*)", "Bash(gh *)"
+    ]
+  },
+  "codex": {
+    "command": "codex",
+    "prefixArgs": [],
+    "model": "gpt-6-luna",
+    "effort": "medium",
+    "sandbox": "workspace-write",
+    "env": {}
+  }
+}
