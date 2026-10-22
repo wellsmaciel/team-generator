@@ -1,3 +1,8 @@
+:root {
+  --font-body: "Inter", "Segoe UI", Arial, sans-serif;
+  --font-display: "Barlow Condensed", "Arial Narrow", "Segoe UI", sans-serif;
+}
+
 .team {
   display: flex;
   flex-direction: column;
@@ -35,8 +40,16 @@ body {
   background-attachment: fixed;
   padding: 10px;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
   color: aliceblue;
+}
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
 }
 #playersArea > div,
 #matchArea {
@@ -44,6 +57,82 @@ body {
   border-radius: 12px;
   padding: 16px;
   margin: 12px 0;
+}
+#container {
+  display: grid;
+  gap: 24px;
+}
+#container > div {
+  min-width: 0;
+}
+#participantSelection > p:first-child {
+  margin-bottom: 12px;
+}
+.player-list-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-bottom: 12px;
+}
+.player-list-toolbar p {
+  margin: 0;
+  text-align: left;
+}
+.player-list-header,
+#playerSkillList > li > label {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) 1rem 4ch;
+  align-items: center;
+  gap: 8px;
+}
+.player-list-header {
+  padding: 0 0 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+  color: #d9e2e9;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-align: left;
+}
+.player-list-header[hidden] {
+  display: none;
+}
+.player-list-header span:last-child {
+  grid-column: 4;
+  text-align: right;
+}
+#playerSkillList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#playerSkillList > li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+#playerSkillList > li > label {
+  min-height: 48px;
+  margin: 0;
+  padding: 10px 0;
+  cursor: pointer;
+  text-align: left;
+}
+.player-name {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.player-score-separator {
+  color: rgba(255, 255, 255, 0.72);
+  text-align: center;
+}
+.player-score {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  text-align: right;
+}
+#teamGenerationHeading {
+  margin-top: 0;
+  padding: 0;
 }
 form {
   display: flex;
@@ -117,21 +206,6 @@ input[type="checkbox"] {
   accent-color: #b5ee7a;
 }
 
-#playerSkillList > li {
-  list-style: none;
-  text-align: left;
-}
-
-#playerSkillList > li > label {
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  min-height: 44px;
-  padding: 10px 0;
-  cursor: pointer;
-}
-
 #registeredPlayerList > li {
   list-style: none;
   display: flex;
@@ -176,15 +250,30 @@ input[type="checkbox"] {
   }
 
   #playerSkillList {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 12px;
-    list-style: none;
+    display: block;
     overflow-wrap: anywhere;
+  }
+  #container {
+    grid-template-columns: minmax(0, 1.4fr) minmax(220px, 0.8fr);
+    align-items: start;
+    gap: 32px;
   }
 }
 
 @media (max-width: 500px) {
+  .player-list-toolbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .player-list-toolbar p {
+    text-align: center;
+  }
+
+  .player-list-toolbar button {
+    align-self: center;
+  }
+
   #teamsContainer {
     grid-template-columns: minmax(0, 1fr);
   }
