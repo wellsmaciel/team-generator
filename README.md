@@ -4,7 +4,7 @@ A static web application for selecting participants and forming teams using inte
 
 ## Run locally
 
-Keep `index.html`, `script.js`, `styles.css` and `Dark_court.jpg` together, then open `index.html` in a browser. A local static server, such as VS Code Live Server, is optional. Use the same address and browser profile when checking saved players.
+Keep `index.html`, `script.js` and `styles.css` together, then open `index.html` in a browser. A local static server, such as VS Code Live Server, is optional. The former court photo is no longer used as the page background. Use the same address and browser profile when checking saved players.
 
 ## How to use
 
@@ -86,12 +86,14 @@ The [stage 05 checklist](docs/testes-manuais-etapa-05.md) links the evidence and
 
 Manual text copying, the Copy teams button, team generation placed after the participant list and the Select All Players button are available. There is no button to unselect everyone. There is no login, backend, cross-device synchronization, saved match, image sharing or sharing with skill totals. No published application URL has been confirmed.
 
+The UX refinements approved on 22 October 2026 are recorded in [docs/ajustes-ux-2026-10-22.md](docs/ajustes-ux-2026-10-22.md). They include the solid background, scroll-aware fixed navigation, clearer player/skill layout, compact controls and persistent mobile version label.
+
 ## Project files
 
 - `index.html`: page structure and controls
 - `styles.css`: page styling
 - `script.js`: registrations, local storage, selection, generation and match actions
-- `Dark_court.jpg`: background image
+- `Dark_court.jpg`: legacy image asset, not used by the current interface
 - `tests/*.test.cjs`: dependency-free Node.js checks
 - `tests/browser/`, `playwright.config.cjs`: isolated browser checks and their server
 - `package.json`, `package-lock.json`: development-only Playwright dependency and commands

@@ -4,6 +4,8 @@
 
 # Tarefas e continuidade
 
+> **Estado atual (22/10/2026):** além das tarefas 04–07 concluídas, o usuário aprovou e revisou a rodada de refinamento de UX descrita em [ajustes de UX e interface](ajustes-ux-2026-10-22.md). A versão móvel no rodapé foi restaurada após observação do usuário. O registro de aprovação não altera o histórico de commits/release de 21/10/2026.
+
 > **Regra histórica das tarefas 04/05:** a coordenação e os gates usados estão preservados em [coordenação por hooks](agents/coordenacao-por-hooks.md). As tarefas e a release `v1.4.0` foram concluídas. Esta regra não é uma autorização atual.
 
 ## Rodada mobile first — planejamento aprovado em 20/10/2026 e concluído em 21/10/2026

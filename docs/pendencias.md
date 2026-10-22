@@ -1,6 +1,6 @@
 # Dúvidas abertas e ideias adiadas
 
-**Estado atual — 21/10/2026:** as tarefas 04–07 do [plano mobile first](plano-mobile-first.md) foram concluídas. As pendências e ideias abaixo continuam sem aprovação ou implementação, exceto quando o texto registra explicitamente uma entrega concluída. Não há próxima tarefa autorizada.
+**Estado atual — 22/10/2026:** as tarefas 04–07 do [plano mobile first](plano-mobile-first.md) foram concluídas e a rodada de UX aprovada pelo usuário foi aplicada; consulte [ajustes de UX e interface](ajustes-ux-2026-10-22.md). As pendências e ideias abaixo continuam sem aprovação ou implementação, exceto quando o texto registra explicitamente uma entrega concluída.
 
 ## Registro histórico — estado após o fechamento da etapa 05
 

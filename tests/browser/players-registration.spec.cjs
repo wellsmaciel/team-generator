@@ -42,17 +42,19 @@ test('saved legacy records load in Players with literal names, long names fit th
   await page.getByRole('button', { name: 'Edit Diego', exact: true }).click();
   await expect(page.getByLabel('Player Name', { exact: true })).toHaveValue('Diego');
   await expect(page.getByRole('button', { name: 'Save changes', exact: true })).toBeVisible();
-  await page.getByLabel('Player Skill', { exact: true }).fill('9');
+  await page.getByLabel('Estimated skill (1–10)', { exact: true }).fill('9');
   await page.getByRole('button', { name: 'Cancel edit', exact: true }).click();
   await expect(page.getByRole('button', { name: 'Add Player', exact: true })).toBeVisible();
   await expect(page.getByLabel('Player Name', { exact: true })).toHaveValue('');
-  await expect(page.locator('#registeredPlayerList li').filter({ hasText: 'Diego' })).toContainText('Diego - 4');
+  const diegoRow = page.locator('#registeredPlayerList li').filter({ has: page.locator('.registered-player-name', { hasText: 'Diego' }) });
+  await expect(diegoRow.locator('.registered-player-name')).toHaveText('Diego');
+  await expect(diegoRow.locator('.player-score')).toHaveText('4');
 
   // Saving the edit persists it, and the stored literal name is unchanged.
   await page.getByRole('button', { name: 'Edit Diego', exact: true }).click();
-  await page.getByLabel('Player Skill', { exact: true }).fill('9');
+  await page.getByLabel('Estimated skill (1–10)', { exact: true }).fill('9');
   await page.getByRole('button', { name: 'Save changes', exact: true }).click();
-  await expect(page.locator('#registeredPlayerList li').filter({ hasText: 'Diego' })).toContainText('Diego - 9');
+  await expect(diegoRow.locator('.player-score')).toHaveText('9');
   const stored = await page.evaluate(() => JSON.parse(localStorage.getItem('team-generator.players')));
   expect(stored.map(player => [player.name, player.score])).toEqual([
     [LONG_NAME, 7], ['  <b>Zé</b> & "Co"  ', 5], ['Carla', 3], ['Diego', 9],
@@ -90,7 +92,7 @@ test('only navigating keeps a pending decision, cancelling an edit keeps the mat
   // Cancelling an edit preserves the result and the pending decision.
   await players.click();
   await page.getByRole('button', { name: 'Edit Diego', exact: true }).click();
-  await page.getByLabel('Player Skill', { exact: true }).fill('1');
+  await page.getByLabel('Estimated skill (1–10)', { exact: true }).fill('1');
   await page.getByRole('button', { name: 'Cancel edit', exact: true }).click();
   await match.click();
   await expect(page.locator('#alternativeControls')).toBeVisible();
@@ -101,7 +103,7 @@ test('only navigating keeps a pending decision, cancelling an edit keeps the mat
   // Saving an edit invalidates the match but keeps the selection.
   await players.click();
   await page.getByRole('button', { name: 'Edit Diego', exact: true }).click();
-  await page.getByLabel('Player Skill', { exact: true }).fill('1');
+  await page.getByLabel('Estimated skill (1–10)', { exact: true }).fill('1');
   await page.getByRole('button', { name: 'Save changes', exact: true }).click();
   await match.click();
   await expect(page.locator('#teamsContainer')).toBeEmpty();

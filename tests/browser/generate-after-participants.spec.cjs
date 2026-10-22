@@ -4,12 +4,12 @@ async function registerPlayers(page, players) {
   await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score] of players) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
-    await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
+    await page.getByLabel('Estimated skill (1–10)', { exact: true }).fill(String(score));
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
 }
 
-test('positions the team count input and Generate Teams button after the participant list and before the results, in both DOM and visual order', async ({ page }) => {
+test('keeps team count and generation in the Match controls panel and before results in DOM order', async ({ page }) => {
   await page.goto('/');
   await registerPlayers(page, [
     ['Ana', 5],
@@ -27,12 +27,14 @@ test('positions the team count input and Generate Teams button after the partici
   // a successful generation, so the position checks locate it by id instead.
   const generateButton = page.locator('#btnTeams');
 
-  // In Select players, the team count and generation follow the participant list.
-  const participantsListBox = await page.locator('#playerSkillList').boundingBox();
+  // The desktop layout places participant selection beside generation controls.
+  const generationPanelBox = await page.locator('#teamGeneration').boundingBox();
   const teamCountBox = await teamCountInput.boundingBox();
   const generateButtonBox = await generateButton.boundingBox();
-  expect(teamCountBox.y).toBeGreaterThanOrEqual(participantsListBox.y + participantsListBox.height);
-  expect(generateButtonBox.y).toBeGreaterThanOrEqual(participantsListBox.y + participantsListBox.height);
+  expect(teamCountBox.x).toBeGreaterThanOrEqual(generationPanelBox.x);
+  expect(teamCountBox.x + teamCountBox.width).toBeLessThanOrEqual(generationPanelBox.x + generationPanelBox.width);
+  expect(generateButtonBox.x).toBeGreaterThanOrEqual(generationPanelBox.x);
+  expect(generateButtonBox.x + generateButtonBox.width).toBeLessThanOrEqual(generationPanelBox.x + generationPanelBox.width);
 
   // Generation opens Teams, where the results follow the generation button.
   await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();

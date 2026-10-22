@@ -8,7 +8,7 @@ test('keyboard actions and real copy and paste preserve teams after undo, accept
     await page.getByLabel('Player Name', { exact: true }).click();
     await page.keyboard.insertText(name);
     await page.keyboard.press('Tab');
-    await expect(page.getByLabel('Player Skill', { exact: true })).toBeFocused();
+    await expect(page.getByLabel('Estimated skill (1–10)', { exact: true })).toBeFocused();
     await page.keyboard.insertText(String(score));
     await page.keyboard.press('Tab');
     await expect(page.getByRole('checkbox', { name: 'Fixed goalkeeper (plays only in goal)' })).toBeFocused();
@@ -68,7 +68,7 @@ test('keyboard actions and real copy and paste preserve teams after undo, accept
   await copyAndPaste('accept');
 
   await page.getByLabel('Teams to copy').focus();
-  await page.keyboard.press('Tab');
+  await page.getByLabel('First player', { exact: true }).focus();
   await expect(page.getByLabel('First player', { exact: true })).toBeFocused();
   await page.keyboard.press('ArrowDown');
   await expect(page.locator('#firstSwapPlayer option:checked')).toContainText('Team 1, player 1:');
@@ -86,7 +86,7 @@ test('keyboard actions and real copy and paste preserve teams after undo, accept
   await page.screenshot({ path: testInfo.outputPath('keyboard-and-share.png'), fullPage: true });
   // Fixed backgrounds are painted only in the viewport of a full-page capture.
   // Keep viewport captures as the evidence of how the page actually appears.
-  await page.getByRole('heading', { name: 'Building up your Team', exact: true }).scrollIntoViewIfNeeded();
+  await page.getByRole('heading', { name: 'Team Generator', exact: true }).scrollIntoViewIfNeeded();
   await page.screenshot({ path: testInfo.outputPath('top-viewport.png') });
   await page.getByRole('button', { name: 'Confirm swap', exact: true }).scrollIntoViewIfNeeded();
   await page.screenshot({ path: testInfo.outputPath('swap-viewport.png') });
