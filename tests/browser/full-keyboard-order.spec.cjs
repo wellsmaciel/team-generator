@@ -8,7 +8,7 @@ test('Tab visits registration, participants, team count/generation and sharing c
   await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Players', exact: true }).click();
 
   const playerNameInput = page.getByLabel('Player Name', { exact: true });
-  const playerSkillInput = page.getByLabel('Player Skill', { exact: true });
+  const playerSkillInput = page.getByLabel('Estimated skill (1–10)', { exact: true });
   const goalkeeperCheckbox = page.getByLabel('Fixed goalkeeper (plays only in goal)', { exact: true });
   const addPlayerButton = page.getByRole('button', { name: 'Add Player', exact: true });
 

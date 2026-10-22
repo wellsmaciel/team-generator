@@ -4,7 +4,7 @@ async function registerAndGenerate(page, players) {
   await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score] of players) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
-    await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
+    await page.getByLabel('Estimated skill (1–10)', { exact: true }).fill(String(score));
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
   await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Match', exact: true }).click();

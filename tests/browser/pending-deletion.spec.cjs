@@ -7,7 +7,7 @@ test('confirming deletion during a worse preview clears the match and allows a n
   await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Players', exact: true }).click();
   for (const [name, score] of [['Bruno', 2], ['Carla', 3], ['Diego', 4], ['Eva', 5]]) {
     await page.getByLabel('Player Name', { exact: true }).fill(name);
-    await page.getByLabel('Player Skill', { exact: true }).fill(String(score));
+    await page.getByLabel('Estimated skill (1–10)', { exact: true }).fill(String(score));
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
   const navigation = page.getByRole('navigation', { name: 'Main', exact: true });
@@ -52,7 +52,7 @@ test('confirming deletion during a worse preview clears the match and allows a n
   // Restore the minimum of four participants through the registration form.
   await navigation.getByRole('button', { name: 'Players', exact: true }).click();
   await page.getByLabel('Player Name', { exact: true }).fill('Replacement');
-  await page.getByLabel('Player Skill', { exact: true }).fill('2');
+  await page.getByLabel('Estimated skill (1–10)', { exact: true }).fill('2');
   await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   await navigation.getByRole('button', { name: 'Match', exact: true }).click();
   await participants.last().check();
