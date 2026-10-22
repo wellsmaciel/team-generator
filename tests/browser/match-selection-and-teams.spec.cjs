@@ -81,7 +81,7 @@ test('generating teams opens Teams and hides the selection, and Back to selectio
   await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
 
   await expect(page.getByRole('heading', { name: 'Teams', exact: true })).toBeVisible();
-  await expect(page.getByRole('heading', { name: /^Players Team \d/ })).toHaveCount(3);
+  await expect(page.getByRole('heading', { name: /^Team \d$/ })).toHaveCount(3);
   await expect(page.getByRole('heading', { name: 'Select players', exact: true })).toBeHidden();
   await expect(page.getByRole('button', { name: 'Select All Players', exact: true })).toBeHidden();
   await expect(page.getByLabel('Number of teams', { exact: true })).toBeHidden();

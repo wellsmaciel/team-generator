@@ -80,8 +80,8 @@ function renderPlayers(id, players, showScores = false) {
   list.replaceChildren();
   players.forEach(function (player) {
     const item = document.createElement('li');
-    item.textContent = showScores ? player.name + ' - ' + player.score : player.name;
-    if (player.isGoalkeeper) item.textContent += ' (Goalkeeper)';
+    const playerName = player.name + (player.isGoalkeeper ? ' (Goalkeeper)' : '');
+    item.textContent = showScores ? playerName + ' - ' + player.score : playerName;
     if (id === 'playerSkillList') {
       const label = document.createElement('label');
       const checkbox = document.createElement('input');
@@ -91,7 +91,18 @@ function renderPlayers(id, players, showScores = false) {
         selectPlayer(player, checkbox.checked);
       });
       label.appendChild(checkbox);
-      label.appendChild(document.createTextNode(' ' + item.textContent));
+      const name = document.createElement('span');
+      name.className = 'player-name';
+      name.textContent = playerName;
+      label.appendChild(name);
+      const separator = document.createElement('span');
+      separator.className = 'player-score-separator';
+      separator.textContent = ' - ';
+      label.appendChild(separator);
+      const score = document.createElement('span');
+      score.className = 'player-score';
+      score.textContent = String(player.score);
+      label.appendChild(score);
       item.replaceChildren(label);
     }
     if (id === 'registeredPlayerList') {
@@ -119,6 +130,7 @@ function renderPlayers(id, players, showScores = false) {
   if (id === 'playerSkillList') {
     updateSelectedPlayerCount();
     const hasNoPlayers = players.length === 0;
+    document.getElementById('playerListColumns').hidden = hasNoPlayers;
     document.getElementById('noPlayersGuidance').hidden = !hasNoPlayers;
     document.getElementById('addPlayersFromMatch').hidden = !hasNoPlayers;
   }
@@ -322,7 +334,7 @@ function renderTeams() {
     section.className = 'team';
     const playerSection = document.createElement('div');
     const heading = document.createElement('h3');
-    heading.textContent = 'Players Team ' + (index + 1) + ' (' + team.players.length + ')';
+    heading.textContent = 'Team ' + (index + 1);
     const list = document.createElement('ul');
     team.players.forEach(function (player) {
       const item = document.createElement('li');
