@@ -48,7 +48,7 @@ test('the button, success message and shareable text fit the viewport without ho
   expect(confirmationBox.x + confirmationBox.width).toBeLessThanOrEqual(viewportWidth + 1);
 });
 
-test('the Copy teams button is reachable by Tab, shows a visible focus style and activates by Enter and Space', async ({ page }) => {
+test('WhatsApp link and Copy teams button are reachable by Tab, while Copy teams activates by Enter and Space', async ({ page }) => {
   test.skip(page.viewportSize().width <= 500, 'Keyboard activation check targets the desktop pointer-free flow.');
 
   await page.context().grantPermissions(['clipboard-read', 'clipboard-write']);
@@ -71,6 +71,8 @@ test('the Copy teams button is reachable by Tab, shows a visible focus style and
   await expect(page.getByRole('button', { name: 'Confirm swap', exact: true })).toBeFocused();
   await page.keyboard.press('Tab');
   await expect(page.getByRole('button', { name: 'Cancel', exact: true })).toBeFocused();
+  await page.keyboard.press('Tab');
+  await expect(page.getByRole('link', { name: 'Share on WhatsApp', exact: true })).toBeFocused();
   await page.keyboard.press('Tab');
   await expect(copyButton).toBeFocused();
 
