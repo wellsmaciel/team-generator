@@ -14,7 +14,7 @@ Guardar nomes, notas e condição de goleiro. Limpar os dados do navegador pode 
 
 Proposta: salvar uma lista em JSON, representação textual dos dados, com identificadores estáveis para distinguir jogadores de mesmo nome. Validar os dados ao carregar e ao salvar, e informar falhas de leitura ou gravação. Nomes iguais não devem ser usados como identificador técnico.
 
-Dados de participação e times podem ficar apenas na memória enquanto a página estiver aberta; persistir a partida ainda depende de decisão.
+Dados de participação, local/data/horário e times ficam apenas na memória enquanto a página estiver aberta; persistir ou salvar partidas continua fora do escopo aprovado. A mensagem é montada no cliente. Copy teams copia esse texto e Share on WhatsApp cria um link `wa.me` com o mesmo texto codificado; o app não envia a mensagem nem acessa contatos, deixando a escolha e o envio para a pessoa.
 
 ## Organização proposta, não implementada
 

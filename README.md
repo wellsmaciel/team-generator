@@ -15,7 +15,7 @@ Keep `index.html`, `script.js` and `styles.css` together, then open `index.html`
 5. Review participants, skill totals and warnings. Team sizes differ by at most one participant. Each team has at most one fixed goalkeeper; too many selected goalkeepers block generation. Missing goalkeepers and unequal sizes produce warnings.
 6. Use **Generate another composition** to search for different groups. Equal or better balance applies immediately. Any increase in the difference between the highest and lowest totals shows a preview requiring **Accept composition** or **Undo composition**. Sharing and swaps are unavailable during that decision.
 7. To swap players, choose participants from different teams and click **Confirm swap**. Swap outfield for outfield or goalkeeper for goalkeeper. **Cancel** clears the choices.
-8. Under **Share teams**, click **Copy teams** to copy the text with one action, or select and copy it manually. It contains team titles and names, without skill scores or totals, and follows the accepted composition after generation, swaps or undo. A confirmation message appears only after a successful copy; if the clipboard is unavailable or denies access, guidance to copy manually appears instead, without claiming success or losing the displayed teams. The button is unavailable together with the share text when there are no teams or a pending decision.
+8. Optionally enter the match location, date and time in **Match details**. Under **Share teams**, click **Copy teams** or **Share on WhatsApp**; both use the same text, with entered match details first and team titles/names below. Empty details are omitted. The message never includes skill scores or totals and follows the accepted composition after generation, swaps or undo. WhatsApp opens with the message prefilled so the organizer can choose a contact or group and send it. Copy gives confirmation only after success; if clipboard access is unavailable, guidance to copy manually appears instead. Sharing is unavailable when there are no teams or a pending decision.
 
 Adding a player, saving an edit, confirming deletion, changing selection or changing the team count clears the current match. Canceling an edit or deletion preserves it.
 
@@ -57,7 +57,7 @@ npx.cmd --no-install playwright install chromium
 npm.cmd run test:browser
 ```
 
-The browser suite creates its own loopback server on port 51806 and a fresh browser context per test. It does not read the user's browser profile or registrations. It runs at 1280×720, 360×800 and 390×844, covering deletion during a pending preview, keyboard/copy/paste after undo/acceptance/swaps, the Copy teams button (success, clipboard rejection and absence, stale-feedback races, invalidation) and its presentation/keyboard access. All tests passed on Chromium 156.0.8078.4. An integrated flow check chains Select All Players, generation, Copy teams, a manual swap, another composition (accept or undo) and copying again, confirming that the clipboard always matches the displayed teams without skill scores. Screenshots and an HTML report are generated under `.scratch/playwright-results` and `.scratch/playwright-report`.
+The browser suite creates its own loopback server on port 51806 and a fresh browser context per test. It does not read the user's browser profile or registrations. It runs at 1280×720, 360×800 and 390×844, covering deletion during a pending preview, keyboard/copy/paste after undo/acceptance/swaps, sharing controls and their keyboard access. Match details and WhatsApp feature checks passed in isolated browser runs; screenshots and an HTML report are generated under `.scratch/playwright-results` and `.scratch/playwright-report`. The WhatsApp destination is verified as a prefilled URL; opening the native app/site and completing a send were not tested.
 
 The responsive journey (task 07) has its own acceptance configuration, which runs the chained public journey, keyboard-only access, text and focus-outline contrast and a reflow check at 360×800, 390×844, 768×1024 and 1280×720 in emulated Chromium viewports, with synthetic data in fresh browser contexts. The browser suite above and this one use the same loopback port, so run them one after the other, never together:
 
@@ -67,7 +67,7 @@ npx.cmd --no-install playwright test --config .scratch/mobile-first-planning/evi
 
 The same command works as `npx --no-install playwright test --config ...` in shells where `npx` is allowed. The check found one real defect, now fixed: the footer text and links over the background photo fell below the 4.5:1 minimum contrast on tablet and desktop widths, so the footer now sits on the same dark card as the other sections. After the fix the footer is checked against a conservative bound (the dark card over a white pixel, 10.75:1), not by sampling the rendered photo; the headline and the wide-screen navigation are still sampled from rendered pixels. The reflow check resizes the viewport to 640×512 and 320×256 CSS pixels, which is the layout of 200% and 400% zoom, but it is not the browser's zoom control. Physical phones, real touch, mobile keyboards and native applications were not tested.
 
-The shared text (the "Teams to copy" box and what Copy teams puts on the clipboard) lists each team title followed by one bulleted player per line, with a blank line between teams. It never includes skill scores, totals or goalkeeper roles, and player names are copied exactly as typed:
+The shared text (the "Teams to copy" box and both sharing actions) lists non-empty match details first, then each team title followed by one bulleted player per line, with a blank line between teams. It never includes skill scores, totals or goalkeeper roles, and player names are copied exactly as typed:
 
 ```text
 Team 1
@@ -84,7 +84,7 @@ The [stage 05 checklist](docs/testes-manuais-etapa-05.md) links the evidence and
 
 ## Current scope
 
-Manual text copying, the Copy teams button, team generation placed after the participant list and the Select All Players button are available. There is no button to unselect everyone. There is no login, backend, cross-device synchronization, saved match, image sharing or sharing with skill totals. No published application URL has been confirmed.
+Manual text copying, Copy teams, Share on WhatsApp, optional location/date/time, team generation after participant selection and Select All Players are available. Match details and selection reset on reload. There is no button to unselect everyone, login, backend, cross-device synchronization, saved match, image sharing or sharing with skill totals. No published application URL has been confirmed.
 
 The UX refinements approved on 22 October 2026 are recorded in [docs/ajustes-ux-2026-10-22.md](docs/ajustes-ux-2026-10-22.md). They include the solid background, scroll-aware fixed navigation, clearer player/skill layout, compact controls and persistent mobile version label.
 

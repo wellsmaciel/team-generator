@@ -1,5 +1,9 @@
 # Jornada do usuário
 
+## Detalhes da partida e compartilhamento — 23/10/2026
+
+Na etapa Match, o organizador pode informar local, data e horário da partida; os três campos são opcionais. Editá-los atualiza a mensagem sem apagar os times. Os detalhes aparecem antes das equipes e campos vazios são omitidos. **Copy teams** e **Share on WhatsApp** usam exatamente a mesma mensagem. O WhatsApp abre com o texto preenchido; a pessoa escolhe contato ou grupo e envia. Esses dados não persistem após recarregar.
+
 ## Guia inicial e tablets — 23/10/2026
 
 Ao abrir o app, o organizador vê o fluxo em três passos: adicionar jogadores com notas estimadas, selecionar participantes e quantidade de times, depois gerar e revisar a sugestão. O botão do guia leva ao formulário de cadastro. A interface não garante equilíbrio: a avaliação final continua com o organizador.
@@ -28,10 +32,10 @@ O uso principal é no celular, com suporte também a tablet e PC. A tarefa 01 co
 | Confirmar participantes | Selecionar jogadores individualmente e conferir a contagem | **Select All Players** implementado no ticket 02a (20/10/2026): marca todos os cadastrados; fica desabilitado sem cadastrados ou com todos já marcados, para não apagar times à toa; reabilita ao desmarcar alguém. **Concluído** em 20/10/2026 |
 | Configurar e gerar | Quantidade de times, regras de goleiros, tamanhos e equilíbrio | Lógica existente; **tarefa 02 concluída** em 20/10/2026: quantidade de times e geração ficam depois da lista de participantes e antes dos resultados, na ordem visual, DOM e de Tab |
 | Rever os times | Regenerar, aceitar/desfazer e trocar jogadores | Existente; preservar nas próximas mudanças |
-| Compartilhar | Copy teams e cópia manual | **Tarefa 01 concluída** em 19/10/2026 (8 ciclos de lógica + apresentação/teclado, verificados independentemente); sem lacunas de lógica pendentes, limitações registradas no ticket |
+| Compartilhar | Copiar ou abrir WhatsApp com detalhes e equipes | **Copy teams** concluído em 19/10/2026; detalhes opcionais e WhatsApp concluídos em 23/10/2026. A pessoa escolhe o destinatário no WhatsApp; aparelho/app nativo não foi testado |
 | Conferir a entrega | Validar o fluxo integrado e atualizar a documentação | **Tarefa 03 concluída** em 20/10/2026: fluxo integrado validado sem defeitos; não é uma nova rodada de implementação automática |
 
-**Estado das rodadas:** tarefas 01, 02, 02a (Select All Players) e 03 da rodada de usabilidade concluídas; tarefas 04–07 da rodada mobile first também concluídas. Não há trabalho seguinte autorizado nesta documentação.
+**Estado das rodadas:** tarefas 01, 02, 02a (Select All Players) e 03 da rodada de usabilidade concluídas; tarefas 04–07 da rodada mobile first também concluídas. A entrega de detalhes da partida e WhatsApp foi concluída em 23/10/2026; novos trabalhos dependem de pedido do usuário.
 
 **Ordem aprovada da segunda rodada, ampliada pelo usuário em 19/10/2026:** tarefas 01 (Copy teams), 02 (geração após a seleção) e Select All Players (ticket 02a) e tarefa 03 (validação integrada) concluídas; segunda rodada encerrada. Não iniciar outra entrega automaticamente. Tickets e passagens recentes em [tarefas](tarefas.md) são a referência para o progresso de cada entrega.
 
@@ -46,9 +50,9 @@ O uso principal é no celular, com suporte também a tablet e PC. A tarefa 01 co
 5. Escolher a quantidade de times e conferir os avisos e impedimentos.
 6. Gerar times conforme as regras de quantidade, goleiros e equilíbrio.
 7. Solicitar outra combinação quando possível ou trocar dois jogadores de times diferentes. Recalcular as somas após a troca e preservar as regras de goleiros. Se uma nova geração piorar o equilíbrio das notas, avisar e permitir aceitar ou desfazer, recuperando a composição anterior. A avaliação final do equilíbrio cabe ao organizador.
-8. Exibir texto com nomes e times, sem notas individuais nem totais por padrão, para copiar e colar manualmente (seleção + Ctrl+C) ou com o botão Copy teams, com confirmação acessível só após sucesso e orientação manual em caso de falha/ausência da API.
+8. Opcionalmente informar local, data e horário; exibir esses dados preenchidos antes dos times, omitindo campos vazios. A mesma mensagem, sem notas individuais nem totais, pode ser copiada com Copy teams ou aberta preenchida no WhatsApp para escolher contato/grupo e enviar.
 
-As notas permanecem visíveis na tela do organizador. Não foi confirmado um controle para incluí-las no compartilhamento; a primeira entrega pode manter o texto sempre sem notas, sujeito à revisão final.
+As notas permanecem visíveis na tela do organizador e não são incluídas no compartilhamento.
 
 ## Estado funcional anterior à evolução mobile first — histórico
 
@@ -62,4 +66,4 @@ A segunda rodada de 19/10/2026 foi aprovada para adicionar Copy teams e posicion
 
 ## Dúvidas
 
-Salvar a seleção da partida e ampliar as trocas manuais para goleiro por linha continuam sem aprovação. Os avisos e novas composições já foram entregues; ver [pendências](pendencias.md) para ideias adiadas e [o plano aprovado](plano-2026-10-19.md) para o próximo dia.
+Persistir a partida e ampliar as trocas manuais para goleiro por linha continuam sem aprovação. Os avisos, novas composições e compartilhamento básico por WhatsApp já foram entregues; ideias adiadas estão em [pendências](pendencias.md).

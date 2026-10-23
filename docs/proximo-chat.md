@@ -1,6 +1,14 @@
-> **Estado atual (23/10/2026):** as mudanças de guia inicial, estado vazio e layout responsivo para tablets foram implementadas, verificadas e publicadas na release `v1.6.0`. Consulte [ajustes de UX](ajustes-ux-2026-10-22.md) e [jornada do usuário](jornada-do-usuario.md).
+> **Estado atual (23/10/2026):** guia inicial, estado vazio e tablets foram publicados na `v1.6.0`. Depois, local/data/horário opcionais e compartilhamento por WhatsApp foram implementados na branch `feat/match-details-whatsapp` (commits `153e915` e `657ce4f`, mais atualização documental). A mensagem é igual para Copy teams e WhatsApp; o WhatsApp recebe o texto preenchido para escolha manual do destinatário. Detalhes atuais não persistem após recarregar. Sem teste no app/dispositivo WhatsApp nativo. Ver [jornada](jornada-do-usuario.md) e [ticket](../.scratch/match-details-and-whatsapp/issues/02-share-via-whatsapp-and-review-docs.md).
 
-## Atualização desta sessão — 23/10/2026
+## Atualização desta sessão — 23/10/2026 (detalhes e WhatsApp)
+
+- Adicionados campos opcionais de local, data e horário na área Match. Alterá-los atualiza a mensagem sem invalidar os times; ao recarregar, os detalhes são descartados.
+- Copy teams e Share on WhatsApp usam a mesma mensagem, com detalhes preenchidos antes das equipes e sem notas/totais. O link `wa.me` abre com texto pré-preenchido; não envia automaticamente.
+- Verificação de navegador aprovada para detalhes e construção do link; 42/42 checagens focadas da primeira parte e 15 aprovadas/3 ignoradas na suíte relacionada ao WhatsApp. `node --check script.js` e `git diff --check` passaram. Nenhum teste em aparelho físico ou WhatsApp nativo.
+- Revisados os arquivos Markdown locais, incluindo skills/configuração, instruções, documentação ativa, tickets e evidências históricas. README, PRODUCT, jornada, pendências, índice de docs, roadmap, visão do produto, tarefas e este resumo foram alinhados. Registros datados, cópias de evidência e docs de skill não precisaram de alteração.
+- A revisão de código final e o fechamento do ticket 02 ainda estão em andamento nesta sessão.
+
+## Atualização desta sessão — 23/10/2026 (estado publicado anterior)
 
 - Revisados os documentos de estado; os resumos atuais foram alinhados às mudanças de guia, estado vazio e tablets, mantendo os registros anteriores identificados como históricos.
 - A versão de produto passou de `1.5.0` para `1.6.0` (incremento minor por novas capacidades de onboarding e responsividade); a versão exibida no rodapé acompanha a release.
