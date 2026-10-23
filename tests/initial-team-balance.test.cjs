@@ -6,7 +6,7 @@ const { setup } = require('./manual-player-swaps.test.cjs');
 const names = ['High A', 'High B', 'High C', 'Low A', 'Low B'];
 const page = setup(5, 0, 2, [10, 10, 10, 1, 1], names);
 const rendered = page.elements.teamsContainer.children.map(section => ({
-  names: section.children[0].children[1].children.map(item => item.textContent),
+  names: section.children[0].children.find(child => child.tagName === 'UL').children.map(item => item.textContent),
   total: Number(section.children[1].children[1].textContent),
 }));
 const totals = rendered.map(team => team.total).sort((a, b) => a - b);

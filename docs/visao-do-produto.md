@@ -6,13 +6,15 @@ Atender quem organiza partidas e precisa montar times com habilidades próximas.
 
 O organizador reaproveita nomes e notas dos jogadores, seleciona os participantes de cada partida e escolhe quantos times formar. Pode ajustar o resultado e compartilhar os nomes sem divulgar as avaliações.
 
+Na partida atual, pode informar local, data e horário opcionais. A mensagem de compartilhamento inclui os detalhes preenchidos antes dos times; ela pode ser copiada ou aberta no WhatsApp para a pessoa escolher o destinatário. Os detalhes não são salvos ao recarregar.
+
 A primeira versão guarda o cadastro no mesmo navegador e aparelho. Não precisa de login, servidor próprio ou banco de dados externo.
 
 Há um possível grupo de teste com 15 jogadores. O usuário pretende contatar seu organizador; o contato e o teste ainda não ocorreram.
 
 ## Estado atual
 
-Cadastro persistente com goleiro, edição, exclusão, seleção da partida, vários times, restrições de tamanho/goleiros, avisos, trocas, novas composições com aceitar/desfazer e texto compartilhável já foram entregues. Código e interface estão em inglês. As duas primeiras rodadas estão concluídas, incluindo Copy teams, geração após participantes, Select All Players e validação integrada. README e resumo documentam evidências e limitações; não há validação em celular físico.
+Cadastro persistente com goleiro, edição, exclusão, seleção da partida, vários times, restrições de tamanho/goleiros, avisos, trocas, novas composições com aceitar/desfazer e compartilhamento estão entregues. O texto contém detalhes opcionais da partida e nomes dos times, sem notas/totais. Código e interface estão em inglês. README e resumo documentam evidências e limitações; não há validação em celular físico nem no aplicativo nativo do WhatsApp.
 
 ## Evolução mobile first aprovada e implementada
 

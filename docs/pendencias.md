@@ -1,6 +1,6 @@
 # Dúvidas abertas e ideias adiadas
 
-**Estado atual — 22/10/2026:** as tarefas 04–07 do [plano mobile first](plano-mobile-first.md) foram concluídas e a rodada de UX aprovada pelo usuário foi aplicada; consulte [ajustes de UX e interface](ajustes-ux-2026-10-22.md). As pendências e ideias abaixo continuam sem aprovação ou implementação, exceto quando o texto registra explicitamente uma entrega concluída.
+**Estado atual — 23/10/2026:** as tarefas 04–07 e a rodada de UX foram concluídas. Local/data/horário opcionais para a partida atual e compartilhamento via WhatsApp também foram implementados; veja o [resumo](proximo-chat.md). As demais pendências e ideias abaixo continuam sem aprovação ou implementação, exceto quando o texto registra explicitamente uma entrega concluída.
 
 ## Registro histórico — estado após o fechamento da etapa 05
 
@@ -15,7 +15,7 @@ Limitações de validação registradas separadamente: B9 não executado por fal
 3. **Aviso de quantidade — implementado e verificado:** o aviso aparece quando o total não é divisível pela quantidade de times, preservando os avisos de goleiros. A1/A2/B5 comprovaram os tamanhos e avisos no navegador, incluindo 15/3, 15/2 e 10/3. Ticket 01 concluído.
 4. **Limites — resolvido:** confirmado na continuidade: pelo menos 2 times e pelo menos 2 participantes por time, contando goleiros. Assim, são necessários ao menos 4 selecionados; o máximo de times é a parte inteira da quantidade de selecionados dividida por 2.
 5. **Alterações após gerar — resolvido:** confirmado na continuidade: ao salvar uma edição, confirmar a exclusão de jogador, marcar/desmarcar participantes ou mudar a quantidade de times, limpar os times gerados e pedir nova geração. Cancelar a edição ou a exclusão mantém os times.
-6. **Continuidade da partida:** guardar apenas o cadastro ou também presentes e times ao recarregar? Só o cadastro foi confirmado.
+6. **Continuidade da partida:** a seleção, os detalhes e os times da partida atual são temporários e reiniciam ao recarregar. Persistir ou salvar partidas para uso futuro ainda não foi aprovado.
 7. **Trocas com goleiro:** estão confirmadas trocas entre jogadores de linha e entre goleiros. Permitir transferir um goleiro para um time sem goleiro, compensando a troca por alguém da linha, não foi discutido nem aprovado.
 8. **Exibição no compartilhamento:** omissão das notas por padrão está confirmada; um botão para incluí-las não está confirmado.
 9. **Tarefas e verificações — concluídas no escopo essencial:** tickets 01 a 05 concluídos com reaproveitamento das evidências, sem bateria duplicada. Regressões Node preservadas e reexecutadas. Playwright instalado como dependência de desenvolvimento por autorização explícita do usuário; seis testes de aceitação passaram. Isso não autoriza outras instalações por padrão. TDD continua obrigatório para novas correções e funcionalidades autorizadas; ver [procedimento](desenvolvimento-tdd.md). Os testes adicionados para comportamento existente não são um novo ciclo TDD.
@@ -50,8 +50,8 @@ Esses adiamentos não significam compromisso de implementação futura.
 
 ## Ideias sem aprovação
 
-Backup por exportação/importação, histórico de partidas, nomes personalizados de times, integração com WhatsApp, reservas e revezamento automático não fazem parte do escopo confirmado. Algumas nem foram propostas na entrevista; não tratá-las como pedidos do usuário.
+Backup por exportação/importação, histórico de partidas, nomes personalizados de times, reservas e revezamento automático não fazem parte do escopo confirmado. O compartilhamento básico pelo WhatsApp já foi implementado; integrações além do link de mensagem pré-preenchida não foram aprovadas. Algumas ideias nem foram propostas na entrevista; não tratá-las como pedidos do usuário.
 
 ## Confirmação antes do plano final
 
-O usuário aprovou as cinco tarefas restantes, disponíveis no índice de tarefas. Cada novo chat deve trabalhar no escopo indicado, com uma pergunta por vez. Persistência da partida, trocas mistas e opção de compartilhar notas continuam sem aprovação e não bloqueiam os tickets publicados. Não reabrir decisões confirmadas sem um conflito concreto.
+As tarefas anteriores estão encerradas. Persistência da partida, trocas mistas e opção de compartilhar notas continuam sem aprovação. Não reabrir decisões confirmadas sem um conflito concreto.

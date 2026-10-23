@@ -9,9 +9,11 @@ const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const source = fs.readFileSync(path.join(root, 'script.js'), 'utf8');
 
 class Element {
-  constructor() {
+  constructor(tagName = 'div') {
+    this.tagName = tagName.toUpperCase();
     this.children = [];
     this.listeners = {};
+    this.classList = { toggle() {} };
     this.textContent = '';
     this.value = '';
     this.hidden = false;
@@ -20,6 +22,7 @@ class Element {
   appendChild(child) { this.children.push(child); return child; }
   addEventListener(type, handler) { this.listeners[type] = handler; }
   setAttribute() {}
+  removeAttribute() {}
   setCustomValidity() {}
   reportValidity() { return true; }
   focus() {}
@@ -39,14 +42,14 @@ function setup(count = 9, goalkeeperCount = 2, teamCount = 3, scores = [], names
   const context = vm.createContext({
     document: {
       getElementById: id => { assert.ok(elements[id], 'Missing HTML element: ' + id); return elements[id]; },
-      createElement: () => new Element(),
+      createElement: tagName => new Element(tagName),
       createTextNode: text => ({ textContent: text }),
     },
     localStorage: {
       getItem: () => JSON.stringify(saved),
       setItem: () => { writes++; },
     },
-    window: { confirm: () => true },
+    window: { addEventListener: () => {}, innerHeight: 720, confirm: () => true },
   });
   const run = code => vm.runInContext(code, context);
   run(source);
@@ -76,7 +79,8 @@ function setup(count = 9, goalkeeperCount = 2, teamCount = 3, scores = [], names
     assert.equal(run('JSON.stringify(players)'), registration, 'Swaps must not mutate registrations');
     elements.teamsContainer.children.forEach((section, index) => {
       const team = run(`teams[${index}]`);
-      assert.deepEqual(section.children[0].children[1].children.map(item => item.textContent),
+      const playerList = section.children[0].children.find(child => child.tagName === 'UL');
+      assert.deepEqual(playerList.children.map(item => item.textContent),
         Array.from(team.players, player => player.name + (player.isGoalkeeper ? ' (Goalkeeper)' : '')));
       assert.equal(Number(section.children[1].children[1].textContent), team.totalScore);
     });
@@ -116,7 +120,8 @@ for (const [count, goalkeepers, teamCount] of [[4, 0, 2], [6, 2, 2], [9, 1, 3], 
         assert.deepEqual(actual.map(team => team.members), expected.map(team => team.members));
         assert.equal(page.elements.firstSwapPlayer.value, '');
         assert.match(page.elements.swapStatus.textContent, /Players swapped/);
-        assert.ok(JSON.stringify(page.elements.teamsContainer.children).includes('Skill total - Team'));
+        assert.ok(page.elements.teamsContainer.children.every(section =>
+          section.children[1].children.some(child => child.textContent === 'Skill total')));
       } else {
         assert.equal(page.snapshot(), initial);
         assert.match(page.elements.swapStatus.textContent, /Choose|Swap outfield/);

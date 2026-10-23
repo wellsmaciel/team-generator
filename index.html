@@ -46,7 +46,7 @@
         <label for="pName">Player Name</label>
         <input type="text" id="pName" required />
         <label for="pSkill">Estimated skill (1–10)</label>
-        <input type="number" id="pSkill" min="1" max="10" step="1" required aria-describedby="pSkillHelp" />
+        <input type="number" id="pSkill" min="1" max="10" step="1" inputmode="numeric" required aria-describedby="pSkillHelp" />
         <p id="pSkillHelp" class="skill-guidance">Rate each player relative to this group: 1 = developing, 5 = average, 10 = strongest.</p>
         <label for="pGoalkeeper">
           <input type="checkbox" id="pGoalkeeper" />
@@ -60,6 +60,23 @@
     </section>
 
     <section id="matchArea">
+    <section id="matchDetails" aria-labelledby="matchDetailsHeading">
+      <h2 id="matchDetailsHeading">Match details</h2>
+      <div class="match-detail-fields">
+        <div>
+          <label for="matchLocation">Match location</label>
+          <input type="text" id="matchLocation" autocomplete="off" />
+        </div>
+        <div>
+          <label for="matchDate">Match date</label>
+          <input type="date" id="matchDate" />
+        </div>
+        <div>
+          <label for="matchTime">Match time</label>
+          <input type="time" id="matchTime" />
+        </div>
+      </div>
+    </section>
     <section id="selectPlayersStage" aria-labelledby="selectPlayersHeading">
     <h2 id="selectPlayersHeading" tabindex="-1">Select players</h2>
     <p id="noPlayersGuidance" hidden>No players registered yet. Add players to set up a match.</p>
@@ -83,7 +100,7 @@
       <div id="teamGeneration">
         <h3 id="teamGenerationHeading">Generate teams</h3>
         <label for="teamCount">Number of teams</label>
-        <input type="number" id="teamCount" min="2" step="1" value="2" required aria-describedby="teamCountHelp" />
+        <input type="number" id="teamCount" min="2" step="1" value="2" inputmode="numeric" required aria-describedby="teamCountHelp" />
         <p id="teamCountHelp">Choose at least 2 teams, with at least 2 selected players per team.</p>
         <div id="teamGenerateSlot"><button id="btnTeams" type="button" onclick="generateTeams()">Generate Teams</button></div>
       </div>
@@ -117,7 +134,8 @@
       </section>
       <section id="shareControls" hidden aria-labelledby="shareHeading">
         <h3 id="shareHeading">Share teams</h3>
-        <p id="shareHelp">Copy teams to share the player names. You can also select the text below and copy it manually. Skill scores are not included.</p>
+        <p id="shareHelp">Share the player names on WhatsApp, copy them, or select the text below and copy it manually. Skill scores are not included.</p>
+        <a id="btnShareWhatsApp" href="https://wa.me/" target="_blank" rel="noopener noreferrer">Share on WhatsApp</a>
         <button id="btnCopyTeams" type="button" onclick="copyTeamsToClipboard()">Copy teams</button>
         <p id="copyStatus" role="status"></p>
         <label for="shareText">Teams to copy</label>
