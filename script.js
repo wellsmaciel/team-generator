@@ -154,6 +154,11 @@ function renderPlayers(id, players, showScores = false) {
     document.getElementById('noPlayersGuidance').hidden = !hasNoPlayers;
     document.getElementById('addPlayersFromMatch').hidden = !hasNoPlayers;
   }
+  if (id === 'registeredPlayerList') {
+    const hasRegisteredPlayers = players.length > 0;
+    document.getElementById('registeredPlayersEmptyState').hidden = hasRegisteredPlayers;
+    document.getElementById('playersArea').classList.toggle('has-registered-players', hasRegisteredPlayers);
+  }
 }
 
 function updateSelectedPlayerCount() {

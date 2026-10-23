@@ -12,13 +12,31 @@
   </head>
   <body>
     <h1>Team Generator</h1>
+    <section id="gettingStarted" aria-labelledby="gettingStartedHeading">
+      <div class="guide-heading">
+        <div>
+          <h2 id="gettingStartedHeading">Build your teams in three steps</h2>
+          <p>Get a suggested split based on estimated skills, then adjust the teams as needed.</p>
+        </div>
+        <button type="button" onclick="showArea('players'); document.getElementById('pName').focus({ preventScroll: true });">Add your players</button>
+      </div>
+      <ol class="guide-steps">
+        <li><strong>Add players</strong><span>Save each player's name and estimated skill.</span></li>
+        <li><strong>Select players</strong><span>Choose who is playing and how many teams you need.</span></li>
+        <li><strong>Generate teams</strong><span>Review a suggested split, then adjust it if needed.</span></li>
+      </ol>
+    </section>
     <nav aria-label="Main">
       <button id="playersNavigation" type="button" aria-current="location" onclick="showArea('players')">Players</button>
       <button id="matchNavigation" type="button" onclick="showArea('match')">Match</button>
     </nav>
     <section id="playersArea" hidden>
-    <div>
+    <div id="registeredPlayersPanel">
       <h2>Registered players</h2>
+      <div id="registeredPlayersEmptyState" hidden>
+        <p>Your saved players will appear here. Add players to reuse your roster in this browser.</p>
+        <button type="button" onclick="document.getElementById('pName').focus();">Add your first player</button>
+      </div>
       <ul id="registeredPlayerList"></ul>
     </div>
     <div>
@@ -109,7 +127,7 @@
     </section>
 
     <footer>
-      <p>Team Generator — Created by Wells Maciel <span class="site-version">v1.5.0</span></p>
+      <p>Team Generator — Created by Wells Maciel <span class="site-version">v1.6.0</span></p>
       <p>
         <a href="https://www.linkedin.com/in/wells-velasquez-maciel/">LinkedIn</a>
       </p>

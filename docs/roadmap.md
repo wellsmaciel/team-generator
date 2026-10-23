@@ -1,6 +1,6 @@
 # Roadmap por fases
 
-**Estado atual (21/10/2026):** as fases iniciais e as rodadas de usabilidade foram concluídas. A evolução [mobile first, tarefas 04–07](plano-mobile-first.md) também foi concluída; consulte [tarefas](tarefas.md) para os commits e evidências. As fases abaixo registram o roadmap original e não são uma fila de trabalho atual.
+**Estado atual (23/10/2026):** as fases iniciais, as rodadas de usabilidade e a entrega mobile first foram concluídas. Refinamentos de UX incluem guia inicial, orientação de estado vazio e layout responsivo para tablets; a release `v1.6.0` está sendo preparada. Consulte [tarefas](tarefas.md), [jornada do usuário](jornada-do-usuario.md) e [registro de UX](ajustes-ux-2026-10-22.md). As fases abaixo registram o roadmap original e não são uma fila de trabalho atual.
 
 O [mapa da jornada](jornada-do-usuario.md) e o [índice de tarefas](tarefas.md) registram as entregas encerradas. Não há sequência de implementação autorizada neste roadmap.
 
