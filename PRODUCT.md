@@ -12,19 +12,19 @@ Organizers preparing futsal matches who reuse player registrations, choose parti
 
 ## Product Purpose
 
-Team Generator helps an organizer prepare teams with reasonably close skill totals, review and adjust the result, and share team names. The organizer makes the final judgment about balance.
+Team Generator helps an organizer prepare a match, form teams with reasonably close skill totals, review and adjust the result, and share match details and team names. The organizer makes the final judgment about balance.
 
 ## Positioning
 
-The product combines reusable local player registrations, fixed-goalkeeper constraints, team generation, manual swaps, and shareable team lists that omit skill scores and totals. Generated balance is guidance rather than a guarantee.
+The product combines reusable local player registrations, optional location/date/time for the current match, fixed-goalkeeper constraints, team generation, manual swaps, and shareable match details and team lists that omit skill scores and totals. Organizers can copy the message or open WhatsApp with it prefilled, then choose where to send it. Generated balance is guidance rather than a guarantee.
 
 ## Operating Context
 
-The main use is on a phone, with tablet and desktop support. The organizer registers players, selects participants for a match, chooses the number of teams, reviews warnings and generated teams, optionally regenerates or swaps players, then copies or manually shares the team list.
+The main use is on a phone, with tablet and desktop support. The organizer registers players, selects participants for a match, optionally enters location/date/time, chooses the number of teams, reviews warnings and generated teams, optionally regenerates or swaps players, then copies the message or opens WhatsApp to choose a recipient.
 
 ## Capabilities and Constraints
 
-Player names, integer skill estimates from 1 to 10, and fixed-goalkeeper status are stored in the current browser. Selection and match state reset on reload. There is no account, synchronization, or remote backup. Skill scores are estimates and do not guarantee balanced play; the organizer decides whether the teams are satisfactory. The default shared team list omits skill scores and totals. Rules for sports other than futsal are outside the confirmed scope.
+Player names, integer skill estimates from 1 to 10, and fixed-goalkeeper status are stored in the current browser. Selection and current match details reset on reload. There is no account, synchronization, or remote backup. WhatsApp sharing uses a prefilled URL; the user selects the recipient and sends the message. Skill scores are estimates and do not guarantee balanced play; the organizer decides whether the teams are satisfactory. Shared messages omit skill scores and totals. Rules for sports other than futsal are outside the confirmed scope.
 
 ## Evidence on Hand
 
