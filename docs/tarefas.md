@@ -1,10 +1,10 @@
-> **Estado atual (21/10/2026):** a rodada mobile first (04–07) está concluída. O último commit é `e63a27fea080f676bc76e418553b1e59b62ebefa` (tarefa 07); a tag `v1.4.0` fecha 04/05 e as tarefas 06/07 estão em commits posteriores. Revisão, resultados e limites estão no [ticket 07](../.scratch/mobile-first-planning/issues/07-integrated-responsive-validation.md) e no recibo final local. Não há próxima tarefa autorizada; não iniciar trabalho ou operações externas com base nas autorizações históricas abaixo.
+> **Estado atual (23/10/2026):** tarefas 04–07 e os refinamentos de UX até esta data estão concluídos. As mudanças de guia inicial, estado vazio e layout para tablets preparam a release `v1.6.0`; seu estado de publicação consta no [resumo da sessão](proximo-chat.md). A tag `v1.4.0` fecha historicamente 04/05; `v1.5.0` fechou os refinamentos anteriores. As autorizações antigas abaixo são registros históricos e não limitam pedidos novos do usuário.
 
 > **Histórico (autorização da 06, superada):** executar 06 com TDD e commit condicional exclusivo de Claude; encerrar após o commit validado de 06, sem iniciar 07. Sem push/PR/merge/release/publicação. O resultado está no início de [coordenação](agents/coordenacao-por-hooks.md); essa autorização também foi encerrada. Regras de 04/05 abaixo são históricas.
 
 # Tarefas e continuidade
 
-> **Estado atual (22/10/2026):** além das tarefas 04–07 concluídas, o usuário aprovou e revisou a rodada de refinamento de UX descrita em [ajustes de UX e interface](ajustes-ux-2026-10-22.md). A versão móvel no rodapé foi restaurada após observação do usuário. O registro de aprovação não altera o histórico de commits/release de 21/10/2026.
+> **Histórico (22/10/2026):** o usuário aprovou e revisou a rodada de refinamento de UX descrita em [ajustes de UX e interface](ajustes-ux-2026-10-22.md). A versão móvel no rodapé foi restaurada após observação do usuário.
 
 > **Regra histórica das tarefas 04/05:** a coordenação e os gates usados estão preservados em [coordenação por hooks](agents/coordenacao-por-hooks.md). As tarefas e a release `v1.4.0` foram concluídas. Esta regra não é uma autorização atual.
 
