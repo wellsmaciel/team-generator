@@ -6,7 +6,7 @@
 - A navegação por teclado detectou expectativa antiga no teste: agora a sequência cobre local, data, horário e o novo link do WhatsApp. Os controles nativos de data/hora podem manter o foco no mesmo elemento durante segmentos internos; o teste espera o próximo controle sem fixar essa contagem.
 - Os testes Node de geração/trocas usavam seletores simulados ligados à estrutura anterior do DOM; a fixture passou a preservar o nome da tag e localizar a lista pelo elemento `UL`.
 - Revisão contra `main`: Standards sem violações documentadas; Spec sem requisitos ausentes, escopo adicional ou implementação incorreta. Repetição de preparação de jogador em testes é uma observação menor, sem bloqueio.
-- Ainda não há confirmação de PR, merge, release ou deploy. A publicação depende de conseguir autenticar o GitHub nesta máquina. O teste automatizado verifica o link e o texto do WhatsApp, sem abrir o aplicativo, escolher destinatário ou enviar mensagem.
+- Ainda não há confirmação de PR, merge, release ou deploy. `gh auth status` informa token inválido. A tentativa de push foi rejeitada pela revisão automática porque o destino remoto externo e a autorização de exportação do conteúdo não foram considerados comprovados; aguardar autorização explícita para `https://github.com/wellsmaciel/team-generator`. O teste automatizado verifica o link e o texto do WhatsApp, sem abrir o aplicativo, escolher destinatário ou enviar mensagem.
 
 ## Atualização desta sessão — 23/10/2026 (detalhes e WhatsApp)
 
