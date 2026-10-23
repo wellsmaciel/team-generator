@@ -5,7 +5,7 @@
 - Revisados os documentos de estado; os resumos atuais foram alinhados às mudanças de guia, estado vazio e tablets, mantendo os registros anteriores identificados como históricos.
 - A versão de produto passou de `1.5.0` para `1.6.0` (incremento minor por novas capacidades de onboarding e responsividade); a versão exibida no rodapé acompanha a release.
 - Verificação: teste focado de layout aprovado; suíte completa com 159 aprovados e 12 ignorados. Três ocorrências do teste de origem local falharam porque a porta alternativa usada estava fora da URL `127.0.0.1:51806` fixada pelo teste. O ciclo visual/interativo de guia e cadastro vazio passou em 390×844 e 1024×768.
-- Publicação: registrar aqui o resultado final de commit, PR, merge e release após concluir as operações no GitHub.
+- Publicação: commit `ea9ad33` enviado à branch `feat/onboarding-tablet-layout` em `origin`. A criação do PR para `main` retornou HTTP 401 da API do GitHub porque `gh` não está autenticado; após `gh auth login -h github.com`, criar o PR, concluir merge e release `v1.6.0`.
 
 ## Atualização desta sessão — 22/10/2026
 

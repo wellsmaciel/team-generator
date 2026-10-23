@@ -64,4 +64,4 @@ Com o cadastro vazio, o cartão **Registered players** passa a ocupar uma faixa 
 
 ## Preparação da release 1.6.0 — 23/10/2026
 
-As novas capacidades de orientação inicial, estado vazio e responsividade justificam o incremento minor de `1.5.0` para `1.6.0`. `package.json`, `package-lock.json` e a versão exibida no rodapé devem acompanhar a mesma versão. O resultado do commit, PR, merge e publicação será registrado no [resumo da sessão](proximo-chat.md).
+As novas capacidades de orientação inicial, estado vazio e responsividade justificam o incremento minor de `1.5.0` para `1.6.0`. `package.json`, `package-lock.json` e a versão exibida no rodapé acompanham a mesma versão. O commit `ea9ad33` foi enviado na branch `feat/onboarding-tablet-layout`. A criação do PR está pendente de autenticação válida da CLI GitHub (HTTP 401); o andamento está no [resumo da sessão](proximo-chat.md).
