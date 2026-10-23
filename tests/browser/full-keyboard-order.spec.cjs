@@ -50,6 +50,27 @@ test('Tab visits registration, participants, team count/generation and sharing c
     await expect(control).toBeFocused();
     await page.keyboard.press('Tab');
   }
+  const matchLocationInput = page.getByLabel('Match location', { exact: true });
+  const matchDateInput = page.getByLabel('Match date', { exact: true });
+  const matchTimeInput = page.getByLabel('Match time', { exact: true });
+  await expect(matchLocationInput).toBeFocused();
+  expect(await outlineOf(matchLocationInput)).not.toBe('none');
+  await page.keyboard.press('Tab');
+  await expect(matchDateInput).toBeFocused();
+  expect(await outlineOf(matchDateInput)).not.toBe('none');
+
+  // Native date inputs expose internal date segments to Tab on Chromium. Keep
+  // advancing until focus reaches the next control instead of assuming one Tab.
+  for (let tab = 0; tab < 8; tab++) {
+    await page.keyboard.press('Tab');
+    if (await matchTimeInput.evaluate(element => document.activeElement === element)) break;
+  }
+  await expect(matchTimeInput).toBeFocused();
+  expect(await outlineOf(matchTimeInput)).not.toBe('none');
+  for (let tab = 0; tab < 8; tab++) {
+    await page.keyboard.press('Tab');
+    if (await selectAllButton.evaluate(element => document.activeElement === element)) break;
+  }
   await expect(selectAllButton).toBeFocused();
   expect(await outlineOf(selectAllButton)).not.toBe('none');
 
@@ -90,6 +111,10 @@ test('Tab visits registration, participants, team count/generation and sharing c
   await expect(page.getByRole('button', { name: 'Confirm swap', exact: true })).toBeFocused();
   await page.keyboard.press('Tab');
   await expect(page.getByRole('button', { name: 'Cancel', exact: true })).toBeFocused();
+  await page.keyboard.press('Tab');
+  const whatsappLink = page.getByRole('link', { name: 'Share on WhatsApp', exact: true });
+  await expect(whatsappLink).toBeFocused();
+  expect(await outlineOf(whatsappLink)).not.toBe('none');
   await page.keyboard.press('Tab');
   await expect(copyButton).toBeFocused();
   expect(await outlineOf(copyButton)).not.toBe('none');

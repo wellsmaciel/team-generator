@@ -1,4 +1,12 @@
-> **Estado atual (23/10/2026):** guia inicial, estado vazio e tablets foram publicados na `v1.6.0`. Depois, local/data/horário opcionais e compartilhamento por WhatsApp foram implementados na branch `feat/match-details-whatsapp` (commits `153e915` e `657ce4f`, mais atualização documental). A mensagem é igual para Copy teams e WhatsApp; o WhatsApp recebe o texto preenchido para escolha manual do destinatário. Detalhes atuais não persistem após recarregar. Sem teste no app/dispositivo WhatsApp nativo. Ver [jornada](jornada-do-usuario.md) e [ticket](../.scratch/match-details-and-whatsapp/issues/02-share-via-whatsapp-and-review-docs.md).
+> **Estado atual (24/10/2026):** guia inicial, estado vazio e tablets foram publicados na `v1.6.0`. Local/data/horário opcionais e compartilhamento por WhatsApp estão implementados na branch `feat/match-details-whatsapp` (commits `153e915` e `657ce4f`, mais atualização documental). A mensagem é igual para Copy teams e WhatsApp; o WhatsApp recebe o texto preenchido para escolha manual do destinatário. Detalhes atuais não persistem após recarregar. A regressão e a revisão desta sessão passaram; PR, merge e release ainda estão pendentes. Sem teste no app/dispositivo WhatsApp nativo. Ver [jornada](jornada-do-usuario.md) e [ticket](../.scratch/match-details-and-whatsapp/issues/02-share-via-whatsapp-and-review-docs.md).
+
+## Atualização desta sessão — 24/10/2026 (testes e revisão)
+
+- Suíte Playwright completa: 168 aprovados, 12 ignorados por configuração, 0 falhas (desktop, 360 px e 390 px). Quatro testes Node, `node --check script.js` e `git diff --check` também passaram.
+- A navegação por teclado detectou expectativa antiga no teste: agora a sequência cobre local, data, horário e o novo link do WhatsApp. Os controles nativos de data/hora podem manter o foco no mesmo elemento durante segmentos internos; o teste espera o próximo controle sem fixar essa contagem.
+- Os testes Node de geração/trocas usavam seletores simulados ligados à estrutura anterior do DOM; a fixture passou a preservar o nome da tag e localizar a lista pelo elemento `UL`.
+- Revisão contra `main`: Standards sem violações documentadas; Spec sem requisitos ausentes, escopo adicional ou implementação incorreta. Repetição de preparação de jogador em testes é uma observação menor, sem bloqueio.
+- Ainda não há confirmação de PR, merge, release ou deploy. A publicação depende de conseguir autenticar o GitHub nesta máquina. O teste automatizado verifica o link e o texto do WhatsApp, sem abrir o aplicativo, escolher destinatário ou enviar mensagem.
 
 ## Atualização desta sessão — 23/10/2026 (detalhes e WhatsApp)
 
