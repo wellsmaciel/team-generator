@@ -416,9 +416,11 @@ function renderShareText() {
   const teamText = teams.map(function (team, index) {
     return 'Team ' + (index + 1) + '\n' + team.players.map(player => '• ' + player.name).join('\n');
   }).join('\n\n');
-  document.getElementById('shareText').value = details.length > 0
+  const shareText = details.length > 0
     ? details.join('\n') + '\n\n' + teamText
     : teamText;
+  document.getElementById('shareText').value = shareText;
+  document.getElementById('btnShareWhatsApp').href = 'https://wa.me/?text=' + encodeURIComponent(shareText);
   document.getElementById('shareControls').hidden = false;
 }
 
