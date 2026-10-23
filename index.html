@@ -46,7 +46,7 @@
         <label for="pName">Player Name</label>
         <input type="text" id="pName" required />
         <label for="pSkill">Estimated skill (1–10)</label>
-        <input type="number" id="pSkill" min="1" max="10" step="1" required aria-describedby="pSkillHelp" />
+        <input type="number" id="pSkill" min="1" max="10" step="1" inputmode="numeric" required aria-describedby="pSkillHelp" />
         <p id="pSkillHelp" class="skill-guidance">Rate each player relative to this group: 1 = developing, 5 = average, 10 = strongest.</p>
         <label for="pGoalkeeper">
           <input type="checkbox" id="pGoalkeeper" />
@@ -100,7 +100,7 @@
       <div id="teamGeneration">
         <h3 id="teamGenerationHeading">Generate teams</h3>
         <label for="teamCount">Number of teams</label>
-        <input type="number" id="teamCount" min="2" step="1" value="2" required aria-describedby="teamCountHelp" />
+        <input type="number" id="teamCount" min="2" step="1" value="2" inputmode="numeric" required aria-describedby="teamCountHelp" />
         <p id="teamCountHelp">Choose at least 2 teams, with at least 2 selected players per team.</p>
         <div id="teamGenerateSlot"><button id="btnTeams" type="button" onclick="generateTeams()">Generate Teams</button></div>
       </div>
