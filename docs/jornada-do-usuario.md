@@ -1,5 +1,15 @@
 # Jornada do usuário
 
+## Guia inicial e tablets — 23/10/2026
+
+Ao abrir o app, o organizador vê o fluxo em três passos: adicionar jogadores com notas estimadas, selecionar participantes e quantidade de times, depois gerar e revisar a sugestão. O botão do guia leva ao formulário de cadastro. A interface não garante equilíbrio: a avaliação final continua com o organizador.
+
+Em tablet retrato (768–899 px), cadastro e Match ficam empilhados para dar largura às listas e controles. Em tablet paisagem (900–1099 px), essas áreas usam duas colunas quando há jogadores cadastrados; os resultados mostram até dois times por linha. Os botões nesse intervalo têm alvos de toque de pelo menos 44 px. Essas dimensões foram verificadas em emulação Chromium, sem validação em iPad físico.
+
+Quando não há jogadores cadastrados, **Registered players** explica que a lista será salva neste navegador e oferece **Add your first player**, que leva o foco ao campo de nome. O estado vazio desaparece ao salvar o primeiro jogador e volta se o último for excluído.
+
+Em telas largas, enquanto o cadastro está vazio, essa orientação ocupa uma faixa curta de largura total acima do formulário. Após o primeiro cadastro, a lista reaparece à esquerda do formulário e seu painel acompanha a altura dos registros. Em tablet retrato e celular os painéis continuam empilhados.
+
 ## Evolução mobile first — aprovada em 20/10/2026, entregue em 21/10/2026
 
 Disposição aprovada na prévia: Players para cadastro/edição/exclusão e Match como área principal. Match terá Select players (participantes e quantidade) e Teams (resultado, revisão, troca e compartilhamento). Apenas navegar preserva a partida; alterações reais seguem as invalidações atuais. Cadastro continua salvo no navegador e seleção começa vazia ao recarregar. Sem jogadores, Add players orienta o primeiro uso.

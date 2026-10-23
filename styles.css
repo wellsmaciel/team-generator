@@ -86,6 +86,82 @@ body {
   font-family: var(--font-body);
   color: aliceblue;
 }
+#gettingStarted {
+  max-width: 1120px;
+  margin: 12px auto 0;
+  padding: 16px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  background: var(--color-panel);
+  text-align: left;
+}
+.guide-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 24px;
+}
+.guide-heading > div {
+  min-width: 0;
+}
+.guide-heading h2 {
+  margin: 0 0 4px;
+  padding: 0;
+}
+.guide-heading p {
+  max-width: 62ch;
+  margin: 0;
+  color: #d9e2e9;
+  line-height: 1.5;
+}
+.guide-heading button {
+  flex: 0 0 auto;
+  min-height: 44px;
+  color: #14200b;
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  font-weight: 600;
+}
+.guide-heading button:hover:not(:disabled) {
+  color: #14200b;
+  background: #c8f39a;
+  border-color: #c8f39a;
+}
+.guide-steps {
+  counter-reset: guide-step;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 14px 0 0;
+  padding: 12px 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  list-style: none;
+}
+.guide-steps li {
+  counter-increment: guide-step;
+  display: grid;
+  grid-template-columns: 1.8rem minmax(0, 1fr);
+  align-items: baseline;
+  gap: 0 8px;
+  min-width: 0;
+}
+.guide-steps li::before {
+  grid-row: span 2;
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  content: counter(guide-step, decimal-leading-zero);
+}
+.guide-steps strong {
+  font-size: 0.95rem;
+}
+.guide-steps span {
+  grid-column: 2;
+  color: #d9e2e9;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
 h1,
 h2,
 h3 {
@@ -100,6 +176,29 @@ h3 {
   border-radius: 12px;
   padding: 16px;
   margin: 12px 0;
+}
+#registeredPlayersPanel {
+  display: flex;
+  flex-direction: column;
+}
+#registeredPlayersEmptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  max-width: 34rem;
+  margin: 0 auto;
+  color: #d9e2e9;
+}
+#registeredPlayersEmptyState p {
+  margin: 0;
+}
+#registeredPlayersEmptyState button {
+  min-height: 44px;
+}
+#registeredPlayersEmptyState[hidden] {
+  display: none;
 }
 #playersArea,
 #matchArea {
@@ -438,9 +537,43 @@ input[type="checkbox"] {
   }
 }
 
+@media (min-width: 900px) {
+  #playersArea:not(.has-registered-players):not([hidden]) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #playersArea:not(.has-registered-players):not([hidden]) #registeredPlayersPanel {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 8px 24px;
+  }
+
+  #playersArea:not(.has-registered-players):not([hidden]) #registeredPlayersPanel h2 {
+    grid-column: 1;
+    margin: 0;
+    padding: 0;
+  }
+
+  #playersArea:not(.has-registered-players):not([hidden]) #registeredPlayersEmptyState {
+    grid-column: 2;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    max-width: none;
+    margin: 0;
+    text-align: left;
+  }
+
+  #playersArea:not(.has-registered-players):not([hidden]) #registeredPlayersEmptyState p {
+    max-width: 48rem;
+  }
+}
+
 @media (min-width: 1100px) {
   body {
-    max-width: 1480px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 12px 24px;
   }
@@ -535,18 +668,151 @@ input[type="checkbox"] {
 }
 
 @media (min-width: 768px) and (max-width: 1099px) {
+  body {
+    box-sizing: border-box;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 12px 20px;
+  }
+
+  body > h1 {
+    margin: 6px 0 12px;
+    font-size: clamp(2rem, 4vw, 2.7rem);
+  }
+
+  #gettingStarted {
+    margin: 12px auto 16px;
+    padding: 18px 22px;
+  }
+
+  .guide-heading {
+    gap: 16px 24px;
+  }
+
+  .guide-heading h2 {
+    font-size: clamp(1.75rem, 3.2vw, 2.2rem);
+  }
+
+  .guide-steps {
+    gap: 12px;
+  }
+
+  button {
+    min-height: 44px;
+  }
+
+  nav[aria-label="Main"] {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 0 auto 12px;
+    padding: 8px 12px;
+  }
+
+  nav[aria-label="Main"] button {
+    min-width: 120px;
+    min-height: 44px;
+  }
+
   #playersArea:not([hidden]) {
-    grid-template-columns: minmax(0, 1.1fr) minmax(250px, 0.9fr);
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+    gap: 16px;
+  }
+
+  #container {
+    grid-template-columns: minmax(0, 1.6fr) minmax(240px, 0.8fr);
+    gap: 20px;
+  }
+
+  #teamsContainer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .swap-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: end;
+    gap: 12px;
+  }
+
+  .swap-fields label {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 4px;
+    text-align: left;
+  }
+
+  .swap-fields select,
+  .swap-fields button {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 899px) {
+  #playersArea:not([hidden]) {
+    grid-template-columns: minmax(0, 1fr);
     gap: 12px;
   }
 
   #container {
-    grid-template-columns: minmax(0, 1.3fr) minmax(190px, 0.7fr);
+    grid-template-columns: minmax(0, 1fr);
     gap: 16px;
+  }
+
+  #teamGeneration {
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
   }
 }
 
 @media (max-width: 500px) {
+  #gettingStarted {
+    padding: 14px;
+  }
+
+  .guide-heading {
+    align-items: center;
+    gap: 8px;
+  }
+
+  .guide-heading > div {
+    flex: 1;
+  }
+
+  .guide-heading h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    line-height: 1.05;
+  }
+
+  .guide-heading p {
+    display: none;
+  }
+
+  .guide-heading button {
+    min-height: 44px;
+    padding: 8px 10px;
+  }
+
+  .guide-steps {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+    margin-top: 12px;
+    padding-top: 10px;
+  }
+
+  .guide-steps li {
+    grid-template-columns: 1.6rem minmax(0, 1fr);
+  }
+
+  .guide-steps span {
+    grid-column: 2;
+  }
+
   .player-list-toolbar {
     flex-direction: column;
     align-items: center;
