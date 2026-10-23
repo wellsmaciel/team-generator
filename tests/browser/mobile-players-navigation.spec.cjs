@@ -361,7 +361,7 @@ test('Players keeps the Registered players card before the Add player form in it
   });
 });
 
-test('on tablet and desktop widths Players shows the roster panel on the left and a wide Add player form panel on the right, list first in the DOM', async ({ page }, testInfo) => {
+test('Players stacks panels on a portrait tablet and places the roster beside the form in landscape and desktop', async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== 'desktop', 'The widths are set by the test itself; one project is enough.');
   await page.goto('/');
   await page.getByRole('navigation', { name: 'Main', exact: true }).getByRole('button', { name: 'Players', exact: true }).click();
@@ -372,7 +372,7 @@ test('on tablet and desktop widths Players shows the roster panel on the left an
     await page.getByRole('button', { name: 'Add Player', exact: true }).click();
   }
 
-  for (const [width, height] of [[768, 1024], [1280, 720]]) {
+  for (const [width, height] of [[768, 1024], [1024, 768], [1280, 720]]) {
     await page.setViewportSize({ width, height });
     const layout = await page.evaluate(() => {
       const panelOf = selector => document.querySelector(selector).closest('#playersArea > div');
@@ -389,8 +389,10 @@ test('on tablet and desktop widths Players shows the roster panel on the left an
       return {
         distinctPanels: roster !== formPanel,
         rosterFirstInDom: Boolean(roster.compareDocumentPosition(formPanel) & Node.DOCUMENT_POSITION_FOLLOWING),
+        columns: getComputedStyle(document.querySelector('#playersArea')).gridTemplateColumns.split(' ').length,
         sameTop: Math.abs(rosterBox.top - formBox.top) <= 2,
         rosterLeftOfForm: rosterBox.right <= formBox.left,
+        panelsStacked: Math.abs(rosterBox.left - formBox.left) <= 2 && formBox.top >= rosterBox.bottom,
         rosterAtLeastAsWide: rosterBox.width >= formBox.width,
         controls,
         rosterSingleColumn: new Set(rows.map(row => Math.round(row.left))).size === 1
@@ -402,8 +404,11 @@ test('on tablet and desktop widths Players shows the roster panel on the left an
     const label = `at ${width}px`;
     expect(layout.distinctPanels, `${label} distinct panels`).toBe(true);
     expect(layout.rosterFirstInDom, `${label} roster before form in the DOM`).toBe(true);
-    expect(layout.sameTop, `${label} panels start at the same height`).toBe(true);
-    expect(layout.rosterLeftOfForm, `${label} roster panel left of the form panel`).toBe(true);
+    const portraitTablet = width < 900;
+    expect(layout.columns, `${label} responsive panel count`).toBe(portraitTablet ? 1 : 2);
+    expect(layout.sameTop, `${label} side-by-side panels start at the same height`).toBe(!portraitTablet);
+    expect(layout.rosterLeftOfForm, `${label} roster is beside the form only when there is room`).toBe(!portraitTablet);
+    expect(layout.panelsStacked, `${label} panels stack on a portrait tablet`).toBe(portraitTablet);
     expect(layout.rosterAtLeastAsWide, `${label} roster panel at least as wide as the form panel`).toBe(true);
     for (const { selector, widthShare, height } of layout.controls) {
       expect(widthShare, `${label} ${selector} width share of the form panel`).toBeGreaterThanOrEqual(0.95);
