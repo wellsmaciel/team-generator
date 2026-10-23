@@ -1,4 +1,4 @@
-> **Estado atual (24/10/2026):** a PR #13 foi integrada em `main` no commit `3f6728db6997aa5a95c08bc20017767fa703922c`; a versão `1.7.0` está preparada para publicação. Ela inclui detalhes opcionais de local/data/horário e partilha pelo WhatsApp. A mensagem é igual para Copy teams e WhatsApp; o WhatsApp recebe o texto preenchido para escolha manual do destinatário. Detalhes atuais não persistem após recarregar. A regressão e a revisão desta sessão passaram. Sem teste no app/dispositivo WhatsApp nativo. Ver [jornada](jornada-do-usuario.md) e [ticket](../.scratch/match-details-and-whatsapp/issues/02-share-via-whatsapp-and-review-docs.md).
+> **Estado atual (24/10/2026):** a PR #13 foi integrada em `main` no commit `3f6728db6997aa5a95c08bc20017767fa703922c`; a release [v1.7.0](https://github.com/wellsmaciel/team-generator/releases/tag/v1.7.0) está publicada no commit `444497a29c598657a63e344ee930a013b2a9ae91`. Ela inclui detalhes opcionais de local/data/horário e partilha pelo WhatsApp. A mensagem é igual para Copy teams e WhatsApp; o WhatsApp recebe o texto preenchido para escolha manual do destinatário. Detalhes atuais não persistem após recarregar. A regressão e a revisão desta sessão passaram. O [deploy do GitHub Pages](https://github.com/wellsmaciel/team-generator/actions/runs/40039792036) concluiu com sucesso nesse commit. Sem teste no app/dispositivo WhatsApp nativo. Ver [jornada](jornada-do-usuario.md) e [ticket](../.scratch/match-details-and-whatsapp/issues/02-share-via-whatsapp-and-review-docs.md).
 
 ## Atualização desta sessão — 24/10/2026 (testes e revisão)
 
@@ -6,7 +6,7 @@
 - A navegação por teclado detectou expectativa antiga no teste: agora a sequência cobre local, data, horário e o novo link do WhatsApp. Os controles nativos de data/hora podem manter o foco no mesmo elemento durante segmentos internos; o teste espera o próximo controle sem fixar essa contagem.
 - Os testes Node de geração/trocas usavam seletores simulados ligados à estrutura anterior do DOM; a fixture passou a preservar o nome da tag e localizar a lista pelo elemento `UL`.
 - Revisão contra `main`: Standards sem violações documentadas; Spec sem requisitos ausentes, escopo adicional ou implementação incorreta. Repetição de preparação de jogador em testes é uma observação menor, sem bloqueio.
-- PR #13 criada e mergeada em `main`; versão `1.7.0` preparada. O teste automatizado verifica o link e o texto do WhatsApp, sem abrir o aplicativo, escolher destinatário ou enviar mensagem.
+- PR #13 criada e mergeada em `main`; release `v1.7.0` e deploy do Pages publicados. O teste automatizado verifica o link e o texto do WhatsApp, sem abrir o aplicativo, escolher destinatário ou enviar mensagem.
 
 ## Atualização desta sessão — 23/10/2026 (detalhes e WhatsApp)
 
