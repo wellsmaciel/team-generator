@@ -7,6 +7,10 @@ let shareTextVersion = 0;
 let playerBeingEdited = null;
 const selectedPlayers = new Set();
 
+for (const id of ['matchLocation', 'matchDate', 'matchTime']) {
+  document.getElementById(id).addEventListener('input', renderShareText);
+}
+
 function showArea(area) {
   const target = document.getElementById(area === 'players' ? 'playersArea' : 'matchArea');
   target.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -401,11 +405,20 @@ function resetShareText() {
 
 function renderShareText() {
   resetShareText();
+  document.getElementById('copyStatus').textContent = '';
   if (teams.length === 0 || previousTeams !== null) return;
 
-  document.getElementById('shareText').value = teams.map(function (team, index) {
+  const details = [
+    ['Location', document.getElementById('matchLocation').value.trim()],
+    ['Date', document.getElementById('matchDate').value],
+    ['Time', document.getElementById('matchTime').value],
+  ].filter(([, value]) => value).map(([label, value]) => label + ': ' + value);
+  const teamText = teams.map(function (team, index) {
     return 'Team ' + (index + 1) + '\n' + team.players.map(player => '• ' + player.name).join('\n');
   }).join('\n\n');
+  document.getElementById('shareText').value = details.length > 0
+    ? details.join('\n') + '\n\n' + teamText
+    : teamText;
   document.getElementById('shareControls').hidden = false;
 }
 
