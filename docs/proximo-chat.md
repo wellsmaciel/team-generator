@@ -1,11 +1,11 @@
-> **Estado atual (23/10/2026):** implementadas e verificadas as mudanças de guia inicial, estado vazio e layout responsivo para tablets, além dos refinamentos de UX anteriores. A versão foi atualizada para `1.6.0` em preparação para a release. O usuário autorizou commit, PR, merge e release; o resultado e qualquer bloqueio de autenticação estão registrados abaixo. Consulte [ajustes de UX](ajustes-ux-2026-10-22.md) e [jornada do usuário](jornada-do-usuario.md).
+> **Estado atual (23/10/2026):** as mudanças de guia inicial, estado vazio e layout responsivo para tablets foram implementadas, verificadas e publicadas na release `v1.6.0`. Consulte [ajustes de UX](ajustes-ux-2026-10-22.md) e [jornada do usuário](jornada-do-usuario.md).
 
 ## Atualização desta sessão — 23/10/2026
 
 - Revisados os documentos de estado; os resumos atuais foram alinhados às mudanças de guia, estado vazio e tablets, mantendo os registros anteriores identificados como históricos.
 - A versão de produto passou de `1.5.0` para `1.6.0` (incremento minor por novas capacidades de onboarding e responsividade); a versão exibida no rodapé acompanha a release.
 - Verificação: teste focado de layout aprovado; suíte completa com 159 aprovados e 12 ignorados. Três ocorrências do teste de origem local falharam porque a porta alternativa usada estava fora da URL `127.0.0.1:51806` fixada pelo teste. O ciclo visual/interativo de guia e cadastro vazio passou em 390×844 e 1024×768.
-- Publicação: commit `ea9ad33` enviado à branch `feat/onboarding-tablet-layout` em `origin`. A criação do PR para `main` retornou HTTP 401 da API do GitHub porque `gh` não está autenticado; após `gh auth login -h github.com`, criar o PR, concluir merge e release `v1.6.0`.
+- Publicação concluída: [PR #11](https://github.com/wellsmaciel/team-generator/pull/11) mergeado em `main` no commit `b1d1f86762ca8203fcfbd767f32a0dca93544f3b`; [release `v1.6.0`](https://github.com/wellsmaciel/team-generator/releases/tag/v1.6.0) publicada nesse commit. O [deploy do GitHub Pages](https://github.com/wellsmaciel/team-generator/actions/runs/39992255524) concluiu build e deploy com sucesso. A branch do recurso foi enviada ao remoto; os arquivos de trabalho locais estão limpos.
 
 ## Atualização desta sessão — 22/10/2026
 
