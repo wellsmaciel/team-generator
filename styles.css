@@ -7,6 +7,10 @@
   --color-accent: #b5ee7a;
 }
 
+:focus {
+  scroll-margin-top: 5rem;
+}
+
 .team {
   display: flex;
   flex-direction: column;

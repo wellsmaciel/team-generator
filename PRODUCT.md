@@ -16,7 +16,7 @@ Team Generator helps an organizer prepare a match, form teams with reasonably cl
 
 ## Positioning
 
-The product combines reusable local player registrations, optional location/date/time for the current match, fixed-goalkeeper constraints, team generation, manual swaps, and shareable match details and team lists that omit skill scores and totals. Organizers can copy the message or open WhatsApp with it prefilled, then choose where to send it. Generated balance is guidance rather than a guarantee.
+The product combines reusable local player registrations, participant search, optional location/date/time for the current match, fixed-goalkeeper constraints, team generation, manual swaps, and shareable match details and team lists that omit skill scores and totals. Organizers can copy the message, open WhatsApp with it prefilled, or use the device share sheet where supported; they choose the destination and send it. Generated balance is guidance rather than a guarantee.
 
 ## Operating Context
 
@@ -24,7 +24,7 @@ The main use is on a phone, with tablet and desktop support. The organizer regis
 
 ## Capabilities and Constraints
 
-Player names, integer skill estimates from 1 to 10, and fixed-goalkeeper status are stored in the current browser. Selection and current match details reset on reload. There is no account, synchronization, or remote backup. WhatsApp sharing uses a prefilled URL; the user selects the recipient and sends the message. Skill scores are estimates and do not guarantee balanced play; the organizer decides whether the teams are satisfactory. Shared messages omit skill scores and totals. Rules for sports other than futsal are outside the confirmed scope.
+Player names, integer skill estimates from 1 to 10, and fixed-goalkeeper status are stored only in the current browser, as explained beside the list. Selection and current match details reset on reload, and the interface identifies match details as temporary. There is no account, synchronization, or remote backup. WhatsApp sharing uses a prefilled URL; the user selects the recipient and sends the message. Skill scores are estimates and do not guarantee balanced play; the organizer decides whether the teams are satisfactory. Shared messages omit skill scores and totals. Rules for sports other than futsal are outside the confirmed scope.
 
 ## Evidence on Hand
 
