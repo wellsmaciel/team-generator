@@ -423,6 +423,29 @@ button {
   transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
 }
 
+#btnShareWhatsApp {
+  display: inline-flex;
+  min-height: 44px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  color: #14200b;
+  background: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  border-radius: 8px;
+  font: inherit;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+
+#btnShareWhatsApp:hover {
+  background: #c8f39a;
+  border-color: #c8f39a;
+}
+
 button:hover:not(:disabled) {
   background: #263a43;
   border-color: rgba(255, 255, 255, 0.55);
