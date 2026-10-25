@@ -80,3 +80,89 @@ test('WhatsApp prepares the current share text while Copy teams remains availabl
   expect(updatedText).toContain('Location: Harbour Park');
   await expect(page.getByRole('button', { name: 'Copy teams', exact: true })).toBeVisible();
 });
+
+test('native sharing receives the current displayed message from a direct user action', async ({ page }) => {
+  await page.addInitScript(() => {
+    window.nativeShareCalls = [];
+    navigator.share = async payload => window.nativeShareCalls.push(payload);
+  });
+  await page.goto('/');
+  const navigation = page.getByRole('navigation', { name: 'Main', exact: true });
+  await navigation.getByRole('button', { name: 'Players', exact: true }).click();
+  for (const [name, score] of [['Ana', 4], ['Bia', 5], ['Caio', 6], ['Duda', 7]]) {
+    await page.getByLabel('Player Name', { exact: true }).fill(name);
+    await page.getByLabel('Estimated skill (1–10)', { exact: true }).fill(String(score));
+    await page.getByRole('button', { name: 'Add Player', exact: true }).click();
+  }
+  await navigation.getByRole('button', { name: 'Match', exact: true }).click();
+  await page.getByRole('button', { name: 'Select All Players', exact: true }).click();
+  await page.getByLabel('Match location', { exact: true }).fill('Riverside Court');
+  await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
+
+  const shareText = page.getByLabel('Teams to copy', { exact: true });
+  const expectedText = await shareText.inputValue();
+  const nativeShare = page.getByRole('button', { name: 'Share teams', exact: true });
+  await expect(nativeShare).toBeVisible();
+  await nativeShare.click();
+
+  await expect.poll(() => page.evaluate(() => window.nativeShareCalls)).toEqual([{
+    title: 'Team Generator',
+    text: expectedText,
+  }]);
+  await expect(page.getByRole('link', { name: 'Share on WhatsApp', exact: true }))
+    .toHaveAttribute('href', `https://wa.me/?text=${encodeURIComponent(expectedText)}`);
+  await expect(page.getByRole('button', { name: 'Copy teams', exact: true })).toBeVisible();
+});
+
+test('native sharing cancellation stays quiet and other failures explain the available alternatives', async ({ page }) => {
+  await page.addInitScript(() => {
+    window.nativeShareMode = 'cancel';
+    navigator.share = async () => {
+      if (window.nativeShareMode === 'cancel') throw new DOMException('Dismissed.', 'AbortError');
+      throw new DOMException('Sharing is unavailable.', 'NotAllowedError');
+    };
+  });
+  await page.goto('/');
+  const navigation = page.getByRole('navigation', { name: 'Main', exact: true });
+  await navigation.getByRole('button', { name: 'Players', exact: true }).click();
+  for (const [name, score] of [['Ana', 4], ['Bia', 5], ['Caio', 6], ['Duda', 7]]) {
+    await page.getByLabel('Player Name', { exact: true }).fill(name);
+    await page.getByLabel('Estimated skill (1–10)', { exact: true }).fill(String(score));
+    await page.getByRole('button', { name: 'Add Player', exact: true }).click();
+  }
+  await navigation.getByRole('button', { name: 'Match', exact: true }).click();
+  await page.getByRole('button', { name: 'Select All Players', exact: true }).click();
+  await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
+
+  const nativeShare = page.getByRole('button', { name: 'Share teams', exact: true });
+  await nativeShare.click();
+  await expect(page.locator('#copyStatus')).toHaveText('');
+  await expect(page.getByRole('link', { name: 'Share on WhatsApp', exact: true })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Copy teams', exact: true })).toBeVisible();
+
+  await page.evaluate(() => { window.nativeShareMode = 'failure'; });
+  await nativeShare.click();
+  await expect(page.getByRole('status').filter({ hasText: /sharing options|WhatsApp|manually/i }))
+    .toBeVisible();
+});
+
+test('native share action is absent when the browser does not support it', async ({ page }) => {
+  await page.addInitScript(() => {
+    Object.defineProperty(navigator, 'share', { value: undefined, configurable: true });
+  });
+  await page.goto('/');
+  const navigation = page.getByRole('navigation', { name: 'Main', exact: true });
+  await navigation.getByRole('button', { name: 'Players', exact: true }).click();
+  for (const [name, score] of [['Ana', 4], ['Bia', 5], ['Caio', 6], ['Duda', 7]]) {
+    await page.getByLabel('Player Name', { exact: true }).fill(name);
+    await page.getByLabel('Estimated skill (1–10)', { exact: true }).fill(String(score));
+    await page.getByRole('button', { name: 'Add Player', exact: true }).click();
+  }
+  await navigation.getByRole('button', { name: 'Match', exact: true }).click();
+  await page.getByRole('button', { name: 'Select All Players', exact: true }).click();
+  await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
+
+  await expect(page.getByRole('button', { name: 'Share teams', exact: true })).toHaveCount(0);
+  await expect(page.getByRole('link', { name: 'Share on WhatsApp', exact: true })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Copy teams', exact: true })).toBeVisible();
+});
