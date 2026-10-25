@@ -142,5 +142,5 @@ Validação integrada concluída em Chromium emulado (360×800, 390×844, 768×1
 
 - Busca por nome sem alterar selecao, partilha nativa quando disponivel e avisos sobre armazenamento local/temporario foram implementados; WhatsApp, Copy teams e copia manual foram preservados.
 - Tres tickets `.scratch/responsive-sharing-ux/issues/` concluidos com evidencias. Playwright verificou interface publica em desktop, tablet emulado e telas moveis; sem aparelho fisico, seletor nativo real ou envio WhatsApp.
-- Versao candidata `1.8.0` (incremento minor por recursos aditivos), condicionada ao merge/publicacao da PR #14.
+- PR #14 foi mergeada em `main` no commit `167fd53e921a9f3c70b43d9416f11cb1c5f67113`. Release [v1.8.0](https://github.com/wellsmaciel/team-generator/releases/tag/v1.8.0) publicada nesse commit; o [deploy do GitHub Pages](https://github.com/wellsmaciel/team-generator/actions/runs/40184573296) concluiu com sucesso. Incremento minor por recursos aditivos.
 - Login por email/Google, banco de dados, backend e sincronizacao continuam fora do escopo.
