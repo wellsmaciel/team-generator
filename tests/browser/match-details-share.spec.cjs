@@ -70,6 +70,14 @@ test('WhatsApp prepares the current share text while Copy teams remains availabl
   await expect(whatsapp).toBeVisible();
   await expect(whatsapp).toHaveAttribute('href', `https://wa.me/?text=${encodeURIComponent(shareText)}`);
   await expect(whatsapp).toHaveAttribute('target', '_blank');
+  const presentation = await whatsapp.evaluate(link => {
+    const style = getComputedStyle(link);
+    return { display: style.display, color: style.color, background: style.backgroundColor, height: link.getBoundingClientRect().height };
+  });
+  expect(presentation.display).toBe('inline-flex');
+  expect(presentation.color).toBe('rgb(20, 32, 11)');
+  expect(presentation.background).toBe('rgb(181, 238, 122)');
+  expect(presentation.height).toBeGreaterThanOrEqual(44);
   await expect(page.getByRole('button', { name: 'Copy teams', exact: true })).toBeVisible();
   expect(shareText).toMatch(/^Location: Riverside Court\nDate: 2026-11-07\nTime: 18:30\n\nTeam 1/m);
   expect(shareText).not.toMatch(/\b(?:score|skill|goalkeeper|total)\b/i);
