@@ -136,7 +136,8 @@
       </section>
       <section id="shareControls" hidden aria-labelledby="shareHeading">
         <h3 id="shareHeading">Share teams</h3>
-        <p id="shareHelp">Share the player names on WhatsApp, copy them, or select the text below and copy it manually. Skill scores are not included.</p>
+        <p id="shareHelp">Share the player names using your device, WhatsApp, or copy them. You can also select the text below and copy it manually. Skill scores are not included.</p>
+        <button id="btnNativeShare" type="button" onclick="shareTeamsUsingDevice()" hidden>Share teams</button>
         <a id="btnShareWhatsApp" href="https://wa.me/" target="_blank" rel="noopener noreferrer">Share on WhatsApp</a>
         <button id="btnCopyTeams" type="button" onclick="copyTeamsToClipboard()">Copy teams</button>
         <p id="copyStatus" role="status"></p>
