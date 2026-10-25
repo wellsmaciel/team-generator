@@ -17,7 +17,7 @@ test('optional match details appear before teams and update without changing the
   const location = page.getByLabel('Match location', { exact: true });
   const date = page.getByLabel('Match date', { exact: true });
   const time = page.getByLabel('Match time', { exact: true });
-  const shareText = page.getByLabel('Teams to copy', { exact: true });
+  const shareText = page.getByLabel('Message preview', { exact: true });
   const initialText = await shareText.inputValue();
   const initialTeams = await page.locator('#teamsContainer').innerText();
 
@@ -65,7 +65,7 @@ test('WhatsApp prepares the current share text while Copy teams remains availabl
   await page.getByLabel('Match time', { exact: true }).fill('18:30');
   await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
 
-  const shareText = await page.getByLabel('Teams to copy', { exact: true }).inputValue();
+  const shareText = await page.getByLabel('Message preview', { exact: true }).inputValue();
   const whatsapp = page.getByRole('link', { name: 'Share on WhatsApp', exact: true });
   await expect(whatsapp).toBeVisible();
   await expect(whatsapp).toHaveAttribute('href', `https://wa.me/?text=${encodeURIComponent(shareText)}`);
@@ -83,7 +83,7 @@ test('WhatsApp prepares the current share text while Copy teams remains availabl
   expect(shareText).not.toMatch(/\b(?:score|skill|goalkeeper|total)\b/i);
 
   await page.getByLabel('Match location', { exact: true }).fill('Harbour Park');
-  const updatedText = await page.getByLabel('Teams to copy', { exact: true }).inputValue();
+  const updatedText = await page.getByLabel('Message preview', { exact: true }).inputValue();
   await expect(whatsapp).toHaveAttribute('href', `https://wa.me/?text=${encodeURIComponent(updatedText)}`);
   expect(updatedText).toContain('Location: Harbour Park');
   await expect(page.getByRole('button', { name: 'Copy teams', exact: true })).toBeVisible();
@@ -107,7 +107,7 @@ test('native sharing receives the current displayed message from a direct user a
   await page.getByLabel('Match location', { exact: true }).fill('Riverside Court');
   await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
 
-  const shareText = page.getByLabel('Teams to copy', { exact: true });
+  const shareText = page.getByLabel('Message preview', { exact: true });
   const expectedText = await shareText.inputValue();
   const nativeShare = page.getByRole('button', { name: 'Share teams', exact: true });
   await expect(nativeShare).toBeVisible();

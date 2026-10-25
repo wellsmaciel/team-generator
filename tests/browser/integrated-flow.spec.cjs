@@ -24,7 +24,7 @@ test('Select All Players, generation, copy, swap, regeneration and copy again st
   await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
   await expect(page.locator('#shareControls')).toBeVisible();
 
-  const shareText = page.getByLabel('Teams to copy');
+  const shareText = page.getByLabel('Message preview');
   const copyButton = page.getByRole('button', { name: 'Copy teams', exact: true });
 
   async function expectCopyMatchesDisplayedTeams() {
