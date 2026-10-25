@@ -17,7 +17,7 @@
 **Evidências:**
 
 - Testes Playwright públicos em `tests/browser/match-details-share.spec.cjs` simulam suporte nativo, texto/título atuais, cancelamento, falha e ausência de suporte. Resultado: 9/9 aprovados em Chromium desktop, 360px e 390px.
-- A suíte existente `match-details-share.spec.cjs` preserva os verificadores de `wa.me`, `Copy teams`, conteúdo sem notas e seleção manual.
+- Regressão desktop de `match-details-share.spec.cjs` e `copy-teams-button.spec.cjs`: 16/16 aprovados, incluindo `wa.me`, `Copy teams`, conteúdo sem notas e cópia manual.
 - Sem teste físico em aparelho; o seletor nativo foi simulado no navegador e nenhuma mensagem foi enviada.
 
 **Referências:** [spec](../spec.md); [jornada do usuário](../../../docs/jornada-do-usuario.md); `tests/browser/match-details-share.spec.cjs` e `tests/browser/copy-teams-button.spec.cjs`.
