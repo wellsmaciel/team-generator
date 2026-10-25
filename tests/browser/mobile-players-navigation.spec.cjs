@@ -80,7 +80,7 @@ test('navigating between Players and Match marks the current section and keeps t
 
   await page.getByRole('button', { name: 'Select All Players', exact: true }).click();
   await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
-  const shareText = page.getByLabel('Teams to copy');
+  const shareText = page.getByLabel('Message preview');
   await expect(shareText).toBeVisible();
   const generated = await shareText.inputValue();
   const selection = await page.locator('#selectionStatus').textContent();

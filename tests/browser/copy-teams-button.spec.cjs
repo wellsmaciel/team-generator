@@ -15,7 +15,7 @@ test('clicking Copy teams copies the current shareable text and confirms only af
   await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
   await expect(page.locator('#shareControls')).toBeVisible();
 
-  const expectedText = await page.getByLabel('Teams to copy').inputValue();
+  const expectedText = await page.getByLabel('Message preview').inputValue();
 
   await page.getByRole('button', { name: 'Copy teams', exact: true }).click();
 
@@ -37,7 +37,7 @@ test('clipboard rejection offers manual copying without losing the displayed tea
   for (const checkbox of await participants.all()) await checkbox.check();
   await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
   await expect(page.locator('#shareControls')).toBeVisible();
-  const shareText = page.getByLabel('Teams to copy');
+  const shareText = page.getByLabel('Message preview');
   const expectedText = await shareText.inputValue();
   const expectedTeams = await page.locator('#teamsContainer').innerText();
 
@@ -49,7 +49,7 @@ test('clipboard rejection offers manual copying without losing the displayed tea
   });
   await page.getByRole('button', { name: 'Copy teams', exact: true }).click();
 
-  await expect(page.getByRole('status').filter({ hasText: /^Teams copied\.$/ })).toHaveCount(0);
+  await expect(page.getByRole('status').filter({ hasText: /^Message copied\.$/ })).toHaveCount(0);
   await expect(shareText).toBeVisible();
   await expect(shareText).toHaveValue(expectedText);
   await expect(shareText).toHaveAttribute('readonly', '');
@@ -101,7 +101,7 @@ test('Copy teams copies the currently displayed composition after undo, accept a
   for (const checkbox of await participants.all()) await checkbox.check();
   await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
   await expect(page.locator('#shareControls')).toBeVisible();
-  const shareText = page.getByLabel('Teams to copy');
+  const shareText = page.getByLabel('Message preview');
 
   async function copyAndCompareWithDisplayedText() {
     const expectedText = await shareText.inputValue();
@@ -187,14 +187,14 @@ test('a missing clipboard API offers manual copying without losing the displayed
   for (const checkbox of await participants.all()) await checkbox.check();
   await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
   await expect(page.locator('#shareControls')).toBeVisible();
-  const shareText = page.getByLabel('Teams to copy');
+  const shareText = page.getByLabel('Message preview');
   const expectedText = await shareText.inputValue();
   const expectedTeams = await page.locator('#teamsContainer').innerText();
 
   expect(await page.evaluate(() => navigator.clipboard === undefined)).toBe(true);
   await page.getByRole('button', { name: 'Copy teams', exact: true }).click();
 
-  await expect(page.getByRole('status').filter({ hasText: /^Teams copied\.$/ })).toHaveCount(0);
+  await expect(page.getByRole('status').filter({ hasText: /^Message copied\.$/ })).toHaveCount(0);
   await expect(shareText).toBeVisible();
   await expect(shareText).toHaveValue(expectedText);
   await expect(shareText).toHaveAttribute('readonly', '');
@@ -259,7 +259,7 @@ test('confirming a manual swap after a successful copy clears the previous succe
   await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
   await expect(page.locator('#shareControls')).toBeVisible();
 
-  const shareText = page.getByLabel('Teams to copy');
+  const shareText = page.getByLabel('Message preview');
   const textBeforeSwap = await shareText.inputValue();
 
   await page.getByRole('button', { name: 'Copy teams', exact: true }).click();
@@ -291,7 +291,7 @@ test('an immediately applied regeneration without a pending decision clears the 
   await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
   await expect(page.locator('#shareControls')).toBeVisible();
 
-  const shareText = page.getByLabel('Teams to copy');
+  const shareText = page.getByLabel('Message preview');
   const textBeforeRegeneration = await shareText.inputValue();
 
   await page.getByRole('button', { name: 'Copy teams', exact: true }).click();
@@ -354,7 +354,7 @@ test('Copy teams copies literal HTML-looking names as plain text, without interp
   await expect(page.locator('#shareControls')).toBeVisible();
   expect(await page.locator('#teamsContainer b').count()).toBe(0);
 
-  const expectedText = await page.getByLabel('Teams to copy').inputValue();
+  const expectedText = await page.getByLabel('Message preview').inputValue();
   expect(expectedText).toContain('<b>Sam</b>');
 
   await page.getByRole('button', { name: 'Copy teams', exact: true }).click();

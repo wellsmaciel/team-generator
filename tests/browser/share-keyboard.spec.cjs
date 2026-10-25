@@ -30,10 +30,10 @@ test('keyboard actions and real copy and paste preserve teams after undo, accept
   await page.keyboard.press('Tab');
   await expect(page.locator('#btnTeams')).toBeFocused();
   await page.keyboard.press('Enter');
-  const originalText = await page.getByLabel('Teams to copy').inputValue();
+  const originalText = await page.getByLabel('Message preview').inputValue();
 
   async function copyAndPaste(state) {
-    const source = page.getByLabel('Teams to copy');
+    const source = page.getByLabel('Message preview');
     const expected = await source.inputValue();
     expect(expected.split('\n').filter(line => line && !/^Team [12]$/.test(line)).sort())
       .toEqual(['• <b>Sam</b>', '• Alex', '• Alex', '• Player 10']);
@@ -56,7 +56,7 @@ test('keyboard actions and real copy and paste preserve teams after undo, accept
   await expect(page.locator('#alternativeControls')).toBeVisible();
   await page.getByRole('button', { name: 'Undo composition' }).focus();
   await page.keyboard.press('Enter');
-  await expect(page.getByLabel('Teams to copy')).toHaveValue(originalText);
+  await expect(page.getByLabel('Message preview')).toHaveValue(originalText);
   await copyAndPaste('undo');
 
   await page.locator('#btnTeams').focus();
@@ -67,7 +67,7 @@ test('keyboard actions and real copy and paste preserve teams after undo, accept
   await expect(page.locator('#alternativeControls')).toBeHidden();
   await copyAndPaste('accept');
 
-  await page.getByLabel('Teams to copy').focus();
+  await page.getByLabel('Message preview').focus();
   await page.getByLabel('First player', { exact: true }).focus();
   await expect(page.getByLabel('First player', { exact: true })).toBeFocused();
   await page.keyboard.press('ArrowDown');

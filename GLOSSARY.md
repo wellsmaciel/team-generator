@@ -30,3 +30,6 @@ Jogador que não atua exclusivamente como goleiro e ocupa uma vaga de linha na f
 **Nota de habilidade**:
 Avaliação única do jogador, expressa por um número inteiro de 1 a 10 e considerando a função em que atua. É uma estimativa usada para comparar a força dos times.
 _Evitar_: Skill, score (nos textos em português do aplicativo).
+
+**Mensagem da partida**:
+Texto preparado para partilhar uma partida, com os detalhes informados e os nomes dos times e participantes. Não inclui notas de habilidade, totais nem funções de goleiro.

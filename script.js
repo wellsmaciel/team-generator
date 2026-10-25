@@ -436,7 +436,10 @@ function renderShareText() {
     : teamText;
   document.getElementById('shareText').value = shareText;
   document.getElementById('btnShareWhatsApp').href = 'https://wa.me/?text=' + encodeURIComponent(shareText);
-  document.getElementById('btnNativeShare').hidden = typeof navigator === 'undefined' || typeof navigator.share !== 'function';
+  const supportsNativeShare = typeof navigator !== 'undefined' && typeof navigator.share === 'function';
+  document.getElementById('btnNativeShare').hidden = !supportsNativeShare;
+  document.getElementById('btnNativeShare').classList.toggle('share-action-primary', supportsNativeShare);
+  document.getElementById('btnShareWhatsApp').classList.toggle('share-action-primary', !supportsNativeShare);
   document.getElementById('shareControls').hidden = false;
 }
 
@@ -459,11 +462,11 @@ async function copyTeamsToClipboard() {
   try {
     await navigator.clipboard.writeText(document.getElementById('shareText').value);
     if (copiedVersion !== shareTextVersion) return;
-    document.getElementById('copyStatus').textContent = 'Teams copied.';
+    document.getElementById('copyStatus').textContent = 'Message copied.';
   } catch {
     if (copiedVersion !== shareTextVersion) return;
     document.getElementById('copyStatus').textContent =
-      'Could not copy teams. Select the text below and copy it manually.';
+      'Could not copy the message. Select the text below and copy it manually.';
   }
 }
 

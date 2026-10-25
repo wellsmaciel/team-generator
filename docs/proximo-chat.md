@@ -1,5 +1,12 @@
 > **Estado atual (24/10/2026):** a PR #13 foi integrada em `main` no commit `3f6728db6997aa5a95c08bc20017767fa703922c`; a release [v1.7.0](https://github.com/wellsmaciel/team-generator/releases/tag/v1.7.0) está publicada no commit `444497a29c598657a63e344ee930a013b2a9ae91`. Ela inclui detalhes opcionais de local/data/horário e partilha pelo WhatsApp. A mensagem é igual para Copy teams e WhatsApp; o WhatsApp recebe o texto preenchido para escolha manual do destinatário. Detalhes atuais não persistem após recarregar. A regressão e a revisão desta sessão passaram. O [deploy do GitHub Pages](https://github.com/wellsmaciel/team-generator/actions/runs/40039792036) concluiu com sucesso nesse commit. Sem teste no app/dispositivo WhatsApp nativo. Ver [jornada](jornada-do-usuario.md) e [ticket](../.scratch/match-details-and-whatsapp/issues/02-share-via-whatsapp-and-review-docs.md).
 
+## Atualização desta sessão — 25/10/2026 (ações de partilha)
+
+- Crítica UX: mantidas as três ações por atenderem destinos distintos — seletor de partilha do dispositivo, rascunho de WhatsApp e cópia para qualquer canal. Ajustada a hierarquia visual, explicação do rascunho, rótulo da pré-visualização e alvos/foco em telas responsivas.
+- Versão preparada: `1.8.1` (patch; sem alteração do comportamento nem persistência). Spec, ticket, glossário, jornada e evidências em `.scratch/share-options/` e `.impeccable/critique/`.
+- Playwright completo: 192 aprovados, 12 ignorados pela configuração, 0 falhas; quatro regressões Node passaram. O teste dos controles foi ampliado e passou, verificando 44 px, foco visível e largura sem overflow a 360, 390, 768 e 1280 px. Sem envio de mensagem real.
+- Revisão Standards sem achados; revisão Spec apontou uma lacuna de cobertura de foco/largura, agora corrigida e em confirmação independente.
+- Commit local `fix: clarify team sharing options`. A branch `feat/share-options` está na worktree `.scratch/share-options-worktree`; a escrita no `.git` foi habilitada por worktree. Push e PR aguardam credenciais GitHub: `git push` retorna `SEC_E_NO_CREDENTIALS` e `gh` não tem autenticação. A release v1.8.1 não foi publicada.
 ## Atualização desta sessão — 24/10/2026 (testes e revisão)
 
 - Suíte Playwright completa: 168 aprovados, 12 ignorados por configuração, 0 falhas (desktop, 360 px e 390 px). Quatro testes Node, `node --check script.js` e `git diff --check` também passaram.

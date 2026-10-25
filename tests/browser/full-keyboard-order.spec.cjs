@@ -120,5 +120,5 @@ test('Tab visits registration, participants, team count/generation and sharing c
   expect(await outlineOf(copyButton)).not.toBe('none');
 
   await page.keyboard.press('Tab');
-  await expect(page.getByLabel('Teams to copy')).toBeFocused();
+  await expect(page.getByLabel('Message preview')).toBeFocused();
 });
