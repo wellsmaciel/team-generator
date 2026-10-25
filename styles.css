@@ -439,8 +439,7 @@ nav[aria-label="Main"] button[aria-current="location"] {
 }
 
 #btnPs,
-#btnTeams,
-#btnCopyTeams {
+#btnTeams {
   background: var(--color-accent);
   color: #14200b;
   border-color: var(--color-accent);
@@ -448,11 +447,59 @@ nav[aria-label="Main"] button[aria-current="location"] {
 }
 
 #btnPs:hover:not(:disabled),
-#btnTeams:hover:not(:disabled),
-#btnCopyTeams:hover:not(:disabled) {
+#btnTeams:hover:not(:disabled) {
   background: #c8f39a;
   border-color: #c8f39a;
   color: #14200b;
+}
+
+#btnNativeShare,
+#btnShareWhatsApp,
+#btnCopyTeams {
+  display: inline-flex;
+  min-height: 44px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border: 1px solid var(--color-accent);
+  border-radius: 8px;
+  font: inherit;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+
+#btnNativeShare.share-action-primary,
+#btnShareWhatsApp.share-action-primary {
+  color: #14200b;
+  background: var(--color-accent);
+  font-weight: 600;
+}
+
+#btnNativeShare.share-action-primary:hover,
+#btnShareWhatsApp.share-action-primary:hover {
+  background: #c8f39a;
+  border-color: #c8f39a;
+}
+
+#btnShareWhatsApp,
+#btnCopyTeams {
+  color: #eef3f6;
+  background: var(--color-panel-raised);
+}
+
+#btnShareWhatsApp:hover,
+#btnCopyTeams:hover:not(:disabled) {
+  color: #14200b;
+  background: #c8f39a;
+  border-color: #c8f39a;
+}
+
+#btnShareWhatsApp[hidden],
+#btnNativeShare[hidden] {
+  display: none;
 }
 
 #teamsActionSlot #btnTeams {

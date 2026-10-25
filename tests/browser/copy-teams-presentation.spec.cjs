@@ -32,7 +32,7 @@ test('the button, success message and shareable text fit the viewport without ho
 
   for (const locator of [
     page.getByRole('button', { name: 'Copy teams', exact: true }),
-    page.getByLabel('Teams to copy'),
+    page.getByLabel('Message preview'),
   ]) {
     await expect(locator).toBeVisible();
     const box = await locator.boundingBox();
@@ -80,7 +80,7 @@ test('WhatsApp link and Copy teams button are reachable by Tab, while Copy teams
   expect(outlineStyle).not.toBe('none');
 
   await page.keyboard.press('Tab');
-  await expect(page.getByLabel('Teams to copy')).toBeFocused();
+  await expect(page.getByLabel('Message preview')).toBeFocused();
 
   await copyButton.focus();
   await page.keyboard.press('Enter');

@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 
-test('Teams to copy lists each player on a bulleted line under the team title, with a blank line between teams', async ({ page }) => {
+test('Message preview lists each player on a bulleted line under the team title, with a blank line between teams', async ({ page }) => {
   await page.goto('/');
   const navigation = page.getByRole('navigation', { name: 'Main', exact: true });
   await navigation.getByRole('button', { name: 'Players', exact: true }).click();
@@ -13,7 +13,7 @@ test('Teams to copy lists each player on a bulleted line under the team title, w
   await page.getByRole('button', { name: 'Select All Players', exact: true }).click();
   await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
 
-  const text = await page.getByLabel('Teams to copy').inputValue();
+  const text = await page.getByLabel('Message preview').inputValue();
 
   expect(text).toMatch(/^Team 1\n• .+\n• .+\n\nTeam 2\n• .+\n• .+$/);
   expect(text.split('\n').filter(line => line.startsWith('• ')).sort())
@@ -21,7 +21,7 @@ test('Teams to copy lists each player on a bulleted line under the team title, w
 });
 
 // Acceptance of existing behavior: the shared text never exposes scores or goalkeeper roles.
-test('Teams to copy contains only titles, bulleted names and blank separators, without scores or roles', async ({ page }) => {
+test('Message preview contains only titles, bulleted names and blank separators, without scores or roles', async ({ page }) => {
   await page.goto('/');
   const navigation = page.getByRole('navigation', { name: 'Main', exact: true });
   await navigation.getByRole('button', { name: 'Players', exact: true }).click();
@@ -35,7 +35,7 @@ test('Teams to copy contains only titles, bulleted names and blank separators, w
   await page.getByRole('button', { name: 'Select All Players', exact: true }).click();
   await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
 
-  const lines = (await page.getByLabel('Teams to copy').inputValue()).split('\n');
+  const lines = (await page.getByLabel('Message preview').inputValue()).split('\n');
 
   expect(lines.length).toBeGreaterThan(0);
   for (const line of lines) expect(line).toMatch(/^(Team [12]|• (Ana|Bia|Caio|Duda)|)$/);

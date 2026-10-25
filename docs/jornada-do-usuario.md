@@ -6,7 +6,7 @@ Na etapa Match, o organizador pode informar local, data e horário da partida; o
 
 ## Busca, partilha e armazenamento (25/10/2026)
 
-O organizador pode filtrar participantes por nome sem alterar a sele??o ou o alcance de Select All Players. A tela informa junto ao cadastro que os jogadores ficam somente neste navegador e junto aos detalhes que local/data/hor?rio desaparecem ao recarregar. Em navegadores compat?veis, **Share teams** abre o seletor nativo com a mensagem atual; cancelar n?o ? tratado como envio. **Share on WhatsApp**, **Copy teams** e c?pia manual continuam dispon?veis.
+O organizador pode filtrar participantes por nome sem alterar a seleção ou o alcance de Select All Players. A tela informa junto ao cadastro que os jogadores ficam somente neste navegador e junto aos detalhes que local, data e horário desaparecem ao recarregar. Em navegadores compatíveis, **Share teams** abre o seletor de partilha do dispositivo com a Mensagem da partida; cancelar não é tratado como envio. **Share on WhatsApp** abre um rascunho da mesma mensagem para escolher destinatário e enviar. **Copy teams** copia essa mensagem para qualquer outro destino, e a pré-visualização permite a seleção manual se a cópia automática falhar.
 
 ## Guia inicial e tablets — 23/10/2026
 
