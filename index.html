@@ -33,6 +33,7 @@
     <section id="playersArea" hidden>
     <div id="registeredPlayersPanel">
       <h2>Registered players</h2>
+      <p class="storage-guidance">Players are saved only in this browser.</p>
       <div id="registeredPlayersEmptyState" hidden>
         <p>Your saved players will appear here. Add players to reuse your roster in this browser.</p>
         <button type="button" onclick="document.getElementById('pName').focus();">Add your first player</button>
@@ -62,6 +63,7 @@
     <section id="matchArea">
     <section id="matchDetails" aria-labelledby="matchDetailsHeading">
       <h2 id="matchDetailsHeading">Match details</h2>
+      <p class="storage-guidance">Match location, date, and time are temporary and will be cleared when you reload this page.</p>
       <div class="match-detail-fields">
         <div>
           <label for="matchLocation">Match location</label>
@@ -84,6 +86,8 @@
     <div id="container">
       <div id="participantSelection">
         <p>Check the players who will play in this match. Unchecking keeps their registration.</p>
+        <label for="playerSearch">Search players</label>
+        <input type="search" id="playerSearch" autocomplete="off" />
         <div class="player-list-toolbar">
           <p id="selectionStatus" role="status"></p>
           <button id="btnSelectAllPlayers" type="button" onclick="selectAllPlayers()">Select All Players</button>
@@ -134,7 +138,8 @@
       </section>
       <section id="shareControls" hidden aria-labelledby="shareHeading">
         <h3 id="shareHeading">Share teams</h3>
-        <p id="shareHelp">Share the player names on WhatsApp, copy them, or select the text below and copy it manually. Skill scores are not included.</p>
+        <p id="shareHelp">Share the player names using your device, WhatsApp, or copy them. You can also select the text below and copy it manually. Skill scores are not included.</p>
+        <button id="btnNativeShare" type="button" onclick="shareTeamsUsingDevice()" hidden>Share teams</button>
         <a id="btnShareWhatsApp" href="https://wa.me/" target="_blank" rel="noopener noreferrer">Share on WhatsApp</a>
         <button id="btnCopyTeams" type="button" onclick="copyTeamsToClipboard()">Copy teams</button>
         <p id="copyStatus" role="status"></p>
@@ -145,7 +150,7 @@
     </section>
 
     <footer>
-      <p>Team Generator — Created by Wells Maciel <span class="site-version">v1.7.0</span></p>
+      <p>Team Generator — Created by Wells Maciel <span class="site-version">v1.8.0</span></p>
       <p>
         <a href="https://www.linkedin.com/in/wells-velasquez-maciel/">LinkedIn</a>
       </p>

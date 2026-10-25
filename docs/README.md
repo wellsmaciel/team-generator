@@ -29,6 +29,8 @@
 - [Coordenação entre Codex e Claude por hooks](agents/coordenacao-por-hooks.md)
 - [Glossário](../GLOSSARY.md)
 
+**Estado do produto (25/10/2026):** busca de participantes, folha nativa de partilha quando suportada e avisos explicitos de persistencia foram concluidos junto com a revisao responsiva. Ver [jornada](jornada-do-usuario.md), [arquitetura](arquitetura.md), [tarefas](tarefas.md) e [resumo da sessao](proximo-chat.md). A folha nativa foi simulada em Chromium; sem teste em dispositivo fisico ou envio real.
+
 ## Como interpretar
 
 **Confirmado** significa aceito pelo usuário na entrevista. **Proposta** significa recomendação ainda sujeita a confirmação. **Estado atual** descreve o código, e não o produto desejado. As dúvidas estão centralizadas em `pendencias.md`.

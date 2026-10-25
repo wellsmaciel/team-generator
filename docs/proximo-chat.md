@@ -137,3 +137,10 @@ Implementação concluída em um ciclo TDD: RED genuíno (`tests/browser/share-t
 ## Estado da 07 — 21/10/2026
 
 Validação integrada concluída em Chromium emulado (360×800, 390×844, 768×1024 e 1280×720; dados sintéticos; `playwright.acceptance.config.cjs`: 13 aprovados, 3 ignorados por desenho; suíte padrão: 156 aprovados, 12 ignorados; quatro scripts Node aprovados). Um defeito real: texto e links do rodapé sobre a foto ficavam abaixo de 4,5:1 em tablet e desktop (RED medido em pixels renderizados: 3,46–4,37:1). Correção mínima de CSS (`footer` com o fundo escuro dos cartões), com GREEN em 10,75:1 como **limite conservador do cartão escuro sobre branco** (não uma nova amostragem de pixels). O harness de foco foi corrigido (sem limiar de 75%; acesso integral ao campo "Teams to copy" por teclas reais). **Não testados:** aparelho físico, toque, teclado móvel, aplicativo nativo, recusa manual real da área de transferência e zoom real do navegador (o reflow 640×512 e 320×256 é viewport equivalente, não zoom). Relatório: `.scratch/mobile-first-planning/evidence/07-validation-2026-10-21/relatorio-07.md`. Revisão independente e commit: ver o [ticket 07](../.scratch/mobile-first-planning/issues/07-integrated-responsive-validation.md) e o `git log`.
+
+## Atualizacao desta sessao - 25/10/2026
+
+- Busca por nome sem alterar selecao, partilha nativa quando disponivel e avisos sobre armazenamento local/temporario foram implementados; WhatsApp, Copy teams e copia manual foram preservados.
+- Tres tickets `.scratch/responsive-sharing-ux/issues/` concluidos com evidencias. Playwright verificou interface publica em desktop, tablet emulado e telas moveis; sem aparelho fisico, seletor nativo real ou envio WhatsApp.
+- Versao candidata `1.8.0` (incremento minor por recursos aditivos), condicionada ao merge/publicacao da PR #14.
+- Login por email/Google, banco de dados, backend e sincronizacao continuam fora do escopo.

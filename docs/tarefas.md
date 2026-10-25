@@ -1,4 +1,4 @@
-> **Estado atual (24/10/2026):** tarefas 04–07 e refinamentos de UX estão concluídos. Local/data/horário opcionais e partilha por WhatsApp foram integrados pela [PR #13](https://github.com/wellsmaciel/team-generator/pull/13) e publicados na `v1.7.0`; consulte o [ticket local](../.scratch/match-details-and-whatsapp/issues/02-share-via-whatsapp-and-review-docs.md) e o [resumo da sessão](proximo-chat.md). As autorizações antigas abaixo são registros históricos e não limitam pedidos novos do usuário.
+> **Estado atual (25/10/2026):** rodada responsiva com busca, partilha nativa e orientacao de armazenamento concluida na PR #14; tickets e evidencias em `.scratch/responsive-sharing-ux/`. As entregas anteriores e suas releases permanecem registradas como historico.
 
 > **Histórico (autorização da 06, superada):** executar 06 com TDD e commit condicional exclusivo de Claude; encerrar após o commit validado de 06, sem iniciar 07. Sem push/PR/merge/release/publicação. O resultado está no início de [coordenação](agents/coordenacao-por-hooks.md); essa autorização também foi encerrada. Regras de 04/05 abaixo são históricas.
 

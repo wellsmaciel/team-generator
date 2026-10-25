@@ -48,3 +48,7 @@ Escolher a ferramenta mais simples compatível com o ambiente disponível. Não 
 ## Quando reavaliar
 
 Sincronização entre aparelhos, vários organizadores usando o mesmo cadastro ou recuperação remota de dados podem justificar servidor e banco externo no futuro. Essas necessidades não foram confirmadas.
+
+## Orientacao de partilha e armazenamento - 25/10/2026
+
+A acao `Share teams` chama a Web Share API apos interacao direta quando disponivel. O navegador ou sistema escolhe os destinos; cancelar nao e sucesso. Se a API estiver ausente ou falhar, WhatsApp, copia e selecao manual continuam disponiveis. A interface informa que o cadastro fica neste navegador e que os detalhes da partida sao temporarios.
