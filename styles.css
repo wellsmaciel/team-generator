@@ -212,6 +212,17 @@ h3 {
   margin: 0 auto 20px;
   text-align: left;
 }
+.storage-guidance {
+  max-width: 56rem;
+  margin: 0 auto 12px;
+  color: #d9e2e9;
+  font-size: 0.875rem;
+  line-height: 1.45;
+  text-align: left;
+}
+#registeredPlayersPanel > .storage-guidance {
+  width: 100%;
+}
 .match-detail-fields label {
   display: block;
   margin-bottom: 6px;
