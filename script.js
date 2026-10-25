@@ -421,7 +421,22 @@ function renderShareText() {
     : teamText;
   document.getElementById('shareText').value = shareText;
   document.getElementById('btnShareWhatsApp').href = 'https://wa.me/?text=' + encodeURIComponent(shareText);
+  document.getElementById('btnNativeShare').hidden = typeof navigator.share !== 'function';
   document.getElementById('shareControls').hidden = false;
+}
+
+async function shareTeamsUsingDevice() {
+  const shareStatus = document.getElementById('copyStatus');
+  shareStatus.textContent = '';
+  try {
+    await navigator.share({
+      title: 'Team Generator',
+      text: document.getElementById('shareText').value,
+    });
+  } catch (error) {
+    if (error && error.name === 'AbortError') return;
+    shareStatus.textContent = 'Could not open sharing options. Use WhatsApp or copy teams manually.';
+  }
 }
 
 async function copyTeamsToClipboard() {
