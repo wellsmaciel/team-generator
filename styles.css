@@ -230,6 +230,12 @@ h3 {
 #participantSelection > p:first-child {
   margin-bottom: 12px;
 }
+#playerSearch {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 44px;
+  margin-bottom: 12px;
+}
 .player-list-toolbar {
   display: flex;
   align-items: center;

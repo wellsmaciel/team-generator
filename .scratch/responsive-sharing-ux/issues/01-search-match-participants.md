@@ -4,13 +4,15 @@
 
 **Bloqueado por:** Nenhum (pode começar imediatamente).
 
-**Status:** ready-for-agent
+**Status:** done
 
-- [ ] A busca tem rótulo acessível, funciona por teclado e filtra nomes sem diferenciar maiúsculas/minúsculas.
-- [ ] Filtrar, limpar a busca ou não encontrar resultados não altera os cadastros, a seleção existente nem a contagem de participantes.
-- [ ] Select All Players mantém seu significado atual e opera sobre todos os jogadores cadastrados, não apenas os resultados filtrados.
-- [ ] A busca e os resultados continuam utilizáveis nas larguras celular, tablet e desktop; a lista não cria rolagem horizontal.
-- [ ] Teste Playwright pela interface pública cobre filtro, estado vazio, teclado e preservação da seleção.
-- [ ] Verificação em Chromium confirma foco visível e uso em 360 px, 390 px, tablet e desktop.
+- [x] A busca tem rótulo acessível, funciona por teclado e filtra nomes sem diferenciar maiúsculas/minúsculas.
+- [x] Filtrar, limpar a busca ou não encontrar resultados não altera os cadastros, a seleção existente nem a contagem de participantes.
+- [x] Select All Players mantém seu significado atual e opera sobre todos os jogadores cadastrados, não apenas os resultados filtrados.
+- [x] A busca e os resultados continuam utilizáveis nas larguras celular, tablet e desktop; a lista não cria rolagem horizontal.
+- [x] Teste Playwright pela interface pública cobre filtro, estado vazio, teclado e preservação da seleção.
+- [x] Verificação em Chromium confirma foco visível e uso em 360 px, 390 px, tablet e desktop.
+
+**Evidências:** `npm.cmd run test:browser -- tests/browser/search-participants.spec.cjs` (3/3 projetos passaram; o caso verificou 360, 390, 768 e 1280 px), `npm.cmd run test:browser -- tests/browser/select-all-players.spec.cjs` (9/9 passaram) e `node --check` para `script.js` e `tests/browser/search-participants.spec.cjs`. Browser automatizado Chromium; não houve teste em aparelho físico.
 
 **Referências:** [spec](../spec.md); `GLOSSARY.md`; `tests/browser/players-registration.spec.cjs`.
