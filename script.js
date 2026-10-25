@@ -10,6 +10,7 @@ const selectedPlayers = new Set();
 for (const id of ['matchLocation', 'matchDate', 'matchTime']) {
   document.getElementById(id).addEventListener('input', renderShareText);
 }
+document.getElementById('playerSearch').addEventListener('input', renderMatchPlayers);
 
 function showArea(area) {
   const target = document.getElementById(area === 'players' ? 'playersArea' : 'matchArea');
@@ -96,10 +97,10 @@ function savePlayers() {
   }
 }
 
-function renderPlayers(id, players, showScores = false) {
+function renderPlayers(id, visiblePlayers, showScores = false) {
   const list = document.getElementById(id);
   list.replaceChildren();
-  players.forEach(function (player) {
+  visiblePlayers.forEach(function (player) {
     const item = document.createElement('li');
     const playerName = player.name + (player.isGoalkeeper ? ' (Goalkeeper)' : '');
     item.textContent = playerName;
@@ -157,12 +158,26 @@ function renderPlayers(id, players, showScores = false) {
     document.getElementById('playerListColumns').hidden = hasNoPlayers;
     document.getElementById('noPlayersGuidance').hidden = !hasNoPlayers;
     document.getElementById('addPlayersFromMatch').hidden = !hasNoPlayers;
+    if (!hasNoPlayers && visiblePlayers.length === 0) {
+      const emptyResult = document.createElement('li');
+      emptyResult.setAttribute('role', 'status');
+      emptyResult.textContent = 'No players found.';
+      list.appendChild(emptyResult);
+    }
   }
   if (id === 'registeredPlayerList') {
     const hasRegisteredPlayers = players.length > 0;
     document.getElementById('registeredPlayersEmptyState').hidden = hasRegisteredPlayers;
     document.getElementById('playersArea').classList.toggle('has-registered-players', hasRegisteredPlayers);
   }
+}
+
+function renderMatchPlayers() {
+  const query = document.getElementById('playerSearch').value.trim().toLowerCase();
+  const visiblePlayers = query
+    ? players.filter(player => player.name.toLowerCase().includes(query))
+    : players;
+  renderPlayers('playerSkillList', visiblePlayers, true);
 }
 
 function updateSelectedPlayerCount() {
@@ -185,10 +200,10 @@ function selectAllPlayers() {
   players.forEach(function (player) {
     selectPlayer(player, true);
   });
-  renderPlayers('playerSkillList', players, true);
+  renderMatchPlayers();
 }
 
-renderPlayers('playerSkillList', players, true);
+renderMatchPlayers();
 renderPlayers('registeredPlayerList', players, true);
 
 function editPlayer(player) {
@@ -228,7 +243,7 @@ function deletePlayer(player) {
   if (playerBeingEdited === player) cancelEditing();
   clearTeamsAfterChange();
   savePlayers();
-  renderPlayers('playerSkillList', players, true);
+  renderMatchPlayers();
   renderPlayers('registeredPlayerList', players, true);
 }
 
@@ -286,7 +301,7 @@ function addOrUpdatePlayer(event) {
 
   cancelEditing();
 
-  renderPlayers('playerSkillList', players, true);
+  renderMatchPlayers();
   renderPlayers('registeredPlayerList', players, true);
 }
 
@@ -421,7 +436,22 @@ function renderShareText() {
     : teamText;
   document.getElementById('shareText').value = shareText;
   document.getElementById('btnShareWhatsApp').href = 'https://wa.me/?text=' + encodeURIComponent(shareText);
+  document.getElementById('btnNativeShare').hidden = typeof navigator === 'undefined' || typeof navigator.share !== 'function';
   document.getElementById('shareControls').hidden = false;
+}
+
+async function shareTeamsUsingDevice() {
+  const shareStatus = document.getElementById('copyStatus');
+  shareStatus.textContent = '';
+  try {
+    await navigator.share({
+      title: 'Team Generator',
+      text: document.getElementById('shareText').value,
+    });
+  } catch (error) {
+    if (error && error.name === 'AbortError') return;
+    shareStatus.textContent = 'Could not open sharing options. Use WhatsApp or copy teams manually.';
+  }
 }
 
 async function copyTeamsToClipboard() {

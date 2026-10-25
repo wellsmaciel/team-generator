@@ -15,13 +15,13 @@ Keep `index.html`, `script.js` and `styles.css` together, then open `index.html`
 5. Review participants, skill totals and warnings. Team sizes differ by at most one participant. Each team has at most one fixed goalkeeper; too many selected goalkeepers block generation. Missing goalkeepers and unequal sizes produce warnings.
 6. Use **Generate another composition** to search for different groups. Equal or better balance applies immediately. Any increase in the difference between the highest and lowest totals shows a preview requiring **Accept composition** or **Undo composition**. Sharing and swaps are unavailable during that decision.
 7. To swap players, choose participants from different teams and click **Confirm swap**. Swap outfield for outfield or goalkeeper for goalkeeper. **Cancel** clears the choices.
-8. Optionally enter the match location, date and time in **Match details**. Under **Share teams**, click **Copy teams** or **Share on WhatsApp**; both use the same text, with entered match details first and team titles/names below. Empty details are omitted. The message never includes skill scores or totals and follows the accepted composition after generation, swaps or undo. WhatsApp opens with the message prefilled so the organizer can choose a contact or group and send it. Copy gives confirmation only after success; if clipboard access is unavailable, guidance to copy manually appears instead. Sharing is unavailable when there are no teams or a pending decision.
+8. Search the participant list by name; filtering does not change selected players or Select All Players scope. Optionally enter location, date and time in **Match details**. Under **Share teams**, click **Share teams** where device sharing is supported, **Copy teams**, or **Share on WhatsApp**; both use the same text, with entered match details first and team titles/names below. Empty details are omitted. The message never includes skill scores or totals and follows the accepted composition after generation, swaps or undo. WhatsApp opens with the message prefilled so the organizer can choose a contact or group and send it. Copy gives confirmation only after success; if clipboard access is unavailable, guidance to copy manually appears instead. Sharing is unavailable when there are no teams or a pending decision.
 
 Adding a player, saving an edit, confirming deletion, changing selection or changing the team count clears the current match. Canceling an edit or deletion preserves it.
 
 ## Saved data
 
-Registrations (name, score and goalkeeper flag) are stored locally under `team-generator.players`. Selection and match state are held only in memory and reset on reload. Storage errors are reported; unreadable saved data is not automatically overwritten. Clearing browser data may remove registrations. There is no account, synchronization or remote backup. Names are displayed as literal text.
+Registrations (name, score and goalkeeper flag) are stored only in this browser under `team-generator.players`; the interface explains this beside the list. Selection and match details are held only in memory and reset on reload; the interface identifies the details as temporary. Storage errors are reported; unreadable saved data is not automatically overwritten. Clearing browser data may remove registrations. There is no account, synchronization or remote backup. Names are displayed as literal text.
 
 ## Team balancing
 
@@ -57,7 +57,7 @@ npx.cmd --no-install playwright install chromium
 npm.cmd run test:browser
 ```
 
-The browser suite creates its own loopback server on port 51806 and a fresh browser context per test. It does not read the user's browser profile or registrations. It runs at 1280×720, 360×800 and 390×844, covering deletion during a pending preview, keyboard/copy/paste after undo/acceptance/swaps, sharing controls and their keyboard access. Match details and WhatsApp feature checks passed in isolated browser runs; screenshots and an HTML report are generated under `.scratch/playwright-results` and `.scratch/playwright-report`. The WhatsApp destination is verified as a prefilled URL; opening the native app/site and completing a send were not tested.
+The browser suite creates its own loopback server on port 51806 and a fresh browser context per test. It does not read the user's browser profile or registrations. It runs at 1280×720, 360×800 and 390×844, covering deletion during a pending preview, keyboard/copy/paste after undo/acceptance/swaps, sharing controls and their keyboard access. Search, device-share simulation and storage/reload guidance have dedicated browser checks; tablet is covered at 768–820 px. The native share action is simulated: opening a real system sheet, native WhatsApp, and sending a message were not tested. Screenshots and an HTML report are generated under `.scratch/playwright-results` and `.scratch/playwright-report`.
 
 The responsive journey (task 07) has its own acceptance configuration, which runs the chained public journey, keyboard-only access, text and focus-outline contrast and a reflow check at 360×800, 390×844, 768×1024 and 1280×720 in emulated Chromium viewports, with synthetic data in fresh browser contexts. The browser suite above and this one use the same loopback port, so run them one after the other, never together:
 
@@ -84,7 +84,7 @@ The [stage 05 checklist](docs/testes-manuais-etapa-05.md) links the evidence and
 
 ## Current scope
 
-Manual text copying, Copy teams, Share on WhatsApp, optional location/date/time, team generation after participant selection and Select All Players are available. Match details and selection reset on reload. There is no button to unselect everyone, login, backend, cross-device synchronization, saved match, image sharing or sharing with skill totals. No published application URL has been confirmed.
+Manual text copying, Copy teams, Share on WhatsApp, device share where supported, participant search, optional location/date/time, team generation after participant selection and Select All Players are available. Match details and selection reset on reload. There is no button to unselect everyone, login, backend, cross-device synchronization, saved match, image sharing or sharing with skill totals. No published application URL has been confirmed.
 
 The UX refinements approved on 22 October 2026 are recorded in [docs/ajustes-ux-2026-10-22.md](docs/ajustes-ux-2026-10-22.md). They include the solid background, scroll-aware fixed navigation, clearer player/skill layout, compact controls and persistent mobile version label.
 
