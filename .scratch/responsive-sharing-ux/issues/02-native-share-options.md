@@ -16,7 +16,7 @@
 
 **Evidências:**
 
-- Testes Playwright públicos em `tests/browser/match-details-share.spec.cjs` simulam suporte nativo, texto/título atuais, cancelamento, falha e ausência de suporte. Resultado atualizado: 18/18 aprovados nos projetos desktop, 360px e 390px. O teste dedicado tamb?m ajusta o viewport para tablet 820?1024, verifica bot?o vis?vel, ?rea m?nima de 44?44 px, foco por teclado e ativa??o por Enter.
+- Testes Playwright públicos em `tests/browser/match-details-share.spec.cjs` simulam suporte nativo, texto e título atuais, cancelamento, falha e ausência de suporte. Resultado: 18/18 aprovados nos projetos desktop, 360px e 390px. O caso dedicado ajusta o viewport para tablet 820×1024 e confere visibilidade, alvo mínimo 44×44 px, foco por teclado e ativação por Enter.
 - Regressão desktop de `match-details-share.spec.cjs` e `copy-teams-button.spec.cjs`: 16/16 aprovados, incluindo `wa.me`, `Copy teams`, conteúdo sem notas e cópia manual.
 - Sem teste físico em aparelho; o seletor nativo foi simulado no navegador e nenhuma mensagem foi enviada.
 
