@@ -1,6 +1,6 @@
 # Roadmap por fases
 
-**Estado atual (24/10/2026):** as fases iniciais, as rodadas de usabilidade, a entrega mobile first, os refinamentos para tablets e os detalhes opcionais da partida com partilha por WhatsApp foram concluídos. A release publicada é `v1.7.0`. Consulte [tarefas](tarefas.md), [jornada do usuário](jornada-do-usuario.md) e [resumo](proximo-chat.md). As fases abaixo registram o roadmap original e não são uma fila de trabalho atual.
+**Estado atual (25/10/2026):** fases iniciais, rodadas de usabilidade, entrega mobile first, refinamentos para tablets, busca, partilha nativa e orientacao de armazenamento concluidos; a versao desta entrega e `v1.8.0`. Ver [tarefas](tarefas.md), [jornada](jornada-do-usuario.md) e [resumo](proximo-chat.md). O restante registra o roadmap original, sem fila de trabalho atual.
 
 O [mapa da jornada](jornada-do-usuario.md) e o [índice de tarefas](tarefas.md) registram as entregas encerradas. Não há sequência de implementação autorizada neste roadmap.
 

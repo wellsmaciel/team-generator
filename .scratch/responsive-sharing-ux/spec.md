@@ -1,6 +1,6 @@
 ﻿# Especificação: melhorar a partilha e a orientação responsiva
 
-**Status:** ready-for-agent
+**Status:** done
 **Aprovação:** escopo de três entregas e seam Playwright público aprovados pelo usuário em 25/10/2026.
 
 ## Problem Statement
@@ -60,5 +60,4 @@ Adicionar busca acessível que filtre a lista de participantes sem mudar a sele�
 
 - Vocabulário do domínio permanece: organizador, jogador cadastrado, participante da partida, nota de habilidade e time.
 - Não surge conceito de domínio novo que justifique mudança do glossário ou ADR. A jornada e a arquitetura devem registrar a nova folha de partilha e a orientação de persistência quando a implementação estiver concluída.
-- A avaliação UX e seus limites estão arquivados em `.impeccable/critique/2026-10-25T09-52-23Z__index-html.md`.
-
+- A avaliação UX e seus limites estão arquivados em `.scratch/responsive-sharing-ux/impeccable-review.md`.

@@ -166,3 +166,32 @@ test('native share action is absent when the browser does not support it', async
   await expect(page.getByRole('link', { name: 'Share on WhatsApp', exact: true })).toBeVisible();
   await expect(page.getByRole('button', { name: 'Copy teams', exact: true })).toBeVisible();
 });
+
+test('native share control has keyboard access and a comfortable tablet target', async ({ page }) => {
+  await page.setViewportSize({ width: 820, height: 1024 });
+  await page.addInitScript(() => {
+    window.nativeShareCalls = [];
+    navigator.share = async payload => window.nativeShareCalls.push(payload);
+  });
+  await page.goto('/');
+  const navigation = page.getByRole('navigation', { name: 'Main', exact: true });
+  await navigation.getByRole('button', { name: 'Players', exact: true }).click();
+  for (const [name, score] of [['Ana', 4], ['Bia', 5], ['Caio', 6], ['Duda', 7]]) {
+    await page.getByLabel('Player Name', { exact: true }).fill(name);
+    await page.getByLabel('Estimated skill (1\u201310)', { exact: true }).fill(String(score));
+    await page.getByRole('button', { name: 'Add Player', exact: true }).click();
+  }
+  await navigation.getByRole('button', { name: 'Match', exact: true }).click();
+  await page.getByRole('button', { name: 'Select All Players', exact: true }).click();
+  await page.getByRole('button', { name: 'Generate Teams', exact: true }).click();
+
+  const nativeShare = page.getByRole('button', { name: 'Share teams', exact: true });
+  await expect(nativeShare).toBeVisible();
+  const bounds = await nativeShare.boundingBox();
+  expect(bounds.height).toBeGreaterThanOrEqual(44);
+  expect(bounds.width).toBeGreaterThanOrEqual(44);
+  await nativeShare.focus();
+  await expect(nativeShare).toBeFocused();
+  await nativeShare.press('Enter');
+  await expect.poll(() => page.evaluate(() => window.nativeShareCalls.length)).toBe(1);
+});

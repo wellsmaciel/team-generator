@@ -4,6 +4,10 @@
 
 Na etapa Match, o organizador pode informar local, data e horário da partida; os três campos são opcionais. Editá-los atualiza a mensagem sem apagar os times. Os detalhes aparecem antes das equipes e campos vazios são omitidos. **Copy teams** e **Share on WhatsApp** usam exatamente a mesma mensagem. O WhatsApp abre com o texto preenchido; a pessoa escolhe contato ou grupo e envia. Esses dados não persistem após recarregar.
 
+## Busca, partilha e armazenamento (25/10/2026)
+
+O organizador pode filtrar participantes por nome sem alterar a sele??o ou o alcance de Select All Players. A tela informa junto ao cadastro que os jogadores ficam somente neste navegador e junto aos detalhes que local/data/hor?rio desaparecem ao recarregar. Em navegadores compat?veis, **Share teams** abre o seletor nativo com a mensagem atual; cancelar n?o ? tratado como envio. **Share on WhatsApp**, **Copy teams** e c?pia manual continuam dispon?veis.
+
 ## Guia inicial e tablets — 23/10/2026
 
 Ao abrir o app, o organizador vê o fluxo em três passos: adicionar jogadores com notas estimadas, selecionar participantes e quantidade de times, depois gerar e revisar a sugestão. O botão do guia leva ao formulário de cadastro. A interface não garante equilíbrio: a avaliação final continua com o organizador.

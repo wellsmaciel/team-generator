@@ -436,7 +436,7 @@ function renderShareText() {
     : teamText;
   document.getElementById('shareText').value = shareText;
   document.getElementById('btnShareWhatsApp').href = 'https://wa.me/?text=' + encodeURIComponent(shareText);
-  document.getElementById('btnNativeShare').hidden = typeof navigator.share !== 'function';
+  document.getElementById('btnNativeShare').hidden = typeof navigator === 'undefined' || typeof navigator.share !== 'function';
   document.getElementById('shareControls').hidden = false;
 }
 
